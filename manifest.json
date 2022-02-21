@@ -1,0 +1,20 @@
+{   "theme_color": "#0c29cd",
+    "background_color": "#0c29cd",
+    "description": "Art of Learning",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/mwalllogo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "name": "M A S T R O W A L L",
+    "short_name": "MASTROWALL",
+    "start_url": "/",
+    "url": "https://mastrowall.com/",
+    "manifestUrl": "https://mastrowall.com/manifest.json",
+    "scope": "/",
+    "lang": ""
+}
