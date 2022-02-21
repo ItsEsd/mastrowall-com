@@ -185,7 +185,6 @@ function openNav() {
     $('.otservice').hide('fast');
     $('#falsesecback').hide('fast');
     $('.otserviceinfo').hide('fast');
-    document.title = "Art of Learning | MASTROWALL";
   });
 
   $("#expeducon").click(function() {
