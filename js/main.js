@@ -252,7 +252,6 @@ $("#td").click(function() {
 $("#exmprtl").click(function() {
   $('.otservice').show();
   $('#falsesecback').show();
-            document.title = "Exam Portal | MASTROWALL";
 });
 
 $(".closetodbox").click(function() {
