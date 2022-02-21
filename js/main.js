@@ -297,13 +297,13 @@ $(".closejdbox").click(function() {
 });
 
 $("#examside").click(function() {
-  $("#examsideq").show();
+  $("#examsideq").slideDown('slow');
   document.getElementById('examsideq').style.background = "white";
   document.getElementById('hrefframe').href="https://questions.examside.com/";
 });
 
 $(".closeexamsideq").click(function() {
-  $("#examsideq").hide();
+  $("#examsideq").slideUp('slow');
 });
 
 });
