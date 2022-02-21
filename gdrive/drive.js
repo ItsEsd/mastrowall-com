@@ -346,7 +346,7 @@ function buildFiles() {
 
             fText += "<div class='" + DRIVE_FILES[i].fileType + "-box'>";
             if (DRIVE_FILES[i].fileType != "file") {
-                fText += "<div class='folder-icon' data-file-counter='" + i + "' data-level='" + DRIVE_FILES[i].level + "' data-parent='" + DRIVE_FILES[i].parentID + "' data-size='" + DRIVE_FILES[i].fileSize + "' data-id='" + DRIVE_FILES[i].id + "' title='" + textTitle + "' data-name='" + DRIVE_FILES[i].title + "' data-has-permission='" + DRIVE_FILES[i].hasPermission + "'><div class='image-preview'><img src='https://raw.githubusercontent.com/ItsEsd/mwall-aol/mastrowall-V.1.0/images/folder.png'/></div></div>";
+                fText += "<div class='folder-icon' data-file-counter='" + i + "' data-level='" + DRIVE_FILES[i].level + "' data-parent='" + DRIVE_FILES[i].parentID + "' data-size='" + DRIVE_FILES[i].fileSize + "' data-id='" + DRIVE_FILES[i].id + "' title='" + textTitle + "' data-name='" + DRIVE_FILES[i].title + "' data-has-permission='" + DRIVE_FILES[i].hasPermission + "'><div class='image-preview'><img src='../images/folder.png'/></div></div>";
             }
             else {
                 if (DRIVE_FILES[i].thumbnailLink) {
@@ -361,10 +361,10 @@ function buildFiles() {
                         DRIVE_FILES[i].fileExtension == "csv" ||
                         DRIVE_FILES[i].fileExtension == "doc" ||
                         DRIVE_FILES[i].fileExtension == "docx") {
-                        fText += "<div class='file-icon' data-file-counter='" + i + "' ><div class='image-preview'><img src='https://raw.githubusercontent.com/ItsEsd/mwall-aol/mastrowall-V.1.0/images/" + DRIVE_FILES[i].fileExtension + "-icon.png" + "'/></div></div>";
+                        fText += "<div class='file-icon' data-file-counter='" + i + "' ><div class='image-preview'><img src='../images/" + DRIVE_FILES[i].fileExtension + "-icon.png" + "'/></div></div>";
                     }
                     else {
-                        fText += "<div class='file-icon' data-file-counter='" + i + "' ><div class='image-preview'><img src='https://raw.githubusercontent.com/ItsEsd/mwall-aol/mastrowall-V.1.0/images/undefined-icon.png" + "'/></div></div>";
+                        fText += "<div class='file-icon' data-file-counter='" + i + "' ><div class='image-preview'><img src='../images/undefined-icon.png" + "'/></div></div>";
                     }
                 }
             }
@@ -688,7 +688,7 @@ function showLoading() {
     if ($("#drive-box-loading").length === 0) {
         $("#drive-box").prepend("<div id='drive-box-loading'></div>");
     }
-    $("#drive-box-loading").html("<div id='loading-wrapper'><div id='loading'><img src='https://raw.githubusercontent.com/ItsEsd/mwall-aol/mastrowall-V.1.0/images/loading.png'></div></div>");
+    $("#drive-box-loading").html("<div id='loading-wrapper'><div id='loading'><img src='../images/loading.png'></div></div>");
 }
 
 //hide loading animation
