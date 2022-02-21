@@ -249,7 +249,11 @@ $("#td").click(function() {
 						"", "/e/create-TOD/#");
             document.title = "Create TOD | MASTROWALL";
 });
-
+$("#exmprtl").click(function() {
+  $('.otservice').show();
+  $('#falsesecback').show();
+            document.title = "Exam Portal | MASTROWALL";
+});
 
 $(".closetodbox").click(function() {
   $("#todbox").hide();
