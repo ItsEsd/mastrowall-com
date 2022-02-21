@@ -1,0 +1,375 @@
+body {
+  
+    overflow: hidden;
+    background-color: transparent;
+  }
+ 
+  #loader {
+    position: absolute;
+    left: 50%;
+    top: 130px;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    visibility: hidden;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.6s;
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 40px;
+  }
+
+  @media screen and (max-height: 550px) {
+    .overlay {
+      overflow-y: auto;
+    }
+
+    .overlay a {
+      font-size: 20px
+    }
+
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 5px;
+      right: 10px;
+    }
+  }
+/*////// Prev///////
+  .stu,
+  .edu,
+  .co {
+    width:96%;
+    max-width:420px;
+    height: 140px;
+    border-radius: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    box-shadow: 0 2px 10px 0px white;
+    background-color: white;
+    border: 1px solid #0c29cd;
+    margin-bottom:30px;
+  } */
+
+  .stu,
+  .edu,
+  .co {
+    width:96%;
+    max-width:420px;
+    height: 180px;
+    border-radius: 0px;
+    padding: 0px;
+    padding-left: 10px;
+    box-shadow: 0 2px 10px 0px white;
+    background-color: white;
+    border: 1px solid #0c29cd;
+    margin-bottom:60px;
+  }
+
+
+
+  .thumb {
+    pointer-events: none;
+    padding: 5px;
+  }
+
+  #signinstu,
+  #signinedu,
+  #signinco {
+    width: 120px;
+    background-color: #0c29cd;
+  }
+
+  #signinstu:hover,
+  #signinedu:hover,
+  #signinco:hover {
+    color: #0c29cd;
+    background-color: white;
+    border:1px solid #0C29CD;
+  }
+
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    border: 1px solid #aaaaaa;
+  }
+
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+
+  /* Hide all steps by default: */
+  .form-control {
+    padding: 20px;
+    border: solid 1px #0C29CD;
+    outline: 0;
+    border-radius: 0px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .form-controlDOB {
+    border: solid 1px #0C29CD;
+    outline: 0;
+    border-radius: 0px;
+  }
+
+  .form-check-label {
+    color: #0C29CD;
+  }
+
+  label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+  }
+
+  input.error {
+    background-color: #ffdddd;
+    font-weight: 300;
+    color: red;
+  }
+
+  .modal {
+    height: 100%;
+    width: 100%;
+  }
+
+  .modal-content {
+    background-color: #e6e6e6;
+    width: 100%;
+    max-width: 480px;
+    height: 500px;
+    border: 2px solid white;
+    overflow-y: auto;
+    overflow: hidden;
+    position: fixed;
+  }
+
+  .modal-dialog {
+    margin-top:40px;
+    overflow: hidden;
+  }
+
+  .msg {
+    font-size: 16px;
+    display: none;
+    margin-top: 0px;
+    padding-left: 4px;
+  }
+
+  .error {
+    color: red;
+  }
+
+  .success {
+    color: green;
+  }
+
+  a:hover {
+    color: #0c29cd;
+  }
+
+  .readmore {
+    color: white;
+    background-color: #cc6600;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 2px;
+    display: inline-block;
+  }
+
+  .readmoren {
+    color: white;
+    background-color: #008000;
+    padding: 5px 10px;
+    text-align: center;
+    margin-left: 2px;
+    display: inline-block;
+  }
+
+  a.readmore:hover,
+  a.readmoren:hover {
+    color: white;
+  }
+
+  .modal-backdrop {
+    background-color: #242424;
+  }
+
+  img {
+    pointer-events: none;
+  }
+
+  .thumbPic {
+    padding:10px;
+    padding-top:30px;
+    width:140px;
+  }
+
+  .box {
+    overflow-y: visible;
+    overflow-x: auto;
+    white-space: nowrap;
+    vertical-align: text-top;
+    margin: auto;
+    padding-bottom: 20px;
+    clear: both;
+    border-spacing: 14px;
+  }
+
+  .iteam {
+    display: table-cell;
+    min-width: 310px;
+    width: 320px;
+    font-size: 140px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    white-space: normal;
+    line-height: 1.6;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  .qu {
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 6px;
+  }
+
+  #loader2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin: -20px 0 0 -20px;
+  }
+
+  #myDiv {
+    display: none;
+  }
+
+  #eduupModal,#stuupModal,#coupModal {
+    overflow: hidden;
+  }
+a:hover{text-decoration:none;}
+.signinop{
+  float:right;padding-right:10px;
+  
+
+}
+#casheader{
+  margin-top:50px;
+  padding:6px;
+  position: absolute;
+  background-color:#455eee;
+  z-index:1;
+  width:100%;
+  max-width:30px;
+  float:left;
+  color:white;
+  font-size: 20px;
+}
+
+#promoreg{
+  width:100%;
+  height:100%;
+  right:0px;
+  top:0px;
+  position:fixed;
+  background-color:#8611d483;
+  z-index: 100;
+  padding:20px;
+  padding-top:100px;
+}
+
+#pregcon{
+  padding:10px;
+  padding-left:20px;
+  padding-right:20px;
+  background:#ffffff;
+  width:100%;
+  height:100%;
+  max-width: 640px;
+  max-height:490px;
+  overflow-y:scroll;
+  box-shadow:0 2px 10px 0px #455eeecb;
+}
+#pregcon img{
+  width:100%;
+  max-width:140px;
+  float: right;
+}
+
+#promoconinfo{
+  padding-top:0px;
+}
+#promoconinfo h4{
+  text-align: left;
+  padding-bottom:10px;
+
+}
+.sppromo{
+  font-size:40px;
+}
+.sppromot{
+margin-bottom:-6px;
+}
+#promoconinfo p{
+  text-align: left;
+  padding-left:0px;
+}
+.infohl{
+  font-weight:600;
+  font-style: italic;
+}
+
+.ccontinue{
+  float:left;
+  width:100%;
+}
