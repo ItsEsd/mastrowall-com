@@ -321,7 +321,7 @@ if(!window.desktopcheck()){
  // $('.dlight').hide();
   //document.getElementById('fullheighttod').style.display="none";
  // document.body.style.backgroundImage ="url(images/backimg.gif)";
- // window.open('https://astro.mastrowall.com/','_self');
+ // window.open('https://astro.mastrowall.in/','_self');
   document.getElementById('fullheighttod').style.display="none";
   document.getElementById('emid').style.display="none";
   //document.getElementById('oknavicon').style.fontSize="28px";
