@@ -200,18 +200,30 @@ $(".closesearch").click(function() {
   document.getElementById('searchframe').style.boxShadow ="none";
   document.getElementById('searchframe').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+			window.history.replaceState(stateObj,
+						"", "/");
+            document.title = "Art of Learning | MASTROWALL";
 });
 
 $(".closelinkins").click(function() {
   document.getElementById('linkins').style.boxShadow ="none";
   document.getElementById('linkins').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", "/");
+       document.title = "Art of Learning | MASTROWALL";
 });
 
 $(".closetelemedia").click(function() {
   document.getElementById('telemedia').style.boxShadow ="none";
   document.getElementById('telemedia').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", "/");
+       document.title = "Art of Learning | MASTROWALL";
 });
 $("#closecas").click(function() {
   document.getElementById('continueas').style.width = '0';
@@ -232,11 +244,19 @@ $(".closedrivebox").click(function() {
 $("#td").click(function() {
   $("#todbox").toggle('fast');
   $("#gdrivebox").hide();
+  let stateObj = { id: "0" };
+			window.history.replaceState(stateObj,
+						"", "/e/create-TOD/#");
+            document.title = "Create TOD | MASTROWALL";
 });
 
 
 $(".closetodbox").click(function() {
   $("#todbox").hide();
+  let stateObj = { id: "0" };
+  window.history.replaceState(stateObj,
+        "", "/");
+        document.title = "Art of Learning | MASTROWALL";
 });
 
 $("#pt").click(function() {
@@ -412,18 +432,30 @@ $("#acdash").click(function() {
   document.getElementById('searchframe').style.boxShadow ="0 1px 6px 1px #2202af";
   document.getElementById('searchframe').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+			window.history.replaceState(stateObj,
+						"", "/e/topic-search/#");
+            document.title = "Topic Search | MASTROWALL";
 });
 
 $("#spdash").click(function() {
   document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
  document.getElementById('linkins').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", "/e/linkins-updates/#");
+       document.title = "New Linkins | MASTROWALL";
 });
 
 $("#sgdash").click(function() {
   document.getElementById('telemedia').style.boxShadow ="0 1px 6px 1px #2202af";
   document.getElementById('telemedia').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", "/e/telemedia/#");
+       document.title = "Tele Media | MASTROWALL";
 });
 
 });
