@@ -34,6 +34,10 @@ $('#stopvc1').click(function(){
 
 $('#crtod').click(function(){
     $('#todbox').toggle('fast');
+    let stateObj = { id: "0" };
+    window.history.replaceState(stateObj,
+          "", "/e/create-TOD/#");
+          document.title = "Create TOD | MASTROWALL";
 });
 
 $('#prosign').click(function(){
