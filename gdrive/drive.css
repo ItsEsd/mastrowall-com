@@ -31,7 +31,7 @@
     }
 
 .breadcrumb-arrow {
-    background: url(https://raw.githubusercontent.com/ItsEsd/mwall-aol/mastrowall-V.1.0/images/arrow_right.png) no-repeat 0 7px;
+    background: url(../images/arrow_right.png) no-repeat 0 7px;
     display: inline-block;
     height: 20px;
     width: 15px;
