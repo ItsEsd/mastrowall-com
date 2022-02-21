@@ -1,0 +1,43 @@
+#bdy .form-group {
+    color: white;
+  
+  }
+
+
+  #hideBtn {
+    border: none;
+    margin-top: 45px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: white;
+    color: red;
+  }
+
+
+  a,
+  a:active,
+  a:hover {
+    color: blue;
+  }
+
+#bdy .form-control:focus,
+  .btn:focus {
+    box-shadow: none;
+  }
+
+  #bdy .form-control{
+    border:1px solid #0c29cd;
+
+  }
+  .qb a {
+    margin-right: 10px;
+    float: right;
+    color: white;
+    margin-bottom: 2px;
+    text-decoration: none;
+  }
+
+  .qb a:hover {
+    margin-right: 18px;
+    transition: 0.3s;
+  }

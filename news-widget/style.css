@@ -1,0 +1,30 @@
+body{
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
+#newsfeed{
+padding:10px;
+}
+
+hr{border-color: #1d0a72;}
+#rfitem {
+    border: none;
+    width:100%;
+    padding:10px;
+    display:inline-block;
+    margin: 2px;
+
+    background-color: #dddddd;
+    border-radius:10px;
+}
+#rfitem p{color:#6a13db}
+
+#rfitem .title{color: #a00a49;}
+
+#rfitem a{text-decoration: none;}
+#rfitem .title:hover{color:#a00a48ab}
+
+#rfitem .dtitle{font-size: 14px;color:#ff6868}
+
+#rfitem .descp {color:#06117a}
+#rfitem img{width:100%;height:100%;pointer-events: none;}

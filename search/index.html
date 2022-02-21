@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en-IN">
+
+  <head><meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Search | MASTROWALL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="icon" href="../images/mwalllogo.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css">
+    <script src="../js/assets/jQuery v3.5.1.min.js"></script>
+    <script src="../js/vendor/popper.min.js"></script>
+    <script src="../js/assets/bootstrap.4.5.2.min.js"></script>
+    <script src="../js/assets/jQuery.3.4.0.min.js"></script>
+    <script src="../js/assets/jquery-1.12.4.js"></script>
+    <script src="../js/assets/jquery-1.12.1-ui.js"></script>
+    <script src="../js/assets/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="../css/assets/jquery-1.12.1-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="youtb.css">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0c09c9"> 
+    <base target="_blank">
+  </head>
+  <body>
+    <div class='falseback' align="center">
+      <div id="loader_fl" class="spinner-border text-light" style="margin-top:300px;"></div>
+    
+    </div>  
+   <div id="promodiv" align="center"><div id="titltesrcpromo">|| An Art of Learning ||</div></div>
+<!----------------------->
+<div id="empnamblk" align="center">
+  <div id="empnamblkmain">
+    <div id="loaderempnam" class="spinner-border text-primary"></div>
+  </div>
+</div>
+ <div align="left">
+  <div id="divsearch_note">
+  <!--  <img id="imgsearchtemp" onerror="previewerror()" src="../images/edusearch.jpg" style="width:100%;height:210px;pointer-events:none;object-fit: cover;margin-bottom:4px;">-->
+    <form onsubmit="return false;" id="mwallsearch" style="padding:6px;">
+      <div class="autocomplete">
+        <input id="searchmwall" class="form-control" type="search" placeholder="Start here.." autocomplete="off" required></div>
+
+<div id="searchbtns">
+<button class="btn btn-primary" type="submit" id="searchnote_wiki">Wikipedia</button>
+<button class="btn btn-secondary" type="submit" id="searchnote_wall">MASTROWALL</button>
+<button class="btn btn-danger" type="button" id="search_youtube">YouTube</button>
+<button class="btn btn-success" type="button" id="search_gcustom">Google Custom</button></div>
+      
+    </form>
+  </div>
+</div>
+
+
+<!-------------------------------->
+      <div class="container" align="center" id="youtb" style="display:none;">
+        <div id="bdy" style="max-width:800px;text-align:left;margin-top:160px;"> <br>
+          <form id="myForm" autocomplete="off">
+            <div class="form-group"> <input class="form-control" type="text" id="search" placeholder="Search YouTube" required> 
+            <div class="container"><br>
+              <div class="row">
+                <div class="column" style="width:50%">
+                  <div class="form-group"> <label for="duration">Duration:</label> <select class="form-control" id="duration">
+                      <option>Any</option>
+                      <option>Short</option>
+                      <option>Medium</option>
+                      <option>Long</option>
+                    </select> </div>
+                </div>
+                <div class="column" style="width:50%;padding-left:10px;">
+                  <div class="form-group"> <label for="order">Order:</label> <select class="form-control" id="order">
+                      <option>Relevance</option>
+                      <option>ViewCount</option>
+                      <option>VideoCount</option>
+                      <option>Title</option>
+                      <option>Rating</option>
+                    </select></div>
+                </div>
+              </div>
+            </div></div>
+            <div class="form-group"> <button id="btn" class="btn btn-danger" style="float:right;background-color:#dd2a2a;border:none;color:white;"> Go >></button></div>
+          </form>
+        </div><br>
+        <div class="container pgdown" style="max-width:800px;text-align:left;"><br>
+          <div style="display: none;" id="table" class="table table-striped" style="min-height:400px;">
+            <div id="results"> </div>
+          </div>
+          <div id="pager">
+            <ul id="pagination" class="pagination-sm" onclick="goto()"></ul>
+          </div>
+        </div>
+        <div style="display:none" align="center" id="back"><button type="button" class="btn btn-light" onclick="document.getElementById('bdy').style.display='block';document.getElementById('results').style.display='none';document.getElementById('back').style.display='none';document.getElementById('pager').style.display='none';" style="color:#0c09c9;border-radius:0px;">Goto Search >></button></div> <br>
+      </div>
+      
+    
+<div align="center">
+  <div id="gcustom" align="left">
+    <script async src="https://cse.google.com/cse.js?cx=dbd9ee76e3683f69b"></script>
+    <div class="gcse-search" target="_self"></div><br><p style="text-align: center;color:#e6e6e6;">© Google Custom Search</p>
+  </div>
+</div>
+
+      <div align="center" id="mwallresult" class="pgdown">
+        <div id="re" style="display:none; padding-top:10px;">
+          <div id="loader" class="spinner-border text-light"></div>
+          <div id="search_results_not"></div>
+          <div id="search_results"></div>         
+          <div id="search_results_vid"></div>
+          <br><br></div>
+      </div>
+
+      <div align="center" class="pgdown"><br>
+        <div id="rewiki">
+          <div class="articles"></div>
+          <br></div>
+      </div>
+     
+      <div align="right" id="othersearch">
+        <a type="button" id="showother" style="text-decoration: none;">Other Search &#9650; </a>
+        <div id="searchother" style="display:none;">
+      <a type="button"  href="https://scholar.google.com/">Google Scholar</a>
+      <a type="button"  href="https://www.researchgate.net/search">ResearchGate</a>
+      <a type="button"  href="https://base-search.net/">Base</a>
+      <a type="button"  href="https://www.wolframalpha.com/">Wolfram Alpha</a>
+      
+      </div>
+      </div>
+
+      <script>
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+   // document.getElementById('mwallsearch').style.top = "0";
+  // document.getElementById('mwallsearch').style.position = "fixed";
+ //  document.getElementById('mwallsearch').style.width = "100%";
+   document.getElementById('mwallsearch').style.boxShadow = "0 1px 4px 0px #d6d6d6";
+   document.getElementById('mwallsearch').style.backgroundColor = "white";
+   document.getElementById('mwallsearch').style.zIndex = "1";
+ //  document.getElementsByClassName('pgdown').style.marginTop = "120px";
+ //  document.getElementById('imgsearchtemp').style.visibility = "hidden";
+   
+
+  } else {
+    
+    document.getElementById('mwallsearch').style.boxShadow = "none";
+   // document.getElementById('imgsearchtemp').style.visibility = "hidden";
+    //document.getElementById('imgsearchtemp').style.display = "block";
+  }
+}
+      </script>
+ <script src="youtb.js"></script>
+    <script src="script.js"></script>
+  </body>
+
+</html>
