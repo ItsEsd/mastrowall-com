@@ -3,7 +3,10 @@ const CACHE_NAME  = 'MASTROWALL';
 
 /* Add relative URL of all the static content you want to store in
  * cache storage (this will help us use our app offline)*/
-let resourcesToCache = ['./'];
+let resourcesToCache = ['../css/assets/',
+'../css/fonts/',
+'../css/bootstrap.min.css',
+'../css/fontAwesome.css','../js/assets/','../js/vendor/'];
 
 self.addEventListener("install", e=>{
     e.waitUntil(
