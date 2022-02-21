@@ -458,7 +458,7 @@ $("#sgdash").click(function() {
  document.getElementById('main').style.marginLeft= '0';
  let stateObj = { id: "0" };
  window.history.replaceState(stateObj,
-       "", "/e/telemedia/#");
+       "", "/e/tele-media/#");
        document.title = "Tele Media | MASTROWALL";
 });
 
