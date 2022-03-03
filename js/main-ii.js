@@ -211,7 +211,7 @@ function openNav() {
   });
 
   $("#expgtotst").click(function() {
-    window.open('exam-portal/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://exam-portal.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
   });
 
   $("#exmpcreatid").click(function() {
