@@ -125,8 +125,8 @@ $('#oknav,#mwallImg').on('mouseover',function(){
   $("#dots").hide('fast');
   $("#togTest").show();
     $("#togTest2").hide();
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  //  document.body.scrollTop = 0;
+   // document.documentElement.scrollTop = 0;
 });
 
  $('#bodyConOne').on('mouseover',function(){
@@ -356,8 +356,8 @@ $(document).ready(function() {
   document.getElementById("falseback-conas").style.display = "none";
   $('.falseback-nav').hide();$('.mynvflback').hide();
   document.getElementById("dots").style.zIndex = '100';
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+ // document.body.scrollTop = 0;
+ // document.documentElement.scrollTop = 0;
   });
 });
 $(document).ready(function() {
