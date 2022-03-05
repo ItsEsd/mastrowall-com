@@ -22,7 +22,7 @@
     <div align="center" class="container"><br>
       <div align="center" id="logAd">
         <div style="width:80%;max-width:400px;"><br><br>
-          <form onsubmit="return false;"><img class="topImg" src="../images/mwalllogo.png"><br> <br><input type="email" id="em" class="form-control" placeholder="Email address" required /><input autocomplete="off" type="password" id="idop" class="form-control" placeholder="******" required /> <input autocomplete="off" type="submit" Value="Admin" style="width:100%;max-width:400px;background-color:#0c29cd;color:white;border:none;height:35px;border-radius:4px;" id="in"></form>
+          <form target="hdnfrm"><img class="topImg" src="../images/mwalllogo.png"><br> <br><input type="email" id="em" class="form-control" placeholder="Email address" required /><input autocomplete="off" type="password" id="idop" class="form-control" placeholder="******" required /> <input autocomplete="off" type="submit" Value="Admin" style="width:100%;max-width:400px;background-color:#0c29cd;color:white;border:none;height:35px;border-radius:4px;" id="in"></form>
         </div>
         <div id="loader1" class="spinner-border text-primary"></div>
       </div>
@@ -61,7 +61,7 @@
           </div>
           <div class="content">
             <hr style="border-color:#0c29cd;width:100%;max-width:600px;">
-            <form id="mwall_inmedia#1" onsubmit="return false">
+            <form id="mwall_inmedia#1" target="hdnfrm">
               <div align="center">
                 <div class="input_fields_wrap">
                   <div class="contentN1">
@@ -177,7 +177,7 @@
           </div>
           <div class="content">
             <hr style="border-color:#0c29cd;width:100%;max-width:600px;">
-            <form id="mwall_inmedia#2" onsubmit="return false">
+            <form id="mwall_inmedia#2" target="hdnfrm">
               <div align="center">
                 <div class="input_fields_wrap">
                   <div class="contentN1">
@@ -417,7 +417,7 @@
           </div>
           <div class="content">
             <hr style="border-color:#0c29cd;width:100%;max-width:600px;">
-            <form id="quote_edit" onsubmit="return false">
+            <form id="quote_edit" target="hdnfrm">
               <div align="center"><input autocomplete="off" type="text" id="quote1" name="dquoteWall" class="form-control" placeholder="MASTRO Quote" required /><input id="quote2" autocomplete="off" type="text" name="dquoteWall" class="form-control" placeholder="MASTRO Quote" required /><input id="quote3" autocomplete="off" type="text" name="dquoteWall" class="form-control" placeholder="MASTRO Quote" required /><input id="quote4" autocomplete="off" type="text" name="dquoteWall" class="form-control" placeholder="MASTRO Quote" required /></div> <input autocomplete="off" type="submit" id="upQuote" value="Update" />
             </form><br><input autocomplete="off" type="button" id="prequote" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /><br> 
             <input id="quotes_json" style="display:none;" /> <input id="quotes_json_unesc" style="display:block;" />
@@ -436,7 +436,7 @@
         <p style="cursor:pointer;color:#0c29cd;"><span onclick="document.getElementById('textarea').style.display='block';">Textarea >></span><span><a target="_blank" href="../dev-tools/" style="color:#0c29cd;text-decoration:none;"> Dev Tools >></a></span></p>
         <hr style="border-color:#0c29cd;width:100%;max-width:600px;">
       </div>
-  
+      <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
       <script>
         document.getElementById("prequote").addEventListener("click", previewQuote);
 
