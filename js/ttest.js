@@ -87,7 +87,7 @@ sendEdmail();
     var mailat = $('#edueid').val(); var passk = $('#confirmpasskey').val();
    // console.log(elemed);
       Email.send({
-        SecureToken : "2ecae5a7-d0bc-4df8-a933-fedd48053e4c",
+        SecureToken : "596b8b7e-d5a8-4bf3-88b5-2183733319bf",
         To: mailat,
         From: "examportal@mastrowall.com",
           Subject: "Exam Portal - MASTROWALL",
