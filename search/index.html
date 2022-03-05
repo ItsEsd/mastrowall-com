@@ -39,7 +39,7 @@
  <div align="left">
   <div id="divsearch_note">
   <!--  <img id="imgsearchtemp" onerror="previewerror()" src="../images/edusearch.jpg" style="width:100%;height:210px;pointer-events:none;object-fit: cover;margin-bottom:4px;">-->
-    <form onsubmit="return false;" id="mwallsearch" style="padding:6px;">
+    <form target="hdnfrm" id="mwallsearch" style="padding:6px;">
       <div class="autocomplete">
         <input id="searchmwall" class="form-control" type="search" placeholder="Start here.." autocomplete="off" required></div>
 
@@ -52,8 +52,7 @@
     </form>
   </div>
 </div>
-
-
+<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
 <!-------------------------------->
       <div class="container" align="center" id="youtb" style="display:none;">
         <div id="bdy" style="max-width:800px;text-align:left;margin-top:160px;"> <br>
