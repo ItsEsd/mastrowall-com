@@ -105,7 +105,7 @@
           <h4>Notes LinkIn</h4>
         </div>
         <hr style="border-width:4px;width:45%;"> <br>
-        <form id="editwall" autocomplete="off" onsubmit="return false;"> <input class="form-control" type="text" name="NotesTitle" id="ntitle" placeholder="Title: " required> <br> <input class="form-control" type="url" pattern="https?://.+" name="NotesLink" id="nlink" placeholder="Content Address: (url)" onkeyup="genId()" required> <br> <input class="form-control" type="url" pattern="https?://.+" oninput="PreviewThumb()" name="NotesPic" id="npic" placeholder="Picture Thumbnail: (url)" required> <br>
+        <form id="editwall" autocomplete="off" target="hdnfrm"> <input class="form-control" type="text" name="NotesTitle" id="ntitle" placeholder="Title: " required> <br> <input class="form-control" type="url" pattern="https?://.+" name="NotesLink" id="nlink" placeholder="Content Address: (url)" onkeyup="genId()" required> <br> <input class="form-control" type="url" pattern="https?://.+" oninput="PreviewThumb()" name="NotesPic" id="npic" placeholder="Picture Thumbnail: (url)" required> <br>
           <div id="preview" style="display:none; height:285px;background-color: transparent;"></div> <select list="Subject" name="Subject" id="subject" class="form-control" placeholder="Social Science" required>
             <option>Social Science</option>
             <option>Accountancy</option>
@@ -187,7 +187,7 @@
           <h4>Video LinkIn</h4>
         </div>
         <hr style="border-width:4px;width:45%;"> <br>
-        <form id="editwall_lec" autocomplete="off" onsubmit="return false"> <input class="form-control" type="text" name="LecTitle" id="lectitle" placeholder="Title: " required> <br> <input class="form-control" type="url" name="LecLink" id="leclink" placeholder="Content Address: (url)" onkeyup="genId_lec()" required> <br>
+        <form id="editwall_lec" autocomplete="off" target="hdnfrm"> <input class="form-control" type="text" name="LecTitle" id="lectitle" placeholder="Title: " required> <br> <input class="form-control" type="url" name="LecLink" id="leclink" placeholder="Content Address: (url)" onkeyup="genId_lec()" required> <br>
           <div id="preview_lec" style="display:none; height:285px;background-color: transparent;"></div> <select list="Subject" name="Subject" id="subject_lec" class="form-control" placeholder="Social Science" required>
             <option>Social Science</option>
             <option>Accountancy</option>
@@ -246,6 +246,7 @@
 </div>
 </div>
 </section>
+<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
 <div align="center" id="info">
   <p> <span id="emid" >Contact: <a href="mailto:mail@mastrowall.com">mail@mastrowall.com</a> </span>
     <br><span >© 2022 by <a target="_blank" href="https://mastrowall.com/">MASTROWALL</a></span></p>
