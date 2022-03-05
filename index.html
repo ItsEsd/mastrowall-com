@@ -214,7 +214,7 @@
           </div>
         </div>
         <div id="headsrcdiv">
-          <form id="topicsearchmw" onsubmit="return false;"><input placeholder="Search Topic"  class="form-control" id="srctopichead" type="search" autocomplete="off" required/><input id="topicsrcbtn" type="submit" value="Go"/>
+          <form id="topicsearchmw" target="hdnfrm"><input placeholder="Search Topic"  class="form-control" id="srctopichead" type="search" autocomplete="off" required/><input id="topicsrcbtn" type="submit" value="Go"/>
           </form></div>
           <div align="center" id="mwallresult" class="pgdown">
             <button id="clstpseach" class="btn btn-danger">X</button>
@@ -559,7 +559,7 @@
 <div id="createid" class="otserviceinfo"><div class="otservprp">
   <span class="closeot" style="float:right;" title="Close">X</span>
   <h2>Create ID</h2><hr style="border-width: 2px;border-color:#ffffff;">
-<form id="cridone" onsubmit="return false" autocomplete="off">
+<form id="cridone" target="hdnfrm" autocomplete="off">
   <div id="crtestone">
   <label>Name:</label>
   <input type="text" class="form-control" id="eduname" placeholder="Full name" required/><br/>
@@ -592,7 +592,7 @@
   <input type="submit" class="submitform"  value="Next">
  
   </div></form> 
-  <form id="cridtwo" onsubmit="return false" style="display: none;" autocomplete="off">
+  <form id="cridtwo" target="hdnfrm" style="display: none;" autocomplete="off">
     <input  class="form-control" id="timestr" style="display: none;" />
   <input class="form-control" id="totalsec" style="display: none;" />
   <div id="crtestthree">
@@ -676,7 +676,7 @@
 <section>
 <div id="continueexamid" align="center">
 <div id="formcontainerexid">
-<form id="checkexid" onsubmit="return false;">
+<form id="checkexid" target="hdnfrm">
   <label>Exam ID:</label>
   <input type="text" class="form-control" id="chexid" placeholder="Enter Exam ID" required/><br>
   <label>Key:</label>
@@ -691,7 +691,7 @@
  <section>
 <div id="otserviceexamid">
 <div id="formcontainer">
-<form onsubmit="return false;" id="quesfrm" autocomplete="off">
+<form target="hdnfrm" id="quesfrm" autocomplete="off">
   <div id="stdiv">
 <label>Question Statement:</label>
 <div contenteditable="true" id="conq"></div>
@@ -788,7 +788,7 @@
 <section>
 <div id="continueeducator" align="center">
 <div id="eduexloginform">
-  <form id="conexeducator"  onsubmit="return false">
+  <form id="conexeducator"  target="hdnfrm">
     <label>Exam ID:</label>
     <input type="text" class="form-control" id="cpexid" placeholder="Enter Exam ID" required/><br>
     <label>Exam Pass:</label>
@@ -806,7 +806,7 @@
 <section>
   <div id="assignstuexam" align="center">
 <div id="assignstuexform">
-<form id="stuassign" onsubmit="return false">
+<form id="stuassign" target="hdnfrm">
   <label>Name:</label>
   <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required/><br>
   <label>Email Address:</label>
@@ -827,7 +827,7 @@
 </section>  
 <section>
   <div id="resbrd" align='center'><div id="chresform">
-<form id="chresult" onsubmit="return false;">
+<form id="chresult" target="hdnfrm">
 <label>Exam ID:</label>
 <input class="form-control" type="text" id="checkexamid" style="
 text-align:center;" placeholder="Enter Exam ID" required/><br>
@@ -857,7 +857,7 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
   <center><div id="loader-qdd" class="spinner-border text-primary" style="display: block;margin-top:300px;"></div></center>
 
 </div></section>
-
+<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
 <!----------------------------------------------------------------------->
 <section>
 <div id="falsesecback"></div>
