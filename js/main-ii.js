@@ -9,10 +9,6 @@ $('#conasmwall').click(function(){
 $('#signregpre').click(function(){
   $('#intro').slideUp('slow');
   document.getElementById('continueas').style.width='100%'; 
-  document.getElementById('myNav').style.width='0';  
-  document.getElementById('main').style.marginLeft= '0'; 
-  document.getElementById('closecas').style.display='block';
-  document.getElementById('closecasinfo').style.display='block';
 });
 
 $('#goinmastro').click(function(){
