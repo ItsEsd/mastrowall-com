@@ -5,6 +5,20 @@ $('#conasmwall').click(function(){
     document.getElementById('closecas').style.display='block';
     document.getElementById('closecasinfo').style.display='block';
 });
+
+$('#signregpre').click(function(){
+  $('#intro').slideUp('slow');
+  document.getElementById('continueas').style.width='100%'; 
+  document.getElementById('myNav').style.width='0';  
+  document.getElementById('main').style.marginLeft= '0'; 
+  document.getElementById('closecas').style.display='block';
+  document.getElementById('closecasinfo').style.display='block';
+});
+
+$('#goinmastro').click(function(){
+  window.open('https://mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+});
+
 $('#signinuser').click(function(){
   document.getElementById('continueas').style.width='100%'; 
   document.getElementById('myNav').style.width='0';  
