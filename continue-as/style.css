@@ -177,16 +177,16 @@ body {
   .modal-content {
     background-color: #e6e6e6;
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
     height: 500px;
     border: 2px solid white;
     overflow-y: auto;
     overflow: hidden;
-    position: fixed;
+    position:fixed;
   }
 
   .modal-dialog {
-    margin-top:40px;
+    margin-top:20px;
     overflow: hidden;
   }
 
