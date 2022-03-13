@@ -281,6 +281,10 @@ border-radius: 0px;
     #prereq ul{
         width:240px;
     }
+
+    #proimgone{
+        margin-top:100px;
+    }
    
 }
 @media screen and (max-width: 1200px) {
