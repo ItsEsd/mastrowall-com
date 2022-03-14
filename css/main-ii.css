@@ -275,6 +275,7 @@ border-radius: 0px;
     #exportalpromo{
         display: none;
     }
+   
     .otservicesidefoot{
         width:240px;
     }
@@ -584,4 +585,13 @@ a:before {
 
 a:active:before {
     background-color: #768be9;
+}
+
+#promo_tw{
+    display: block;
+    background-color: #161616;
+    z-index: 100;
+}
+.promoimg{
+    height:400px;
 }
