@@ -111,7 +111,7 @@ $('#fullheightmtel').on('click', function() {
   document.getElementById('btitlemtel').style.display="none";
 });
 $('.closeot').on('click', function() {
-$('.otserviceinfo').fadeOut("fast");
+  $('.otserviceinfo').hide("fast");
 $('#exportalpromo').fadeOut("fast");
 });
 $('#oknav,#mwallImg').on('mouseover',function(){
