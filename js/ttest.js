@@ -59,7 +59,7 @@ document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"
 "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
 "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
 "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-"<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Goto Test</a></span>"+
+"<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Exam Portal</a></span>"+
 "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
 "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
 "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -627,7 +627,7 @@ if(cat === "Value updated successfully!"){
   "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
   "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
   "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Goto Test >></a></p>"+
+  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Exam Portal >></a></p>"+
   "<hr></div></div>";
   document.getElementById('actionbtnenroll').style.display="block";
 }
@@ -832,7 +832,7 @@ function createnewexid(){
     "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
     "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
     "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-    "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Goto Test</a></span>"+
+    "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Exam Portal</a></span>"+
     "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
     "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
     "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
