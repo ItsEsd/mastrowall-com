@@ -249,6 +249,13 @@ $("#td").click(function() {
 						"", "/e/create-TOD/#");
             document.title = "Create TOD | MASTROWALL";
 });
+$("#botcrtod").click(function() {
+  $("#todbox").toggle('fast');
+  let stateObj = { id: "0" };
+			window.history.replaceState(stateObj,
+						"", "/e/create-TOD/#");
+            document.title = "Create TOD | MASTROWALL";        
+});
 $("#exmprtl").click(function() {
   $('.otservice').show();
   $('#falsesecback').show();
@@ -461,4 +468,14 @@ $("#sgdash").click(function() {
        document.title = "Tele Media | MASTROWALL";
 });
 
+});
+
+$("#botlinkins").click(function() {
+  document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
+ document.getElementById('linkins').style.width = '100%';
+ document.getElementById('main').style.marginLeft= '0';
+ let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", "/e/linkins-updates/#");
+       document.title = "New Linkins | MASTROWALL";
 });
