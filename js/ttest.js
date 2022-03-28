@@ -630,13 +630,33 @@ if(cat === "Value updated successfully!"){
   "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Goto Test >></a></p>"+
   "<hr></div></div>";
   document.getElementById('actionbtnenroll').style.display="block";
+  sendStmail();
 }
 else{
 }
 return false;
 }
 
-
+function sendStmail() {
+  var elemed = document.getElementById("enrolledinfo").innerHTML;
+  var mailat = $('#stueid').val(); 
+ // console.log(elemed);
+    Email.send({
+      SecureToken : "cc4823c2-6012-4e3c-b375-9fa519b23754",
+      To: mailat,
+      From: "examportal@mastrowall.com",
+        Subject: "Exam Portal - MASTROWALL",
+        Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
+    })
+        .then(function (message) {
+      document.getElementById('mailsentstu').style.display= 'block';
+      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+      setTimeout(function() {
+        jQuery('#mailsentstu').fadeOut('fast');
+      }, 10000);
+        
+        });
+    }
 function enrollmentinfo() {
   var elem = document.getElementById("enrolledinfo");
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
