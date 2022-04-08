@@ -239,7 +239,7 @@ border-radius: 0px;
         top:14px;
         display: block;
         left:320px;
-        position: absolute;
+        position: fixed;
         z-index: 6;
     }
     #headsrcdiv #srctopichead{
@@ -253,7 +253,7 @@ border-radius: 0px;
        top:14px;
        display: block;
        left:360px;
-       position: absolute;
+       position: fixed;
        z-index: 6;
    }
    #headsrcdiv #srctopichead{
