@@ -538,13 +538,24 @@ text-decoration:none;
 #maxmzyouvidfrm,#minmzyouvidfrm{
   display: none;
   padding:6px 10px;
-  width:140px;
-  margin:4px;
+  max-width:100px;
+  margin-left:0px;
+  border-radius: 0px;
+  border: 0px;
 }
 #clsyouviffrm{
   width:40px;
   margin:10px;
-  float:right;
+ display: inline-block;
+}
+#vidlecminmax{
+  width:100%;
+  max-width:700px;
+  text-align: right;
+  display: block;
+}
+#vidlecminmax span{
+  text-align: left;
 }
 
 #info{
@@ -553,7 +564,9 @@ text-decoration:none;
   text-align: left;
   padding-left:10px;
 }
-
+#youvidfrid{
+  background-color: rgba(226, 221, 221, 0.171);
+}
 #info a{
   color:#555;
 }
