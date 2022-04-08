@@ -69,6 +69,7 @@ body {
       right: 10px;
     }
   }
+
 /*////// Prev///////
   .stu,
   .edu,
@@ -90,9 +91,8 @@ body {
   .co {
     width:96%;
     max-width:420px;
-    height: 180px;
-    border-radius: 0px;
-    padding: 0px;
+    border-radius: 10px;
+    padding: 4px;
     padding-left: 10px;
     box-shadow: 0 2px 10px 0px white;
     background-color: white;
@@ -100,7 +100,9 @@ body {
     margin-bottom:60px;
   }
 
-
+.memb{
+  display:block;margin-top:120px;
+}
 
   .thumb {
     pointer-events: none;
@@ -241,9 +243,11 @@ body {
   }
 
   .thumbPic {
-    padding:10px;
-    padding-top:30px;
-    width:140px;
+    top:0px;
+    position: initial;
+    padding:6px;
+    width:100%;
+    max-width:140px;
   }
 
   .box {
@@ -299,7 +303,8 @@ body {
   }
 a:hover{text-decoration:none;}
 .signinop{
-  float:right;padding-right:10px;
+  float:right;
+  padding-right:10px;
   
 
 }
@@ -375,4 +380,55 @@ margin-bottom:-6px;
 .ccontinue{
   float:left;
   width:100%;
+}
+.picholder,.signinop{
+  display:inline-block;
+  padding:4px;
+}
+.picholder img{
+float:left;
+}
+@media screen and (max-width: 550px) {
+ .signinop h4{
+   font-size: 18px;
+ }
+ .signinop button{
+  font-size: 14px;
+  padding:4px 6px;
+}
+.thumbPic{
+  max-width: 100px;
+}
+.stu,
+  .edu,
+  .co {
+    max-width:340px;
+    padding: 4px;
+  }
+  .picholder,.signinop{
+    padding-top:14px;
+  }
+
+  .sppromo{
+    font-size:30px;
+  }
+  #promoconinfo h4{
+    font-size:20px;
+  }
+  .memb{
+    margin-top:160px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .signinop{
+    padding-top:20px;
+  }
+  .stu,
+  .edu,
+  .co {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+  }
 }
