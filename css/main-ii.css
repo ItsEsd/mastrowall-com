@@ -264,8 +264,15 @@ border-radius: 0px;
 
 @media screen and (max-width: 600px) {
     .dashheading {
-      font-size: 20px;
+      font-size: 18px;
     }
+    .dashiconimg{
+        height:120px;
+    }
+    .mwallmnicon{
+        max-width:180px;
+    }
+
     #signinuser{
         display: none;
     }
@@ -286,7 +293,18 @@ border-radius: 0px;
     #proimgone{
         margin-top:100px;
     }
+
+    .dashicon svg{
+        width:50px;
+        height:50px;
+    }
    
+}
+@media screen and (min-width: 600px) {
+
+    .mwallmnicon{
+        max-width:335px;
+    }
 }
 @media screen and (max-width: 1200px) {
     .mynvflback{
