@@ -378,8 +378,19 @@ margin-bottom:-6px;
 }
 
 .ccontinue{
-  float:left;
   width:100%;
+}
+.ccontinue h4{
+  font-size:18px;
+}
+.ccontinue div{
+  font-size:14px;
+  font-weight:400;
+  border:1px solid red;
+  padding:4px;
+  max-width: 260px;
+  margin-bottom:20px;
+  margin-top:20px;
 }
 .picholder,.signinop{
   display:inline-block;
@@ -431,4 +442,27 @@ float:left;
     padding-top: 10px;
     padding-right: 10px;
   }
+}
+
+#mailconfirm{
+  width:100%;
+  bottom:60px;
+  position: fixed;
+  display:none;
+  z-index: 10000;
+}
+
+#mailconf{
+  background-color: #e6e6e6;
+  border:1px solid #202020;
+  color:#202020;
+  font-size: 14px;
+  padding:10px;
+  border-radius: 5px;
+  max-width:300px;
+}
+
+.emsenduser{
+  padding:10px;
+  font-size:18px;
 }
