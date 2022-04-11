@@ -84,7 +84,7 @@ function formReset() {
               method: "GET",
               dataType: "jsonp"
             });
-           
+            sendconfirmem(email);
           } else {
             document.getElementById("register").disabled = false;
             return false;
@@ -179,6 +179,7 @@ function conasmwallstu(){
       dataType: "jsonp"
     });
    
+    sendconfirmem(email);
   } else {
     return false
   }
@@ -278,6 +279,7 @@ function conasmwallco(){
         method: "GET",
         dataType: "jsonp"
       });
+      sendconfirmem(email);
     } else {
       return false;
     }
@@ -439,3 +441,24 @@ $(document).ready(function(){
     $('#promoreg').hide();
   })
 })
+
+
+function sendconfirmem(mailat) {
+  //var elemed = document.getElementById("studentpassdoc").innerHTML;
+ // console.log(elemed);
+    Email.send({
+      SecureToken : "cc4823c2-6012-4e3c-b375-9fa519b23754",
+      To: mailat,
+      From: "MASTROWALL<donotreply@mastrowall.com>",
+        Subject: "Account Confirmation - MASTROWALL",
+        Body:  "<!doctype html><html><head><title>M A S T R O W A L L | An Art of Learning<\/title><link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body><div class=\"emsenduser\"\>Account Created Successfully. Sign In to Continue.<p>N.B Do not reply to this email</p><\div><\/body><\/html>",
+    })
+        .then(function (message) {
+      document.getElementById('mailconfirm').style.display= 'block';
+      document.getElementById('mailconf').innerHTML= 'Cofirmation sent to your email.';
+      setTimeout(function() {
+        jQuery('#mailconfirm').fadeOut('fast');
+      }, 6000);
+        
+        });
+    }
