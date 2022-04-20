@@ -16,6 +16,7 @@ body {
 .collapsible{
   z-index:1; padding:10px;
   background-image:url('../images/backimg.gif');
+  background-color: #1f0246;
   width:100%;
   position: fixed;
   background-repeat: repeat;
