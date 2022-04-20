@@ -1,7 +1,7 @@
 var myVar;
 
 function myFunction() {
-  myVar = setTimeout(showPage, 1000);
+  myVar = setTimeout(showPage, 2000);
 }
 
 function showPage() {
@@ -46,6 +46,7 @@ function read_value_pic() {
       var vidid = link;
       document.getElementById("vid").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
     }
+    
     document.getElementById("loader_in").style.visibility = "hidden";
   });
 }
