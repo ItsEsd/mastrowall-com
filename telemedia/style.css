@@ -403,9 +403,10 @@ height:510px;
 z-index:1000;
 }
 .tboard{
-  min-height:800px;
+  min-height:600px;
   height:100%;
   max-width: 1200px;
+  margin-top:-20px;
 }
 #info{
   width:100%;
@@ -425,4 +426,7 @@ z-index:1000;
 }
 #info a:hover{
   text-decoration: underline;
+}
+hr{
+  max-width: 800px;
 }
