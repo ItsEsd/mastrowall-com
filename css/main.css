@@ -129,8 +129,8 @@ body {
   overscroll-behavior-x: none;
   scroll-behavior: smooth;
  background-image:url("images/hexback-blue-1200x900.gif");
-  background-repeat: repeat;
-  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-color: #161616;
   height:100%;
 }
@@ -1081,20 +1081,21 @@ font-weight: bold;
 #dlight1,#dlight2{
 width:30px;
 height:30px;
-border-bottom-left-radius: 5px;
-border-top-left-radius: 5px;
+border-bottom-left-radius: 10px;
+border-top-left-radius: 10px;
 background-color: #ffffff;
 border:1px solid #211df7;
 border-right: none;
 color:#0c29cd;
 text-align:center;
-padding:4px;
+padding:6px;
 cursor: pointer;
 z-index: 0;
 }
 #dlight2{
   display:none;
 }
+
 .con-one-light{color:#0c09c9;}
 .con-one{color:#f7e818;}
 .con-one-main{
@@ -1663,7 +1664,7 @@ font-size:24px;
 }
 
 #examside,#checkres{
-max-width: 500px;
+  max-width: 500px;
   cursor: pointer;
   font-size: 16px;
   color:#df0a0a;
@@ -1671,9 +1672,10 @@ max-width: 500px;
   margin-bottom:10px;
   text-align:center;
   padding: 4px 10px;
+  background-color: #ffffffa6;
 }
 #examside:hover,#checkres:hover{
-  color:#4e4e4d;
+  color:#081266;
 }
 #examsideq iframe{
   background-image: url('/images/frameloader.gif');
