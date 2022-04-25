@@ -53,6 +53,7 @@ border-radius: 0px;
     text-align: right;
     font-size:14px;
 }
+
 #conasmwall{
     display:block;
 }
@@ -223,7 +224,9 @@ border-radius: 0px;
     #headsrcdiv{
         display: none;
     }
-   
+   #chngbcgrnd{
+       display: none;
+   }
 }
 
 @media screen and (min-width: 993px) {
@@ -231,6 +234,9 @@ border-radius: 0px;
         font-size: 24px;
     }  
     #headsrcdiv{
+        display: none;
+    }
+    #chngbcgrnd{
         display: none;
     }
 }
@@ -246,7 +252,9 @@ border-radius: 0px;
         
         width:400px;
     } 
-   
+    #chngbcgrnd{
+        display: block;
+    }
 }
 @media screen and (min-width: 1240px) {
     #headsrcdiv {
@@ -260,6 +268,9 @@ border-radius: 0px;
        
        width:600px;
    }
+   #chngbcgrnd{
+    display: block;
+}
 }
 
 @media screen and (max-width: 600px) {
@@ -623,4 +634,95 @@ a:active:before {
     background-color: white;
     color:#f72b2b;
     font-size: 16px;
+}
+
+#chngbcgrnd{
+    bottom:60px;
+    right:0px;
+    position: fixed;
+    padding:6px;
+    color:white;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background: linear-gradient(-75deg, blue, #dd1d16, #ffd703,#28ad16);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+#chngbcgrnd svg{
+    width:30px;
+    height:30px;
+
+}
+
+#chngbcgrnd:hover{
+    background: #161616;
+} 
+#chbcground{
+    top:0px;
+    left:0px;
+    position: fixed;
+    background-color: #000000c7;
+    width:100%;
+    height:100%;
+    display: none;
+}
+#choosebcgrnd{
+    background: linear-gradient(-75deg, blue, #dd1d16, #ffd703,#28ad16);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    vertical-align: auto;
+    bottom:110px;
+    right:0px;
+    position: fixed;
+    width:100%;
+    max-width: 400px;
+    background-color: #ececec;
+    z-index: 100;
+    padding:4px;
+    overflow-y: hidden;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#clschbc{
+float:right;
+padding:2px 6px;
+background-color: white;
+color:red;
+font-size: 14px;
+cursor: pointer;
+}
+#clschbc:hover{
+background-color: red;
+color:white;
+}
+#chbcgrtop p{
+    width:100%;
+    text-align: left;
+    font-size: 16px;
+    color:white;
+    padding-left:4px;
+}
+#chbcgrtop{
+    border-bottom: 1px solid #ffffff;
+    margin-bottom:4px;
+}
+#choosebcgr{
+  height: 300px;  
+  overflow-y: auto;
+  width:100%;
+}
+.chsbcg{
+    width:190px;
+    height:120px;
+    padding:4px;
+    background-color: white;
+    display: inline-block;
+    margin:2px;
+    cursor: pointer;
+    object-fit: cover;
+    filter:blur(0.8);
+}
+.chsbcg:hover{
+border:2px solid blue;
 }
