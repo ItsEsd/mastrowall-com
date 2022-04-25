@@ -25,13 +25,13 @@ function read_value_pic() {
     var news1 = JSON.parse(json.records[0].InMedia1);
     var maxMedia1 = news1.conTitle1.length;
     for (n = 0; n < maxMedia1; n++) {
-      document.getElementById("inm1").innerHTML += '<p style="color:black;" class="telenewsblock"><span style="font-size:20px;padding-right:4px;">&#10144;</span>' + news1.conTitle1[n] + '</p><a target="_blank" class="readmore" href="' + news1.conLink1[n] + '">' + news1.conSiteName1[n] + '</a> <hr> ';
+      document.getElementById("inm1").innerHTML += '<p style="color:black;" class="telenewsblock">' + news1.conTitle1[n] + '</p><a target="_blank" class="readmore" href="' + news1.conLink1[n] + '">' + news1.conSiteName1[n] + '</a> <hr> ';
     }
     var m;
     var news2 = JSON.parse(json.records[0].InMedia2);
     var maxMedia2 = news2.conTitle1.length;
     for (m = 0; m < maxMedia2; m++) {
-      document.getElementById("inm2").innerHTML += '<p style="color:black;" class="telenewsblock"><span style="font-size:20px;padding-right:4px;">&#10144;</span>' + news2.conTitle1[m] + '</p><a target="_blank" class="readmoren" href="' + news2.conLink1[m] + '">' + news2.conSiteName1[m] + '</a><hr> ';
+      document.getElementById("inm2").innerHTML += '<p style="color:black;" class="telenewsblock">' + news2.conTitle1[m] + '</p><a target="_blank" class="readmoren" href="' + news2.conLink1[m] + '">' + news2.conSiteName1[m] + '</a><hr> ';
     }
     var y = Math.floor((Math.random() * 3) + 1);
     var quotes = JSON.parse(json.records[0].Quote);
