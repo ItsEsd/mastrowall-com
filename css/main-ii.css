@@ -227,6 +227,9 @@ border-radius: 0px;
    #chngbcgrnd{
        display: none;
    }
+   #examside,#checkres{
+       background-color: transparent;
+   }
 }
 
 @media screen and (min-width: 993px) {
