@@ -38,10 +38,9 @@ $('#playvc1').click(function(){
     document.getElementById('vcone').pause();document.getElementById('vcone').currentTime = 0; document.getElementById('playvc1').style.display= 'none';document.getElementById('stopvc1').style.display= 'block';
 });
 
-$('#stopvc1').click(function(){
+$('#stopvc1,#signregpre').click(function(){
     document.getElementById('vcone').play();document.getElementById('stopvc1').style.display= 'none';document.getElementById('playvc1').style.display= 'block';
 });
-
 $('#crtod').click(function(){
     $('#todbox').toggle('fast');
     let stateObj = { id: "0" };
@@ -295,3 +294,80 @@ $("#enlrgimg").click(function() {
   $('#enlrgimg').hide();
   
 });
+
+$('#chngbcgrnd').click(function(){
+  $('#chbcground').toggle('fast');
+})
+$('#clschbc').click(function(){
+  $('#chbcground').hide('fast');
+})
+$(document).ready(function(){
+  var chsbc =[
+    "../images/background/img-29.jpg",
+    "../images/background/img-30.jpg",
+    "../images/background/img-31.png",
+    "../images/background/img-32.jpg",
+    "../images/background/img-33.jpg",
+    "../images/background/img-34.jpg",
+    "../images/background/img-35.jpg",
+    "../images/background/img-1.jpg",
+  "../images/background/img-2.jpg",
+  "../images/background/img-3.jpg",
+  "../images/background/img-4.jpg",
+  "../images/background/img-5.jpg",
+  "../images/background/img-6.jpg",
+  "../images/background/img-7.jpg",
+  "../images/background/img-8.jpg",
+  "../images/background/img-9.jpg",
+  "../images/background/img-10.jpg",
+  "../images/background/img-11.jpg",
+  "../images/background/img-12.jpg",
+  "../images/background/img-13.jpg",
+  "../images/background/img-14.jpg",
+  "../images/background/img-15.jpg",
+  "../images/background/img-16.jpg",
+  "../images/background/img-17.jpg",
+  "../images/background/img-18.jpg",
+  "../images/background/img-19.jpg",
+  "../images/background/img-20.jpg",
+  "../images/background/img-21.jpg",
+  "../images/background/img-22.jpg",
+  "../images/background/img-23.jpg",
+  "../images/background/img-24.jpg",
+  "../images/background/img-25.jpg",
+  "../images/background/img-26.jpg",
+  "../images/background/img-27.jpg",
+  "../images/background/img-28.jpg",
+  "../images/background/img-36.jpg",
+  "../images/background/img-37.jpg",
+  "../images/background/img-38.jpg",
+  "../images/background/img-39.jpg",
+  "../images/background/img-40.jpg",
+  "../images/background/img-41.jpg",
+  "../images/background/img-42.jpg",
+  "../images/background/img-43.jpg",
+  "../images/background/img-44.jpg",
+  "../images/background/img-45.jpg",
+  "../images/background/img-46.jpg",
+  "../images/background/img-47.jpg",
+  "../images/background/img-48.png",
+  "../images/background/img-49.jpg",
+  "../images/background/img-50.jpg"];
+  var exmplen =chsbc.length;
+  for(var k=0;k<=exmplen-1;k++){
+    document.getElementById('choosebcgr').innerHTML +="<img class='chsbcg' src='"+chsbc[k]+"' onclick='chngbackground(this)'>";
+  }
+    });
+
+    function chngbackground(label){
+      var list=document.getElementsByClassName("chsbcg");
+      list = [].slice.call(list); 
+      var posofimg = list.indexOf(label);
+      var srcimg = document.getElementsByClassName("chsbcg")[posofimg].src;
+      
+      document.body.style.backgroundImage= 'url("'+ srcimg +'")';
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundSize = "100% 100%";
+      $('#chbcground').hide('fast');
+    }
+  
