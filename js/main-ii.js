@@ -354,17 +354,29 @@ $(document).ready(function(){
   "../images/background/img-49.jpg",
   "../images/background/img-50.jpg"];
   var exmplen =chsbc.length;
-  for(var k=0;k<=exmplen-1;k++){
-    document.getElementById('choosebcgr').innerHTML +="<img class='chsbcg' src='"+chsbc[k]+"' onclick='chngbackground(this)'>";
+  for (var a=[],i=0;i<exmplen-1;++i) a[i]=i;
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+a = shuffle(a);
+var fin;
+for(var d=0;d<a.length;d++){
+  fin = a[d];
+    document.getElementById('choosebcgr').innerHTML +="<img class='chsbcg' src='"+chsbc[fin]+"' onclick='chngbackground(this)'>";
   }
     });
-
     function chngbackground(label){
       var list=document.getElementsByClassName("chsbcg");
       list = [].slice.call(list); 
       var posofimg = list.indexOf(label);
       var srcimg = document.getElementsByClassName("chsbcg")[posofimg].src;
-      
       document.body.style.backgroundImage= 'url("'+ srcimg +'")';
       document.body.style.backgroundRepeat = "no-repeat";
       document.body.style.backgroundSize = "100% 100%";
