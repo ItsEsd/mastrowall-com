@@ -354,7 +354,7 @@ $(document).ready(function(){
   "../images/background/img-49.jpg",
   "../images/background/img-50.jpg"];
   var exmplen =chsbc.length;
-  for (var a=[],i=0;i<exmplen-1;++i) a[i]=i;
+  for (var a=[],i=0;i<exmplen;++i) a[i]=i;
 function shuffle(array) {
   var tmp, current, top = array.length;
   if(top) while(--top) {
