@@ -1885,9 +1885,8 @@ border-color:#1b1b1b;
 }
 
 #clsbodycon{
-  float:right;
-  margin-right:10px;
-  background-color:#df3939;
+  margin-bottom:40px;
+  background-color:#df3939b2;
   color:white;
   font-size: 14px;
   padding:4px 10px;
