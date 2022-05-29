@@ -447,7 +447,7 @@ function sendconfirmem(mailat) {
   //var elemed = document.getElementById("studentpassdoc").innerHTML;
  // console.log(elemed);
     Email.send({
-      SecureToken : "cc4823c2-6012-4e3c-b375-9fa519b23754",
+      SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
       To: mailat,
       From: "MASTROWALL<donotreply@mastrowall.com>",
         Subject: "Account Confirmation - MASTROWALL",
@@ -462,3 +462,5 @@ function sendconfirmem(mailat) {
         
         });
     }
+
+    
