@@ -454,11 +454,15 @@ function sendconfirmem(mailat) {
         Body:  "<!doctype html><html><head><title>M A S T R O W A L L | An Art of Learning<\/title><link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body><div class=\"emsenduser\"\>Account Created Successfully. Sign In to Continue.<p>N.B Do not reply to this email</p><\div><\/body><\/html>",
     })
         .then(function (message) {
-      document.getElementById('mailconfirm').style.display= 'block';
-      document.getElementById('mailconf').innerHTML= 'Cofirmation sent to your email.';
-      setTimeout(function() {
-        jQuery('#mailconfirm').fadeOut('fast');
-      }, 6000);
+if(message == "OK"){
+
+  document.getElementById('mailconfirm').style.display= 'block';
+  document.getElementById('mailconf').innerHTML= 'Cofirmation sent to your email.';
+  setTimeout(function() {
+    jQuery('#mailconfirm').fadeOut('fast');
+  }, 6000);
+
+}      
         
         });
     }
