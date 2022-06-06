@@ -1,3 +1,4 @@
+
 $('#conasmwall').click(function(){
     document.getElementById('continueas').style.width='100%'; 
     document.getElementById('myNav').style.width='0';  
@@ -23,7 +24,10 @@ $('#signinuser').click(function(){
   document.getElementById('closecasinfo').style.display='block';
 });
 $('#conlivem').click(function(){
-    $('#golive').toggle();
+  $('#golive').toggle();
+  var objDiv = document.getElementById("myNav-two");
+objDiv.scrollTop = objDiv.scrollHeight;
+   
 });
  
 $('.closebtn').click(function(){
