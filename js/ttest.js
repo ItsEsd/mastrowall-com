@@ -94,11 +94,15 @@ sendEdmail();
           Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
       })
           .then(function (message) {
-        document.getElementById('mailsented').style.display= 'block';
-        document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
-        setTimeout(function() {
-          jQuery('#mailsented').fadeOut('fast');
-        }, 10000);
+            if(message == "OK"){
+              document.getElementById('mailsented').style.display= 'block';
+              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
+              setTimeout(function() {
+                jQuery('#mailsented').fadeOut('fast');
+              }, 10000);
+            
+            }
+
           
           });
       }
@@ -649,11 +653,13 @@ function sendStmail() {
         Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
     })
         .then(function (message) {
+          if(message == "OK"){
       document.getElementById('mailsentstu').style.display= 'block';
       document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
       setTimeout(function() {
         jQuery('#mailsentstu').fadeOut('fast');
       }, 10000);
+          }
         
         });
     }
