@@ -382,7 +382,7 @@ for(var d=0;d<a.length;d++){
       var posofimg = list.indexOf(label);
       var srcimg = document.getElementsByClassName("chsbcg")[posofimg].src;
       document.body.style.backgroundImage= 'url("'+ srcimg +'")';
-      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundRepeat = "repeat";
       document.body.style.backgroundSize = "100% 100%";
       $('#chbcground').hide('fast');
     }
