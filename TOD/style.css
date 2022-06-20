@@ -427,3 +427,6 @@ body {
     border-top-right-radius: 0px;
     cursor: pointer;
   }
+  #radioS span{
+    cursor: pointer;
+  }
