@@ -757,3 +757,6 @@ color:white;
 .chsbcg:hover{
 border:2px solid blue;
 }
+#qsetanst{
+    display:none;
+}
