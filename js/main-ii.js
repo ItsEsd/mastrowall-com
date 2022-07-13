@@ -69,11 +69,11 @@ $('#opblog').click(function(){
     window.open('https://blog.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
 });
 
-$('#opabout').click(function(){
-    $('#bodyConOne').show('fast');
-    document.getElementById('bodyConOne').scrollTop = '0px';
-    document.documentElement.scrollTop = 0;
-});
+// $('#opabout').click(function(){
+//     $('#bodyConOne').show('fast');
+//     document.getElementById('bodyConOne').scrollTop = '0px';
+//     document.documentElement.scrollTop = 0;
+// });
 
 function openNav() {
     // document.getElementById('aol').style.boxShadow = "0px 1px 4px 1px #8f8f8f";
@@ -168,8 +168,8 @@ function openNav() {
 
   $("#anainsgt").click(function() {
     move(); openframenews(); 
-    document.getElementById('frame').src='https://www.analyticsinsight.net/';
-    document.getElementById('hrefframenews').href='https://www.analyticsinsight.net/';
+    document.getElementById('frame').src='https://www.ourworldindata.org/';
+    document.getElementById('hrefframenews').href='https://www.ourworldindata.org/';
   });
 
   $("#thescitst").click(function() {
