@@ -539,7 +539,7 @@ display:inline-block;
 #framenews{top:0px;left:0px;
   position:fixed;
   padding:0px; 
-  padding-top:2px;
+  padding-top:0px;
   padding-bottom:32px;
   width:100%;
   max-height:560px;
@@ -582,6 +582,7 @@ z-index:10;
 #frameProgress {
   width: 90%;margin-left:10px;margin-right:10px;
   background-color:white;
+  display:none;
 }
 
 #frameBar {
