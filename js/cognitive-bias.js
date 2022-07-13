@@ -373,6 +373,6 @@ for(var i=0; i<=cogelemlen;i++){
 });
 
 $('#cogelemhead').click(function(){
-    $('#cogbias').toggle('fast');
+    $('#cogbias').toggle();
     });
     
