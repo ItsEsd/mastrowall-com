@@ -186,28 +186,28 @@ border-radius: 0px;
     text-align:center;max-width:800px;font-size: 24px;
 }
 #mtitlelink{
-    float:right;padding-right:4px;font-size: 16px;display:block;padding-top:2px;
+    float:right;padding-right:4px;font-size: 16px;display:block;padding-top:0px;
 }
 #mtitlemtel{
-    float:right;font-size: 16px;display:none;padding-top:2px;padding-right:4px;
+    float:right;font-size: 16px;display:none;padding-top:0px;padding-right:4px;
 }
 #mtitlesearch{
-    font-size: 16px;display:none;padding-top:2px;float:left;padding-left:4px;
+    font-size: 16px;display:none;padding-top:0px;float:left;padding-left:4px;
 }
 #btitlesearch{
-    float:left;font-size: 16px;display:block;padding-top:2px;
+    float:left;font-size: 16px;display:block;padding-top:0px;
 }
 #containsframe{
     padding-left:4px;padding-right:4px;height:100%;
 }
 #mtitlenews{
-    float:right;font-size: 16px;display:none;padding-top:2px;padding-right:4px;
+    float:right;font-size: 16px;display:none;padding-top:0px;padding-right:4px;
 }
 #btitlefnews{
-    float:right;font-size: 16px;display:block;padding-top:2px;padding-right:4px;
+    float:right;font-size: 16px;display:block;padding-top:0px;padding-right:4px;
 }
 #btitlemtel{
-    float:right;font-size: 16px;display:block;padding-top:2px;padding-right:4px;
+    float:right;font-size: 16px;display:block;padding-top:0px;padding-right:4px;
 }
 
 #cntashr{
