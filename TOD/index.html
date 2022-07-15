@@ -21,7 +21,7 @@
     <base target="_blank">
   </head>
   <body onload="initDoc(); pasteFun();">
-    <button id="sktchpd" type="button" class="btn btn-dark" onclick="$('#sketchpdcon').show();">Sketch Pad</button>
+    
     <div id="sketchpdcon" align="center"><span id="closepad" onclick="$('#sketchpdcon').hide();" title="Close Sketch Pad">Close</span>
       <iframe id="sketchframe" width="100%" src="../sketch-pad/index.html"></iframe>
     </div>  
@@ -114,7 +114,7 @@
               <option value="yellow">Yellow</option>
               <option value="black">Black</option>
               <option value="white">White</option>
-            </select> </div>
+            </select> <button id="sktchpd" type="button" class="btn btn-dark" onclick="$('#sketchpdcon').show();">Sketch Pad</button></div>
           <div style="display:none;">
             <p id="editMode"> <input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label> </p>
           </div>
