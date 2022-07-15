@@ -760,3 +760,19 @@ border:2px solid blue;
 #qsetanst{
     display:none;
 }
+
+#dpquery{
+    display:block;
+    font-size:12px;
+    padding:0px;
+    float:right;
+    color:white;
+    background-color: #ffffff8e;
+    width:160px;
+    padding:4px;
+    padding-left:6px;
+}
+
+#dpquery a{
+   color: #222222;
+}
