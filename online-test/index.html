@@ -508,11 +508,9 @@
       
   <button id="stbtn" class="btn btn-danger" onclick="timer();$('#stuinfo').hide();$('#navicon').hide();document.getElementById('qcontainer').style.display ='block';">START</button>
 </div>
-    <div id="expdash" class="row">
-<div id="left-block" class="col-md-6">
-<img src="/images/exam-portal.png" id="leftimg">
-</div>
-    <div id="right-block" class="col-md-6">
+    <div id="expdash">
+      <div id="titlehd"><h2>Online Test ⏰</h2></div>
+      <div id="right-block" align="center">
     <form id="expone" target="ttstnfrm">
 <label>Exam ID:</label>
 <input class="form-control" id="chexid" placeholder="*************" required/><br>
@@ -528,12 +526,12 @@
       <input class="form-control" id="chenid" placeholder="*************" required /><br>
       <input type="submit" class="btn btn-warning" value="Go"  style="float:right;">
     </form></div>
-      <div id="loader-vq" class="spinner-border text-light" style="display: none;"></div>
+<div id="loader-vq" class="spinner-border text-light" style="display: none;"></div>
 <p id="troomlimit"></p>
-  </div>
+  </div> 
   <div align="right" id="info">
       <span><a target="_blank" href="https://mastrowall.com/privacy-and-terms.html">Privacy and Terms</a></span><br>
-      <span><a target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></span>
+      <span><img src="images/mwalllogo.png" style="padding:6px;width:46px;"><a target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></span>
   </div>
 </div>  
  <div id="qcontainer" align="center" style="display:none;">
