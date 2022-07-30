@@ -7,8 +7,9 @@ body{
     background-size:6px 6px; */
     width:100%;height:100%;
     background-image:url('../../images/examportal/backimg.png');
-    background-size: 140% 140%;
+    background-size: 160% 200%;
     background-repeat: no-repeat;
+    margin-bottom: 40px;
 }
 html{
     overflow-x: hidden;
@@ -18,7 +19,7 @@ html{
 #titlehd{
     top:10px;
     left:10px;
-    position: fixed;
+    position: absolute;
     font-size: 30px;
     font-weight: 600;
     color:white;
