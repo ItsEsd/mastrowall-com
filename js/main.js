@@ -449,7 +449,7 @@ $("#acdash").click(function() {
  let stateObj = { id: "0" };
 			window.history.replaceState(stateObj,
 						"", "/e/topic-search/#");
-            document.title = "Topic Search | MASTROWALL";
+            document.title = "Search Topic | MASTROWALL";
 });
 
 $("#spdash").click(function() {
