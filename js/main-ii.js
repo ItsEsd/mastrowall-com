@@ -54,7 +54,7 @@ $('#crtod').click(function(){
 });
 
 $('#prosign').click(function(){
-    window.open('https://exam-portal.mastrowall.com/', '_self', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://exam-portal.mastrowall.com/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
 });
 
 $('#signtomdrive').click(function(){
@@ -227,7 +227,7 @@ function openNav() {
   });
 
   $("#expgtotst").click(function() {
-    window.open('https://exam-portal.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('online-test/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
   });
 
   $("#exmpcreatid").click(function() {
