@@ -365,7 +365,7 @@ var obj = JSON.parse(cogbiaselem);
 var cogelemlen = obj.length;
 for(var i=0; i<=cogelemlen;i++){
 
-    document.getElementById('cogbias').innerHTML += "<div class='cogbelem'><h4>"+obj[i].Title +"</h4><h5>"+obj[i].Def+"</h5><h6>Eg: "+obj[i].Eg+"</h6></div>"; 
+    document.getElementById('cogbias').innerHTML += "<div class='cogbelem'><h4>"+obj[i].Title +"</h4><h5>"+obj[i].Def+"</h5><h6>Eg: "+obj[i].Eg+"</h6></div>";
     
 }
 
