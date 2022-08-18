@@ -66,9 +66,9 @@ sendEdmail();});
         oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\">" + elem.innerHTML + "<\/body><\/html>");
         oPrntWin.document.close();
    }
-   mquearytest.addEventListener('submit', (event) => {
-    $("#qmsgsent").show();
-    $("#mquearytest").hide();   });
+  //  mquearytest.addEventListener('submit', (event) => {
+  //   $("#qmsgsent").show();
+  //   $("#mquearytest").hide();   });
    function sendEdmail() {
     var elemed = document.getElementById("studentpassdoc").innerHTML;
     var mailat = $('#edueid').val(); var passk = $('#confirmpasskey').val();
@@ -134,7 +134,7 @@ var request = jQuery.ajax({
   url: url,
   method: "GET",
   dataType: "jsonp"
-});});
+});console.log(url)});
 function ctrlqexeditin(e){
   var res = e.records;
 if(res != "ID not found!"){
