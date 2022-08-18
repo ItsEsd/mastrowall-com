@@ -2,16 +2,6 @@ function formReset() {
     document.getElementById("formwall").reset();
   }
 
-/* $(document).ready(function() {
-    $('input').on('input', function() {
-      if ($("#formwall").valid()) {
-        $('#register').prop('disabled', false);
-      } else {
-        $('#register').prop('disabled', 'disabled');
-      }
-    });
-  }); */
-
   $('#email').on('input',function() {
     var email = $(this).val();
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
@@ -41,7 +31,6 @@ function formReset() {
                flag = flag + 1;
            
                }}
-    // console.log(flag);
     if(flag == 0){
       conasmwalledu();
     
@@ -91,7 +80,6 @@ function formReset() {
           }
         }
         function ctrlq(e) {
-      //   console.log(e.result);
           $("#re").css("visibility", "visible");
             document.getElementById("formwall").reset();
             document.getElementById("formwall").style.display = "none";
@@ -101,15 +89,7 @@ function formReset() {
   function formResetstu() {
             document.getElementById("formwallstu").reset();
           }
-  /*$(document).ready(function() {
-            $('input').on('input', function() {
-              if ($("#formwallstu").valid()) {
-                $('#registerstu').prop('disabled', false);
-              } else {
-                $('#registerstu').prop('disabled', 'disabled');
-              }
-            });
-  });*/
+ 
   $('#emailstu').on('input',function() {
     var emailstu = $(this).val();
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
@@ -138,7 +118,6 @@ function formReset() {
          flag = flag + 1;
      
          }}
-//console.log(flag);
 if(flag == 0){
 conasmwallstu();
 
@@ -185,7 +164,6 @@ function conasmwallstu(){
   }
 }
   function ctrlqs(e) {
-   // console.log(e.result);
       document.getElementById("formwallstu").reset();
       document.getElementById("formwallstu").style.display = "none";
       document.getElementById("successmsgstu").style.display = "block";
@@ -203,15 +181,7 @@ function conasmwallstu(){
       $('#registerco').prop('disabled', 'disabled');
     }
   });
-  /*$(document).ready(function() {
-    $('input').on('blur', function() {
-      if ($("#formwallco").valid()) {
-        $('#registerco').prop('disabled', false);
-      } else {
-        $('#registerco').prop('disabled', 'disabled');
-      }
-    });
-  });*/
+  
 
   function formResetco() {
     document.getElementById("formwallco").reset();
@@ -236,7 +206,6 @@ function conasmwallstu(){
          flag = flag + 1;
      
          }}
-//console.log(flag);
 if(flag == 0){
 conasmwallco();
 
@@ -285,7 +254,6 @@ function conasmwallco(){
     }
 }
   function ctrlqc(e) {
-   // console.log(e.result); 
       document.getElementById("formwallco").reset();
       document.getElementById("formwallco").style.display = "none";
       document.getElementById("successmsgco").style.display = "block";
@@ -299,24 +267,6 @@ function conasmwallco(){
       $(".collap").toggle();
     });
   });
-
-
-  /*jQuery(function($) {
-    $.fn.hScroll = function(amount) {
-      amount = amount || 120;
-      $(this).bind("DOMMouseScroll mousewheel", function(event) {
-        var oEvent = event.originalEvent,
-          direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
-          position = $(this).scrollLeft();
-        position += direction > 0 ? -amount : amount;
-        $(this).scrollLeft(position);
-        event.preventDefault();
-      })
-    };
-  });
-  $(document).ready(function() {
-    $('.box').hScroll(40);
-  }); */
 
  
   function myFunction() {
@@ -444,9 +394,7 @@ $(document).ready(function(){
 
 
 function sendconfirmem(mailat) {
-  //var elemed = document.getElementById("studentpassdoc").innerHTML;
- // console.log(elemed);
-    Email.send({
+     Email.send({
       SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
       To: mailat,
       From: "MASTROWALL<donotreply@mastrowall.com>",
