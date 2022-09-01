@@ -129,13 +129,6 @@ $('#oknav,#mwallImg').on('mouseover',function(){
    // document.documentElement.scrollTop = 0;
 });
 
- $('#bodyConOne').on('mouseover',function(){
- // document.getElementById("myNav").style.width = "0";
-  document.getElementById("continueas").style.width = "0";
-  document.getElementById("closecasinfo").style.display = "none";
- // $('.falseback-nav').hide();
-  //document.getElementById("main").style.marginLeft = "0";
-});
 $('#continueas').on('mouseover',function(){
   document.getElementById("myNav").style.width = "0";
   document.getElementById("falseback-conas").style.display = "none";
@@ -164,10 +157,7 @@ $('#telemedia').on('mouseover',function(){
   document.getElementById("main").style.marginLeft = "0";
   $('.falseback-nav').hide();$('.mynvflback').hide();
 });
-$('#gdrivebox').on('mouseover',function(){
- // document.getElementById("myNav").style.width = "0";
- // document.getElementById("main").style.marginLeft = "0";
-});
+
 $('#linkins').on('mouseover',function(){
   document.getElementById("myNav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
@@ -284,7 +274,6 @@ $("#esq").click(function() {
   $("#dots").hide('fast');
   $("#togTest").show();
   $("#togTest2").hide();
- // document.getElementById('jdbox').style.background = "white";
   document.getElementById('jdframe').src = "https://www.openaccessjournals.com/";
   document.getElementById('hrefframejd').href ="https://www.openaccessjournals.com/";
 });
@@ -293,7 +282,6 @@ $("#scd").click(function() {
   $("#dots").hide('fast');
   $("#togTest").show();
   $("#togTest2").hide();
- // document.getElementById('jdbox').style.background = "white";
   document.getElementById('jdframe').src = "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
   document.getElementById('hrefframejd').href ="https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
 });
@@ -324,17 +312,8 @@ window.desktopcheck = function() {
 }
 if(!window.desktopcheck()){
   golight();
-  //document.getElementById("myNav").style.width = "0";
- // $('.dlight').hide();
-  //document.getElementById('fullheighttod').style.display="none";
- // document.body.style.backgroundImage ="url(images/backimg.gif)";
- // window.open('https://astro.mastrowall.in/','_self');
   document.getElementById('fullheighttod').style.display="none";
   document.getElementById('emid').style.display="none";
-  //document.getElementById('oknavicon').style.fontSize="28px";
- // document.getElementById('oknav').style.top="4px";
- // document.getElementById('prosign').style.display="none";
- // document.getElementById('crtod').style.display="none";
 }
 
 else{
@@ -357,14 +336,11 @@ $(document).ready(function() {
     $("#togTest").hide();
     $("#closecasinfo").hide();
     document.getElementById("continueas").style.width = "0";
- //   document.getElementById("closecasinfo").style.display = "none";
     document.getElementById("togTest2").style.display = "block";
   document.getElementById("myNav").style.width = "0";
   document.getElementById("falseback-conas").style.display = "none";
   $('.falseback-nav').hide();$('.mynvflback').hide();
   document.getElementById("dots").style.zIndex = '100';
- // document.body.scrollTop = 0;
- // document.documentElement.scrollTop = 0;
   });
 });
 $(document).ready(function() {
@@ -381,9 +357,6 @@ window.addEventListener('mouseup', function(event) {
 window.addEventListener('mouseup', function(event) {
   var pol = document.getElementById('myNav');
   if (event.target != pol && event.target.parentNode != pol) {
- // document.getElementById('aol').style.boxShadow = "none";
-   // document.getElementById("myNav").style.width = "0";
-   // document.getElementById("main").style.marginLeft = "0";
   }
 });
 });
@@ -391,11 +364,8 @@ window.addEventListener('mouseup', function(event) {
 function golight(){
 document.getElementById('aol').style.backgroundColor ="white";
 document.getElementById('aol').style.boxShadow ="0 2px 10px 0px #2a26f1";
-document.getElementById('bodyConOne').style.backgroundImage ="linear-gradient(45deg,#dad8c5,#dad8c5,#dad8c5,white)";
 document.getElementById('oknav').style.color ="#0c29cd";
-document.getElementById('bodyConOne').style.color = "black";
 document.getElementById('mwallImg').style.filter ="invert(0)";
-document.getElementById('topimg').src="images/lightimg-1.jpg";
 document.body.style.backgroundColor ="#e6e6e6";
 document.body.style.backgroundImage ="url('images/hexback-white-1200x900.gif')";
 document.body.style.backgroundRepeat = "repeat";
@@ -407,8 +377,6 @@ document.body.scrollTop = 0; document.documentElement.scrollTop = 0;
 document.getElementById('continueas').style.backgroundImage = "linear-gradient(45deg,#0c29cd,#be1531,#eff309)"
 document.getElementById('dlight1').style.display ="none";
 document.getElementById('dlight2').style.display ="block";
-//document.getElementById('prosign').style.backgroundColor ="#cd0c56";
-//document.getElementById('crtod').style.backgroundColor ="#f0cc04";
 document.getElementById('falsesecback').style.backgroundColor ="#d6d6d6";
 document.getElementById('myNav').style.backgroundImage = "linear-gradient(-45deg, #0c09c9,white,white)";
 document.getElementById('dots').style.backgroundColor ="#000000de";
@@ -417,11 +385,8 @@ document.getElementById('signinuser').style.color = "#0b07df";
 function godark(){
   document.getElementById('aol').style.backgroundColor ="#282828";
   document.getElementById('aol').style.boxShadow ="0 0px 0px 0px #2a26f1";
-document.getElementById('bodyConOne').style.backgroundImage ="linear-gradient(45deg,#161616,#161616, #161616,#161616)";
 document.getElementById('oknav').style.color ="#6a67fa";
-document.getElementById('bodyConOne').style.color = "#cfcfcf";
 document.getElementById('mwallImg').style.filter ="invert(1)";
-document.getElementById('topimg').src="images/bookslibrary.jpg";
 document.body.style.backgroundColor ="#181818";
 document.body.style.backgroundImage ="url('images/hexback-blue-1200x900.gif')";
 document.body.style.backgroundRepeat = "repeat";
@@ -433,8 +398,6 @@ document.body.scrollTop = 0; document.documentElement.scrollTop = 0;
 document.getElementById('dlight1').style.display ="block";
 document.getElementById('dlight2').style.display ="none";
 document.getElementById('continueas').style.backgroundImage = "linear-gradient(-45deg,#141414,#0a0a0a,#0c29cd)";
-//document.getElementById('prosign').style.backgroundColor ="#c405a4";
-//document.getElementById('crtod').style.backgroundColor ="#df620f";
 document.getElementById('falsesecback').style.backgroundColor ="black";
 document.getElementById('myNav').style.backgroundImage = "linear-gradient(-45deg,#1d1d1d,#ece7e7,#ece7e7)";
 document.getElementById('dots').style.backgroundColor ="#161616f4";
