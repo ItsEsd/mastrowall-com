@@ -64,7 +64,6 @@ body {
   left:0px;
   position: fixed;
   margin-top:48px;
-  padding:6px;
   width:100%;
   height:87.5%;
   background-image: url('../images/background/img-29.jpg');
@@ -72,19 +71,44 @@ body {
   background-repeat: no-repeat;
   overflow-y: scroll;
  }
-
  .otservprp{
   margin-top:20px;
-  padding:20px;
-  max-width:800px;
+  width:100%;
+  max-width:900px;
   background-color: #ffffff62;
   text-align:left;
   box-shadow: 0 2px 10px 0 #555;
   color:white;
+  overflow-x: hidden;
  }
 
+ .conone{
+  width:100%;
+  padding:30px;
+ }
+ .contwo{
+  width:100%;
+  min-height:400px;
+ padding:20px;
+  text-align: right;
+  background-image: url('../images/locationimg.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+ }
+.addrs{
+ padding: 20px;
+ margin-top:120px;
+ background-color: #08239bb2;
+ font-family: Arial, Helvetica, sans-serif;
+ 
+}
+.adrstitle{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+}
  #info{
-  margin-top:40px;
+  margin-top:30px;
   color:#9c9ea3c4;
  }
 
