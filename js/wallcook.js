@@ -3,14 +3,22 @@
     for (var i = 0; i < ca.length; i++) {
        var c = ca[i].split('mwallced=')[1];
        var d = ca[i].split('mwallcstu=')[1];
-    if(c=="true" || d=="true"){
+    if(c=="true"){
         actionforuser();
+        rmvrestrictfn();
+    }
+    else if(d=="true"){
+      actionforuser();
     }
       } 
   function actionforuser(){
     $('#intro').slideUp('slow');
   }
   
+  function rmvrestrictfn(){
+    $('#chexid,#chkey,#conexedited').removeAttr('disabled');
+    $('#eduname,#extitle,#exdescp,#timedurhr,#timedurmin,#edueid,#crtidone').removeAttr('disabled');
+  }
 
   /*
       $(document).ready(function(){
