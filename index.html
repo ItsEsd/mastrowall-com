@@ -489,18 +489,18 @@ gtag('config', 'G-N25E2CWHPC');
 <form id="cridone" target="hdnfrm" autocomplete="off">
 <div id="crtestone">
 <label>Name:</label>
-<input type="text" class="form-control" id="eduname" placeholder="Full name" required/><br/>
+<input type="text" class="form-control" id="eduname" placeholder="Full name" required disabled/><br/>
 <label>Title:</label>
-<input type="text" class="form-control" id="extitle" placeholder="(e.g. Mathematics - Class 10)" required/><br/>
+<input type="text" class="form-control" id="extitle" placeholder="(e.g. Mathematics - Class 10)" required disabled/><br/>
 <label>Test Description:</label>
-<input type="text" class="form-control" id="exdescp" placeholder="(e.g. Permutation & Combination)" required/><br/>
+<input type="text" class="form-control" id="exdescp" placeholder="(e.g. Permutation & Combination)" disabled required/><br/>
 <label>Test Duration:</label><br/>
 <div>
-<select class="form-control tdur" id="timedurhr" class='timedur' required><option value="0">0</option>
+<select class="form-control tdur" id="timedurhr" class='timedur' disabled required><option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option></select><span style='padding:4px;font-size: 14px;'>Hour</span>
-<select type="number" class="form-control tdur" id="timedurmin" class='timedur' required>
+<select type="number" class="form-control tdur" id="timedurmin" class='timedur'disabled required>
 <option value="00">00</option>
 <option value="05">05</option>
 <option value="10">10</option>
@@ -515,8 +515,8 @@ gtag('config', 'G-N25E2CWHPC');
 <option value="55">55</option>
 <option value="60">60</option></select><span style='padding:4px;font-size: 14px;'>Minutes</span></div><br/>
 <label>Email:</label>
-<input type="email" class="form-control" id="edueid" placeholder="sample@example.xyz" required/><br/>
-<input type="submit" class="submitform"  value="Next">
+<input type="email" class="form-control" id="edueid" placeholder="sample@example.xyz" disabled required/><br/>
+<input type="submit" class="submitform"  value="Next" id="crtidone" disabled>
 </div></form> 
 <form id="cridtwo" target="hdnfrm" style="display: none;" autocomplete="off">
 <input  class="form-control" id="timestr" style="display: none;" />
@@ -576,10 +576,10 @@ gtag('config', 'G-N25E2CWHPC');
 <div id="formcontainerexid">
 <form id="checkexid" target="hdnfrm">
 <label>Exam ID:</label>
-<input type="text" class="form-control" id="chexid" placeholder="Enter Exam ID" required/><br>
+<input type="text" class="form-control" id="chexid" placeholder="Enter Exam ID" disabled required/><br>
 <label>Key:</label>
-<input type="password" class="form-control" id="chkey" placeholder="**************" required/><br>
-<input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueexamid').hide();" value="Back">
+<input type="password" class="form-control" id="chkey" placeholder="**************" disabled required/><br>
+<input type="submit" class="exidbtn" id="conexedited" value="Continue" disabled><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#continueexamid').hide();" value="Back">
 
 </form>
 </div><div align="center"><br><div id="loader-exid"  class="spinner-border text-primary"></div></div>
