@@ -778,6 +778,6 @@ border:2px solid blue;
 }
 
 input:disabled{
-    background-color: #c7c7c7;
+    background-color: #c0c0c0;
     cursor: not-allowed;
 }
