@@ -776,3 +776,8 @@ border:2px solid blue;
 #dpquery a{
    color: #222222;
 }
+
+input:disabled{
+    background-color: #c7c7c7;
+    cursor: not-allowed;
+}
