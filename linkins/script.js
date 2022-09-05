@@ -1,3 +1,26 @@
+  $(document).ready(function(){
+    var decodedCookie = decodeURIComponent(document.cookie); 
+    var ca = decodedCookie.split(';'); 
+    var getcookie = function(){
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].split('mwallced=')[1];
+        var d = ca[i].split('mwallcstu=')[1];
+     if(c=="true"){
+      return true;
+     }
+       } 
+    }
+    if(getcookie() != true){
+      $('#note_log,#lec_log').empty();
+      $('#content_notes').click(function(){
+        show_wall();
+      });
+      $('#content_lecture').click(function(){
+        show_wall_lec();
+      });
+    }
+  });
+
 function logas_Note() {
   var logAs_note = document.getElementById("log_as_note").value;
   if (logAs_note == "Educator") {
