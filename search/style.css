@@ -1,4 +1,4 @@
-
+/* M A S T R O W A L L */
  body{
   background-color: rgb(199, 196, 196);
   background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, .2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .2) 75%, transparent 75%, transparent);
@@ -445,3 +445,13 @@
        display: none;
        overflow: hidden;
      }
+
+     @media screen and (max-width:500px){
+      .empnamimg{
+        width:50px;
+        height:50px;
+      }
+      .empnamtitle{
+        font-size: 20px;
+      }
+    }
