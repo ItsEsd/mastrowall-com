@@ -1,5 +1,4 @@
- 
-
+ /* M A S T R O W A L L */
 function logas_Note() {
   var logAs_note = document.getElementById("log_as_note").value;
   if (logAs_note == "Educator") {
