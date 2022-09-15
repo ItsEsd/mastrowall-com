@@ -54,7 +54,7 @@ document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"
 "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
 "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
 "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-"<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Goto Test</a></span>"+
+"<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Goto Test</a></span>"+
 "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
 "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
 "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -496,7 +496,7 @@ if(cat === "Value updated successfully!"){
   "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
   "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
   "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://exam-portal.mastrowall.com/'>Goto Test >></a></p>"+
+  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://mastrowall.com/online-test'>Goto Test >></a></p>"+
   "<hr></div></div>";
   document.getElementById('actionbtnenroll').style.display="block";
   sendStmail();
@@ -697,7 +697,7 @@ function createnewexid(){
     "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
     "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
     "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-    "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Goto Test</a></span>"+
+    "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Goto Test</a></span>"+
     "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
     "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
     "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -733,6 +733,6 @@ function examresultpdf() {
   var elem3 = document.getElementById("qsetanst");
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
       oPrntWin.document.open();
-      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;max-width:1000px;\">" + elem2.innerHTML + "<\/div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\">M A S T R O W A L L<\/a><\/h4><\/div><\/center><\/body><\/html>");
+      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><link rel=\"stylesheet\" href=\"css/main.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;max-width:1000px;\">" + elem2.innerHTML + "<\/div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\">M A S T R O W A L L<\/a><\/h4><\/div><\/center><\/body><\/html>");
       oPrntWin.document.close();
  }
