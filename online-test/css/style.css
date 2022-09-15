@@ -414,3 +414,10 @@ transform: scale(0.98);
 
     }
 }
+
+/* NewEdit */
+
+#showqstimg img{
+    width:100%;
+    max-width: 600px;
+}
