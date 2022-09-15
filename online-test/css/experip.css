@@ -196,14 +196,14 @@
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
     }
-  .preqimg{
-  float:right;
-  max-width:400px;
+.preqimg{
+  width:100%;
   padding-top:10px;
-  max-width:400px;
+  padding-bottom:10px;
   }
   .propimg{
-    float:left;
+    width:100%;
+    max-width: 600px;
     padding-top:10px;
   }
   .preans{
