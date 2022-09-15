@@ -147,7 +147,7 @@ conq.addEventListener('input',(event) =>{
   }, 4000);
   quesfrm.reset();
   document.getElementById('conq').innerText = '';
-  previewqset();
+  // previewqset();
   
   });
   
