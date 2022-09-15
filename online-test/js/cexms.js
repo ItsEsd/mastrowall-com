@@ -83,7 +83,7 @@ document.getElementById('timestr').value= str; });
   "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
   "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
   "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-  "<span style='float:left;'>M A S T R O W A L L | <a href='https://exam-portal.mastrowall.com/' style='text-decoration:none;'>Exam Portal</a></span>"+
+  "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Exam Portal</a></span>"+
   "<span style='float:right;'>"+"<span style='font-size:16px;color:#0c29cd;padding:4px 6px;'>"+title+" </span> "+
   "By "+" "+"<span style='font-size:18px;color:#0c29cd;padding:4px 6px;'>"+name+" </span>"+
   "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
