@@ -4,6 +4,7 @@ body{
 }
 #newsfeed{
 padding:10px;
+padding-bottom:0px;
 }
 
 hr{border-color: #1d0a72;}
@@ -12,11 +13,10 @@ hr{border-color: #1d0a72;}
     width:100%;
     padding:10px;
     display:inline-block;
-    margin: 2px;
-
+    margin-bottom: 5px;
     background-color: #dddddd;
     border-radius:10px;
-}
+}  
 #rfitem p{color:#6a13db}
 
 #rfitem .title{color: #a00a49;}
