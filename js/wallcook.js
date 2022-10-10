@@ -19,7 +19,15 @@
     $('#chexid,#chkey,#conexedited').removeAttr('disabled');
     $('#eduname,#extitle,#exdescp,#timedurhr,#timedurmin,#edueid,#crtidone').removeAttr('disabled');
   }
-
+   
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var q = url.searchParams.get("onlineTest");
+  console.log(q);
+  if(q =="true"){
+      $('.otservice').show();
+      $('#falsesecback').show();
+  }
   /*
       $(document).ready(function(){
         var cookies = document.cookie.split(";");
