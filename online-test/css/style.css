@@ -421,3 +421,16 @@ transform: scale(0.98);
     width:100%;
     max-width: 600px;
 }
+.newpmrk{
+width:100%;
+text-align: left;
+}
+
+.mrkbtn{
+    font-size:14px;
+    background-color: #202020;
+    border-radius: 0px;
+    padding:0px 4px;
+    margin:10px;
+    
+}
