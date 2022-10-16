@@ -9,7 +9,7 @@ body{
     background-image:url('../../images/examportal/backimg.png');
     background-size: 140% 140%;
     background-repeat: no-repeat;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 html{
     overflow-x: hidden;
