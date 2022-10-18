@@ -1428,6 +1428,7 @@ background-image:linear-gradient(-45deg,#2222f0,#d716e9)
 }
 .exidbtn{
   font-size: 14px;margin-top:10px;
+  width:49%; padding:4px 10px;
 }
 .exidbtn:hover{
 
