@@ -299,6 +299,7 @@ function read_value() {
 }
 
 function show_wall() {
+  $("#loadmore_note,#loadmore_lec").show();
   $("#re_lec").css("visibility", "hidden");
   document.getElementById("loader").style.visibility = "visible";
   var url = script_url + "?action=read";
@@ -508,6 +509,7 @@ function getId(url) {
 }
 
 function show_wall_lec() {
+  $("#loadmore_note,#loadmore_lec").show();
   $("#re_lec").css("visibility", "hidden");
   document.getElementById("loader_lec").style.visibility = "visible";
   var url = script_url_lec + "?action=readLec";
