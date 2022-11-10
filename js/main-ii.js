@@ -184,7 +184,7 @@ function openNav() {
     window.open('https://home.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
   });
   $("#astroforum").click(function() {
-    window.open('https://astro.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://www.astro.mastrowall.in/forum', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
   });
   $("#opabout").click(function() {
     window.open('about/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
