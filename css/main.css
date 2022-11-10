@@ -1147,7 +1147,7 @@ z-index: 0;
 padding:8px 15px;
 color:white;
 z-index:100;
-font-size: 16px;
+font-size: 14px;
 border:0px;
 background-color: #575757;
 border-radius: 0px;
@@ -1164,7 +1164,7 @@ margin-left:1px;
 padding:8px 15px;
 color:white;
 z-index:100;
-font-size: 16px;
+font-size: 14px;
 border:0px;
 background-color: #575757;
 border-top-left-radius: 6px;
@@ -1689,7 +1689,7 @@ font-size:24px;
   margin-bottom:10px;
   text-align:center;
   padding: 4px 10px;
-  background-color: #ffffffa6;
+  background-color: #ffffffd5;
 }
 #examside:hover,#checkres:hover{
   color:#081266;
