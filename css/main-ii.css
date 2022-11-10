@@ -374,6 +374,23 @@ border-radius: 0px;
         max-width:335px;
     }
 }
+@media screen and (max-width: 400px) {
+
+    .mwallmnicon{
+        max-width:160px;
+    }
+    .dashicon svg{
+        width:40px;
+        height:40px;
+    }
+    .dashheading{
+        font-size:16px;
+    }
+    #chresexam div{
+        max-width: 100%;
+    }
+    
+}
 @media screen and (max-width: 1200px) {
     .mynvflback{
         display: none;
