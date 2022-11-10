@@ -446,3 +446,23 @@ $("#botlinkins").click(function() {
        "", "/e/linkins-updates/#");
        document.title = "New Linkins | MASTROWALL";
 });
+
+window.onscroll = function() {scrollFunction();};
+function scrollFunction(){
+console.log($(window).width())
+    if($(window).width()<1360){
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop >100) {
+
+      $('#footerholder').slideDown('slow');
+    }
+    else{
+      $('#footerholder').slideUp('slow');
+    }
+   
+  } 
+}
+$(document).ready(function fixdfun(){
+  if($(window).width()>1360){
+    $('#footerholder').slideDown();
+  }
+  });
