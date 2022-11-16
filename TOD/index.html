@@ -345,11 +345,11 @@
         if (imgS != '' && imgS != 'http://') {
           if (document.getElementById('rd1').checked) {
             document.getElementById("btnOkImg").disabled = false;
-            formatDoc('insertHTML', '<img class="ForTypeP" src="' + imgS + '" width="32%" style="float:left; padding: 6px;background:transparent;margin:4px;">');
+            formatDoc('insertHTML', '<img class="ForTypePs" src="' + imgS + '">');
           }
           if (document.getElementById('rd2').checked) {
             document.getElementById("btnOkImg").disabled = false;
-            formatDoc('insertHTML', '<img class="ForTypeP" src="' + imgS + '" width="50%" style="float:right;display:flex;flex-wrap: wrap;background:transparent; padding: 6px;margin:4px;">');
+            formatDoc('insertHTML', '<img class="ForTypePm" src="' + imgS + '">');
           }
           if (document.getElementById('rd3').checked) {
             document.getElementById("btnOkImg").disabled = false;
