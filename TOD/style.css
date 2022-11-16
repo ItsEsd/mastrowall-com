@@ -301,7 +301,9 @@ body {
     border-radius: 10px;
     width: 100%;
   }
-
+#previewPostTitle{
+  padding-left:10px;
+}
   .avatarPro {
     width: 80px;
     height: 80px;
