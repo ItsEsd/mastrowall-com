@@ -385,7 +385,23 @@ body {
     cursor: pointer;
     text-align: center;
   }
-
+  .ForTypePs{
+    float:left; 
+    padding: 6px;
+    background:transparent;
+    margin:4px;
+    width:32%;
+  }
+  
+  .ForTypePm{
+    float:right;
+    display:flex;
+    flex-wrap: wrap;
+    background:transparent; 
+    padding: 6px;
+    margin:4px;
+    width:50%;
+  }
   .youvidF:focus {
     border: 2px solid #008000;
   }
@@ -430,4 +446,13 @@ margin-top:-2px;
   }
   #radioS span{
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 400px) {
+    .ForTypePs,.ForTypePm{
+      width:100% !important;
+    }
+    .youvidF{
+    height:300px !important;
+    }
   }
