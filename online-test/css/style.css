@@ -96,10 +96,8 @@ height:100%;
     min-width:350px;
     text-align: left;
 }
-/* #viewqset img{
-    width:100%;
-} */
-.showqstimg {
+
+.showqstimg{
     width:100%;
 }
 #qsetanst{
@@ -421,6 +419,9 @@ transform: scale(0.98);
     #boxexp-one{
         margin-top:40px;
 
+    }
+    #viewqset img{
+        width:100%;
     }
 }
 
