@@ -48,7 +48,7 @@ expone.addEventListener('submit', (event) => {
           var oplen = qstateops2.length;
           var opq= 4;
          // console.log(oplen);
-    
+         document.getElementById("responqsindx").innerHTML = "Q.1 - Q."+ (len-2);
           for(var k = 0; k<len-2;k++){
     
             if(k == 0){
@@ -407,4 +407,8 @@ $("#chresexam").click(function() {
 
 $('#sgconwexid').click(function(){
   window.open('https://educator.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+});
+$("#responqsindx,#upndd").click(function() {
+  $('#quesindex,#uparw,#updwn').toggle();
+  
 });
