@@ -162,10 +162,10 @@ function openNav() {
     document.getElementById('hrefframenews').href='https://www.ourworldindata.org/';
   });
 
-  $("#thescitst").click(function() {
+  $("#dictnr").click(function() {
     move(); openframenews(); 
-    document.getElementById('frame').src='https://www.the-scientist.com';
-    document.getElementById('hrefframenews').href='https://www.the-scientist.com';
+    document.getElementById('frame').src='https://www.dictionary.com/';
+    document.getElementById('hrefframenews').href='https://www.dictionary.com/';
   });
 
   $("#lvscien").click(function() {
