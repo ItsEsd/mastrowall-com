@@ -367,7 +367,7 @@ document.getElementById('aol').style.boxShadow ="0 2px 10px 0px #2a26f1";
 document.getElementById('oknav').style.color ="#0c29cd";
 document.getElementById('mwallImg').style.filter ="invert(0)";
 document.body.style.backgroundColor ="#e6e6e6";
-document.body.style.backgroundImage ="url('images/hexback-white-1200x900.gif')";
+document.body.style.backgroundImage ="url('images/hexback-white-1200x900.gif')"; 
 document.body.style.backgroundRepeat = "repeat";
 document.body.style.backgroundSize = "100%";
 $('.con-one').addClass('con-one-light').removeClass('con-one');
