@@ -114,13 +114,15 @@ height:100%;
     }
 
 
-.qrefimg{
-    max-width: 600px;
-}
-.oprefimg{
-padding-bottom:10px;
-max-width: 600px;
-}
+    .qrefimg{
+        /* width: 100%; */
+         max-width: 800px;
+     }
+     .oprefimg{
+     padding-bottom:10px;
+     /* width: 100%; */
+     max-width: 800px;
+     }
 #stuinfo{
     padding: 20px;
     top:0px;
