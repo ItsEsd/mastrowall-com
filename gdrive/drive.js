@@ -491,6 +491,10 @@ function initDriveButtons() {
     $(".button-info").unbind("click");
     $(".button-info").click(function () {
         FILE_COUNTER = $(this).attr("data-file-counter");
+      
+        $('html,body').animate({
+            scrollTop: $("#box-info").offset().top 
+          }, 2000);
 
         $("#box-info").show();
         if (DRIVE_FILES[FILE_COUNTER] != null) {
