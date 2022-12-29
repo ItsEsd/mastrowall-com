@@ -164,7 +164,7 @@ $(function () {
         }
         showLoading();
         showStatus("Loading Google Drive files...");
-        getDriveFiles();
+        getDriveFiles();$("#box-info").hide();
     });
 
     $("#button-addfolder").click(function () {
