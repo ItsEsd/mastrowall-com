@@ -9,7 +9,17 @@ $('#conasmwall').click(function(){
 
 $('#signregpre').click(function(){
   $('#intro').slideUp('slow');
-  document.getElementById('continueas').style.width='100%'; 
+  // document.getElementById('continueas').style.width='100%'; 
+  document.getElementById("myNav").style.width = "350px";
+  document.getElementById("continueas").style.width = "0";
+  document.getElementById("closecasinfo").style.display = "none";
+  $('.falseback-nav').show();
+  $('.mynvflback').slideDown('slow');
+  document.getElementById("main").style.marginLeft = "0px";
+
+  $("#dots").hide('fast');
+  $("#togTest").show();
+    $("#togTest2").hide();
 });
 
 $('#goinmastro').click(function(){
