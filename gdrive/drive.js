@@ -504,9 +504,8 @@ function initDriveButtons() {
             $("#spanExtension").html((DRIVE_FILES[FILE_COUNTER].fileExtension == null) ? "N/A" : DRIVE_FILES[FILE_COUNTER].fileExtension);
         }
 
-        $('html,body').animate({
-            scrollTop: $(".scroll-onL").offset().top 
-          }, 1000);
+        var elemscrl = document.getElementById('scroll-onL');
+        elemscrl.scrollTop= elemscrl.scrollHeight;
     });
 
     //Initiate the click folder browse icon
