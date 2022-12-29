@@ -374,7 +374,7 @@ function buildFiles() {
             fText += "<div class='button-box'>";
 
             if (DRIVE_FILES[i].fileType != "folder") {
-                fText += "<span class='glyphicon glyphicon-download-alt button-download' title='Download' data-id='" + DRIVE_FILES[i].id + "' data-file-counter='" + i + "'></span>";
+                fText += "<span class='glyphicon glyphicon-save-file button-download' title='Download' data-id='" + DRIVE_FILES[i].id + "' data-file-counter='" + i + "'></span>";
             }
 
             fText += "<span class='glyphicon glyphicon-info-sign button-info' title='Info' data-id='" + DRIVE_FILES[i].id + "' data-file-counter='" + i + "'></span>";
@@ -382,17 +382,17 @@ function buildFiles() {
             if (DRIVE_FILES[i].hasPermission) {
                 if (DRIVE_FILES[i].labels.trashed) {
                     if (DRIVE_FILES[i].permissionRole == "owner") {
-                        fText += "<span class='glyphicon glyphicon-remove button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
+                        fText += "<span class='glyphicon glyphicon-trash button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
                     } else if (DRIVE_FILES[i].fileType != "folder") {
-                        fText += "<span class='glyphicon glyphicon-remove button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
+                        fText += "<span class='glyphicon glyphicon-trash button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
                     }
                     fText += "<span class='glyphicon glyphicon-retweet button-restore' title='Restore' data-id='" + DRIVE_FILES[i].id + "'></span>";
                 }
                 else {
                     if (DRIVE_FILES[i].permissionRole == "owner") {
-                        fText += "<span class='glyphicon glyphicon-remove button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
+                        fText += "<span class='glyphicon glyphicon-trash button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
                     } else if (DRIVE_FILES[i].fileType != "folder") {
-                        fText += "<span class='glyphicon glyphicon-remove button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
+                        fText += "<span class='glyphicon glyphicon-trash button-delete' title='Delete' data-id='" + DRIVE_FILES[i].id + "'></span>";
                     }
                 }
             }
@@ -491,10 +491,6 @@ function initDriveButtons() {
     $(".button-info").unbind("click");
     $(".button-info").click(function () {
         FILE_COUNTER = $(this).attr("data-file-counter");
-      
-        $('html,body').animate({
-            scrollTop: $("#box-info").offset().top 
-          }, 2000);
 
         $("#box-info").show();
         if (DRIVE_FILES[FILE_COUNTER] != null) {
@@ -507,6 +503,10 @@ function initDriveButtons() {
             $("#spanSize").html((DRIVE_FILES[FILE_COUNTER].fileSize == null) ? "N/A" : formatBytes(DRIVE_FILES[FILE_COUNTER].fileSize));
             $("#spanExtension").html((DRIVE_FILES[FILE_COUNTER].fileExtension == null) ? "N/A" : DRIVE_FILES[FILE_COUNTER].fileExtension);
         }
+
+        $('html,body').animate({
+            scrollTop: $(".scroll-onL").offset().top 
+          }, 1000);
     });
 
     //Initiate the click folder browse icon
