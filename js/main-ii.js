@@ -132,12 +132,7 @@ function openNav() {
     document.getElementById('hrefframenews').href='https://www.sciencealert.com';
   });
 //////////////
-  $("#spcecom").click(function() {
-    move(); openframenews(); 
-    document.getElementById('frame').src='https://www.space.com';
-    document.getElementById('hrefframenews').href='https://www.space.com';
-  });
-
+ 
   $("#popscie").click(function() {
     move(); openframenews(); 
     document.getElementById('frame').src='https://www.popsci.com';
@@ -162,16 +157,12 @@ function openNav() {
     document.getElementById('hrefframenews').href='https://www.ourworldindata.org/';
   });
 
-  $("#dictnr").click(function() {
-    move(); openframenews(); 
-    document.getElementById('frame').src='https://www.dictionary.com/';
-    document.getElementById('hrefframenews').href='https://www.dictionary.com/';
-  });
+ 
 
-  $("#lvscien").click(function() {
+  $("#bigth").click(function() {
     move(); openframenews(); 
-    document.getElementById('frame').src='https://www.livescience.com';
-    document.getElementById('hrefframenews').href='https://www.livescience.com';
+    document.getElementById('frame').src='https://bigthink.com/';
+    document.getElementById('hrefframenews').href='https://bigthink.com/';
   });
 
   $("#genennws").click(function() {
