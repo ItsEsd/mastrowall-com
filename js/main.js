@@ -273,7 +273,8 @@ $("#esq").click(function() {
   $("#jdbox").slideDown('slow');
   $("#dots").hide('fast');
   $("#togTest").show();
-  $("#togTest2").hide();
+  $("#togTest2").hide(); 
+  document.getElementById('btitlejd').innerHTML="|| Journals";
   document.getElementById('jdframe').src = "https://www.openaccessjournals.com/";
   document.getElementById('hrefframejd').href ="https://www.openaccessjournals.com/";
 });
@@ -282,6 +283,7 @@ $("#scd").click(function() {
   $("#dots").hide('fast');
   $("#togTest").show();
   $("#togTest2").hide();
+  document.getElementById('btitlejd').innerHTML="|| Journals";
   document.getElementById('jdframe').src = "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
   document.getElementById('hrefframejd').href ="https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
 }); $("#wikip").click(function() {
@@ -289,6 +291,7 @@ $("#scd").click(function() {
   $("#dots").hide('fast');
   $("#togTest").show();
   $("#togTest2").hide();
+  document.getElementById('btitlejd').innerHTML="|| Wikipedia";
   document.getElementById('jdframe').src='https://www.wikipedia.org';
   document.getElementById('hrefframejd').href='https://www.wikipedia.org';
 });
@@ -297,6 +300,7 @@ $("#dictnr").click(function() {
   $("#dots").hide('fast');
   $("#togTest").show();
   $("#togTest2").hide();
+  document.getElementById('btitlejd').innerHTML="|| Dictionary";
   document.getElementById('jdframe').src='https://www.dictionary.com/';
   document.getElementById('hrefframejd').href='https://www.dictionary.com/';
 });
