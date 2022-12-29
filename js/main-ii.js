@@ -56,7 +56,7 @@ $('#stopvc1,#signregpre').click(function(){
     document.getElementById('vcone').play();document.getElementById('stopvc1').style.display= 'none';document.getElementById('playvc1').style.display= 'block';
 });
 $('#crtod').click(function(){
-    $('#todbox').toggle('fast');
+    $('#todbox').slideDown('fast');
     let stateObj = { id: "0" };
     window.history.replaceState(stateObj,
           "", "/e/create-TOD/#");
