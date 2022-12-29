@@ -223,7 +223,7 @@ $("#closecas").click(function() {
 });
 
 $("#gd").click(function() {
-  $("#gdrivebox").toggle('fast');
+  $("#gdrivebox").slideDown('fast');
   $("#todbox").hide();
 });
 
@@ -232,7 +232,7 @@ $(".closedrivebox").click(function() {
 });
 
 $("#td").click(function() {
-  $("#todbox").toggle('fast');
+  $("#todbox").slideDown('fast');
   $("#gdrivebox").hide();
   let stateObj = { id: "0" };
 			window.history.replaceState(stateObj,
