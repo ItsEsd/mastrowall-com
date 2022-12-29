@@ -23,7 +23,6 @@
   var url_string = window.location.href;
   var url = new URL(url_string);
   var q = url.searchParams.get("onlineTest");
-  console.log(q);
   if(q =="true"){
       $('.otservice').show();
       $('#falsesecback').show();
