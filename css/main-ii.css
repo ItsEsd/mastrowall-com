@@ -265,7 +265,7 @@ border-radius: 0px;
 
 @media screen and (min-width: 993px) {
     .dashheading {
-        font-size: 24px;
+        font-size: 20px;
     }  
     #headsrcdiv{
         display: none;
@@ -371,7 +371,7 @@ border-radius: 0px;
 @media screen and (min-width: 600px) {
 
     .mwallmnicon{
-        max-width:335px;
+        max-width:220px;
     }
 }
 @media screen and (max-width: 400px) {
