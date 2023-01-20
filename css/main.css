@@ -1703,7 +1703,7 @@ border-bottom-left-radius: 10px;
 .dashiconex{
   width:100%;
   text-align: right;
-    background-color: #5707d8;
+    background-image: linear-gradient(-150deg,#0000ffee,#ffffffee);
     color:white;
     display:inline-block;
   margin-bottom:10px;
@@ -1721,10 +1721,10 @@ border-bottom-left-radius: 10px;
 }
 
 .dashiconex:hover{
-  background-color: #27035f;
+  background-image: linear-gradient(-150deg,#949494dc,white);
   text-decoration: none;
   color:white;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .dashiconex svg{
   float:left;
