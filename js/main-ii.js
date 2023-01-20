@@ -63,7 +63,7 @@ $('#crtod').click(function(){
           document.title = "Create TOD | MASTROWALL";
 });
 
-$('#prosign').click(function(){
+$('#prosign,#exammwall').click(function(){
     window.open('https://exam-portal.mastrowall.com/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
 });
 
