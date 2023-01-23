@@ -326,6 +326,7 @@ $.getJSON(url, function(json) {
       document.getElementById("eduextitle").innerHTML =json.records[i].ExamTitle;
       document.getElementById("eduexdescp").innerHTML =json.records[i].ExamDescp;
       document.getElementById("eduextimedur").innerHTML =json.records[i].TDuration;
+      document.getElementById("eduexmpss").innerHTML =JSON.parse(json.records[i].ExamPass);
 var qststr = json.records[i].QuesSTFinal;
 var qststrlen =qststr.length;
 if(qststr != ""){
@@ -365,6 +366,13 @@ else{
   document.getElementById("crtnewexid").value = "Test Room Size Health: GOOD!";
   document.getElementById("crtnewexid").disabled = true;
 }
+
+if(json.records[i].Live == "LIVE"){
+  document.getElementById('exlvnt').checked="true";
+  }
+  if(json.records[i].Calculator == "Enabled"){
+    document.getElementById('excalnt').checked="true";
+  }
       var qstate = JSON.parse(JSON.stringify(json.records[i].QuesSTFinal));
       var qstateimg = JSON.parse(JSON.stringify(json.records[i].QSTimgFinal));
       var qstateops = JSON.parse(JSON.stringify(json.records[i].OPfinal));
@@ -736,3 +744,86 @@ function examresultpdf() {
       oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;max-width:1000px;\">" + elem2.innerHTML + "<\/div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\">M A S T R O W A L L<\/a><\/h4><\/div><\/center><\/body><\/html>");
       oPrntWin.document.close();
  }
+
+ 
+ function lvexnt() {
+  var checkBox = document.getElementById("exlvnt");
+  var eeid=$("#chexid").val();
+  var ppid=JSON.stringify($("#chkey").val());
+  if (checkBox.checked == true){
+    var ssid="LIVE";
+    setvallv(ssid);
+  } else {
+    var ssid="";
+    setvallv(ssid);
+  }
+  function setvallv(stv){
+    ur1="https://script.google.com/macros/s/";
+    ur2="AKfycbxwrQPRltyMBhzQEk6N4fIL4FQN-IoVGRxWPFwuEWTZ3muUj_1R636WabQgq6E5zn0_";
+      var url = ur1+ ur2+"/exec"+"?callback=liveup&edid="+eeid+"&pdid="+ppid+"&stid="+stv+"&action=uplv";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+  }
+}
+
+function calexnt() {
+  var checkBox = document.getElementById("excalnt");
+  var eeid=$("#chexid").val();
+    var ppid=JSON.stringify($("#chkey").val());
+  if (checkBox.checked == true){
+    var ssid="Enabled";
+    setcalv(ssid);
+ 
+  } else {
+    var ssid="";
+    setcalv(ssid);
+  }
+  function setcalv(stv){
+    ur1="https://script.google.com/macros/s/";
+    ur2="AKfycbxwrQPRltyMBhzQEk6N4fIL4FQN-IoVGRxWPFwuEWTZ3muUj_1R636WabQgq6E5zn0_";
+      var url = ur1+ ur2+"/exec"+"?callback=liveupcl&edid="+eeid+"&pdid="+ppid+"&stid="+ssid+"&action=upcl";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+  }
+}
+
+  function liveup(e){
+  if(e.result == "Value updated successfully!" && document.getElementById("exlvnt").checked==true){
+  var elem = document.createElement('div');
+  elem.id="notifyact";
+  elem.innerHTML="This Exam is now LIVE ✅"
+  $('body').append(elem);
+  setTimeout(function(){$(elem).slideUp('fast')},5000)
+  }
+  else{
+    var elem = document.createElement('div');
+    elem.id="notifyact";
+    elem.innerHTML="This Exam is not LIVE ❎"
+    $('body').append(elem);
+    setTimeout(function(){$(elem).slideUp('fast')},5000)
+  }
+  }
+  
+  function liveupcl(e){
+    if(e.result == "Value updated successfully!" && document.getElementById("excalnt").checked==true){
+    var elem = document.createElement('div');
+    elem.id="notifyact";
+    elem.innerHTML="Calculator ENABLED ✅"
+    $('body').append(elem);
+    setTimeout(function(){$(elem).slideUp('fast')},5000);
+    }else{
+      var elem = document.createElement('div');
+      elem.id="notifyact";
+      elem.innerHTML="Calculator DISABLED ❎"
+      $('body').append(elem);
+      setTimeout(function(){$(elem).slideUp('fast')},5000);
+    }
+    }
