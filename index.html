@@ -631,13 +631,25 @@ gtag('config', 'G-N25E2CWHPC');
   <p>Exam Title: <span id="eduextitle" class="exeduinfoid">......</span></p> 
   <p>Description: <span id="eduexdescp" class="exeduinfoid">......</span></p> 
   <p>Test Duration: <span id="eduextimedur" class="exeduinfoid">......</span></p>
+  <p>Exam Pass: <span id="eduexmpss" class="exeduinfoid">......</span></p>
   </div><div class='eduinfoex'>
   <p style="color:#f75858;">Question Set Storage Used: <span id="qststorage">....</span></p>
   <p style="color:#58cc0a;">Number of Enrolled Students: <span id="enrolledstuall">....</span></p>
   <p style="color:#1612f0;">Test Room Size Occupied: <span id="troomsize">....</span></p> 
   <button class="btn btn-dark" type="button" onclick="downloadqset();" style="padding:6px 10px;">Download/ Print Question Set</button> 
 </div>    
-<div id="qsetanst"></div>
+<div id="qsetanst"></div><br>
+<div id="examstate"> <div class="form-check form-switch" style="display:inline-block;">
+   <input class="form-check-input" type="checkbox" id="exlvnt" onclick="lvexnt()"> 
+   <label class="form-check-label" for="flexSwitchCheckDefault" style="margin-left:4px;">LIVE</label>
+ </div>
+ <div class="form-check form-switch" style="display:inline-block;">
+   <input class="form-check-input" type="checkbox" id="excalnt" onclick="calexnt()"> 
+   <label class="form-check-label" for="flexSwitchCheckDefault" style="margin-left:4px;">CALCULATOR</label>
+ </div>
+ <div>** To have Calculator or to make the Exam Live please check as per requirement. Students will not be able to take Exam if not LIVE.</div>
+
+</div>
 </div> 
 </div>
 </div>
