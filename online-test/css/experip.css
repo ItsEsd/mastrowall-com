@@ -473,3 +473,10 @@
   #previewqset hr{
   border-color:#1b1b1b;
   }
+  #notlvnf{
+    margin-top:30px;
+    background-color: #d33e3e;
+    color:white;
+    padding:10px;
+    border:2px solid #ffffff;
+  }
