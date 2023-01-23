@@ -468,7 +468,7 @@ $("#botlinkins").click(function() {
 
 window.onscroll = function() {scrollFunction();};
 function scrollFunction(){
-console.log($(window).width())
+
     if($(window).width()<1360){
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop >100) {
 
