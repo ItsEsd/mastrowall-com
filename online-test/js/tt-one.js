@@ -31,7 +31,17 @@ expone.addEventListener('submit', (event) => {
           "<p style='font-size:16px;'>Exam Title: <span style='font-style: italic;font-size:18px;'>"+json.records[i].ExamTitle+"</span></p>"+
           "<p style='font-size:16px;'>Description: <span style='font-style: italic;font-size:18px;'>"+json.records[i].ExamDescp+"</span></p>"+
           "<p style='font-size:16px;'>Test Duration: <span style='font-style: italic;font-size:18px;'>"+json.records[i].TDuration+"</span></p>"+
-          "</div>"
+          "</div>";
+          if(json.records[i].Live != "LIVE"){
+            $('#exptwo').hide();
+            var nwlm = document.createElement('div');
+            nwlm.id="notlvnf";
+            nwlm.innerHTML ="The Exam is not LIVE. Please contact the Educator."
+            $('#expdetails').append(nwlm);
+                }
+                if(json.records[i].Calculator != "Enabled"){
+                  document.getElementById('calbtnex').disabled="true";
+                }
           var qstate = JSON.parse(JSON.stringify(json.records[i].QuesSTFinal));
           var qstateimg = JSON.parse(JSON.stringify(json.records[i].QSTimgFinal));
           var qstateops = JSON.parse(JSON.stringify(json.records[i].OPfinal));
