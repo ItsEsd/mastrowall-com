@@ -1,8 +1,5 @@
-function formReset() {
-    document.getElementById("formwall").reset();
-  }
 
-  $('#email').on('input',function() {
+$('#email').on('input',function() {
     var email = $(this).val();
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
     if (re.test(email)) {
@@ -17,78 +14,63 @@ function formReset() {
   });
 
   formwall.addEventListener('submit', (event) => {
-          $("#secondlgcheckedu").empty();
-          document.getElementById("register").disabled = true;
-          var ur1 = "https://script.google.com/macros/s/";
-          var ur2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
-          var url = ur1+ ur2+"/exec"+"?action=read";
-          var emailch = $("#email").val();
-          var flag =0;
-          $.getJSON(url, function(json) {
-             for (var i = 0; i < json.records.length - 1; i++) {
-               if (emailch == json.records[i].Email) {
-
-               flag = flag + 1;
-           
-               }}
-    if(flag == 0){
-      conasmwalledu();
-    
-    }else{
-      document.getElementById('secondlgcheckedu').style.display = "block";
-      document.getElementById('secondlgcheckedu').innerHTML ="User email already exist!<br>Please Sign In<br>"
+    document.getElementById("register").disabled = true;
+    var script_url_edureg1 = "https://script.google.com/macros/s/";
+    var script_url_edureg2 ="AKfycbx-7lgnn4V0THVv34EhZG9NeCzM6k_IDSc7-yBi6dYYJC5GLJwPTJDGRybCJk8YRDAmTg";
+    var script_url_edureg = script_url_edureg1 + script_url_edureg2 + "/exec";
+    var email = $("#email").val();
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var dob =JSON.stringify(($("#dob").val()));
+    var dtime = $("#eduregtime").val();
+    var edid = $("#eduregid").val();
+    var edpa = $("#confirmpasswrd").val();
+    var edpap = $("#passwrd").val();
+    var countryCode = $("#countrycode").val();
+    var phoneNo = $("#phoneno").val();
+    var Class = $("#class_").val();
+    var Board = $("#board_").val();
+    var Subject = $("#subject_").val();
+    var Resume = $("#resume").val();
+    var Storage = $("#storage").val();
+    var TPic = $("#proPicT").val();
+    if (email != 0 && fname != 0 && lname != 0 && dob != 0 && countryCode != 0 && phoneNo != 0 && Class != 0 && Board != 0 && Subject != 0 && Resume != 0 && Storage != 0 && edpa !=0 && edpap == edpa) {
+      var url = script_url_edureg + "?callback=ctrlq&email=" + email + "&fname=" + fname + "&lname=" 
+      + lname + "&dob=" + dob + "&countrycode=" + countryCode + "&phoneno=" + phoneNo + "&class_=" 
+      + Class + "&board_=" + Board + "&subject_=" + Subject + "&resume=" + Resume + "&storage=" 
+      + Storage + "&proPicT=" + TPic + "&eduregtime=" + dtime + "&eduregid=" + edid 
+      + "&confirmpasswrd=" + edpa   + "&action=insert";
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url,
+        method: "GET",
+        dataType: "jsonp"
+      });
+    } else {
       document.getElementById("register").disabled = false;
-    }  });          
+      return false;
+    }
+    
         });
 
-        function conasmwalledu(){
-          var script_url_edureg1 = "https://script.google.com/macros/s/";
-          var script_url_edureg2 ="AKfycbxcb9RAuFYAyYt471GV9Jb3cLJGwI2D3HvrnzOO5Gv8-NSKcJm-eSa35-pjwF_-sEYJ1g";
-          var script_url_edureg = script_url_edureg1 + script_url_edureg2 + "/exec";
-          var email = $("#email").val();
-          var fname = $("#fname").val();
-          var lname = $("#lname").val();
-          var dob =JSON.stringify(($("#dob").val()));
-          var dtime = $("#eduregtime").val();
-          var edid = $("#eduregid").val();
-          var edpa = $("#confirmpasswrd").val();
-          var edpap = $("#passwrd").val();
-          var countryCode = $("#countrycode").val();
-          var phoneNo = $("#phoneno").val();
-          var Class = $("#class_").val();
-          var Board = $("#board_").val();
-          var Subject = $("#subject_").val();
-          var Resume = $("#resume").val();
-          var Storage = $("#storage").val();
-          var TPic = $("#proPicT").val();
-          if (email != 0 && fname != 0 && lname != 0 && dob != 0 && countryCode != 0 && phoneNo != 0 && Class != 0 && Board != 0 && Subject != 0 && Resume != 0 && Storage != 0 && edpa !=0 && edpap == edpa) {
-            var url = script_url_edureg + "?callback=ctrlq&email=" + email + "&fname=" + fname + "&lname=" 
-            + lname + "&dob=" + dob + "&countrycode=" + countryCode + "&phoneno=" + phoneNo + "&class_=" 
-            + Class + "&board_=" + Board + "&subject_=" + Subject + "&resume=" + Resume + "&storage=" 
-            + Storage + "&proPicT=" + TPic + "&eduregtime=" + dtime + "&eduregid=" + edid 
-            + "&confirmpasswrd=" + edpa   + "&action=insert";
-            var request = jQuery.ajax({
-              crossDomain: true,
-              url: url,
-              method: "GET",
-              dataType: "jsonp"
-            });
-            sendconfirmem(email);
-          } else {
-            document.getElementById("register").disabled = false;
-            return false;
-          }
-        }
         function ctrlq(e) {
-          $("#re").css("visibility", "visible");
+          if (e.result !="Reading Error!"){
             document.getElementById("formwall").reset();
             document.getElementById("formwall").style.display = "none";
             document.getElementById("successmsg").style.display = "block";
+            var sdm = e.result.split('/');
+            var mid = sdm[0];
+            var nam = sdm[1];
+            sendconfirmem(mid,nam);
+          }
+          else {
+              document.getElementById('secondlgcheckedu').style.display = "block";
+              document.getElementById('secondlgcheckedu').innerHTML ="User email already exist!<br>Please Sign In<br>"
+              document.getElementById("register").disabled = false;
+          }
+            
         }
 
-  function formResetstu() {
-            document.getElementById("formwallstu").reset();
-          }
  
   $('#emailstu').on('input',function() {
     var emailstu = $(this).val();
@@ -104,34 +86,9 @@ function formReset() {
     }
   });
   formwallstu.addEventListener('submit', (event) => {
-    $("#secondlgcheckstu").empty();
     document.getElementById("registerstu").disabled = true;
-    var ur1 = "https://script.google.com/macros/s/";
-    var ur2 ="AKfycbyEI27cuOCoOGf-hTzLpKjFDFgWCw8DHXrhfZuDYQ-Vdv32VvRxeZWzjvHOCZwy-yY9EQ";
-    var url = ur1+ ur2+"/exec"+"?action=read";
-    var emailch = $("#emailstu").val();
-    var flag =0;
-    $.getJSON(url, function(json) {
-       for (var i = 0; i < json.records.length - 1; i++) {
-         if (emailch == json.records[i].Email) {
-
-         flag = flag + 1;
-     
-         }}
-if(flag == 0){
-conasmwallstu();
-
-}else{
-document.getElementById('secondlgcheckstu').style.display = "block";
-document.getElementById('secondlgcheckstu').innerHTML ="User email already exist!<br>Please Sign In<br>"
-document.getElementById("registerstu").disabled = false;
-}});
-});
- 
-function conasmwallstu(){
-  
-  var script_url_stureg1 = "https://script.google.com/macros/s/";
-  var script_url_stureg2 ="AKfycbygYOqMung5jMw8ISEWnRPA54bWfg10-hS4NFotAoyH-1YU0tVYK2Z44NmKGW5ERlSVug";
+    var script_url_stureg1 = "https://script.google.com/macros/s/";
+  var script_url_stureg2 ="AKfycbzzzh5rew8s9WVxUScE1UcreSLhwmANyci0l8lwcPAizLM_Q6CuzYcl2Coa5dloUla05g";
   var script_url_stureg =script_url_stureg1 + script_url_stureg2+ "/exec";
   var email = $("#emailstu").val();
   var fname = $("#fnamestu").val();
@@ -157,17 +114,29 @@ function conasmwallstu(){
       method: "GET",
       dataType: "jsonp"
     });
-   
-    sendconfirmem(email);
+  
   } else {
     return false
   }
-}
+});
+
   function ctrlqs(e) {
+    if (e.result !="Reading Error!"){
       document.getElementById("formwallstu").reset();
       document.getElementById("formwallstu").style.display = "none";
       document.getElementById("successmsgstu").style.display = "block";
+      var sdm = e.result.split('/');
+      var mid = sdm[0];
+      var nam = sdm[1];
+      sendconfirmem(mid,nam);
+    }
+    else {
+      document.getElementById('secondlgcheckstu').style.display = "block";
+      document.getElementById('secondlgcheckstu').innerHTML ="User email already exist!<br>Please Sign In<br>"
+      document.getElementById("registerstu").disabled = false;
+    }
   }
+
   $('#emailco').on('input',function() {
     var emailco = $(this).val();
     var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
@@ -183,6 +152,9 @@ function conasmwallstu(){
   });
   
 
+  function formResetstu() {
+    document.getElementById("formwallstu").reset();
+  }
   function formResetco() {
     document.getElementById("formwallco").reset();
   }
@@ -192,71 +164,60 @@ function conasmwallstu(){
 
   
   formwallco.addEventListener('submit', (event) => {
-    $("#secondlgcheckco").empty();
     document.getElementById("registerco").disabled = true;
-    var ur1 = "https://script.google.com/macros/s/";
-    var ur2 ="AKfycbxdN-3O6TgqnjSFLot6a3ePPXRZvxQFWNuZ1An7Ep5_f2cyLezJ-MDd6HeW0MV7gnrC";
-    var url = ur1+ ur2+"/exec"+"?action=read";
-    var emailch = $("#emailco").val();
-    var flag =0;
-    $.getJSON(url, function(json) {
-       for (var i = 0; i < json.records.length - 1; i++) {
-         if (emailch == json.records[i].Email) {
+    var script_url_coreg1 = "https://script.google.com/macros/s/";
+    var script_url_coreg2 ="AKfycbxEO5KzmVKVVLcW9-ecNM5TjeH_0auZ-km0N_GYkSxI7lud7uCsW10GiCWczpfv-a5FTA";
+    var script_url_coreg = script_url_coreg1+ script_url_coreg2 +"/exec";
+      
+      var email = $("#emailco").val();
+      var fname = $("#fnameco").val();
+      var lname = $("#lnameco").val();
+      var dob = JSON.stringify($("#dobco").val());
+      var dtime = $("#coregtime").val();
+      var coid = $("#coregid").val();
+      var copa = $("#confirmpasswrdco").val();
+      var countryCode = $("#countrycodeco").val();
+      var phoneNo = $("#phonenoco").val();
+      var Class = $("#classco_").val();
+      var Board = $("#boardco_").val();
+      var Subject = $("#subjectco_").val();
+      var Resume = $("#resumeco").val();
+      var Storage = $("#storageco").val();
+      var TPic = $("#proPicT").val();
+      if (email != 0 && fname != 0 && lname != 0 && dob != 0 && countryCode != 0 && phoneNo != 0 && Class != 0 && Board != 0 && Subject != 0 && Resume != 0 && Storage != 0 && copa !=0) {
+        var url = script_url_coreg + "?callback=ctrlqc&emailco=" + email + "&fnameco=" + fname + 
+        "&lnameco=" + lname + "&dobco=" + dob + "&countrycodeco=" + countryCode + "&phonenoco=" + 
+        phoneNo + "&classco_=" + Class + "&boardco_=" + Board + "&subjectco_=" + Subject + "&resumeco=" + 
+        Resume + "&storageco=" + Storage + "&proPicT=" + TPic 
+        + "&coregtime=" + dtime + "&coregid=" + coid 
+        + "&confirmpasswrdco=" + copa+ "&action=insert";
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+      } else {
+        return false;
+      }
 
-         flag = flag + 1;
-     
-         }}
-if(flag == 0){
-conasmwallco();
-
-}else{
-document.getElementById('secondlgcheckco').style.display = "block";
-document.getElementById('secondlgcheckco').innerHTML ="User email already exist!<br>Please Sign In<br>"
-document.getElementById("registerco").disabled = false;
-}});
   });
-function conasmwallco(){
-  var script_url_coreg1 = "https://script.google.com/macros/s/";
-  var script_url_coreg2 ="AKfycbyWG_h-Wy2R-Li5h2oiskituiSC-0qHmOn9vpfzlKa-RfmeDPF-GEkF7Jtf7F47hU3v0Q";
-  var script_url_coreg = script_url_coreg1+ script_url_coreg2 +"/exec";
-    
-    var email = $("#emailco").val();
-    var fname = $("#fnameco").val();
-    var lname = $("#lnameco").val();
-    var dob = JSON.stringify($("#dobco").val());
-    var dtime = $("#coregtime").val();
-    var coid = $("#coregid").val();
-    var copa = $("#confirmpasswrdco").val();
-    var countryCode = $("#countrycodeco").val();
-    var phoneNo = $("#phonenoco").val();
-    var Class = $("#classco_").val();
-    var Board = $("#boardco_").val();
-    var Subject = $("#subjectco_").val();
-    var Resume = $("#resumeco").val();
-    var Storage = $("#storageco").val();
-    var TPic = $("#proPicT").val();
-    if (email != 0 && fname != 0 && lname != 0 && dob != 0 && countryCode != 0 && phoneNo != 0 && Class != 0 && Board != 0 && Subject != 0 && Resume != 0 && Storage != 0 && copa !=0) {
-      var url = script_url_coreg + "?callback=ctrlqc&emailco=" + email + "&fnameco=" + fname + 
-      "&lnameco=" + lname + "&dobco=" + dob + "&countrycodeco=" + countryCode + "&phonenoco=" + 
-      phoneNo + "&classco_=" + Class + "&boardco_=" + Board + "&subjectco_=" + Subject + "&resumeco=" + 
-      Resume + "&storageco=" + Storage + "&proPicT=" + TPic 
-      + "&coregtime=" + dtime + "&coregid=" + coid 
-      + "&confirmpasswrdco=" + copa+ "&action=insert";
-      var request = jQuery.ajax({
-        crossDomain: true,
-        url: url,
-        method: "GET",
-        dataType: "jsonp"
-      });
-      sendconfirmem(email);
-    } else {
-      return false;
-    }
-}
+
   function ctrlqc(e) {
+    if (e.result !="Reading Error!"){
       document.getElementById("formwallco").reset();
       document.getElementById("formwallco").style.display = "none";
       document.getElementById("successmsgco").style.display = "block";
+      var sdm = e.result.split('/');
+      var mid = sdm[0];
+      var nam = sdm[1];
+      sendconfirmem(mid,nam);
+    }
+    else {
+      document.getElementById('secondlgcheckco').style.display = "block";
+      document.getElementById('secondlgcheckco').innerHTML ="User email already exist!<br>Please Sign In<br>"
+      document.getElementById("registerco").disabled = false;
+    }
   }
 
   function capitalize(string) {
@@ -393,13 +354,13 @@ $(document).ready(function(){
 })
 
 
-function sendconfirmem(mailat) {
+function sendconfirmem(mailat,nam) {
      Email.send({
       SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
       To: mailat,
       From: "MASTROWALL<donotreply@mastrowall.com>",
         Subject: "Account Confirmation - MASTROWALL",
-        Body:  "<!doctype html><html><head><title>M A S T R O W A L L | An Art of Learning<\/title><link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body><div class=\"emsenduser\"\>Account Created Successfully. Sign In to Continue.<p>N.B Do not reply to this email</p><\div><\/body><\/html>",
+        Body:  "<!doctype html><html><head><title>M A S T R O W A L L | An Art of Learning<\/title><link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body><div class=\"emsenduser\"\><div>Hello "+nam+",</div><div><br></div><div>Thank you for joining <b><a href=\"https://mastrowall.com\">MASTROWALL</a></b>.</div><div><br></div><div>We’d like to confirm that your account was created successfully. To access sign in to your account.</div><div><br></div><div>If you experience any issues logging into your account, reach out to us at <a href=\"mailto:mail@mastrowall.com\">mail@mastrowall.com</a>.</div><div><br></div><div><font size=\"2\">N.B Do not reply to this email</font><br></div><\div><\/body><\/html>",
     })
         .then(function (message) {
 if(message == "OK"){
