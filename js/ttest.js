@@ -134,7 +134,7 @@ var request = jQuery.ajax({
   url: url,
   method: "GET",
   dataType: "jsonp"
-});console.log(url)});
+});});
 function ctrlqexeditin(e){
   var res = e.records;
 if(res != "ID not found!"){
