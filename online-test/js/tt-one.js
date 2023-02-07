@@ -173,7 +173,6 @@ expone.addEventListener('submit', (event) => {
   var list=document.getElementsByClassName("mrkbtn");
   list = [].slice.call(list); 
   var posofq = list.indexOf(label);
-  console.log(posofq);
   document.getElementsByClassName("qstindex")[posofq].style.backgroundColor = "red";
 
 }
