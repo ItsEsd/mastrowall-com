@@ -267,7 +267,7 @@ function linkpostased(e){
   var res = e.records;
   if(res != "ID not found!"){
     
-   document.getElementById('empnamblkmain').innerHTML ="<div class='empnamblck'><div><span><img class='empnamimg' onerror='this.onerror=null;this.src= `../images/mwalllogo.png`'  src="+res[0].ProfilePic+"></span>"+
+   document.getElementById('empnamblkmain').innerHTML ="<div class='empnamblck'><div><span><img class='empnamimg' onerror='this.onerror=null;this.src= `../images/logoCircleBW.png`'  src="+res[0].ProfilePic+"></span>"+
 "<div class='empnaminfo'><span class='empnamtitle'>"+res[0].FName+" "+res[0].LName+"</span><br><span class='empnamlitinfo'>&#9679; "+ res[0].Board + " &#9679; "+res[0].Class+" &#9679; "+res[0].Subject+
 "</span><p style='margin-top:10px;'><a target='_blank' href='https://educator.mastrowall.com'><span class='empnamblcsign'>Educator</span></a></p></div></div>"
   }
@@ -277,7 +277,7 @@ function linkpostasco(e){
   var res = e.records;
   if(res != "ID not found!"){
     
-    document.getElementById('empnamblkmain').innerHTML ="<div class='empnamblck'><div><span><img class='empnamimg' onerror='this.onerror=null;this.src= `../images/mwalllogo.png`'  src="+res[0].ProfilePic+"></span>"+
+    document.getElementById('empnamblkmain').innerHTML ="<div class='empnamblck'><div><span><img class='empnamimg' onerror='this.onerror=null;this.src= `../images/logoCircleBW.png`'  src="+res[0].ProfilePic+"></span>"+
     "<div class='empnaminfo'><span class='empnamtitle'>"+res[0].FName+" "+res[0].LName+"</span><br><span class='empnamlitinfo'>&#9679; "+ res[0].Board + " &#9679; "+res[0].Class+" &#9679; "+res[0].Subject+
     "</span><p style='margin-top:10px;'><a target='_blank' href='https://coordinator.mastrowall.com'><span class='empnamblcsignco'>Coordinator</span></a></p></div></div>"
   }
