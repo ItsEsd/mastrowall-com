@@ -57,10 +57,10 @@ $('#stopvc1,#signregpre').click(function(){
 });
 $('#crtod').click(function(){
     $('#todbox').slideDown('fast');
-    let stateObj = { id: "0" };
-    window.history.replaceState(stateObj,
-          "", "/e/create-TOD/#");
-          document.title = "Create TOD | MASTROWALL";
+    // let stateObj = { id: "0" };
+    // window.history.replaceState(stateObj,
+    //       "", "/e/create-TOD/#");
+    //       document.title = "Create TOD | MASTROWALL";
 });
 
 $('#prosign,#exammwall').click(function(){
