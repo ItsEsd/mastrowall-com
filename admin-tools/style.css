@@ -10,7 +10,7 @@ body {
     background-color: #ECECEC;
     color: #000000;
     width: 100%;
-    border: solid 1px #0c29cd;
+    border: solid 1px #1a2ca5;
     border-radius: 4px;
   }
 
@@ -115,14 +115,14 @@ body {
   textarea {
     background-color: #f0f0f0;
     color: black;
-    border: 1px solid #0c29cd;
+    border: 1px solid #1a2ca5;
     border-radius: 4px;
   }
 
   input,span,
   label {
     font: 14px Verdana;
-    color: #0c29cd;
+    color: #1a2ca5;
     ;
   }
 
@@ -144,7 +144,7 @@ body {
   }
 
   #info a:hover{
-    color:#0c29cd;
+    color:#1a2ca5;
     text-decoration: underline;
   }
   .containercl{
