@@ -82,7 +82,7 @@ body {
     padding-left: 10px;
     box-shadow: 0 2px 10px 0px white;
     background-color: white;
-    border: 1px solid #0c29cd;
+    border: 1px solid #1a2ca5;
     margin-bottom:30px;
   } */
 
@@ -96,7 +96,7 @@ body {
     padding-left: 10px;
     box-shadow: 0 2px 10px 0px white;
     background-color: white;
-    border: 1px solid #0c29cd;
+    border: 1px solid #1a2ca5;
     margin-bottom:60px;
   }
 
@@ -113,15 +113,15 @@ body {
   #signinedu,
   #signinco {
     width: 120px;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
   }
 
   #signinstu:hover,
   #signinedu:hover,
   #signinco:hover {
-    color: #0c29cd;
+    color: #1a2ca5;
     background-color: white;
-    border:1px solid #0C29CD;
+    border:1px solid #1a2ca5;
   }
 
   input {
@@ -139,7 +139,7 @@ body {
   /* Hide all steps by default: */
   .form-control {
     padding: 20px;
-    border: solid 1px #0C29CD;
+    border: solid 1px #1a2ca5;
     outline: 0;
     border-radius: 0px;
   }
@@ -149,13 +149,13 @@ body {
   }
 
   .form-controlDOB {
-    border: solid 1px #0C29CD;
+    border: solid 1px #1a2ca5;
     outline: 0;
     border-radius: 0px;
   }
 
   .form-check-label {
-    color: #0C29CD;
+    color: #1a2ca5;
   }
 
   label.error {
@@ -208,7 +208,7 @@ body {
   }
 
   a:hover {
-    color: #0c29cd;
+    color: #1a2ca5;
   }
 
   .readmore {
