@@ -36,7 +36,7 @@ window.addEventListener("offline", function() {
   alert('You are offline now!\nConnect to the internet.');
   document.body.style.backgroundImage="linear-gradient(0deg,black,white)";
   document.body.innerHTML ="<div align='center'><div style='color:white;max-width:400px;margin-top:180px;border:none;box-shadow:0 2px 6px 0 grey;padding:40px;'><p style='font-size:60px'>&#9785;</p><h2 style='padding:10px;'>No Internet</h2></div>"+
-  "<br><br><h4 style='text-align:center;color:#0c29cd;'>M A S T R O W A L L</h4></div>";
+  "<br><br><h4 style='text-align:center;color:#1a2ca5;'>M A S T R O W A L L</h4></div>";
   document.getElementById('framecontainer').innerHTML ="<div align='center'><div style='max-width:400px;margin-top:180px;border:none;box-shadow:0 2px 6px 0 grey;padding:40px;'><p style='font-size:60px'>&#9785;</p><h2 style='padding:10px;'>No Internet</h2></div></div>";
 });
 
@@ -190,30 +190,30 @@ $(".closesearch").click(function() {
   document.getElementById('searchframe').style.boxShadow ="none";
   document.getElementById('searchframe').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
-			window.history.replaceState(stateObj,
-						"", "/");
-            document.title = "Art of Learning | MASTROWALL";
+//  let stateObj = { id: "0" };
+// 			window.history.replaceState(stateObj,
+// 						"", "/");
+//             document.title = "Art of Learning | MASTROWALL";
 });
 
 $(".closelinkins").click(function() {
   document.getElementById('linkins').style.boxShadow ="none";
   document.getElementById('linkins').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
- window.history.replaceState(stateObj,
-       "", "/");
-       document.title = "Art of Learning | MASTROWALL";
+//  let stateObj = { id: "0" };
+//  window.history.replaceState(stateObj,
+//        "", "/");
+//        document.title = "Art of Learning | MASTROWALL";
 });
 
 $(".closetelemedia").click(function() {
   document.getElementById('telemedia').style.boxShadow ="none";
   document.getElementById('telemedia').style.width = '0';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
- window.history.replaceState(stateObj,
-       "", "/");
-       document.title = "Art of Learning | MASTROWALL";
+//  let stateObj = { id: "0" };
+//  window.history.replaceState(stateObj,
+//        "", "/");
+//        document.title = "Art of Learning | MASTROWALL";
 });
 $("#closecas").click(function() {
   document.getElementById('continueas').style.width = '0';
@@ -234,17 +234,17 @@ $(".closedrivebox").click(function() {
 $("#td").click(function() {
   $("#todbox").slideDown('fast');
   $("#gdrivebox").hide();
-  let stateObj = { id: "0" };
-			window.history.replaceState(stateObj,
-						"", "/e/create-TOD/#");
-            document.title = "Create TOD | MASTROWALL";
+  // let stateObj = { id: "0" };
+	// 		window.history.replaceState(stateObj,
+	// 					"", "/e/create-TOD/#");
+  //           document.title = "Create TOD | MASTROWALL";
 });
 $("#botcrtod").click(function() {
   $("#todbox").toggle('fast');
-  let stateObj = { id: "0" };
-			window.history.replaceState(stateObj,
-						"", "/e/create-TOD/#");
-            document.title = "Create TOD | MASTROWALL";        
+  // let stateObj = { id: "0" };
+	// 		window.history.replaceState(stateObj,
+	// 					"", "/e/create-TOD/#");
+  //           document.title = "Create TOD | MASTROWALL";        
 });
 $("#exmprtl").click(function() {
   $('.otservice').show();
@@ -253,10 +253,10 @@ $("#exmprtl").click(function() {
 
 $(".closetodbox").click(function() {
   $("#todbox").hide();
-  let stateObj = { id: "0" };
-  window.history.replaceState(stateObj,
-        "", "/");
-        document.title = "Art of Learning | MASTROWALL";
+  // let stateObj = { id: "0" };
+  // window.history.replaceState(stateObj,
+  //       "", "/");
+  //       document.title = "Art of Learning | MASTROWALL";
 });
 
 $("#pt").click(function() {
@@ -383,7 +383,7 @@ window.addEventListener('mouseup', function(event) {
 function golight(){
 document.getElementById('aol').style.backgroundColor ="white";
 document.getElementById('aol').style.boxShadow ="0 2px 10px 0px #2a26f1";
-document.getElementById('oknav').style.color ="#0c29cd";
+document.getElementById('oknav').style.color ="#1a2ca5";
 document.getElementById('mwallImg').style.filter ="invert(0)";
 document.body.style.backgroundColor ="#e6e6e6";
 document.body.style.backgroundImage ="url('images/hexback-white-1200x900.gif')"; 
@@ -393,7 +393,7 @@ $('.con-one').addClass('con-one-light').removeClass('con-one');
 $('.con-one-main').addClass('con-one-main-light').removeClass('con-one-main');
 $('.con-two').addClass('con-two-light').removeClass('con-two');
 document.body.scrollTop = 0; document.documentElement.scrollTop = 0;
-document.getElementById('continueas').style.backgroundImage = "linear-gradient(45deg,#0c29cd,#be1531,#eff309)"
+document.getElementById('continueas').style.backgroundImage = "linear-gradient(45deg,#1a2ca5,#be1531,#eff309)"
 document.getElementById('dlight1').style.display ="none";
 document.getElementById('dlight2').style.display ="block";
 document.getElementById('falsesecback').style.backgroundColor ="#d6d6d6";
@@ -416,7 +416,7 @@ $('.con-two-light').addClass('con-two').removeClass('con-two-light');
 document.body.scrollTop = 0; document.documentElement.scrollTop = 0;
 document.getElementById('dlight1').style.display ="block";
 document.getElementById('dlight2').style.display ="none";
-document.getElementById('continueas').style.backgroundImage = "linear-gradient(-45deg,#141414,#0a0a0a,#0c29cd)";
+document.getElementById('continueas').style.backgroundImage = "linear-gradient(-45deg,#141414,#0a0a0a,#1a2ca5)";
 document.getElementById('falsesecback').style.backgroundColor ="black";
 document.getElementById('myNav').style.backgroundImage = "linear-gradient(-45deg,#1d1d1d,#ece7e7,#ece7e7)";
 document.getElementById('dots').style.backgroundColor ="#161616f4";
@@ -428,30 +428,30 @@ $("#acdash").click(function() {
   document.getElementById('searchframe').style.boxShadow ="0 1px 6px 1px #2202af";
   document.getElementById('searchframe').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
-			window.history.replaceState(stateObj,
-						"", "/e/topic-search/#");
-            document.title = "Search Topic | MASTROWALL";
+//  let stateObj = { id: "0" };
+// 			window.history.replaceState(stateObj,
+// 						"", "/e/topic-search/#");
+//             document.title = "Search Topic | MASTROWALL";
 });
 
 $("#spdash").click(function() {
   document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
  document.getElementById('linkins').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
- window.history.replaceState(stateObj,
-       "", "/e/linkins-updates/#");
-       document.title = "New Linkins | MASTROWALL";
+//  let stateObj = { id: "0" };
+//  window.history.replaceState(stateObj,
+//        "", "/e/linkins-updates/#");
+//        document.title = "New Linkins | MASTROWALL";
 });
 
 $("#sgdash").click(function() {
   document.getElementById('telemedia').style.boxShadow ="0 1px 6px 1px #2202af";
   document.getElementById('telemedia').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
- window.history.replaceState(stateObj,
-       "", "/e/tele-media/#");
-       document.title = "Tele Media | MASTROWALL";
+//  let stateObj = { id: "0" };
+//  window.history.replaceState(stateObj,
+//        "", "/e/tele-media/#");
+//        document.title = "Tele Media | MASTROWALL";
 });
 
 });
@@ -460,10 +460,10 @@ $("#botlinkins").click(function() {
   document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
  document.getElementById('linkins').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
- let stateObj = { id: "0" };
- window.history.replaceState(stateObj,
-       "", "/e/linkins-updates/#");
-       document.title = "New Linkins | MASTROWALL";
+//  let stateObj = { id: "0" };
+//  window.history.replaceState(stateObj,
+//        "", "/e/linkins-updates/#");
+//        document.title = "New Linkins | MASTROWALL";
 });
 
 window.onscroll = function() {scrollFunction();};
