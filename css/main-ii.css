@@ -231,6 +231,14 @@ border-radius: 0px;
     overflow: hidden;
     overflow-y: auto;
 }
+#promo_tw iframe{
+    width:100%;
+    height:400px;
+}
+.ursmnl{
+    height:100%;
+    /* display:none; */
+}
 #promo_tw hr{
     border-color:#ffffff80;
     width:99%;
