@@ -1,17 +1,17 @@
 // Register Service Worker
-// PWA.ServiceWorker.register();
+PWA.ServiceWorker.register();
 
-// // Init Materialize
-// M.AutoInit();
+// Init Materialize
+M.AutoInit();
 
-// // Displays a pop-up requesting permission to allow Notifications
-// $(document)
-//    .ready(function(){
-//         PWA.Notification.requestPermission((status) => {
-//             console.log(status);
-//         });
-//     })
-// ;
+// Displays a pop-up requesting permission to allow Notifications
+$(document)
+   .ready(function(){
+        PWA.Notification.requestPermission((status) => {
+            console.log(status);
+        });
+    })
+;
 
 // Show Notification sent by the browser
 // document
