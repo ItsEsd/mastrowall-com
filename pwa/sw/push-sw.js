@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Listen push events from the server
 self.addEventListener('push', (e) => {
