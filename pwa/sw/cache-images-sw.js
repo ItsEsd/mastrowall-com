@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Cache of images (cache first) (including images of external domains)
 workbox.routing.registerRoute(
