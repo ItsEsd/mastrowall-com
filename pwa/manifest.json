@@ -1,0 +1,22 @@
+{
+    "dir": "ltr",
+    "lang": "en-us",
+    "name": "MASTROWALL",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "/",
+    "short_name": "MASTROWALL",
+    "description": "An Art of Learning", 
+    "orientation": "any",
+    "theme_color": "#969696",
+    "background_color": "#969696",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [{
+        "src": "../images/manifest.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable any"
+    }
+    ]
+}
