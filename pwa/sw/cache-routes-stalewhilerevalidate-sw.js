@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Stale while revalidate strategy
 workbox.routing.registerRoute(
