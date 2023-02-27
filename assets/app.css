@@ -1,0 +1,30 @@
+hr {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#content {
+    min-height: calc(100vh - 126px);
+}
+
+html{
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    overscroll-behavior-y: none;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    scroll-behavior: smooth;
+    height:100%;
+    width:100%
+  }
+
+  #btn-subscription{
+    top:40px;
+    right:20px;
+    position: fixed;
+    z-index:400000000;
+    display:none;
+  }
