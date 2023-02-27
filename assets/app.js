@@ -2,7 +2,7 @@
 PWA.ServiceWorker.register();
 
 // Init Materialize
-M.AutoInit();
+// M.AutoInit();
 
 // Displays a pop-up requesting permission to allow Notifications
 $(document)
