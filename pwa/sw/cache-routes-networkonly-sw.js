@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Network only strategy
 workbox.routing.registerRoute(
