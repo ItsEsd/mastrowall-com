@@ -1,5 +1,3 @@
-/**
- /
 
 const PWA_ROOT = '/pwa';
 
