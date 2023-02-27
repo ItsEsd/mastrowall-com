@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Network first strategy
 workbox.routing.registerRoute(
