@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Cache only strategy
 workbox.routing.registerRoute(
