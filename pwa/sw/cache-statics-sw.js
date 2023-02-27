@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Cache JS, JSON and CSS (request if it is available and update the cache in the background)
 workbox.routing.registerRoute(
