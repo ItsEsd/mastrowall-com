@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Listen notificationclick events
 self.addEventListener('notificationclick', (e) => {
