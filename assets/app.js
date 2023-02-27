@@ -5,13 +5,13 @@ PWA.ServiceWorker.register();
 M.AutoInit();
 
 // Displays a pop-up requesting permission to allow Notifications
-// $(document)
-//    .ready(function(){
-//         PWA.Notification.requestPermission((status) => {
-//             console.log(status);
-//         });
-//     })
-// ;
+$(document)
+   .ready(function(){
+        PWA.Notification.requestPermission((status) => {
+            console.log(status);
+        });
+    })
+;
 
 // Show Notification sent by the browser
 // document
@@ -33,29 +33,29 @@ M.AutoInit();
 // ;
 
 // // Button to subscribe to Push Notifications
-document
-    .getElementById('btn-subscription')
-    .addEventListener('click', () => {
-    	if (
-            PWA.Notification.isDefault() ||
-            PWA.Notification.isGranted()
-        ) {
-            PWA.Push.getSubscription((subscription) => {
-                if (subscription) {
-                    console.log(subscription);
-                    // M.toast({html: 'You are now subscribed to receive Push Notifications!'});
-                } else {
-                    PWA.Push.subscribe((r) => {
-                        console.log(subscription);
-                        // M.toast({html: 'Congratulations! You are subscribed to receive Push Notifications!'});
-                    });
-                }
-            });
-        } else {
-            M.toast({html: "You've turned off Push Notifications. Allow Push Notifications in your browser settings."});
-        }
-    })
-;
+// document
+//     .getElementById('btn-subscription')
+//     .addEventListener('click', () => {
+//     	if (
+//             PWA.Notification.isDefault() ||
+//             PWA.Notification.isGranted()
+//         ) {
+//             PWA.Push.getSubscription((subscription) => {
+//                 if (subscription) {
+//                     console.log(subscription);
+//                     // M.toast({html: 'You are now subscribed to receive Push Notifications!'});
+//                 } else {
+//                     PWA.Push.subscribe((r) => {
+//                         console.log(subscription);
+//                         // M.toast({html: 'Congratulations! You are subscribed to receive Push Notifications!'});
+//                     });
+//                 }
+//             });
+//         } else {
+//             M.toast({html: "You've turned off Push Notifications. Allow Push Notifications in your browser settings."});
+//         }
+//     })
+// ;
 
 // // Checkbox toggle to subscribe/unsubscribe to Push Notifications
 // document
@@ -84,7 +84,7 @@ document
 
 // Clear the browser app cache
 // document
-//     .getElementById('btn-clear-cache')
+//     .getElementById('btn-subscription')
 //     .addEventListener('click', () => {
 //         PWA.Navigator.clearCache();
 //         M.toast({html: "Clear Cache! Look in Dev tools > Application!"});
