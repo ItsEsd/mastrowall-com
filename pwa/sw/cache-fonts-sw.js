@@ -1,5 +1,4 @@
-/**
- /
+
 
 // Cache of fonts (cache first) (including fonts of external domains)
 workbox.routing.registerRoute(
