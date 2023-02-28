@@ -165,8 +165,11 @@ const PWA_CONFIG = {
             '/css/assets/bootstrap-icons.1.5.0.font.css',
             '/css/main-ii.css',
             '/css/main.css',
-            '/js/assets/jQuery v3.5.1.min.js'
-            
+            '/js/assets/jQuery v3.5.1.min.js',
+            '/images/dashicon/dash-search.gif',
+            '/images/dashicon/dash-linkins.gif',
+            '/images/dashicon/dash-telem.gif',
+            '/images/dashicon/dash-tt.gif'
         ],
     }
 }
