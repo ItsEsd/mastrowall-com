@@ -157,19 +157,22 @@ const PWA_CONFIG = {
             '/images/logoRecBWsvg.svg',
             '/assets/app.css',
             '/assets/app.js',
-            '/css/assets/',
-            '/css/fonts/',
             '/css/bootstrap.min.css',
             '/css/fontAwesome.css',
             'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js',
             '/css/assets/bootstrap-icons.1.5.0.font.css',
             '/css/main-ii.css',
             '/css/main.css',
+            '/js/main-ii.js',
+            '/js/main.js',
             '/js/assets/jQuery v3.5.1.min.js',
             '/images/dashicon/dash-search.gif',
             '/images/dashicon/dash-linkins.gif',
             '/images/dashicon/dash-telem.gif',
-            '/images/dashicon/dash-tt.gif'
+            '/images/dashicon/dash-tt.gif',
+            '/images/hexback-white-1200x900.gif',
+            '/images/hexback-blue-1200x900.gif',
+            '/js/assets/jQuery-1.11.1.min.js'
         ],
     }
 }
