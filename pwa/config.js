@@ -153,7 +153,7 @@ const PWA_CONFIG = {
             '/main.html',
             '/index.html',
             '/pwa/pwa.js',
-            '/images/thumbnail.png',
+            'https://mastrowall.com/images/thumbnail.png',
             '/images/logoRecBWsvg.svg',
             '/assets/app.css',
             '/assets/app.js',
