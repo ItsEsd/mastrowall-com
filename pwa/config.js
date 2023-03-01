@@ -115,15 +115,15 @@ const PWA_CONFIG = {
             },
             // Cache first request strategy.
             cachefirst: {
-                active: true,
-                regex: /.*/,
-                maxentries: 500,
-                maxageseconds: 365 * 24 * 60 * 60,
+                active: false,
+                // regex: /.*/,
+                // maxentries: 500,
+                // maxageseconds: 365 * 24 * 60 * 60,
             },
             // Force the response to come from the browser.
             cacheonly: {
-                active: true,
-                regex: /.*/,
+                active: false,
+                // regex: /.*/,
             },
         },
         // Add your custom service worker for load it.
@@ -137,7 +137,7 @@ const PWA_CONFIG = {
     // Precache config
     precache: {
         // Enable/disable precaching
-        active: true,
+        active: false,
         // Routes to
         routes: [
             '/main.html',
