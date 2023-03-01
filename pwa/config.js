@@ -115,15 +115,15 @@ const PWA_CONFIG = {
             },
             // Cache first request strategy.
             cachefirst: {
-                active: false,
-                // regex: /.*/,
-                // maxentries: 500,
-                // maxageseconds: 365 * 24 * 60 * 60,
+                active: true,
+                regex: /.*/,
+                maxentries: 500,
+                maxageseconds: 365 * 24 * 60 * 60,
             },
             // Force the response to come from the browser.
             cacheonly: {
-                active: false,
-                // regex: /.*/,
+                active: true,
+                regex: /.*/,
             },
         },
         // Add your custom service worker for load it.
@@ -137,13 +137,13 @@ const PWA_CONFIG = {
     // Precache config
     precache: {
         // Enable/disable precaching
-        active: false,
+        active: true,
         // Routes to
         routes: [
             '/main.html',
             '/index.html',
             '/pwa/pwa.js',
-            'https://mastrowall.com/images/thumbnail.png',
+            '/images/thumbnail.png',
             '/images/logoRecBWsvg.svg',
             '/assets/app.css',
             '/assets/app.js',
