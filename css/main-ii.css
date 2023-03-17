@@ -281,10 +281,11 @@ color:grey;
     font-size:14px;
   }
 }
-@media screen and (min-width: 700px) {
+@media screen and (max-width: 960px) {
     #footerholder{
-        display: block;
+        display: none;
       }}
+
 @media screen and (min-width: 993px) {
     .dashheading {
         font-size: 20px;
