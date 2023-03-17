@@ -478,7 +478,7 @@ $("#botlinkins").click(function() {
 window.onscroll = function() {scrollFunction();};
 function scrollFunction(){
 
-    if($(window).width()<1360){
+    if($(window).width()<700){
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop >100) {
 
       $('#footerholder').slideDown('slow');
@@ -489,8 +489,3 @@ function scrollFunction(){
    
   } 
 }
-$(document).ready(function fixdfun(){
-  if($(window).width()>1360){
-    $('#footerholder').slideDown();
-  }
-  });
