@@ -1143,7 +1143,7 @@ z-index: 0;
   width: 100%;
   position:fixed;
   z-index: 6;
-  display:none;
+  display:block;
 }
 #prosign{
 padding:8px 15px;
