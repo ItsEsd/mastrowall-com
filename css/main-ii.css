@@ -29,6 +29,7 @@
     box-shadow:0px 2px 10px 0px #a7a7a9;
     margin-bottom: 0px;
     pointer-events: none;
+    min-height:180px;
 }
 #proimgone img{
     width:100%;
