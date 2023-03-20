@@ -466,3 +466,32 @@ float:left;
   padding:10px;
   font-size:18px;
 }
+
+#crtrsm{
+  float:right;
+  cursor: pointer;
+  margin-top:5px;
+  font-size:14px;
+  color:#0659e8;
+}
+#crtrsm a{
+  color:#0659e8;
+  border-bottom: 1px solid #0659e8;
+}
+.tandcgrp{
+  width:100%;
+  margin-top:10px;
+}
+.tandcgrp input{
+  display: inline-block;
+}
+.tandcgrp span{
+  display: inline-block;
+  margin-left:10px;
+}
+.agreetandc{
+  float:left;
+  width:20px;
+  height:20px;
+  margin-top:2px;
+}
