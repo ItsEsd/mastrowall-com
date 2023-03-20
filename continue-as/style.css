@@ -508,7 +508,3 @@ float:left;
 #tooltipic{
   cursor: pointer;
 }
-input[type="date"]{
-  width:100% !important;
-  min-width: 100% !important;
-}
