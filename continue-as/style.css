@@ -510,4 +510,5 @@ float:left;
 }
 input[type="date"]{
   width:100% !important;
+  min-width: 100% !important;
 }
