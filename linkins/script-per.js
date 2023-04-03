@@ -7,7 +7,13 @@
   if(q =="true"){
     getedlinkNT(i);
   }
-
+var dd = url_string.split("#t/");
+if(dd[1]!=""){
+  document.getElementById('idlogedu_lec').value= window.atob(dd[1]);
+  document.getElementById('idlogedu_note').value=window.atob(dd[1]);
+  document.getElementById("upedit_edu_note").disabled = false;
+  document.getElementById("upedit_edu").disabled = false;
+}
   function getedlinkNT(edlnk){
         $("#re_lec").css("visibility", "hidden");
         document.getElementById("loader").style.visibility = "visible";
