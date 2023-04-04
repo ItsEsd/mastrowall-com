@@ -340,15 +340,12 @@ body {
     position: fixed;
     display:none;
     width:100%;
-    /* max-width:600px; */
-    /* margin-top:20px; */
     padding:10px;
     box-shadow:0 100px 600px 0 grey;
     z-index: 5000;
     background-color: #ffffff;
     padding:10px;
     border-bottom:10px solid #80808085;
-    /* border-top: 10px solid #80808085; */
   }
  
 
