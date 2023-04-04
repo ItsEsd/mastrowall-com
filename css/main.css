@@ -135,7 +135,9 @@ body {
   height:100%;
   background-attachment: fixed;
 }
-
+body {
+  --keyboard-zindex: 10000;
+}
 #myNav{
   z-index:6;
   height: 100%;
