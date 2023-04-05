@@ -292,12 +292,8 @@ body {
   #postTD,
   #previewTD {
     height:36px;
-    /* width:100%;
-    max-width:48%; */
-    /* margin:5px; */
     border: 1px solid white;
     padding: 6px 16px;
-    /* border-radius: 4px; */
     background-color: #686868;
     color: white;
   }
