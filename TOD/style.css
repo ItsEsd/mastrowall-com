@@ -168,14 +168,12 @@ body {
     right:0px;
     position: fixed;
     width:100%;
-    /* max-width:1000px; */
-    /* border:1px solid #414141; */
     padding:7px;
     background-color: #e2e2e2; 
     text-align: right;
-    /* border-radius: 5px; */
     padding-left:45px;
   }
+
   #actnhldr{
     top:0px;
     right:45px;
@@ -196,6 +194,7 @@ body {
   .modal {
     height: 100%;
     width: 100%;
+    z-index:4000;
   }
 
   .modal-content {
@@ -494,7 +493,7 @@ math-field,math-field:focus,math-field:active{
 }
 @media not (pointer: coarse) {
   math-field::part(virtual-keyboard-toggle) {
-    display: none;
+    display: block;
   }
 }
 #creqn math-field{
