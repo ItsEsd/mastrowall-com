@@ -1117,6 +1117,54 @@ elem.style.width = width + "%";}}}}
     $('#loadtd').load("/TOD/");
     }) 
 </script>
+<script src="dist/mathlive.min.js"></script>
+<script>
+      var mf = document.getElementById('formula');
+      mf.addEventListener('input',(ev) => {
+
+      if(ev.target.value !=""){
+      document.getElementById('btnOkEqn').disabled = false;
+      }
+      else{
+      document.getElementById('btnOkEqn').disabled = true;
+      }
+      var elem =  document.getElementById('eqntst');
+      elem.value =   mf.value;      
+      console.log(mf.value);
+      });
+      document.getElementById('btnOkEqn').addEventListener('click',insrteqn);
+      function insrteqn(){
+      var eqnv = $('#eqntst').val();
+      formatDoc('insertHTML', `<math-field class="mftd">`+eqnv+`</math-field><br>`);
+      window.addEventListener('DOMContentLoaded', 
+    () => MathLive.renderMathInDocument());
+      }
+      mf.addEventListener('beforeinput', (ev) => {
+      if (ev.inputType === 'insertLineBreak') {
+      mf.executeCommand("moveToNextPlaceholder");
+      ev.preventDefault();
+      };
+      });
+      </script>
+<script>
+  window.addEventListener('DOMContentLoaded', 
+    () => MathLive.renderMathInDocument()
+  );
+  </script>
+<script src="TOD/dist/mathlive.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', 
+    () => MathLive.renderMathInDocument()
+  );
+mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
+body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
+  </script>
+<script type="module">
+  import { ComputeEngine } from 
+    'https://unpkg.com/@cortex-js/compute-engine?module';
+  const ce = new ComputeEngine();
+  document.getElementsByClassName('mftd').disabled =true;
+</script>
 <script src="js/wallcook.js"> </script>
 </body>
 </html>
