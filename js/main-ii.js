@@ -367,7 +367,7 @@ a = shuffle(a);
 var fin;
 for(var d=0;d<a.length;d++){
   fin = a[d];
-    document.getElementById('choosebcgr').innerHTML +="<img class='chsbcg' src='"+chsbc[fin]+"' onclick='chngbackground(this)'>";
+    document.getElementById('choosebcgr').innerHTML +="<img onerror='this.onerror=null;this.src= `../images/imgonerror.svg`' class='chsbcg' src='"+chsbc[fin]+"' onclick='chngbackground(this)'>";
   }
     });
     function chngbackground(label){
@@ -445,7 +445,7 @@ for(var d=0;d<a.length;d++){
     $(document).ready(function(){
       var gmdshlen =gmdsh.length;
       for(var g=0;g<=gmdshlen;g++){
-        document.getElementById('gmicon').innerHTML +="<img class='gtgmic' src='"+gmdsh[g][0]+"' onclick='goplgm(this)'>";
+        document.getElementById('gmicon').innerHTML +="<img onerror='this.onerror=null;this.src= `../images/imgonerror.svg`' class='gtgmic' src='"+gmdsh[g][0]+"' onclick='goplgm(this)'>";
       }
         });
 
