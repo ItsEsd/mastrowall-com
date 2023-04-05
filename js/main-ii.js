@@ -381,3 +381,89 @@ for(var d=0;d<a.length;d++){
       $('#chbcground').hide('fast');
     }
   
+
+    /// GetGames ///////////////
+    var gmdsh =[
+      ["../images/gaming/gm1.png",
+              "https://testtubegames.com/velocityraptor.html"],
+
+      ["../images/gaming/gm2.png",
+              "https://testtubegames.com/shocktopus_web.html"],
+
+      ["../images/gaming/gm3.png",
+              "https://www.funbrain.com/games/"],
+
+      ["../images/gaming/gm4.png",
+              "https://www.gonoodle.com/"],
+
+      ["../images/gaming/gm5.png",
+              "https://littlealchemy2.com/"],
+
+      ["../images/gaming/gm6.png",
+              "https://www.learninggamesforkids.com/"],
+
+      ["../images/gaming/gm7.png",
+              "https://kids.nationalgeographic.com/games/"],
+
+      ["../images/gaming/gm8.png",
+              "https://www.roomrecess.com/"],
+
+      ["../images/gaming/gm9.png",
+              "https://www.starfall.com/"],
+
+      ["../images/gaming/gm10.png",
+              "https://draw.tate.org.uk/"],
+
+      ["../images/gaming/gm11.png",
+              "https://www.turtlediary.com/"],
+
+      ["../images/gaming/gm12.png",
+              "https://www.spellingcity.com/spelling-games-vocabulary-games.html"],
+
+      ["../images/gaming/gm13.png",
+              "https://www.mathplayground.com/"],
+
+      ["../images/gaming/gm14.png",
+              "https://www.cellsalive.com/"],
+
+      ["../images/gaming/gm15.png",
+              "https://www.physicsgames.net/"],
+
+      ["../images/gaming/gm16.png",
+              "https://kids.niehs.nih.gov/games/"],
+
+      ["../images/gaming/gm17.png",
+              "https://education.jlab.org/indexpages/elementgames.html"],
+              
+      ["../images/gaming/gm18.png",
+              "https://mathworld.wolfram.com/"],
+
+      ["../images/gaming/gm19.png",
+                      "https://www.thatquiz.org/"]
+      
+            ];
+    $(document).ready(function(){
+      var gmdshlen =gmdsh.length;
+      for(var g=0;g<=gmdshlen;g++){
+        document.getElementById('gmicon').innerHTML +="<img class='gtgmic' src='"+gmdsh[g][0]+"' onclick='goplgm(this)'>";
+      }
+        });
+
+        function goplgm(label){
+          var list=document.getElementsByClassName("gtgmic");
+          list = [].slice.call(list); 
+          var posofimg = list.indexOf(label);
+          document.getElementById("opgm").src=gmdsh[posofimg][1];
+          $('#gmcnsl').slideDown();
+        }         
+  
+      $('#getgames').click(function(){
+      $('#gmdiv,#gmdash').slideDown();
+      });
+      $('#gobcm').click(function(){
+      $('#gmdiv,#gmdash').slideUp();
+      $('#gmcnsl').hide();
+      document.getElementById("opgm").src="";
+      });
+
+   
