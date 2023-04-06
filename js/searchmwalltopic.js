@@ -1,100 +1,104 @@
-$(document).ready(function() {
-  var script_url_lec = "https://script.google.com/macros/s/AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
-  var script_url = "https://script.google.com/macros/s/AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
-  var url = script_url + "?action=read";
-  var url2 = script_url_lec + "?action=readLec";
-  $.getJSON(url2, function(json) {
-    var maxsearchVid = json.records.length;
-    var k = 0;
-    var topicVid = [];
-    for (k; k < maxsearchVid; k++) {
-      topicVid.push(json.records[k].LecTitle);
-    }
-    var topV = topicVid;
-    $.getJSON(url, function(json) {
-      var maxsearchNote = json.records.length;
-      var z = 0;
-      var topicNote = [];
-      for (z; z < maxsearchNote; z++) {
-        topicNote.push(json.records[z].NotesTitle);
+$(document).ready(function(){
+  setTimeout(function(){
+    var script_url_lec = "https://script.google.com/macros/s/AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
+    var script_url = "https://script.google.com/macros/s/AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
+    var url = script_url + "?action=read";
+    var url2 = script_url_lec + "?action=readLec";
+    $.getJSON(url2, function(json) {
+      var maxsearchVid = json.records.length;
+      var k = 0;
+      var topicVid = [];
+      for (k; k < maxsearchVid; k++) {
+        topicVid.push(json.records[k].LecTitle);
       }
-      var topN = topicNote;
-      var topic = topV.concat(topN);
-
-      function autocomplete(inp, arr) {
-        var currentFocus;
-        inp.addEventListener("input", function(e) {
-          var a, b, i, val = this.value;
-          closeAllLists();
-          if (!val) {
-            return false;
+      var topV = topicVid;
+      $.getJSON(url, function(json) {
+        var maxsearchNote = json.records.length;
+        var z = 0;
+        var topicNote = [];
+        for (z; z < maxsearchNote; z++) {
+          topicNote.push(json.records[z].NotesTitle);
+        }
+        var topN = topicNote;
+        var topic = topV.concat(topN);
+  console.log(topic);
+        function autocomplete(inp, arr) {
+          var currentFocus;
+          inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) {
+              return false;
+            }
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += '<input type="hidden" value="' + arr[i] + '">';
+                b.addEventListener("click", function(e) {
+                  inp.value = this.getElementsByTagName("input")[0].value;
+                  closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+          });
+          inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) {
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+          });
+  
+          function addActive(x) {
+            if (!x) return false;
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            x[currentFocus].classList.add("autocomplete-active");
           }
-          currentFocus = -1;
-          a = document.createElement("DIV");
-          a.setAttribute("id", this.id + "autocomplete-list");
-          a.setAttribute("class", "autocomplete-items");
-          this.parentNode.appendChild(a);
-          for (i = 0; i < arr.length; i++) {
-            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-              b = document.createElement("DIV");
-              b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-              b.innerHTML += arr[i].substr(val.length);
-              b.innerHTML += '<input type="hidden" value="' + arr[i] + '">';
-              b.addEventListener("click", function(e) {
-                inp.value = this.getElementsByTagName("input")[0].value;
-                closeAllLists();
-              });
-              a.appendChild(b);
+  
+          function removeActive(x) {
+            for (var i = 0; i < x.length; i++) {
+              x[i].classList.remove("autocomplete-active");
             }
           }
-        });
-        inp.addEventListener("keydown", function(e) {
-          var x = document.getElementById(this.id + "autocomplete-list");
-          if (x) x = x.getElementsByTagName("div");
-          if (e.keyCode == 40) {
-            currentFocus++;
-            addActive(x);
-          } else if (e.keyCode == 38) {
-            currentFocus--;
-            addActive(x);
-          } else if (e.keyCode == 13) {
-            e.preventDefault();
-            if (currentFocus > -1) {
-              if (x) x[currentFocus].click();
+  
+          function closeAllLists(elmnt) {
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+              if (elmnt != x[i] && elmnt != inp) {
+                x[i].parentNode.removeChild(x[i]);
+              }
             }
           }
-        });
-
-        function addActive(x) {
-          if (!x) return false;
-          removeActive(x);
-          if (currentFocus >= x.length) currentFocus = 0;
-          if (currentFocus < 0) currentFocus = (x.length - 1);
-          x[currentFocus].classList.add("autocomplete-active");
+          document.addEventListener("click", function(e) {
+            closeAllLists(e.target);
+          });
         }
-
-        function removeActive(x) {
-          for (var i = 0; i < x.length; i++) {
-            x[i].classList.remove("autocomplete-active");
-          }
-        }
-
-        function closeAllLists(elmnt) {
-          var x = document.getElementsByClassName("autocomplete-items");
-          for (var i = 0; i < x.length; i++) {
-            if (elmnt != x[i] && elmnt != inp) {
-              x[i].parentNode.removeChild(x[i]);
-            }
-          }
-        }
-        document.addEventListener("click", function(e) {
-          closeAllLists(e.target);
-        });
-      }
-      var todtop = autocomplete(document.getElementById("srctopichead"), topic);
-    
+        var todtop = autocomplete(document.getElementById("srctopichead"), topic);
+      
+      });
     });
-  });
+
+  }, 5000);
+  
 });
 topicsearchmw.addEventListener('submit',(event)=>{
   result_tp();
