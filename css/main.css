@@ -128,12 +128,14 @@ body {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   scroll-behavior: smooth;
- /* background-image:url("/images/hexback-blue-1200x900.gif"); */
+  background-image:url("/images/loading-gif.gif");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 200px;
   background-color: #161616;
   height:100%;
   background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: center;
 }
 body {
   --keyboard-zindex: 10000;
