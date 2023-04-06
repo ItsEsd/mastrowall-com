@@ -1,5 +1,6 @@
 /* M A S T R O W A L L */
 #intro{
+    display: block;
     bottom:0px;
     left:0px;
     width:100%;
