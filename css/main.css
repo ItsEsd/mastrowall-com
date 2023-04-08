@@ -130,7 +130,7 @@ body {
   scroll-behavior: smooth;
   background-image:url("/images/loading-gif.gif");
   background-repeat: no-repeat;
-  background-size: 200px;
+  background-size: 100px;
   background-color: #161616;
   height:100%;
   background-attachment: fixed;
