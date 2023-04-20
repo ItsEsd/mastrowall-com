@@ -256,6 +256,9 @@ function insert_value() {
     document.getElementById("note_log").style.display = "block";
     document.getElementById("navBtn").style.display = "block";
     document.getElementById("editwall").reset();
+    var ednmstr = document.getElementById('m_id').innerText;
+    var ednm = ednmstr.split(':');
+    document.getElementById('empower').value= ednm[1];
   } else {
     return false;
   }
@@ -459,6 +462,9 @@ function insert_value_lec() {
     document.getElementById("lec_log").style.display = "block";
     document.getElementById("navBtn").style.display = "block";
     document.getElementById("editwall_lec").reset();
+    var ednmstr = document.getElementById('m_id_lec').innerText;
+    var ednm = ednmstr.split(':');
+    document.getElementById('empowered').value= ednm[1];
   } else {
     return false;
   }
