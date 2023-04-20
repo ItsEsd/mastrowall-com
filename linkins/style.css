@@ -325,12 +325,13 @@ a:hover {
   height: 250px;
   border-radius: 4px;
 }
-
 #preview,
 #preview_lec {
   background-color: white;
 }
-
+#preview_lec iframe{
+  height:250px;
+}
 #editwall,
 #editwall_lec {
   width: 100%;
