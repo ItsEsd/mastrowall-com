@@ -162,7 +162,8 @@ const PWA_CONFIG = {
             '/images/dashicon/dash-tt.gif',
             '/images/hexback-white-1200x900.gif',
             '/images/hexback-blue-1200x900.gif',
-            '/js/assets/jQuery-1.11.1.min.js'
+            '/js/assets/jQuery-1.11.1.min.js',
+            '/images/gmtime.jpg'
         ],
     }
 }
