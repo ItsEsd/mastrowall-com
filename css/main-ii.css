@@ -958,7 +958,7 @@ input:disabled{
     border:0px;
     background-image:url("/images/loading-gif.gif");
     background-repeat: no-repeat;
-    background-size: 100px;
+    background-size: 150px;
     background-color: #161616be;
     background-position-x: center;
     background-position-y: center;
@@ -1004,7 +1004,7 @@ input:disabled{
     box-shadow:0px 20px 20px 0px #0d0d0d;
   }
   #prmgm{
-    background-image: url('../images/gmtime.png');
+    background-image: url('../images/gmtime.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-height:300px;
