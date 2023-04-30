@@ -299,6 +299,10 @@ body {
   }
   #topictod{
     font-size: 16px;
+    background-color:#a9c1ff;
+    width:300px;
+    padding:5px;
+    display: none;
   }
   #postTD:focus,
   #previewTD:focus, #postTD:hover,
