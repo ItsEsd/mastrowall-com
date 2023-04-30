@@ -542,7 +542,7 @@ width:100%;height:60px;
     cursor: pointer;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .ForTypePs,.ForTypePm{
       width:100% !important;
     }
