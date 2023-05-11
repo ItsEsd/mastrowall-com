@@ -27,6 +27,18 @@
       $('.otservice').show();
       $('#falsesecback').show();
   }
+
+  var decodedCookie = decodeURIComponent(document.cookie); 
+  var ca = decodedCookie.split(';');
+  function chkck(){for (var i = 0; i < ca.length; i++) {
+     var c = ca[i].split('mwallced=')[1];
+     var d = ca[i].split('mwallcstu=')[1];
+  if(c =="true" || d =="true"){
+    return true;
+  }}}
+  if(chkck() !=true){
+   /// Do restriction
+  }
   /*
       $(document).ready(function(){
         var cookies = document.cookie.split(";");
