@@ -101,8 +101,9 @@ $(document).ready(function(){
   
 });
 topicsearchmw.addEventListener('submit',(event)=>{
-  result_tp();
+  result_tp(); 
 });
+
 var script_url_lec = "https://script.google.com/macros/s/AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
 function result_tp() {
   document.getElementById("loader").style.display = "none";
