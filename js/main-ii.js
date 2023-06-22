@@ -55,13 +55,45 @@ $('#playvc1').click(function(){
 $('#stopvc1,#signregpre').click(function(){
     document.getElementById('vcone').play();document.getElementById('stopvc1').style.display= 'none';document.getElementById('playvc1').style.display= 'block';
 });
-$('#crtod').click(function(){
+
+
+$("#td").click(function() {
+  $("#todbox").slideDown('fast');
+  $("#gdrivebox").hide();
+  // let stateObj = { id: "0" };
+	// 		window.history.replaceState(stateObj,
+	// 					"", "/e/create-TOD/#");
+  //           document.title = "Create TOD | MASTROWALL";
+});
+
+
+$('#crtod,#botcrtod').click(function(){
+  $('#framenews,#framenw-back').slideUp('slow');
+  var fstelm = document.getElementById('todbox');
+  if(fstelm.style.display =='block'){
+    $('#todbox').slideUp('fast');
+  }
+  else{
     $('#todbox').slideDown('fast');
+
+  }
     // let stateObj = { id: "0" };
     // window.history.replaceState(stateObj,
     //       "", "/e/create-TOD/#");
     //       document.title = "Create TOD | MASTROWALL";
 });
+
+function changezpostd(){
+  $('#todbox').slideUp('fast');
+  // var fstelm = document.getElementById('todbox');
+  // if(fstelm.style.display =='block'){
+  //   $('#framenews').css('zIndex','20');
+  // }
+  // else{
+  //   $('#framenews').css('zIndex','100');
+  // }
+
+}
 
 $('#prosign,#exammwall').click(function(){
     window.open('https://exam-portal.mastrowall.com/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
@@ -119,50 +151,50 @@ function openNav() {
   });
 
   $("#scinewsorg").click(function() {
-    move(); openframenews(); 
+    move(); openframenews(); changezpostd();
     document.getElementById('frame').src='https://www.sciencenews.org';
     document.getElementById('hrefframenews').href ='https://www.sciencenews.org';
   });
 
   $("#mntday").click(function() {
-    move(); openframenews();
+    move(); openframenews(); changezpostd();
      document.getElementById('frame').src='https://www.medicalnewstoday.com';
      document.getElementById('hrefframenews').href='https://www.medicalnewstoday.com';
   });
 
   $("#twscience").click(function() {
-    move(); openframenews();
+    move(); openframenews(); changezpostd();
     document.getElementById('frame').src='https://science.thewire.in';
     document.getElementById('hrefframenews').href='https://science.thewire.in';
   });
 
   $("#scialrt").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.sciencealert.com';
     document.getElementById('hrefframenews').href='https://www.sciencealert.com';
   });
 //////////////
  
   $("#popscie").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.popsci.com';
     document.getElementById('hrefframenews').href='https://www.popsci.com';
   });
 
   $("#wirdns").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.wired.com';
     document.getElementById('hrefframenews').href='https://www.wired.com';
   });
 
   $("#scdaily").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.scitechdaily.com';
     document.getElementById('hrefframenews').href='https://www.scitechdaily.com';
   });
 
   $("#anainsgt").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.ourworldindata.org/';
     document.getElementById('hrefframenews').href='https://www.ourworldindata.org/';
   });
@@ -170,13 +202,13 @@ function openNav() {
  
 
   $("#bigth").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://bigthink.com/';
     document.getElementById('hrefframenews').href='https://bigthink.com/';
   });
 
   $("#genennws").click(function() {
-    move(); openframenews(); 
+    move(); openframenews();  changezpostd();
     document.getElementById('frame').src='https://www.genengnews.com';
     document.getElementById('hrefframenews').href='https://www.genengnews.com';
   });
@@ -295,6 +327,7 @@ $("#enlrgimg").click(function() {
 
 $('#chngbcgrnd').click(function(){
   $('#chbcground').toggle('fast');
+  $('#framenews,#framenw-back,#todbox').hide();
 })
 $('#clschbc').click(function(){
   $('#chbcground').hide('fast');
