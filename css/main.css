@@ -435,6 +435,27 @@ display:inline-block;
 
 .botInline3 a{ font-size:12px;}
 
+
+.botInline4{
+  display: inline-block;
+  width: 290px;
+  height: 30px;
+  padding: 6px;
+  text-align: center;
+  margin: 4px;
+  border: 1px solid #120ef7;
+  background-color:#494949;
+  color: #ffffff;cursor:pointer;
+
+}
+
+.botInline4:hover {
+  -webkit-transform: scale(1.06);
+  transform: scale(1.06);
+}
+
+.botInline4 a{ font-size:12px;}
+
 .dotInlineup1{
   display: inline-block;
   width: 97%;
@@ -492,7 +513,7 @@ display:inline-block;
 }
 #mwalldecorOne img {
   width: 60px;
-  bottom: 20px;
+  bottom: 10px;
   position: fixed;
   left: 14px;
   cursor: pointer;
@@ -509,7 +530,7 @@ display:inline-block;
 
 #mwalldecorTwo img {
   width: 60px;
-  bottom: 20px;
+  bottom: 10px;
   position: fixed;
   left: 14px;
   cursor: pointer;
