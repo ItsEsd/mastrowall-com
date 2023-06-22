@@ -770,7 +770,7 @@ a:active:before {
 }
 
 #chngbcgrnd{
-    bottom:60px;
+    bottom:30px;
     right:0px;
     position: fixed;
     padding:6px;
@@ -781,7 +781,7 @@ a:active:before {
     background: linear-gradient(-75deg, blue, #dd1d16, #ffd703,#28ad16);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    z-index: 10;
+    z-index: 0 !important;
 }
 #chngbcgrnd svg{
     width:30px;
@@ -806,13 +806,13 @@ a:active:before {
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     vertical-align: auto;
-    bottom:110px;
+    bottom:90px;
     right:0px;
     position: fixed;
     width:100%;
     max-width: 400px;
     background-color: #ececec;
-    z-index: 100;
+    z-index: 0 !important;
     padding:4px;
     overflow-y: hidden;
     border-bottom-left-radius: 10px;
