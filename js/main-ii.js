@@ -466,4 +466,9 @@ for(var d=0;d<a.length;d++){
       document.getElementById("opgm").src="";
       });
 
-   
+   $('#srchengn').click(function(){
+    $('#srchengcon,#clssrceng').slideDown();
+   });
+   $('#clssrceng').click(function(){
+    $('#srchengcon,#clssrceng').slideUp();
+   })
