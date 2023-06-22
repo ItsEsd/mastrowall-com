@@ -232,7 +232,7 @@ $('#email').on('input',function() {
  
   function myFunction() {
     var myVar;
-    myVar = setTimeout(showPage, 0000);
+    myVar = setTimeout(showPage, 100);
   }
 
   function showPage() {
