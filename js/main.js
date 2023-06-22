@@ -239,34 +239,27 @@ $("#gd").click(function() {
 $(".closedrivebox").click(function() {
   $("#gdrivebox").hide();
 });
-
-$("#td").click(function() {
-  $("#todbox").slideDown('fast');
-  $("#gdrivebox").hide();
-  // let stateObj = { id: "0" };
-	// 		window.history.replaceState(stateObj,
-	// 					"", "/e/create-TOD/#");
-  //           document.title = "Create TOD | MASTROWALL";
-});
-$("#botcrtod").click(function() {
-  $("#todbox").toggle('fast');
-  // let stateObj = { id: "0" };
-	// 		window.history.replaceState(stateObj,
-	// 					"", "/e/create-TOD/#");
-  //           document.title = "Create TOD | MASTROWALL";        
-});
 $("#exmprtl").click(function() {
   $('.otservice').show();
   $('#falsesecback').show();
 });
 
 $(".closetodbox").click(function() {
-  $("#todbox").hide();
+  $("#todbox").slideUp('fast');
   // let stateObj = { id: "0" };
   // window.history.replaceState(stateObj,
   //       "", "/");
   //       document.title = "Art of Learning | MASTROWALL";
 });
+
+
+// $("#todbox").click(function() {
+//   $("#todbox").css('z-index','10');
+//   // let stateObj = { id: "0" };
+//   // window.history.replaceState(stateObj,
+//   //       "", "/");
+//   //       document.title = "Art of Learning | MASTROWALL";
+// });
 
 $("#pt").click(function() {
   $("#privacybox").toggle();
