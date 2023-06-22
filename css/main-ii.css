@@ -783,6 +783,7 @@ a:active:before {
     background: linear-gradient(-75deg, blue, #dd1d16, #ffd703,#28ad16);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    z-index: 10;
 }
 #chngbcgrnd svg{
     width:30px;
@@ -1028,3 +1029,53 @@ width:100%;padding:0px;margin:0px;
 #gmicon::-webkit-scrollbar-thumb{background-color:#202020;border-radius: 10px;border:2px solid #ebe8e8;}
 #gmicon::-webkit-scrollbar-thumb:hover{background-color:#696969;color:#202020;padding:2px;}
 #gmicon::-webkit-scrollbar-track{background-color:#ebe8e8;}
+
+
+#srchengcon{
+    bottom:0px;
+    left:0px;
+    width:100%;
+    position: fixed;
+    z-index: 8;
+    display: none;
+    background-color: #1b1b1b;
+    color:white;
+    font-size: 14px;
+  }
+
+  
+#srchengcon label{
+    margin:2px;
+    cursor: pointer;
+}
+#srchengcon .input-group {
+    margin-bottom: 5px;
+    padding:0px;
+  }
+
+  #srchengcon .form-control{
+    border-radius: 0px;
+    outline: none;
+    box-shadow: none;height:30px;font-size: 14px;
+  }
+  #srchengcon .form-control:focus,.form-control:active{
+    box-shadow: none;
+  }
+  #srchengcon .btn-primary{
+    border-radius: 0px;
+    font-size: 12px;
+  }
+  
+  #clssrceng{
+    bottom:0px;
+    right:0px;
+    font-size:14px;
+    position: fixed;
+    z-index: 8;
+    display: none;
+    background-color: #d4d4d4;
+    color:#f60707;
+    font-size: 20px;
+    padding:0px 10px;
+    cursor: pointer;
+  }
