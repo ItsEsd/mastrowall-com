@@ -298,11 +298,9 @@ color:grey;
    #prosign,#crtod{
     font-size:14px;
   }
+ 
 }
-@media screen and (max-width: 960px) {
-    #footerholder{
-        display: none;
-      }}
+
 
 @media screen and (min-width: 993px) {
     .dashheading {
@@ -1079,3 +1077,12 @@ width:100%;padding:0px;margin:0px;
     padding:0px 10px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 960px) {
+    #footerholder{
+        display: none;
+      }
+      #srchengcon,#clssrceng{
+        z-index:100;
+      }
+    }
