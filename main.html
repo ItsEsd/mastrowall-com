@@ -472,11 +472,11 @@ gtag('config', 'G-N25E2CWHPC');
     <hr>
     <div class="botInline3" id="botcrtod"><a>Create TOD</a></div>
       <div class="botInline3" id="botlinkins"><a>LinkIns</a></div>
+      <div class="botInline4" id="srchengn"><a>Search by Engines</a></div>
     <hr>
     <div class="botInline" id="masthome"><a>MASTRO | Home</a>
     </div>
-  </section>
-  <!-- <section><div ng-include="'divsec/onlntest.html'"></section> -->
+  </section><div id="srchengcon" ng-include="'/src-engines/index.html'"></div><div id="clssrceng">×</div>
 <section>
 <div class="otservice" ><center>
 <div id="ttest" align="center">
@@ -1062,23 +1062,10 @@ tile.addClass("folder");
 if (data.thumbnails && data.thumbnails.length > 0) {
 $("<img>").
 attr("src", data.thumbnails[0].large.url).
-appendTo(tile);
-}
-} else {
-$('<p>No items in this folder.</p>').appendTo('#od-items');
-}
-} else {
-$('#od-items').empty();
+appendTo(tile);}} else {$('<p>No items in this folder.</p>').appendTo('#od-items');
+}} else {$('#od-items').empty();
 $('<p>error.</p>').appendTo('#od-items');
-$('#od-json').empty();
-}
-}
-});
-})(jQuery);
-} else {
-alert("Error signing in");
-}
-}
+$('#od-json').empty();}}});})(jQuery);} else {alert("Error signing in");}}
 odauth();
 
 </script>
@@ -1171,5 +1158,7 @@ document.body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
   document.getElementsByClassName('mftd').disabled =true;
 </script><script src="js/searchmwalltopic.js"></script>
 <script src="js/wallcook.js"> </script>
+<script src="/src-engines/scrpt.js"></script>
+<script src="js/assets/jquery-3.6.0.min.js"></script>
 </body>
 </html>
