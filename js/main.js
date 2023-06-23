@@ -138,6 +138,12 @@ $('#oknav,#mwallImg').on('mouseover',function(){
    // document.documentElement.scrollTop = 0;
 });
 
+$('.botInline1,.botInline2,.botInline3,.botInline4').click(function(){
+  $("#dots").hide('fast');
+  $("#togTest").show();
+    $("#togTest2").hide();
+})
+
 $('#continueas').on('mouseover',function(){
   document.getElementById("myNav").style.width = "0";
   document.getElementById("falseback-conas").style.display = "none";
