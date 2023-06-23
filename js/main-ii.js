@@ -59,7 +59,7 @@ $('#stopvc1,#signregpre').click(function(){
 
 $("#td").click(function() {
   $("#todbox").slideDown('fast');
-  $("#gdrivebox").hide();
+  $("#gdrivebox").hide();closeNav();
   // let stateObj = { id: "0" };
 	// 		window.history.replaceState(stateObj,
 	// 					"", "/e/create-TOD/#");
