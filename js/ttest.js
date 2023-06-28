@@ -599,7 +599,7 @@ document.getElementById('crtans').innerHTML= "<div><p style='text-align:left;fon
   var exid=$("#chexid").val();
   var ekey=JSON.stringify($("#chkey").val());
   var url1 = "https://script.google.com/macros/s/";
-  var url2 = "AKfycbxZPQHLaA5F6xURDLyhdGlmYuP2fOTVNI-Po1q9j05l3kWtVJYvSVVRmK5L2fqtsEws";
+  var url2 = "AKfycbxasNKsISZaoyEB8o9ccmCsWD91PjXLH2vlnREfKXgxTIopCnBR9_RciSfj3pEsy-Zv";
   var url = url1+url2+"/exec"+ "?callback=ctrlqset&chexid=" +exid+"&chkey="+ekey+"&action=clrqdata";
   var request = jQuery.ajax({
     crossDomain: true,
