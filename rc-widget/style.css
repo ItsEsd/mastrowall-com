@@ -128,7 +128,7 @@ float:left;
 }
 
 .nbtbfrm{
-height:95vh; background-color: white; overflow-x:hidden;}
+height:95vh; background-color: white; overflow-x:hidden; display:none;}
 
 .nbtbfrmwtsrc{
   height:81vh; background-color: white; overflow-x:hidden;}
