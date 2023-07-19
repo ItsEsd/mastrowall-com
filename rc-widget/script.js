@@ -128,32 +128,29 @@ $("#clssrceng").click(function() {
   });
 
 function opnotbxctd(){
-  $("#ctdotbx").slideDown('slow');
+  $("#ctdotbx,.nbtbfrm").slideDown('slow');
   $("#dots,#jdbox,#lnkotbx").hide('fast');
 }
 
 function opnotbxlnk(){
-  $("#lnkotbx").slideDown('slow');
+  $("#lnkotbx,.nbtbfrm").slideDown('slow');
   $("#dots,#jdbox,#ctdotbx").hide('fast');
 }
 
 function opjdbox(){
-  $("#jdbox").slideDown('slow');
+  $("#jdbox,.nbtbfrm").slideDown('slow');
     $("#dots,#ctdotbx,#lnkotbx,#framenews").hide('fast');
 }
 
 function openframenews(){
-  $('#framenews').slideDown('slow');
+  $('#framenews,.nbtbfrm').slideDown('slow');
   $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide('fast');
   }
 
-  $('#srchengcon').load('https://mastrowall.com/src-engines/index.html');
   $('<link>', {
     rel: 'stylesheet',
     href: 'https://mastrowall.com/css/bootstrap.min.css'
   }).appendTo('head');
-
-  $.getScript('https://mastrowall.com/src-engines/scrpt.js');
   
 }
 });
