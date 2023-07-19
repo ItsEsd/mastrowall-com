@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var allowedDomains = ['mastrowall.com', 'educator.mastrowall.com', 'student.mastrowall.com'];
   var referringDomain = document.referrer.split('/')[2]; 
+  console.log(referringDomain);
 var resct = function(){
   if (allowedDomains.includes(referringDomain)) {
     return true;
