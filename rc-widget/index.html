@@ -32,7 +32,63 @@
             </div>
     </section>
 <section>
-    <center><div id="srchengcon"></div><div id="clssrceng">×</div></center>
+    <center><div id="srchengcon">
+        <div class="container mt-3">
+            <div class="row ">
+              <div class="col-md-12">
+                <form name="gform" id="glocform" enctype="text/plain" autocomplete="off">
+                  <div class="input-group">
+                    <input id="q" name="q" class="form-control" required>
+                    <div class="input-group-append">
+                      <input type="submit" value="Search" class="btn btn-primary">
+                    </div></div>
+                  <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="google" id="googleRadio" class="custom-control-input" checked>
+                      <label for="googleRadio" class="custom-control-label">Google</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="bing" id="bingRadio" class="custom-control-input">
+                      <label for="bingRadio" class="custom-control-label">Bing</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="yahoo" id="yahooRadio" class="custom-control-input">
+                      <label for="yahooRadio" class="custom-control-label">Yahoo</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="wikipedia" id="wikiRadio" class="custom-control-input">
+                      <label for="wikiRadio" class="custom-control-label">Wikipedia</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="duckduckgo" id="ddgoRadio" class="custom-control-input">
+                      <label for="ddgoRadio" class="custom-control-label">DuckDuckGo</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="wolframalpha" id="wolframRadio" class="custom-control-input">
+                      <label for="wolframRadio" class="custom-control-label">WolframAlpha</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="aol" id="aolRadio" class="custom-control-input">
+                      <label for="aolRadio" class="custom-control-label">AOL Search</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="ask" id="askRadio" class="custom-control-input">
+                      <label for="askRadio" class="custom-control-label">Ask.com</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="ecosia" id="ecosiaRadio" class="custom-control-input">
+                      <label for="ecosiaRadio" class="custom-control-label">Ecosia</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" name="engine" value="youtube" id="youtubeRadio" class="custom-control-input">
+                      <label for="youtubeRadio" class="custom-control-label">YouTube</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    </div><div id="clssrceng">×</div></center>
 </section>
     <section>
         <div id="framenews" class="dircttb">
@@ -65,5 +121,5 @@
         <iframe id="lnkotframe" src="https://mastrowall.com/linkins/" frameborder=0 width="100%" height="100%"  class="nbtbfrm"></iframe>
         </div>
     </section>
-
-    <script src="script.js"></script>
+    <script src="/rc-widget/script.js"></script>
+    <script src="/src-engines/scrpt.js"></script>
