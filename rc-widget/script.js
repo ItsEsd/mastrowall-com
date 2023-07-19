@@ -119,12 +119,12 @@ $("#dictnr").click(function() {
 $("#botcrtod").click(function() {
   opnotfrm();
   document.getElementById('otbtitle').innerHTML="|| Create TOD";
-  document.getElementById('otframe').src='/tod/';
+  document.getElementById('otframe').src='https://mastrowall.com/tod/';
 });
 $("#botlinkins").click(function() {
   opnotfrm();
   document.getElementById('otbtitle').innerHTML="|| LinkIns & Update";
-  document.getElementById('otframe').src='/linkins/';
+  document.getElementById('otframe').src='https://mastrowall.com/linkins/';
 });
 
 $("#masthome").click(function() {
