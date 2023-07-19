@@ -120,7 +120,7 @@ $("#dictnr").click(function() {
 $("#botcrtod").click(function() {
   opnotfrm();
   document.getElementById('otbtitle').innerHTML="|| Create TOD";
-  document.getElementById('otframe').src='https://mastrowall.com/tod/';
+  document.getElementById('otframe').src='https://mastrowall.com/TOD/';
 });
 $("#botlinkins").click(function() {
   opnotfrm();
