@@ -162,4 +162,10 @@ function openframenews(){
     href: 'https://mastrowall.com/css/bootstrap.min.css'
   }).appendTo('head');
 
-}});
+  $('<link>', {
+    rel: 'stylesheet',
+    href: 'https://mastrowall.com/rc-widget/style.css'
+  }).appendTo('head');
+
+}
+});
