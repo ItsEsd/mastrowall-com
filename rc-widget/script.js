@@ -7,11 +7,8 @@ var resct = function(){
   }}
   if(resct()){
   $("#togTest").click(function() {
-    $("#dots").show('fast');
+    $("#dots,#togTest2").show('fast');
     $("#togTest").hide();
-    $("#closecasinfo").hide();
-    document.getElementById("togTest2").style.display = "block";
-    document.getElementById("dots").style.zIndex = '100';
   });
 
 window.addEventListener('mouseup', function(event) {
@@ -84,15 +81,9 @@ $("#genennws").click(function() {
 });
 
 
-$(".closeFrame").click(function(){
-    $("#framenews").slideUp('slow');
-});
 
-$(".closejdbox").click(function() {
-    $("#jdbox").slideUp('slow');
-    });
 $(".closeotbx").click(function() {
-    $("#otbx").slideUp('slow');
+    $(".dircttb").slideUp('slow');
     });
         
 $("#esq").click(function() {
@@ -117,14 +108,10 @@ $("#dictnr").click(function() {
 });
 
 $("#botcrtod").click(function() {
-  opnotfrm();
-  document.getElementById('otbtitle').innerHTML="|| Create TOD";
-  document.getElementById('otframe').src='https://mastrowall.com/TOD/';
+  opnotbxctd();
 });
 $("#botlinkins").click(function() {
-  opnotfrm();
-  document.getElementById('otbtitle').innerHTML="|| LinkIns & Update";
-  document.getElementById('otframe').src='https://mastrowall.com/linkins/';
+  opnotbxlnk();
 });
 
 $("#masthome").click(function() {
@@ -133,27 +120,31 @@ $("#masthome").click(function() {
 
 $("#srchengn").click(function() {
   $('#srchengcon,#clssrceng').slideDown();
+ $('.nbtbfrm').addClass('nbtbfrmwtsrc');
 });
 $("#clssrceng").click(function() {
   $('#srchengcon,#clssrceng').slideUp();
+  $('.nbtbfrm').removeClass('nbtbfrmwtsrc');
   });
 
-function opnotfrm(){
-  $("#otbx").slideDown('slow');
-  $("#dots,#jdbox").hide('fast');
-  $("#togTest").show();
-  $("#togTest2").hide();
+function opnotbxctd(){
+  $("#ctdotbx").slideDown('slow');
+  $("#dots,#jdbox,#lnkotbx").hide('fast');
+}
+
+function opnotbxlnk(){
+  $("#lnkotbx").slideDown('slow');
+  $("#dots,#jdbox,#ctdotbx").hide('fast');
 }
 
 function opjdbox(){
   $("#jdbox").slideDown('slow');
-    $("#dots").hide('fast');
-    $("#togTest").show();
-    $("#togTest2").hide();
+    $("#dots,#ctdotbx,#lnkotbx,#framenews").hide('fast');
 }
 
 function openframenews(){
   $('#framenews').slideDown('slow');
+  $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide('fast');
   }
 
   $('#srchengcon').load('https://mastrowall.com/src-engines/index.html');
