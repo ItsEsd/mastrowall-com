@@ -74,7 +74,6 @@ $("#genennws").click(function() {
 });
 
 
-
 $(".closeotbx").click(function() {
     $(".dircttb").slideUp('slow');
     });
@@ -84,16 +83,19 @@ $("#esq").click(function() {
   document.getElementById('btitlejd').innerHTML="|| Journals";
   document.getElementById('jdframe').src = "https://www.openaccessjournals.com/";
 });
+
 $("#scd").click(function() {
   opjdbox();
   document.getElementById('btitlejd').innerHTML="|| Journals";
   document.getElementById('jdframe').src = "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
 }); 
+
 $("#wikip").click(function() {
   opjdbox();
   document.getElementById('btitlejd').innerHTML="|| Wikipedia";
   document.getElementById('jdframe').src='https://www.wikipedia.org';
 });
+
 $("#dictnr").click(function() {
   opjdbox();
   document.getElementById('btitlejd').innerHTML="|| Dictionary";
@@ -103,6 +105,7 @@ $("#dictnr").click(function() {
 $("#botcrtod").click(function() {
   opnotbxctd();
 });
+
 $("#botlinkins").click(function() {
   opnotbxlnk();
 });
@@ -115,6 +118,7 @@ $("#srchengn").click(function() {
   $('#srchengcon,#clssrceng').slideDown();
  $('.nbtbfrm').addClass('nbtbfrmwtsrc');
 });
+
 $("#clssrceng").click(function() {
   $('#srchengcon,#clssrceng').slideUp();
   $('.nbtbfrm').removeClass('nbtbfrmwtsrc');
