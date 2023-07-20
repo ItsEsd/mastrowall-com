@@ -1,11 +1,4 @@
 $(document).ready(function() {
-  var allowedDomains = ['mastrowall.com', 'educator.mastrowall.com', 'student.mastrowall.com'];
-  var referringDomain = document.referrer.split('/')[2]; 
-var resct = function(){
-  if (allowedDomains.includes(referringDomain)) {
-    return true;
-  }}
-  if(resct()){
   $("#togTest").click(function() {
     $("#dots,#togTest2").show('fast');
     $("#togTest").hide();
@@ -152,5 +145,4 @@ function openframenews(){
     href: 'https://mastrowall.com/css/bootstrap.min.css'
   }).appendTo('head');
   
-}
 });
