@@ -58,6 +58,7 @@
     padding:30px;
     display: block;
     background: linear-gradient(45deg,#ffffff8d,#6565653b);
+    border-right:10px solid #00000061;
 }
 #introptsign{
     width:100%;
