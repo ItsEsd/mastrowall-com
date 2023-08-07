@@ -33,7 +33,7 @@
     background-size: 1600% 1600%;
     animation: rainbowBackground 10s linear infinite;
   }
-  
+
   @keyframes rainbowBackground {
     0% {
       background-position: 0% 0%;
@@ -57,7 +57,7 @@
     margin-bottom:20px;
     padding:30px;
     display: block;
-    background: linear-gradient(45deg,#ffffff8d,#65656555);
+    background: linear-gradient(135deg,#ffffff8d,#65656555);
 }
 #introptsign{
     width:100%;
