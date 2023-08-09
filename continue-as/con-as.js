@@ -61,7 +61,8 @@ $('#email').on('input',function() {
             var sdm = e.result.split('/');
             var mid = sdm[0];
             var nam = sdm[1];
-            sendconfirmem(mid,nam);
+            var sgnbtn = 'https://educator.mastrowall.com';
+            sendconfirmem(mid,nam,sgnbtn);
           }
           else {
               document.getElementById('secondlgcheckedu').style.display = "block";
@@ -128,7 +129,8 @@ $('#email').on('input',function() {
       var sdm = e.result.split('/');
       var mid = sdm[0];
       var nam = sdm[1];
-      sendconfirmem(mid,nam);
+      var sgnbtn = 'https://student.mastrowall.com';
+      sendconfirmem(mid,nam,sgnbtn);
     }
     else {
       document.getElementById('secondlgcheckstu').style.display = "block";
@@ -211,7 +213,8 @@ $('#email').on('input',function() {
       var sdm = e.result.split('/');
       var mid = sdm[0];
       var nam = sdm[1];
-      sendconfirmem(mid,nam);
+      var sgnbtn = 'https://coordinator.mastrowall.com';
+      sendconfirmem(mid,nam,sgnbtn);
     }
     else {
       document.getElementById('secondlgcheckco').style.display = "block";
@@ -354,13 +357,98 @@ $(document).ready(function(){
 })
 
 
-function sendconfirmem(mailat,nam) {
+function sendconfirmem(mailat,nam,sgn) {
      Email.send({
       SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
       To: mailat,
       From: "MASTROWALL<donotreply@mastrowall.com>",
         Subject: "Account Confirmation - MASTROWALL",
-        Body:  "<!doctype html><html><head><title>M A S T R O W A L L | An Art of Learning<\/title><link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body><div class=\"emsenduser\"\><div>Hello "+nam+",</div><div><br></div><div>Thank you for joining <b><a href=\"https://mastrowall.com\">MASTROWALL</a></b>.</div><div><br></div><div>We’d like to confirm that your account was created successfully. To access sign in to your account.</div><div><br></div><div>If you experience any issues logging into your account, reach out to us at <a href=\"mailto:mail@mastrowall.com\">mail@mastrowall.com</a>.</div><div><br></div><div><font size=\"2\">N.B Do not reply to this email</font><br></div><\div><\/body><\/html>",
+        Body:  `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body {
+              font-family: Verdana, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #f5f5f5;
+            }
+            .container {
+              max-width: 600px;
+              margin: 20px auto;
+              padding: 20px;
+              border: 1px solid #ccc;
+              background-color: #ffffff;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+            img{
+              width:100px;
+            }
+            .header {
+              width:100%;
+              text-align: center;
+              margin-bottom: 20px;
+            }
+            .content {
+              margin-bottom: 20px;
+            }
+            .ctabutton {
+              display: inline-block;
+              border-radius:0px;
+            }
+            .footer {
+            margin-top:20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999999;
+            }
+            .footerlinks{
+            display: inline-block;
+            text-align: left;
+            }
+            .footeraddress {
+            display: inline-block;
+            text-align: right;
+            }
+            .sndmail{
+            text-decoration:underline;
+            }
+            .brndname{
+            display:inline-block;
+            color:black;
+            text-decoration:none;
+            }
+            .brndlogo{
+              width:60px;
+              float:right;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="content">
+              <p>Hello <strong>`+nam+`</strong>,</p>
+              <p>Thank you for joining <strong><a class="brndname" target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></strong>, an art of learning.</p>
+              <p>We’d like to confirm that your account was created successfully. To access it, please sign in to your account.</p>
+              <p>If you experience any issues logging into your account, please reach out to us at <a class="sndmail" href="mailto:mail@mastrowall.com">mail@mastrowall.com</a>.</p>
+            </div>
+            <div class="cta">
+              <a class="ctabutton" href="`+sgn+`" target="_blank"><img src="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@2473dd8bc7e75f2efd9371bdebd44fd801300d00/images/signemail.png"></a>
+            </div>
+            <div class="footer">
+              <div class="footerlinks">
+        <a href="https://mastrowall.com/about/">About</a> | <a href="https://mastrowall.com/privacy-policy">Privacy Policy</a> | <a href="https://mastrowall.com/terms-and-conditions">Terms & Conditions</a> | <a href="https://mastrowall.com/contact-us/">Contact Us</a>
+      </div>
+      <div class="footeraddress">
+        Greenpark, Arambagh, Hooghly, INDIA
+      </div>
+              <p><em>N.B. Do not reply to this email</em></p>
+            </div>
+          </div>
+        </body>
+        </html>
+        `,
     })
         .then(function (message) {
 if(message == "OK"){
