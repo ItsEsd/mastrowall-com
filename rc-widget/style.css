@@ -152,9 +152,11 @@ display: none;
 
 
 .closeotbx {
-font-size:14px;
+font-size:25px;
 cursor:pointer;float:right;
-padding:6px 20px;
+padding:0px 15px;
+font-weight: 100;
+margin-top:-5px;
 border-top-right-radius:0px;
 background-color:#db0b49;color:#ffffff;
 /* display:none; */
@@ -214,4 +216,24 @@ color:#f60707;
 font-size: 20px;
 padding:0px 10px;
 cursor: pointer;
+}
+
+.mwallbrndicon{
+  width:28px;
+  padding:2px;
+  margin:4px;
+  background-color: #120ef7;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #242424, #ff7f00, #efd336, #05a105, #6a6aff, #a121fd, #ab9eb7, #a81c1c);
+  background-size: 1600% 1600%;
+  animation: rainbowBackground 10s linear infinite;
+}
+
+@keyframes rainbowBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 200%;
+  }
 }
