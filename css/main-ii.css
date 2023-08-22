@@ -1115,3 +1115,34 @@ width:100%;padding:0px;margin:0px;
         padding-bottom:30px;
       }
     }
+
+    .mwallbrndicon{
+        width:28px;
+        padding:2px;
+        margin-right:4px;
+        margin-top:-2px;
+        background-color: #120ef7;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #242424, #ff7f00, #efd336, #05a105, #6a6aff, #a121fd, #ab9eb7, #a81c1c);
+        background-size: 1600% 1600%;
+        animation: rainbowBackground 10s linear infinite;
+        float:left;
+      }
+      
+      @keyframes rainbowBackground {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 200% 200%;
+        }
+      }
+
+      #mtitletod{
+        float:left;
+        padding-right:4px;
+        font-size: 16px;
+        display:block;
+        padding:2px;
+        padding-top:4px;
+      }
