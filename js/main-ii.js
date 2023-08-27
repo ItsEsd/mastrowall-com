@@ -426,8 +426,8 @@ for(var d=0;d<a.length;d++){
       ["../images/gaming/gm3.png",
               "https://www.funbrain.com/games/"],
 
-      // ["../images/gaming/gm4.png",
-      //         "https://www.gonoodle.com/"],
+      ["../images/gaming/chess.png",
+              "/e-games/stockfish-chess-web-gui-master/index.html"],
 
       ["../images/gaming/gm5.png",
               "https://littlealchemy2.com/"],
