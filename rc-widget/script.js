@@ -1,3 +1,4 @@
+"use strict";
 $(document).ready(function() {
   $("#togTest").click(function() {
     $("#dots,#togTest2").show('fast');
