@@ -163,7 +163,7 @@ const PWA_CONFIG = {
             '/images/hexback-white-1200x900.gif',
             '/images/hexback-blue-1200x900.gif',
             '/js/assets/jQuery-1.11.1.min.js',
-            '/images/gmtime.jpg'
+            '/images/e-Gaming.webp'
         ],
     }
 }
