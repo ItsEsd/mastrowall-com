@@ -541,7 +541,17 @@ pointer-events: none;
 cursor:pointer;
 text-decoration:none;
 }
-
+#vidlecminmax{
+  width:100%;
+  max-width:700px;
+  text-align: left;
+  display: block;
+  background-color: #aeaeae6e;
+}
+#vidlecminmax span:hover{
+  opacity:0.6;
+  color:white;
+}
 #maxmzyouvidfrm,#minmzyouvidfrm{
   display: none;
   padding:6px 10px;
@@ -549,21 +559,15 @@ text-decoration:none;
   margin-left:0px;
   border-radius: 0px;
   border: 0px;
+  background-color: #16c00d96;
 }
 #clsyouviffrm{
-  padding:4px 20px;
-  margin:10px;
- display: inline-block;
+  padding:6px 20px;
  border-radius: 0px;
-}
-#vidlecminmax{
-  width:100%;
-  max-width:700px;
-  text-align: right;
-  display: block;
-}
-#vidlecminmax span{
-  text-align: left;
+ float:right;
+ width:60px;
+ border:0px;
+ background-color: #ec1c1cb9;
 }
 
 #info{
