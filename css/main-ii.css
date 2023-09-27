@@ -1146,3 +1146,14 @@ width:100%;padding:0px;margin:0px;
         padding:2px;
         padding-top:4px;
       }
+      .opntbtlmd{
+        top:10px;right:10px;
+        width:30px;
+        padding:5px;
+        position: absolute;
+        cursor:pointer;
+      }
+      .opntbtlmd:hover{
+        background: #80808082;
+        border-radius: 5px;
+      }
