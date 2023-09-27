@@ -436,33 +436,31 @@ $("#acdash").click(function() {
   document.getElementById('searchframe').style.boxShadow ="0 1px 6px 1px #2202af";
   document.getElementById('searchframe').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
-//  let stateObj = { id: "0" };
-// 			window.history.replaceState(stateObj,
-// 						"", "/e/topic-search/#");
-//             document.title = "Search Topic | MASTROWALL";
 });
 
 $("#spdash").click(function() {
   document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
  document.getElementById('linkins').style.width = '100%';
  document.getElementById('main').style.marginLeft= '0';
-//  let stateObj = { id: "0" };
-//  window.history.replaceState(stateObj,
-//        "", "/e/linkins-updates/#");
-//        document.title = "New Linkins | MASTROWALL";
+
 });
 
-$("#sgdash").click(function() {
-  document.getElementById('telemedia').style.boxShadow ="0 1px 6px 1px #2202af";
+var clkelement = document.getElementById('tlmdnw');
+
+$("#sgdash").click(function(event) {
+  if (event.target === clkelement) {
+    window.open('https://telemedia.mastrowall.com', '_blank');
+    return;
+  }
+
+  document.getElementById('telemedia').style.boxShadow = "0 1px 6px 1px #2202af";
   document.getElementById('telemedia').style.width = '100%';
- document.getElementById('main').style.marginLeft= '0';
-//  let stateObj = { id: "0" };
-//  window.history.replaceState(stateObj,
-//        "", "/e/tele-media/#");
-//        document.title = "Tele Media | MASTROWALL";
+  document.getElementById('main').style.marginLeft = '0';
 });
 
+
 });
+
 
 $("#botlinkins").click(function() {
   document.getElementById('linkins').style.boxShadow ="0 1px 6px 1px #2202af";
