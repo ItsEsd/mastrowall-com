@@ -465,6 +465,8 @@ text-align: left;
     padding:5px;
     font-size:15px;
     cursor: pointer;
+    max-width:300px;
+    text-align: left;
 }
 #upndd{
     bottom:0px;

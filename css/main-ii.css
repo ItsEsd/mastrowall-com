@@ -790,6 +790,8 @@ a:active:before {
     background-color: white;
     color:#f72b2b;
     font-size: 16px;
+    max-width:300px;
+    text-align:left;
 }
 
 #chngbcgrnd{

@@ -441,7 +441,7 @@ conq.addEventListener('input',(event) =>{
       "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
       "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
       "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-      "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Exam Portal</a></span>"+
+      "<span style='float:left;'>M A S T R O W A L L | <a target='_blank' href='https://mastrowall.com/online-test' style='text-decoration:none;'>Online Test</a></span>"+
       "<span style='float:right;'>"+"<span style='font-size:16px;color:#1a2ca5;padding:4px 6px;'>"+title+" </span> "+
       "By "+" "+"<span style='font-size:18px;color:#1a2ca5;padding:4px 6px;'>"+name+" </span>"+
       "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -462,12 +462,4 @@ conq.addEventListener('input',(event) =>{
   function ctrlcrtexid(e){
    // console.log(e.result);
   }
-   function downloadqset() {
-    var elem1 = document.getElementById("previews");
-    var elem2 = document.getElementById("eduinfofordqset");
-    var elem3 = document.getElementById("qsetanst");
-    var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
-        oPrntWin.document.open();
-        oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;max-width:1000px;\">" + elem2.innerHTML + "<\/div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\">M A S T R O W A L L<\/a><\/h4><\/div><\/center><\/body><\/html>");
-        oPrntWin.document.close();
-   }
+  

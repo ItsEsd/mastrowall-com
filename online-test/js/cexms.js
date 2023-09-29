@@ -83,7 +83,7 @@ document.getElementById('timestr').value= str; });
   "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
   "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
   "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-  "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Exam Portal</a></span>"+
+  "<span style='float:left;'>M A S T R O W A L L | <a target='_blank' href='https://mastrowall.com/online-test' style='text-decoration:none;'>Online Test</a></span>"+
   "<span style='float:right;'>"+"<span style='font-size:16px;color:#1a2ca5;padding:4px 6px;'>"+title+" </span> "+
   "By "+" "+"<span style='font-size:18px;color:#1a2ca5;padding:4px 6px;'>"+name+" </span>"+
   "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -101,7 +101,7 @@ document.getElementById('timestr').value= str; });
           .then(function (message) {
             if(message =="OK"){
               document.getElementById('mailsented').style.display= 'block';
-              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
+              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.';
               setTimeout(function() {
                 jQuery('#mailsented').fadeOut('fast');
               }, 10000);

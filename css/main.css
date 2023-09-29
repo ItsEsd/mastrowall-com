@@ -1967,6 +1967,8 @@ border-color:#1b1b1b;
   display:none;
   margin-bottom:6px;
   font-size:14px;
+  max-width:300px;
+  text-align: left;
 }
 
 #cogbias{

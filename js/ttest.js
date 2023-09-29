@@ -48,16 +48,15 @@ document.getElementById("examdescpFin").innerHTML="Description: "+"<span style='
 document.getElementById("mykeyFin").innerHTML="Your Key: "+"<span style='padding:4px 6px;font-style:italic;'>"+youkey+"</span>";
 document.getElementById("exampassFin").innerHTML="Exam Pass For Students: "+"<span style='padding:4px 6px;font-style:italic;'>"+examp+"</span>";
 document.getElementById("tsdur").innerHTML = "Test Duration: "+"<span style='padding:4px 6px;font-style:italic;'>"+ttmstr+"</span>";  
-document.getElementById("studentpassdoc").innerHTML ="<div style=padding:20px;>"+"Exam ID: "+"<span style='color:blue;font-style:italic;'>"+examid +"</span>"+
-"<span style='float:right;margin-left:10px;'>Test Duration: "+ttmstr+"</span>"+
-"<hr>"+"Name: " +"<span style='font-size:20px;'>"+ name+
-"</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
-"Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
-"Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-"<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Goto Test</a></span>"+
-"<span style='float:right;'>"+"<span style='font-size:16px;color:#1a2ca5;padding:4px 6px;'>"+title+" </span> "+
-"By "+" "+"<span style='font-size:18px;color:#1a2ca5;padding:4px 6px;'>"+name+" </span>"+
-"|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
+document.getElementById("studentpassdoc").innerHTML ="<div style='padding:40px 40px;font-family:verdana;background-color: #f5f5f5;border:1px dashed black;'><div style='display:block;text-align: left;line-height:160%;'><p><span style='float:left;'><img src='https://mastrowall.com/images/logoRecBWsvg.svg' style='width:25px;'></span><span style='margin-left:5px;font-size:16px;color:#666666;'><b>M A S T R O W A L L | <a target='_blank' href='https://mastrowall.com/online-test/' style='text-decoration:none;color:#0c29cd;'>Online Test</a></b></a></span></p>"+
+"<p style='text-align: left;display:block;line-height:200%;width:100%;'>"+"<span style='font-size:16px;color:#0c29cd;'>"+title+" </span> "+
+"By "+" "+"<span style='font-size:18px;color:#0c29cd;line-height:160%;'>"+name+" </span>"+
+"</p></div><hr><div><p>"+"Name: " +"<span style='font-size:16px;line-height:160%;'><b>"+ name+
+  "</b></span></p><hr><p>Exam ID: "+"<span style='color:#0c29cd;font-style:italic;line-height:160%;'>"+examid +"</span></p>"+
+"<p style='width:100%;text-align:right;margin-left:10px;display:block;margin:0px;'>Test Duration: "+"<span style='line-height:160%;color:#0c29cd;font-style:italic;'>"+ttmstr+"</span></p>"+
+"<hr><p>"+"Exam Title: "+"<span style='font-weight:bold;line-height:160%;'>"+title+"</span></p><hr><p>"+
+"Description: "+"<span style='font-weight:bold;line-height:160%;'>"+descp+"</span></p><hr><p>"+
+"Exam Pass For Students: "+"<span style='color:#0c29cd;line-height:160%;'>"+examp+"</span></p><hr><hr></div><p style='width:100%;text-align: center;font-size:14px;'>©️ M A S T R O W A L L</p></div>";
 sendEdmail();});
    function infoexampdf() {
     var elem = document.getElementById("studentpassdoc");
@@ -72,20 +71,22 @@ sendEdmail();});
    function sendEdmail() {
     var elemed = document.getElementById("studentpassdoc").innerHTML;
     var mailat = $('#edueid').val(); var passk = $('#confirmpasskey').val();
+     var embody = `<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="x-apple-disable-message-reformatting"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title></title> <style type="text/css"> @media only screen and (min-width: 620px) { .u-row { width: 600px !important; } .u-row .u-col { vertical-align: top; } .u-row .u-col-100 { width: 600px !important; } } @media (max-width: 620px) { .u-row-container { max-width: 100% !important; padding-left: 0px !important; padding-right: 0px !important; } .u-row .u-col { min-width: 320px !important; max-width: 100% !important; display: block !important; } .u-row { width: 100% !important; } .u-col { width: 100% !important; } .u-col>div { margin: 0 auto; } } body { margin: 0; padding: 0; } table, tr, td { vertical-align: top; border-collapse: collapse; } p { margin: 0; } .ie-container table, .mso-container table { table-layout: fixed; } * { line-height: inherit; } a[x-apple-data-detectors='true'] { color: inherit !important; text-decoration: none !important; } table, td { color: #000000; } #u_body a { color: #0000ee; text-decoration: underline; } @media (max-width: 480px) { #u_content_image_1 .v-src-width { width: auto !important; } #u_content_image_1 .v-src-max-width { max-width: 87% !important; } #u_content_heading_1 .v-container-padding-padding { padding: 40px 10px 0px !important; } #u_content_text_2 .v-container-padding-padding { padding: 5px 10px 10px !important; } #u_content_text_deprecated_1 .v-container-padding-padding { padding: 40px 10px 10px !important; } } </style> <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet" type="text/css"> </head> <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ecf0f1;color: #000000"> <table id="u_body" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;min-width: 320px;Margin: 0 auto;background-color: #ecf0f1;width:100%" cellpadding="0" cellspacing="0"> <tbody> <tr style="vertical-align: top"> <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top"> <div class="u-row-container" style="padding: 0px;background-color: transparent"> <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"></div> </div> <div class="u-row-container" style="padding: 0px;background-color: transparent"> </div> <div class="u-row-container" style="padding: 0px;background-color: transparent"> <div class="u-row" style="margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: transparent;"> <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-color: transparent;"> <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;"> <div style="background-color: #ffffff;height: 100%;width: 100% !important;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"> <div style="box-sizing: border-box; height: 100%; padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;"> <table id="u_content_text_deprecated_1" style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"> <tbody> <tr> <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 20px 10px;font-family:'Raleway',sans-serif;" align="left"> <div style="font-size: 14px; line-height: 100%; text-align: left; word-wrap: break-word;"> <div style="background-color: #e0e0e0;">`+ elemed +`</div> </div> </td> </tr> </tbody> </table> <p style='text-align:right;margin:10px;font-size:14px;'>Your Key / Password: <em style="color:#0c29cd;"><b>`+passk+`</b></em></p> <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"> <tbody> <tr> <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 0px;font-family:'Raleway',sans-serif;" align="left"> <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%"> <tbody> <tr style="vertical-align: top"> <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%"> <span>&nbsp;</span> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <table style="font-family:'Raleway',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0"> <tbody> <tr> <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 40px;font-family:'Raleway',sans-serif;" align="left"> <div style="font-size: 14px; line-height: 160%; text-align: center; word-wrap: break-word;"> <p style="font-size: 14px; line-height: 160%;">N.B: Do not reply to this email.</p> <p style="font-size: 14px; line-height: 160%;"><br>Contact: <a rel="noopener" href="mailto:mail@mastrowall.com" target="_blank">mail@mastrowall.com</a><br>Arambagh. Hooghly. WB. India.<br>PIN: 712601</p> <p style="font-size: 14px; line-height: 160%;"> </p> </div> </td> </tr> </tbody> </table> </div> </div> </div> </div> </div> </div> </td> </tr> </tbody> </table> </body></html>`;
       Email.send({
         SecureToken : "dce269d4-508e-4b89-bc50-2201fb9f60a8",
         To: mailat,
         From: "MASTROWALL<examportal@mastrowall.com>",
           Subject: "Exam Portal - MASTROWALL",
-          Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
+          Body:  embody,
+          // Body:  elemed+"<p style='text-align:right;margin:10px;font-size:14px;'>Your Key/Password: "+passk+"</p><br><span style='float:left;font-size:14px;'>N.B. Do not reply to this email</span>",
       })
           .then(function (message) {
             if(message == "OK"){
               document.getElementById('mailsented').style.display= 'block';
-              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email.';
+              document.getElementById('mailsented').innerHTML= 'Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.';
               setTimeout(function() {
                 jQuery('#mailsented').fadeOut('fast');
-              }, 10000);}});}
+              }, 20000);}});}
    cridtwo.addEventListener('submit', (event) => {
     var name =$('#eduname').val();
     var title =$('#extitle').val();
@@ -498,14 +499,13 @@ var cat = e.result;
 if(cat === "Value updated successfully!"){
   document.getElementById('stuassign').style.display ="none";
   document.getElementById('assignstuexform').style.backgroundImage="linear-gradient(0deg,white,white)";
-  document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;' align='center'><div style='max-width:1000px;text-align:left;'>"+
-  "<hr><p style='font-size:16px;'>MASTROWALL Exam Portal <span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
-  "<br><p style='font-size:16px;'>Enrollment ID: <span style='color:blue;'>" +enid+"</span></p>" +
-  "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
-  "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
-  "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-  "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://mastrowall.com/online-test'>Goto Test >></a></p>"+
-  "<hr></div></div>";
+  document.getElementById('enrolledinfo').innerHTML = "<div style='padding:20px;min-height:300px;font-family: verdana;' align='center'><div style='max-width:1000px;text-align:left;'>"+
+"<hr><p><span style='float:left;'><img src='https://mastrowall.com/images/logoRecBWsvg.svg' style='width:25px;'></span><span style='margin-left:5px;font-size:16px;color:#666666;'><b>M A S T R O W A L L | <a target='_blank' href='https://mastrowall.com/online-test/' style='text-decoration:none;color:#0c29cd;'>Online Test</a></b></a></span><span style='float:right;font-size:12px;'>"+currentTime+"</span></p><hr>"+
+"<br><p style='font-size:16px;'>Enrollment ID: <span style='color:#0c29cd;'><b>" +enid+"</b></span></p>" +
+"<p style='font-size:16px;'>Name: <b>" +namestu+"</b></p>" +
+"<p style='font-size:16px;'>Exam ID: <b>" +examid+"</b></p>" +
+"<p style='font-size:16px;'>Registered Email ID: <em>" +eid+"</em></p><br><hr>"+
+"<div><p style='font-size:14px;width:100%;line-height:160%;display:block;'><span style='float:left;line-height:160%;display:block;'>©️ M A S T R O W A L L</span><a style='font-size:16px;color:#0c29cd;text-decoration:none;float:right;line-height:160%;display:block;' target='_blank' href='https://mastrowall.com/online-test/'>Go to Test >></a></p></div><br></div></div>";
   document.getElementById('actionbtnenroll').style.display="block";
   sendStmail();
 }
@@ -520,15 +520,15 @@ function sendStmail() {
       To: mailat,
       From: "MASTROWALL<examportal@mastrowall.com>",
         Subject: "Exam Portal - MASTROWALL",
-        Body:  elemed+"<br><span style='float:center;font-size:14px;'>N.B. Do not reply to this email</span>",
+        Body:  elemed+"<br><p style='text-align:center;font-size:14px;'>N.B. Do not reply to this email</p>",
     })
         .then(function (message) {
           if(message == "OK"){
       document.getElementById('mailsentstu').style.display= 'block';
-      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+      document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.';
       setTimeout(function() {
         jQuery('#mailsentstu').fadeOut('fast');
-      }, 10000);
+      }, 20000);
           }
         
         });
@@ -705,7 +705,7 @@ function createnewexid(){
     "</span><hr>"+"Title: "+"<span style='font-weight:bold;'>"+title+"</span><hr>"+
     "Description: "+"<span style='font-weight:bold;'>"+descp+"</span><hr>"+
     "Exam Pass For Students: "+"<span style='color:blue;'>"+examp+"</span>"+"<hr>"+
-    "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Goto Test</a></span>"+
+    "<span style='float:left;'>M A S T R O W A L L | <a href='https://mastrowall.com/online-test' style='text-decoration:none;'>Go to Test</a></span>"+
     "<span style='float:right;'>"+"<span style='font-size:16px;color:#1a2ca5;padding:4px 6px;'>"+title+" </span> "+
     "By "+" "+"<span style='font-size:18px;color:#1a2ca5;padding:4px 6px;'>"+name+" </span>"+
     "|||||||||||||||||||||||||||</span>"+"</div><hr><hr>";
@@ -741,7 +741,7 @@ function examresultpdf() {
   var elem3 = document.getElementById("qsetanst");
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
       oPrntWin.document.open();
-      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div style=\"text-align:right;font-size:18px;font-weight:400;background-color:#d6d6d6;padding:10px;max-width:1000px;\">" + elem2.innerHTML + "<\/div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\">M A S T R O W A L L<\/a><\/h4><\/div><\/center><\/body><\/html>");
+      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"online-test/css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
       oPrntWin.document.close();
  }
 

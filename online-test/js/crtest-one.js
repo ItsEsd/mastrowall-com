@@ -239,7 +239,7 @@ return false;
     "<p style='font-size:16px;'>Name: " +namestu+"</p>" +
     "<p style='font-size:16px;'>Exam ID: " +examid+"</p>" +
     "<p style='font-size:16px;'>Registered Email ID: " +eid+"</p><br><hr>"+
-    "<p align='center'><a style='font-size:16px;color:blue;text-decoration:none;' href='https://mastrowall.com/online-test'>Exam Portal >></a></p>"+
+    "<p align='center'><a target='_blank' style='font-size:16px;color:blue;text-decoration:none;' href='https://mastrowall.com/online-test'>Online Test >></a></p>"+
     "<hr></div></div>";
     document.getElementById('actionbtnenroll').style.display="block";
     sendStmail();
@@ -268,7 +268,7 @@ return false;
           .then(function (message) {
             if(message="OK"){
               document.getElementById('mailsentstu').style.display= 'block';
-              document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email.';
+              document.getElementById('mailsentstu').innerHTML= 'Credentials sent to your email. Check Junk folder also. Do not forget to save or take a print.';
               setTimeout(function() {
                 jQuery('#mailsentstu').fadeOut('fast');
               }, 10000);
