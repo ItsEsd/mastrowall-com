@@ -70,13 +70,13 @@ expone.addEventListener('submit', (event) => {
           if(qsopsimg =="null"){ var k1 = k+1;
             document.getElementById("viewqset").innerHTML = "<div class='qsecdiv-"+k1+"'  style='font-size:16px;padding:20px;'><div style='background-color:white;padding:20px;'>"+
             "<p style='font-size:14px;font-weight:bold;'>Question No."+k1+"</p><p>"+qs +"</p><div class='showqstimg' align='center'><img class='qrefimg' style='pointer-events:none;' "+
-            "src='"+qsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+            "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
             "<div><p>A. "+qstateops2[k].substring(1)+"</p></div>"+
             "<div><p>B. "+qstateops2[k+1].substring(2)+"</p></div>"+
             "<div><p>C. "+qstateops2[k+2].substring(2)+"</p></div>"+
             "<div><p>D. "+qstateops2[k+3].substring(2)+"</p></div>"+
             "<div class='showopsimg'><img class='oprefimg' style='pointer-events:none;' "+
-            "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+            "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
             "<br><div align='right'><form>"+
             "<input type='text' name='qnst' id='ops"+k1+"' value='Not Answered' style='display:none;'/>"+
             "<input type='text' class='opch' id='opchoice"+k1+"' value='Not Answered' disabled/>"+
@@ -93,10 +93,10 @@ expone.addEventListener('submit', (event) => {
             var k1 = k+1;
             document.getElementById("viewqset").innerHTML = "<div  class='qsecdiv-"+k1+"' style='font-size:16px;padding:20px;'><div style='background-color:white;padding:20px;'>"+
             "<p style='font-size:14px;font-weight:bold;'>Question No."+k1+"</p><p>"+qs +"</p><div class='showqstimg' align='center'><img class='qrefimg' style='pointer-events:none;' "+
-            "src='"+qsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+            "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
            
             "<div class='showopsimg'><img class='oprefimg' style='pointer-events:none;' "+
-            "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+            "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
             "<br><div align='right'><form>"+
             "<input type='text' name='qnst' id='ops"+k1+"' value='Not Answered' style='display:none;'/>"+
             "<input type='text' class='opch' id='opchoice"+k1+"' value='Not Answered' disabled/>"+
@@ -120,13 +120,13 @@ expone.addEventListener('submit', (event) => {
            // console.log(qsopsimg);
            if(qsopsimg=="null"){document.getElementById("viewqset").innerHTML += "<div class='qsecdiv-"+kq+"' style='font-size:16px;padding:20px;'><div style='background-color:white;padding:20px;'>"+
            "<p style='font-size:14px;font-weight:bold;'>Question No."+kq+"</p><p>"+qs +"</p><div class='showqstimg' align='center'><img class='qrefimg' style='pointer-events:none;' "+
-           "src='"+qsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+           "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
            "<div><p>A. "+qstateops2[opq].substring(2)+"</p></div>"+
            "<div><p>B. "+qstateops2[opq+1].substring(2)+"</p></div>"+
            "<div><p>C. "+qstateops2[opq+2].substring(2)+"</p></div>"+
            "<div><p>D. "+qstateops2[opq+3].substring(2)+"</p></div>"+
            "<div class='showopsimg'><img class='oprefimg' style='pointer-events:none;' "+
-           "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+           "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
            "<br><div align='right'><form>"+
            "<input type='text' name='qnst' id='ops"+kq+"' value='Not Answered' style='display:none;'/>"+
            "<input type='text' class='opch' id='opchoice"+kq+"' value='Not Answered' disabled/>"+
@@ -141,10 +141,10 @@ expone.addEventListener('submit', (event) => {
             else{
               document.getElementById("viewqset").innerHTML += "<div class='qsecdiv-"+kq+"'  style='font-size:16px;padding:20px;'><div style='background-color:white;padding:20px;'>"+
               "<p style='font-size:14px;font-weight:bold;'>Question No."+kq+"</p><p>"+qs +"</p><div class='showqstimg' align='center'><img class='qrefimg' style='pointer-events:none;' "+
-              "src='"+qsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+              "src='"+qsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
             
               "<div class='showopsimg'><img class='oprefimg' style='pointer-events:none;' "+
-              "src='"+qsopsimg+"' onerror='this.onerror=null;this.src= `/images/fakefu.png`;'></div>"+
+              "src='"+qsopsimg+"' onerror='this.onerror=null;this.style.display=`none`;'></div>"+
               "<br><div align='right'><form>"+
               "<input type='text' name='qnst' id='ops"+kq+"' value='Not Answered' style='display:none;'/>"+
               "<input type='text' class='opch' id='opchoice"+kq+"' value='Not Answered' disabled/>"+
@@ -203,7 +203,7 @@ function showqsec(label){
   var $scrollTo = $('.qsecdiv-'+posofdiv);
   
   $container.animate({
-    scrollTop: $scrollTo.offset().top-60},0000); 
+    scrollTop: $scrollTo.offset().top-60},0); 
 
 }
 
