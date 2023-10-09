@@ -400,7 +400,7 @@ a = shuffle(a);
 var fin;
 for(var d=0;d<a.length;d++){
   fin = a[d];
-    document.getElementById('choosebcgr').innerHTML +="<img onerror='this.onerror=null;this.src= `../images/imgonerror.svg`' class='chsbcg' src='"+chsbc[fin]+"' onclick='chngbackground(this)'>";
+    document.getElementById('choosebcgr').innerHTML +="<img onerror='this.src= `../images/imgonerror.svg`' class='chsbcg' src='"+chsbc[fin]+"' onclick='chngbackground(this)'>";
   }
     });
     function chngbackground(label){
