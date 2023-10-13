@@ -1816,7 +1816,25 @@ height:40px;
   display:none;
   margin-top: -40px;
 }
-
+#crtans{
+  height:139px;
+  overflow-y:auto;
+  border:1px solid grey;
+  padding:5px;
+}
+  #crtans::-webkit-scrollbar {
+  width:6px;
+  }
+  #crtans::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  }
+  #crtans::-webkit-scrollbar-track {
+  background: #212121;
+  border:2.5px solid white;
+  }
+  #crtans ::-webkit-scrollbar-thumb:hover {
+  background: #ccccccd6;
+  }
 #chresform{
   background-image: linear-gradient(-45deg,#cd0ca3,#2441e6);
 }
