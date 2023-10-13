@@ -11,14 +11,17 @@ $(document).ready(function(){
   });
 });
 cridone.addEventListener('submit', (event) => {
-   $("#cridtwo").show();
-   $("#cridone").hide();
 var hr = $('#timedurhr').val();
 var min = $('#timedurmin').val();
 var tmsec = ((hr*3600) + (min*60))*1000;
+if(tmsec!==0){
+  $("#cridtwo").show();
+  $("#cridone").hide();
 var str = hr+" "+"Hour"+" "+min+" "+"Minutes";
 document.getElementById('totalsec').value= tmsec;
-document.getElementById('timestr').value= str;});
+document.getElementById('timestr').value= str;
+}
+  });
   jQuery('#confirmpasskey').on('keyup', function() {
     if (jQuery('#createpasskey').val() == jQuery('#confirmpasskey').val()) {
       jQuery('#matched').html('Matching').css('font-size', '12px');
@@ -739,9 +742,12 @@ function examresultpdf() {
   var elem1 = document.getElementById("previews");
   var elem2 = document.getElementById("eduinfofordqset");
   var elem3 = document.getElementById("qsetanst");
+  var pdnme = document.getElementById("eduextitle").innerText;
+  var pdby = document.getElementById("eduexname").innerText;
+  var title = pdnme +" by "+pdby;
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
       oPrntWin.document.open();
-      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal<\/title><link rel=\"stylesheet\" href=\"online-test/css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
+      oPrntWin.document.write("<!doctype html><html><head><title>"+title+" - MASTROWALL - Service Portal<\/title><link rel=\"stylesheet\" href=\"online-test/css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
       oPrntWin.document.close();
  }
 
