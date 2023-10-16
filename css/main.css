@@ -1429,10 +1429,16 @@ display:none;
   
 padding:20px;
 }
-#opsimg,#stimg{
+#opsimg{
   font-size: 14px;
   float:left;
   margin-top:10px;}
+
+  #stimg{
+    font-size: 14px;
+    display:inline-block;
+    width:200px;
+    margin-top:10px;}
 
 #formcontainerexid{
   width:98%;
@@ -1570,6 +1576,7 @@ font-size: 16px;
 
 }
 #conq{
+  width:100%;
   height:240px;
   border:2px solid #6a67fa;
   overflow-y:scroll;
@@ -2053,4 +2060,34 @@ border-color:#1b1b1b;
 
 #cogelemhead span{
   font-size: 20px;font-weight: 400;
+}
+#admntl{
+  float:right;
+  margin-top:10px;
+  font-size: 14px;
+}
+.modalot {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000000;
+}
+.modalot iframe{
+height:85vh;
+border:0px;
+border-radius: 10px;
+width:100%;
+}
+.modalot-content {
+  background-color: #fff;
+  margin: 3% auto;
+  padding: 5px;
+  width: 90%;
+  max-width:800px;
+  text-align: center;
+  border-radius: 10px;
 }

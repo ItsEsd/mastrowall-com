@@ -462,4 +462,3 @@ conq.addEventListener('input',(event) =>{
   function ctrlcrtexid(e){
    // console.log(e.result);
   }
-  
