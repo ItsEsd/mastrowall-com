@@ -320,7 +320,7 @@ function show_wall() {
       '<input class="empid_n" value="'+json.records[r].EmpId+'" style="display:none;"></div></div>';
       $('html,body').animate({
         scrollTop: $("#showhtml").offset().top
-      }, 0000);
+      }, 0);
     }
     $(btn_notesmore).on("click", function(e) {
       if (ListIndex < numberofList) {
@@ -542,7 +542,7 @@ function show_wall_lec() {
       '<input class="empid_v" value="'+json.records[v].EmpId+'" style="display:none;"></div></div>';
       $('html,body').animate({
           scrollTop: $("#showhtml_lec").offset().top
-        }, 0000);
+        }, 0);
   
   }
     $(btn_lecmore).on("click", function(e) {
