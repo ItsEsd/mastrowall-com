@@ -4,6 +4,19 @@ document.getElementById('conq').style.border='2px solid #6a67fa';
 var innerh = document.getElementById('conq').innerHTML;
 document.getElementById('qst').value = innerh;
 });
+const editableDiv = document.getElementById("conq");
+  editableDiv.addEventListener("input", function() {
+    const content = editableDiv.textContent;
+    const modifiedContent = content.replace(/"/g, "'");
+    const selection = window.getSelection();
+    const range = selection.getRangeAt(0);
+    const startOffset = range.startOffset;
+    editableDiv.textContent = modifiedContent;
+    range.setStart(editableDiv.firstChild, startOffset);
+    range.setEnd(editableDiv.firstChild, startOffset);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  });
 $(document).ready(function(){
   document.querySelector('[contenteditable]').addEventListener('paste', function(event) {
     event.preventDefault();
@@ -844,3 +857,69 @@ function calexnt() {
         modalep.style.display = "none";
     }
     });
+
+     
+  const editor = document.getElementById("conq");
+  const openDialogButton = document.getElementById("openDialog");
+
+  const dialog = document.createElement("div");
+  dialog.classList.add("math-operator-dialog");
+  dialog.id = "dialog";
+  document.body.appendChild(dialog);
+
+  const operators = [
+      '∀', '∁', '∂', '∃', '∄', '∅', '∆', '∇', '∈', '∉', '∊', '∋', '∌', '∍', '∎', '∏', '∐', '∑',
+      '−', '∓', '∔', '∕', '∖', '∗', '∘', '∙', '√', '∛', '∜', '∝', '∞', '∟', '∠', '∡', '∢', '∣', '∤', '∥',
+      '∦', '∧', '∨', '∩', '∪', '∫', '∬', '∭', '∮', '∯', '∰', '∱', '∲', '∳', '∴', '∵', '∶', '∷', '∸', '∹',
+      '∺', '∻', '∼', '∽', '∾', '∿', '≀', '≁', '≂', '≃', '≄', '≅', '≆', '≇', '≈', '≉', '≊', '≋', '≌', '≍',
+      '≎', '≏', '≐', '≑', '≒', '≓', '≔', '≕', '≖', '≗', '≘', '≙', '≚', '≛', '≜', '≝', '≞', '≟', '≠', '≡',
+      '≢', '≣', '≤', '≥', '≦', '≧', '≨', '≩', '≪', '≫', '≬', '≭', '≮', '≯', '≰', '≱', '≲', '≳', '≴', '≵',
+      '≶', '≷', '≸', '≹', '≺', '≻', '≼', '≽', '≾', '≿', '⊀', '⊁', '⊂', '⊃', '⊄', '⊅', '⊆', '⊇', '⊈',
+      '⊉', '⊊', '⊋', '⊌', '⊍', '⊎', '⊏', '⊐', '⊑', '⊒', '⊓', '⊔', '⊕', '⊖', '⊗', '⊘', '⊙', '⊚',
+      '⊛', '⊜', '⊝', '⊞', '⊟', '⊠', '⊡', '⊢', '⊣', '⊤', '⊥', '⊦', '⊧', '⊨', '⊩', '⊪', '⊫', '⊬',
+      '⊭', '⊮', '⊯', '⊰', '⊱', '⊲', '⊳', '⊴', '⊵', '⊶', '⊷', '⊸', '⊹', '⊺', '⊻', '⊼', '⊽', '⊾', '⊿',
+      '⋀', '⋁', '⋂', '⋃', '⋄', '⋅', '⋆', '⋇', '⋈', '⋉', '⋊', '⋋', '⋌', '⋍', '⋎', '⋏', '⋐', '⋑', '⋒',
+      '⋓', '⋔', '⋕', '⋖', '⋗', '⋘', '⋙', '⋚', '⋛', '⋜', '⋝', '⋞', '⋟', '⋠', '⋡', '⋢', '⋣', '⋤', '⋥',
+      '⋦', '⋧', '⋨', '⋩', '⋪', '⋫', '⋬', '⋭', '⋮', '⋯', '⋰', '⋱', '⋲', '⋳', '⋴', '⋵', '⋶', '⋷', '⋸', '⋹',
+      '⋺', '⋻', '⋼', '⋽', '⋾', '⋿', 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π',
+      'ρ', 'ς', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϕ'
+  ];
+
+  function createDialog() {
+    dialog.innerHTML = "";
+    operators.forEach((operator) => {
+        const operatorButton = document.createElement("button");
+        operatorButton.textContent = operator;
+        operatorButton.addEventListener("click", () => {
+            insertOperator(operator);
+            dialog.style.display = "none";
+        });
+        dialog.appendChild(operatorButton);
+    });
+}
+
+openDialogButton.addEventListener("click", (e) => {
+    createDialog();
+    dialog.style.display = "block";
+    e.stopPropagation();
+});
+
+function insertOperator(operator) {
+  const selection = window.getSelection();
+  if (editor.contains(selection.anchorNode)) {
+      const range = selection.getRangeAt(0);
+      const operatorNode = document.createTextNode(operator);
+      range.insertNode(operatorNode);
+      range.collapse();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      editor.focus();
+  }
+  dialog.style.display = "none";
+}
+
+window.addEventListener("click", (event) => {
+    if (event.target !== openDialogButton && event.target !== dialog) {
+        dialog.style.display = "none";
+    }
+});
