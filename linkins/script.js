@@ -237,9 +237,9 @@ function insert_value() {
   var id1 = $("#id").val();
   var grade = $("#grade").val();
   var empid = $("#empid_note").val();
-  var row1 = escape($("#ntitle").val());
-  var row2 =escape($("#npic").val());
-  var row3 = escape($("#nlink").val());
+  var row1 = encodeURIComponent($("#ntitle").val());
+  var row2 =encodeURIComponent($("#npic").val());
+  var row3 = encodeURIComponent($("#nlink").val());
   var row4 = $("#subject").val();
   var row5 = $("#empower").val();
   if (row1 != 0 && row2 != 0 && row3 != 0 && row4 != 0 && row5 != 0) {
@@ -444,8 +444,8 @@ function insert_value_lec() {
   var id1 = $("#id_lec").val(); 
   var grade = $("#grade_lec").val();
   var empid = $("#empid_vid").val();
-  var row1 = escape($("#lectitle").val());
-  var row2 = escape($("#leclink").val());
+  var row1 = encodeURIComponent($("#lectitle").val());
+  var row2 = encodeURIComponent($("#leclink").val());
   var row4 = $("#subject_lec").val();
   var row5 = $("#empowered").val();
   if (row1 != 0 && row2 != 0 && row4 != 0 && row5 != 0) {

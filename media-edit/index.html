@@ -118,7 +118,7 @@
 
           function PreTOD() {
             var TOD, k;
-            k = unescape(document.getElementById("inmedia1_json").value);
+            k = decodeURIComponent(document.getElementById("inmedia1_json").value);
             TOD = JSON.parse(k);
             $('#mwall_inmedia1').empty();
             var j = 0;
@@ -144,7 +144,7 @@
             var upnews = $("#inmedia1_json").val();
             var idpm = $("#idop").val();
             var emid = $("#em").val();
-            var unEScINM1 = unescape(upnews);
+            var unEScINM1 = decodeURIComponent(upnews);
             var parsedINM1 = JSON.parse(unEScINM1);
             var error1 = parsedINM1.conLink1[0].length;
             var error2 = parsedINM1.conLink1[1].length;
@@ -236,7 +236,7 @@
 
           function PreTOD2() {
             var TOD, k;
-            k = unescape(document.getElementById("inmedia2_json").value);
+            k = decodeURIComponent(document.getElementById("inmedia2_json").value);
             TOD = JSON.parse(k);
             $('#mwall_inmedia2').empty();
             var j = 0;
@@ -262,7 +262,7 @@
             var upnews2 = $("#inmedia2_json").val();
             var idpm = $("#idop").val();
             var emid = $("#em").val();
-            var unEScINM2 = unescape(upnews2);
+            var unEScINM2 = decodeURIComponent(upnews2);
             var parsedINM2 = JSON.parse(unEScINM2);
             var error1 = parsedINM2.conLink1[0].length;
             var error2 = parsedINM2.conLink1[1].length;
@@ -443,7 +443,7 @@
 
         function previewQuote() {
           var Quote, a;
-          a = unescape(document.getElementById("quotes_json").value);
+          a = decodeURIComponent(document.getElementById("quotes_json").value);
           Quote = JSON.parse(a);
           $('#preview_quote').empty();
           var j = 0;

@@ -614,8 +614,8 @@
         var fo = $("#genK").val();
         var itemn = $("#genId").val();
         var reci = $("#toddoc").val();
-        document.getElementById("preId").value=JSON.parse(unescape(itemno));
-        document.getElementById("preK").value=JSON.parse(unescape(food));
+        document.getElementById("preId").value=JSON.parse(decodeURIComponent(itemno));
+        document.getElementById("preK").value=JSON.parse(decodeURIComponent(food));
         document.getElementById("topictod").style.display = "block";
           document.getElementById("AppShare").style.display = "block";
           document.getElementById("copytoC").style.display = "block";
@@ -676,7 +676,7 @@
                 document.getElementById('notfound').style.display = "none";
                 var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
                 var inHTML = atob(prepostpre.TODContent);
-                document.getElementById("previewPost").innerHTML = unescape(inHTML);
+                document.getElementById("previewPost").innerHTML = decodeURIComponent(inHTML);
                 document.getElementById("previewPostTime").innerHTML = reslt[0].TimeStamp;
                 document.getElementById("previewPostId").innerHTML = "ID: " + JSON.parse(reslt[0].TODidd);
                 document.getElementById("previewPostCreator").innerHTML = JSON.parse(reslt[0].TODAddmin);

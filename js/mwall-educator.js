@@ -173,7 +173,7 @@ function live_tod() {
 
 function ProTOD() {
   var TOD, k;
-  k = unescape(document.getElementById("json_tod").value);
+  k = decodeURIComponent(document.getElementById("json_tod").value);
   TOD = JSON.parse(k);
   var error1 = TOD.thumb_ref[0];
   var error2 = TOD.thumb_ref[1];
@@ -251,7 +251,7 @@ $(document).ready(function() {
 function enablePrePost() {
   $('form').submit(function() {
     var TOD, k;
-    k = unescape(document.getElementById("json_tod").value);
+    k = decodeURIComponent(document.getElementById("json_tod").value);
     TOD = JSON.parse(k);
     var error1 = TOD.thumb_ref[0];
     var error2 = TOD.thumb_ref[1];

@@ -241,7 +241,7 @@
 
       function LinkToJson() {
         var val = $id("RawJson").value;
-        val = escape(val.split('/n').join(' ').split('/r').join(' '));
+        val = encodeURIComponent(val.split('/n').join(' ').split('/r').join(' '));
         $id("InvisibleLinkUrl").value = val;
         $id("InvisibleLink").submit();
       }
