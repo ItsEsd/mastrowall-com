@@ -302,7 +302,7 @@ $.fn.serializeObject = function() {
 };
 $(function() {
   $('form').submit(function() {
-    document.getElementById("json_tod").value = escape(JSON.stringify($('form').serializeObject()));
+    document.getElementById("json_tod").value = encodeURIComponent(JSON.stringify($('form').serializeObject()));
     document.getElementById("prepost").style.display = "block";
     return false;
   });

@@ -538,7 +538,7 @@
         };
         $(function() {
           $('form[id="mwall_inmedia#1"]').submit(function() {
-            document.getElementById("inmedia1_json").value = escape(JSON.stringify($('form[id="mwall_inmedia#1"]').serializeObject()));
+            document.getElementById("inmedia1_json").value = encodeURIComponent(JSON.stringify($('form[id="mwall_inmedia#1"]').serializeObject()));
             document.getElementById("inmedia1_json_unesc").value = JSON.stringify($('form[id="mwall_inmedia#1"]').serializeObject());
             document.getElementById("postn").disabled = false;
             document.getElementById("inmpre1").disabled = false;
@@ -547,7 +547,7 @@
         });
         $(function() {
           $('form[id="mwall_inmedia#2"]').submit(function() {
-            document.getElementById("inmedia2_json").value = escape(JSON.stringify($('form[id="mwall_inmedia#2"]').serializeObject()));
+            document.getElementById("inmedia2_json").value = encodeURIComponent(JSON.stringify($('form[id="mwall_inmedia#2"]').serializeObject()));
             document.getElementById("inmedia2_json_unesc").value = JSON.stringify($('form[id="mwall_inmedia#2"]').serializeObject());
             document.getElementById("postn2").disabled = false;
             document.getElementById("inmpre2").disabled = false;
@@ -563,7 +563,7 @@
         });
         $(function() {
           $('form[id="quote_edit"]').submit(function() {
-            document.getElementById("quotes_json").value = escape(JSON.stringify($('form[id="quote_edit"]').serializeObject()));
+            document.getElementById("quotes_json").value = encodeURIComponent(JSON.stringify($('form[id="quote_edit"]').serializeObject()));
             document.getElementById("quotes_json_unesc").value = JSON.stringify($('form[id="quote_edit"]').serializeObject());
             document.getElementById("prequote").disabled = false;
             document.getElementById("postq").disabled = false;

@@ -529,11 +529,11 @@
       document.getElementById("poTOD").addEventListener("click", insertgenTOD);
       function insertgenTOD() {
         var TOD_script_url = "https://script.google.com/macros/s/AKfycbyWEr6h0j11fjP2hudAJ-2P_21jRbSd8DC4pxqL_YiskIok_wnURI6lEcu_nyGIzlAbZQ/exec";
-        var title = escape(JSON.stringify($("#todTitle").val()));
-        var creator = escape(JSON.stringify($("#creatorN").val()));
-        var food = escape(JSON.stringify($("#genK").val()));
-        var itemno = escape(JSON.stringify($("#genId").val()));
-        var recip = escape(JSON.stringify($("#toddoc").val()));
+        var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
+        var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
+        var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
         var splitString =splitStringByLength(recip,4500);
         var clln = splitString.length;   var urlmd = [];var urmi;
@@ -603,11 +603,11 @@
               document.getElementById("loader-potd").style.display ="none";
               document.getElementById("loader-potd").style.display ="none";
               document.getElementById('genstrngary').value="";
-              var title = escape(JSON.stringify($("#todTitle").val()));
-        var creator = escape(JSON.stringify($("#creatorN").val()));
-        var food = escape(JSON.stringify($("#genK").val()));
-        var itemno = escape(JSON.stringify($("#genId").val()));
-        var recip = escape(JSON.stringify($("#toddoc").val()));
+              var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
+        var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
+        var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
         var ti = $("#todTitle").val();
         var cre = $("#creatorN").val();
@@ -620,8 +620,8 @@
           document.getElementById("AppShare").style.display = "block";
           document.getElementById("copytoC").style.display = "block";
           document.getElementById("topictod").innerHTML = "Topic Posted.";
-          var itemno1 = escape(JSON.stringify($("#genId").val()));
-          var food1 = escape(JSON.stringify($("#genK").val()));
+          var itemno1 = encodeURIComponent(JSON.stringify($("#genId").val()));
+          var food1 = encodeURIComponent(JSON.stringify($("#genK").val()));
           var item = JSON.stringify($("#genId").val());
           var foodF = JSON.stringify($("#genK").val());
           document.getElementById("postT").style.display="none";
