@@ -344,6 +344,7 @@ $.getJSON(url, function(json) {
       document.getElementById("eduexdescp").innerHTML =json.records[i].ExamDescp;
       document.getElementById("eduextimedur").innerHTML =json.records[i].TDuration;
       document.getElementById("eduexmpss").innerHTML =JSON.parse(json.records[i].ExamPass);
+      document.getElementById('stdassign').disabled=false;
 var qststr = json.records[i].QuesSTFinal;
 var qststrlen =qststr.length;
 if(qststr != ""){
@@ -760,7 +761,7 @@ function examresultpdf() {
   var title = pdnme +" by "+pdby;
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
       oPrntWin.document.open();
-      oPrntWin.document.write("<!doctype html><html><head><title>"+title+" - MASTROWALL - Service Portal<\/title><link rel=\"stylesheet\" href=\"online-test/css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:40px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
+      oPrntWin.document.write("<!doctype html><html><head><title>"+title+" - MASTROWALL - Service Portal<\/title><link rel=\"stylesheet\" href=\"online-test/css/vendor/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"online-test/css/dqset.css\"><\/head><body onload=\"print();\" style=\"margin:20px;\"><center><div class='row' style='background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;'><div class='col-md-6'><div style=\"text-align:left;font-size:18px;font-weight:400;\">" + elem2.innerHTML + "<\/div></div><div class='col-md-6'><a target='_blank' href=\"https://mastrowall.com\" style='cursor:pointer;'><img src=\"https://mastrowall.com/images/logoRecBWsvg.svg\" style='width:80px;float:right;display:block;' oncontextmenu=\"return false;\"><\/a></div></div><hr style=\"max-width:1000px;\"><div align=\"center\" style=\"max-width:1000px;\"><div>" + elem1.innerHTML + "<\/div><div align=\"left\" style=\"max-width:1000px;background-color:#d6d6d6;padding:10px;\">Answer Key:<br>"+elem3.innerHTML+"<\/div><hr style=\"max-width:1000px;\"><h4><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#d6d6d6;\"><b>M A S T R O W A L L</b><\/a><\/h4><\/div><\/center><\/body><\/html>");
       oPrntWin.document.close();
  }
 
@@ -928,3 +929,43 @@ window.addEventListener("click", (event) => {
         dialog.style.display = "none";
     }
 });
+
+
+document.getElementById('stdassign').addEventListener('click', function() {
+  var button =document.getElementById('stdassign');
+  var exmid = document.getElementById('chexid').value;
+  var exps = document.getElementById('eduexmpss').innerText;
+  var aslnk = 'https://mastrowall.com' + "?e=" + encodeURIComponent(exmid) + "&p=" + encodeURIComponent(exps) + "&valid=true";
+  var tempTextArea = document.createElement('textarea');
+  tempTextArea.value = aslnk; console.log(aslnk);
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
+  try {
+    document.execCommand('copy'); 
+    console.log('Link copied to clipboard: ' + aslnk);
+    button.innerText = "Copied!";
+    setTimeout(function() {
+      button.innerText = "Get link: Student Enroll";
+    }, 10000); 
+  } catch (err) {
+    console.error('Unable to copy link to clipboard');
+  }
+  document.body.removeChild(tempTextArea); 
+});
+
+  var url_stringn = window.location.href;
+  var urlex = new URL(url_stringn);
+  var dig = urlex.searchParams.get("e");
+  var key = urlex.searchParams.get("p");
+  var rtv = urlex.searchParams.get("valid");
+  if (rtv == "true") {
+    setTimeout(function(){
+      document.getElementById('falsesecback').style.display = 'block';
+      document.getElementById('exmprtl').click();
+      document.getElementById('assgntst').click();
+      document.getElementById('exid').value = decodeURIComponent(dig); 
+      document.getElementById('exid').disabled =true;
+      document.getElementById('expass').value = key; 
+      document.getElementById('expass').disabled =true;
+    },2000);
+  }
