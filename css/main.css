@@ -1825,7 +1825,7 @@ height:40px;
 }
 #crtans{
   height:139px;
-  overflow-y:auto;
+  overflow-y:scroll;
   border:1px solid grey;
   padding:5px;
 }
@@ -1901,17 +1901,31 @@ z-index: 1;
   display:none;
   z-index: 100;
 }
-
-#stresultall::-webkit-scrollbar {
+  
+#d365eqw::-webkit-scrollbar {
   width: 10px;
   color: #0a0a0a;
 }
-
+#d365eqw{
+  overflow-y: scroll;
+  max-height:350px;
+  max-width:600px;
+  background-color: white;
+  display: block;
+}
+#exmdscrpprfn{
+  text-align: left;
+  padding:20px;
+  padding-bottom:0px;
+  font-size: 14px;
+  background-color: #e5e5e5;
+}
+.exdcrtedt{
+  margin-right:5px;
+}
 #stresultall{
   background-color:white;
   padding:20px;
-  overflow-y: scroll;
-  max-height:300px;
   max-width:600px;
 }
 

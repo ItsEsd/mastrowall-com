@@ -349,27 +349,26 @@
     margin-top: -40px;
   }
   #crtans{
+    padding:5px;
+  }
+  #crtans2{
     height:139px;
     overflow-y:scroll;
     border:1px solid grey;
-    padding:5px;
+    padding:10px;
   }
-  #crtans::-webkit-scrollbar {
+    #crtans2::-webkit-scrollbar {
     height: 10px;
     width: 6px;
     }
-
-    /* Track */
-    #crtans ::-webkit-scrollbar-track {
+    #crtans2 ::-webkit-scrollbar-track {
     background: #999a9b98;
     }
 
-    /* Handle */
-    #crtans ::-webkit-scrollbar-thumb {
+    #crtans2 ::-webkit-scrollbar-thumb {
     background: #424242a8;
     }
-    /* Handle on hover */
-    #crtans ::-webkit-scrollbar-thumb:hover {
+    #crtans2 ::-webkit-scrollbar-thumb:hover {
     background: #ccccccd6;
     }
   #chresform{

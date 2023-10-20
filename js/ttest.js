@@ -593,8 +593,8 @@ else{
 document.getElementById('chresform').style.display = "none";
   document.getElementById('scrbrd').style.display = "block";
 document.getElementById('crtans').style.display = "block";
-document.getElementById('crtans').innerHTML= "<div><p style='text-align:left;font-size:14px;'>Educator: "+json.records[i].EducatorName+
-"<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"</p></div>"+
+document.getElementById('crtans').innerHTML= "<div><p style='text-align:left;font-size:16px;'>Educator: "+json.records[i].EducatorName+
+"<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>"+
 "<p style='font-size:20px;color:green;'>Correct Answer: "+ count+"</p>";
 }
   }
@@ -632,7 +632,7 @@ document.getElementById('crtans').innerHTML= "<div><p style='text-align:left;fon
   document.getElementById('loader-clrq').style.display = "none";
  }
  conexeducator.addEventListener('submit', (event) => { 
-   $('#stresultall').empty();
+   $('#stresultall,#exmdscrpprfn').empty();
   var exid=$("#cpexid").val();
   var expass=JSON.stringify($("#cppass").val());
 var url1 = "https://script.google.com/macros/s/";
@@ -642,6 +642,14 @@ document.getElementById('loader-cp').style.display = "block";
 $.getJSON(url, function(json) { 
 for (var i = 0; i < json.records.length - 1; i++) {
   if (exid === json.records[i].ExamID && expass === json.records[i].ExamPass) {
+    var exmhd = '<div class="row"><div class="col-sm-8"><p>Educator Name: <b><span class="exeduinfoid">'+
+    json.records[i].EducatorName+'</span></b></p><p>Exam Title: <b><span class="exeduinfoid">'+
+    json.records[i].ExamTitle+'</span></b></p><p>Description: <b><span class="exeduinfoid">'+
+    json.records[i].ExamDescp+'</span></b></p><p>Test Duration: <b><span class="exeduinfoid">'+
+    json.records[i].TDuration+'</span></b></p><p><span class="exdcrtedt">Exam ID: <b><span class="exeduinfoid">'+
+    json.records[i].ExamID+'</span></b></span><span class="exdcrtedt">Exam Pass: <b><span class="exeduinfoid">'+
+    JSON.parse(json.records[i].ExamPass)+'</span></b></span></p></div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>';
+    document.getElementById('exmdscrpprfn').innerHTML = exmhd;
     var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
     var sprestren = restren.split(',');
     var lenstren = sprestren.length;
@@ -674,7 +682,7 @@ for (var i = 0; i < json.records.length - 1; i++) {
     document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
     document.getElementById('backcp').style.display = "block";
     document.getElementById('loader-cp').style.display = "none";
-    }}}});});
+    } }}});});
 function createnewexid(){
   document.getElementById("crtnewexid").disabled = true;
   var d = new Date();
@@ -746,10 +754,10 @@ function ctrlcrtexid(e){
  // console.log(e.result);
 }
 function examresultpdf() {
-  var elem = document.getElementById("stresultall");
+  var elem = document.getElementById("d365eqw");
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
       oPrntWin.document.open();
-      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elem.innerHTML + "<\/div><\/div><\/body><\/html>");
+      oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/css/main.css\"><\/head><body style=\"width:100%;padding:10px;background-color:white;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:1px solid #e2e2e2;\">" + elem.innerHTML + "<h4 style=\"width:100%;text-align:center;color:#0c29cd;\"><a style=\"text-decoration:none;color:#0c29cd;\" target=\"_blank\" href=\"https://mastrowall.com\">M A S T R O W A L L<\/a><\/h4><\/div><\/div><\/body><\/html>");
       oPrntWin.document.close();
  }
  function downloadqset() {
