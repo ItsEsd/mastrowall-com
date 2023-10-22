@@ -88,7 +88,7 @@ function myFunction() {
       $("#bdy").hide();
       $("#back").show();
       data.items.forEach((item) => {
-        videoData = `<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe></div> <p> <a target="_blank" style="text-decoration:none;font-size:16px; color:#161616;"href="https://www.youtube.com/watch?v=${item.id.videoId}"> ${item.snippet.title}</a> <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a></p><hr style="border-width:2px; border-color:#4d4d4d;">`;
+        videoData = `<div class="yrbrslt embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe></div> <p> <a target="_blank" style="text-decoration:none;font-size:16px; color:#161616;"href="https://www.youtube.com/watch?v=${item.id.videoId}"> ${item.snippet.title}</a> <a target="_blank" href="https://www.youtube.com/channel/${item.snippet.channelId}">${item.snippet.channelTitle}</a></p><hr style="border-width:2px; border-color:#4d4d4d;">`;
         $("#results").append(videoData);
       });
     }
