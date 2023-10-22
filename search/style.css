@@ -93,7 +93,14 @@
     background: url(https://ajsupport.com/wp-content/uploads/2020/05/Spin-Preloader.gif) center center no-repeat;
     background-size: 200px;
   }
-
+.yrbrslt{
+  background-color: #161616;
+  padding:2px;
+  border-radius: 5px;
+}
+.yrbrslt iframe{
+  border-radius: 5px;
+}
   .autocomplete-items {
     position: relative;
     box-shadow: 0 1px 6px 0 #0c09c9;
