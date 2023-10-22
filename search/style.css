@@ -347,9 +347,10 @@
   z-index: 0;
 }
 #titltesrcpromo{
-  color:rgba(255, 255, 255, 0.438);
+  color:#ffffff70;
   font-size: 24px;
   font-weight: 600;
+  z-index: 10000;
 }
 
 #gcustom{
