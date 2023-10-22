@@ -22,6 +22,9 @@
   .yrbrslt iframe{
     border-radius: 5px;
   }
+  #results{
+    z-index:20000;
+  }
   #results p{
     padding:5px;
     background-color: #1e1e1e;
