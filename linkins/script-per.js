@@ -62,7 +62,7 @@ if(dd[1]!=""){
                   }
                   $('html,body').animate({
                   scrollTop: $("#showhtml").offset().top
-                  }, 0000);
+                  }, 0);
                       }
             document.getElementById("loader").style.visibility = "hidden";
             }); });
