@@ -272,7 +272,7 @@ gtag('config', 'G-N25E2CWHPC');
       </div><div id="gmcnsl"><iframe id="opgm" sandbox="allow-scripts allow-forms allow-same-origin"></iframe></div><div id="gobcm"><span style="float:left;">e-Games | M A S T R O W A L L</span><span style="float:right;">©️ 2023 | Close</span></div></div>
 
     <div id="headsrcdiv">
-      <form id="topicsearchmw" target="hdnfrm"><input placeholder="Topic Search"  class="form-control" id="srctopichead" type="search" autocomplete="off" required/><input id="topicsrcbtn" type="submit" value="Go"/>
+      <form id="topicsearchmw" onsubmit="event.preventDefault();"><input placeholder="Topic Search"  class="form-control" id="srctopichead" type="search" autocomplete="off" required/><input id="topicsrcbtn" type="submit" value="Go"/>
       </form></div>
       <div align="center" id="mwallresult" class="pgdown">
         <button id="clstpseach" class="btn btn-danger">X</button>
@@ -518,7 +518,7 @@ gtag('config', 'G-N25E2CWHPC');
 <div id="createid" class="otserviceinfo"><div class="otservprp">
 <span class="closeot" style="float:right;" title="Close">X</span>
 <h2>Create Test ID</h2><hr style="border-width: 2px;border-color:#ffffff;">
-<form id="cridone" target="hdnfrm" autocomplete="off">
+<form id="cridone" onsubmit="event.preventDefault();" autocomplete="off">
 <div id="crtestone">
 <label>Name:</label>
 <input type="text" class="form-control" style="text-transform: capitalize;" id="eduname" placeholder="Full name" required disabled/><br/>
@@ -550,7 +550,7 @@ gtag('config', 'G-N25E2CWHPC');
 <input type="email" class="form-control" id="edueid" placeholder="sample@example.xyz" disabled required/><br/>
 <input type="submit" class="submitform"  value="Next" id="crtidone" disabled>
 </div></form> 
-<form id="cridtwo" target="hdnfrm" style="display: none;" autocomplete="off">
+<form id="cridtwo" onsubmit="event.preventDefault();" style="display: none;" autocomplete="off">
 <input  class="form-control" id="timestr" style="display: none;" />
 <input class="form-control" id="totalsec" style="display: none;" />
 <div id="crtestthree">
@@ -606,7 +606,7 @@ gtag('config', 'G-N25E2CWHPC');
 <section>
 <div id="continueexamid" align="center">
 <div id="formcontainerexid">
-<form id="checkexid" target="hdnfrm">
+<form id="checkexid" onsubmit="event.preventDefault();">
 <label>Exam ID:</label>
 <input type="text" class="form-control" id="chexid" placeholder="Enter Exam ID" disabled required/><br>
 <label>Key:</label>
@@ -621,7 +621,7 @@ gtag('config', 'G-N25E2CWHPC');
 <section>
 <div id="otserviceexamid">
 <div id="formcontainer">
-<form target="hdnfrm" id="quesfrm" autocomplete="off">
+<form onsubmit="event.preventDefault();" id="quesfrm" autocomplete="off">
 <div id="stdiv">
 <label>Question Statement:</label><span id="qtstfalse"></span>
 <div contenteditable="true" id="conq"></div>
@@ -735,7 +735,7 @@ gtag('config', 'G-N25E2CWHPC');
 <section>
 <div id="continueeducator" align="center">
 <div id="eduexloginform">
-<form id="conexeducator"  target="hdnfrm">
+<form id="conexeducator"  onsubmit="event.preventDefault();">
 <label>Exam ID:</label>
 <input type="text" class="form-control" id="cpexid" placeholder="Enter Exam ID" required/><br>
 <label>Exam Pass:</label>
@@ -753,7 +753,7 @@ gtag('config', 'G-N25E2CWHPC');
 <section>
 <div id="assignstuexam" align="center">
 <div id="assignstuexform">
-<form id="stuassign" target="hdnfrm">
+<form id="stuassign" onsubmit="event.preventDefault();">
 <label>Name:</label>
 <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required/><br>
 <label>Email Address:</label>
@@ -775,7 +775,7 @@ gtag('config', 'G-N25E2CWHPC');
 </section>  
 <section>
 <div id="resbrd" align='center'><div id="chresform">
-<form id="chresult" target="hdnfrm">
+<form id="chresult" onsubmit="event.preventDefault();">
 <label>Exam ID:</label>
 <input class="form-control" type="text" id="checkexamid" style="
 text-align:center;" placeholder="Enter Exam ID" required/><br>
@@ -805,7 +805,7 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
 <center><div id="loader-qdd" class="spinner-border text-primary" style="display: block;margin-top:300px;"></div></center>
 
 </div></section>
-<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
+
 <!--------------------------------------------------->
 <section>
 <div id="falsesecback"></div>

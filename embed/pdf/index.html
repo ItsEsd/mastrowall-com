@@ -1,0 +1,98 @@
+
+
+
+<!-- 
+https://pdf.mastrowall.com/
+?f=%22https%3A%2F%2Fmastrowall.com%2Ffiles%2Fquick-manual%2FUSER%20MANUAL.pdf%22
+&m=USER%20MANUAL
+
+&r=true
+
+ -->
+ <!DOCTYPE html>
+<html>
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .no-border {
+      border: none;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="myForm">
+      <div class="form-group">
+        <input type="text" name="input1" value="https://pdf.mastrowall.com/?f='" disabled hidden>
+      </div>
+      <div class="form-group">
+        <input type="text" name="input2" class="form-control" placeholder="File address" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="input3" class="form-control" placeholder="File Name" required>
+      </div>
+      <button type="submit" class="btn btn-primary" name="submit" value="Create">Create</button>
+    </form>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Form Data</h2>
+      <p id="modalData"></p>
+    </div>
+  </div>
+
+  <!-- Add Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const form = document.getElementById("myForm");
+    const modal = document.getElementById("myModal");
+    const modalData = document.getElementById("modalData");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const input1 = (form.elements.input1.value);
+      const input2 = String('"'+form.elements.input2.value+'"');
+      const input3 = String("&m="+form.elements.input3.value+"&r=true");
+      const address = `Address: ${input1+input2+input3}`;
+      modalData.innerHTML = address;
+      modal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>

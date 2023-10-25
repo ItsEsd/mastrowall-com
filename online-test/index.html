@@ -663,7 +663,7 @@
   <section>
     <div id="otserviceexamid">
       <div id="formcontainer">
-        <form target="hdnfrm" id="quesfrm" autocomplete="off">
+        <form onsubmit="event.preventDefault();" id="quesfrm" autocomplete="off">
           <div id="stdiv">
             <label>Question Statement:</label>
             <textarea class="form-control" id="qst" required></textarea>
@@ -768,7 +768,7 @@
   <section>
     <div id="assignstuexam" align="center">
       <div id="assignstuexform">
-        <form id="stuassign" target="hdnfrm">
+        <form id="stuassign" onsubmit="event.preventDefault();">
           <label>Name:</label>
           <input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required /><br>
           <label>Email Address:</label>
@@ -791,7 +791,7 @@
   <section>
     <div id="resbrd" align='center'>
       <div id="chresform">
-        <form id="chresult" target="hdnfrm">
+        <form id="chresult" onsubmit="event.preventDefault();">
           <label>Exam ID:</label>
           <input class="form-control" type="text" id="checkexamid" style="text-align:center;" placeholder="Enter Exam ID" required /><br>
           <label>Enrollment ID:</label>
@@ -821,7 +821,7 @@
   <section>
     <div id="continueeducator" align="center">
       <div id="eduexloginform">
-        <form id="conexeducator" target="hdnfrm" autocomplete="off">
+        <form id="conexeducator" onsubmit="event.preventDefault();" autocomplete="off">
           <label>Exam ID:</label>
           <input type="text" class="form-control" id="cpexid" placeholder="Enter Exam ID" required /><br>
           <label>Exam Pass:</label>
@@ -839,7 +839,7 @@
   <section>
     <div id="continueexamid" align="center">
       <div id="formcontainerexid">
-        <form id="checkexid" target="hdnfrm">
+        <form id="checkexid" onsubmit="event.preventDefault();">
           <label>Exam ID:</label>
           <input type="text" class="form-control" id="chexamidedu" placeholder="Enter Exam ID" required /><br>
           <label>Key:</label>
@@ -853,7 +853,7 @@
     </div>
   </section>
   <div ng-include="'divsec/create-examid.html'"></div>
-  <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
+  
  <script src="js/tt-one.js"></script>
  <script src="js/timer.js"></script>
  <script src="js/crtest-one.js"></script>

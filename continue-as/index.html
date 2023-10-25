@@ -78,7 +78,7 @@
             </div>
             <div class="modal-body">
               <div class="container">
-                <form id="formwall" autocomplete="off" target="hdnfrm">
+                <form id="formwall" autocomplete="off" onsubmit="event.preventDefault();">
                   <div class="form-group"> <label for="FName">First Name:</label> <input type="text" class="form-control" oninput="this.value= capitalize(String(this.value));" id="fname" placeholder="First name" name="FName" minlength=2 required></div>
                   <div class="form-group"><label for="LName">Last Name:</label> <input type="text" class="form-control" oninput="this.value= capitalize(String(this.value));" id="lname" placeholder="Last name" name="LName" minlength=2 required> </div>
                   <div class="form-group"> <label for="birthday">Date of Birth:</label> <input type="date" id="dob" name="DOB" class="form-controlDOB" required> </div>
@@ -248,7 +248,7 @@
             </div>
             <div class="modal-body">
               <div class="container">
-                <form id="formwallstu" autocomplete="off" target="hdnfrm">
+                <form id="formwallstu" autocomplete="off" onsubmit="event.preventDefault();">
                   <div class="form-group"> <label for="FName">First Name:</label> <input type="text" class="form-control" oninput="this.value= capitalize(String(this.value));" id="fnamestu" placeholder="First name" name="FName" minlength=2 required></div>
                   <div class="form-group"> <label for="LName">Last Name:</label> <input type="text" oninput="this.value= capitalize(String(this.value));" class="form-control" id="lnamestu" placeholder="Last name" name="LName" minlength=2 required> </div>
                   <div class="form-group"> <label for="birthday">Date of Birth:</label> <input type="date" id="dobstu" name="DOB" class="form-controlDOB" placeholder="DD/MM/YY" required> </div>
@@ -350,7 +350,7 @@
             </div>
             <div class="modal-body">
               <div class="container">
-                <form id="formwallco" autocomplete="off" target="hdnfrm">
+                <form id="formwallco" autocomplete="off" onsubmit="event.preventDefault();">
                   <div class="form-group"> <label for="FName">First Name:</label> <input type="text" class="form-control" id="fnameco" placeholder="First name" name="FName" oninput="this.value= capitalize(String(this.value));" minlength=2 required> </div>
                   <div class="form-group"><label for="LName">Last Name:</label> <input type="text" class="form-control" id="lnameco" oninput="this.value= capitalize(String(this.value));" placeholder="Last name" name="LName" minlength=2 required> </div>
                   <div class="form-group"> <label for="birthday">Date of Birth:</label> <input type="date" id="dobco" name="DOB" class="form-controlDOB" required> </div>
@@ -516,7 +516,7 @@
       </div>
     </div>
    
-<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
+
 <script src="con-as.js">
 </script><script>
   $('#tooltipic').click(function(){
