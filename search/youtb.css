@@ -20,7 +20,9 @@
     border-top-left-radius: 10px;
   }
   .yrbrslt iframe{
-    border-radius: 5px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
   #results{
     z-index:20000;
