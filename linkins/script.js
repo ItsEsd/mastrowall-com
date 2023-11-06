@@ -683,8 +683,7 @@ var list=document.getElementsByClassName("youvidframeout");
   var posofinput = list.indexOf(label);
   var x = document.getElementsByClassName('youvidid');
  var vidid =  x[posofinput].value;
- document.getElementById('youvidfrid').src ="https://www.youtube.com/embed/"+vidid;
- 
+ document.getElementById('youvidfrid').src ="https://www.youtube.com/embed/"+vidid+"?autoplay=1";
 }
 
 function closeyouvid(){
