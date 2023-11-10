@@ -23,7 +23,7 @@ $('#signregpre').click(function(){
 });
 
 $('#goinmastro').click(function(){
-  window.open('https://mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+  window.open('https://mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
 });
 
 $('#signinuser').click(function(){
@@ -96,7 +96,7 @@ function changezpostd(){
 }
 
 $('#prosign,#exammwall').click(function(){
-    window.open('https://exam-portal.mastrowall.com/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://exam-portal.mastrowall.com/', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
 });
 
 $('#signtomdrive').click(function(){
@@ -104,11 +104,11 @@ $('#signtomdrive').click(function(){
 });
 
 $('#oplibrary').click(function(){
-    window.open('https://library.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://library.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
 });
 
 $('#opblog').click(function(){
-    window.open('https://blog.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://blog.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
 });
 
 
@@ -214,13 +214,13 @@ function openNav() {
   });
 
   $("#masthome").click(function() {
-    window.open('https://home.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://home.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
   });
   $("#astroforum").click(function() {
-    window.open('https://www.astro.mastrowall.in/forum', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('https://www.astro.mastrowall.in/forum', '_blank', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
   });
   $("#opabout").click(function() {
-    window.open('about/', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('about/', '_blank');
   });
   $(".closeotserv").click(function() {
     $('.otservice').hide('fast');
@@ -250,7 +250,7 @@ function openNav() {
   });
 
   $("#expgtotst").click(function() {
-    window.open('online-test/', '_self', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');
+    window.open('online-test/', '_self', 'location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes');
   });
 
   $("#exmpcreatid").click(function() {
