@@ -389,7 +389,7 @@ window.addEventListener('mouseup', function(event) {
 });
 
 function golight(){
-  $('.dashiconimg').css({'filter':'invert(0)'});
+  $('.dashiconimg,.opntbtlmd').css({'filter':'invert(0)'});
   $('.dashiconex').css({'background-image':'linear-gradient(-150deg,#3333d9ee,#ffffffee)'});
 document.getElementById('aol').style.backgroundColor ="white";
 document.getElementById('aol').style.boxShadow ="0 2px 10px 0px #2a26f1";
@@ -412,7 +412,7 @@ document.getElementById('dots').style.backgroundColor ="#000000de";
 document.getElementById('signinuser').style.color = "#0b07df";
 }
 function godark(){
-  $('.dashiconimg').css({'filter':'invert(1)'});
+  $('.dashiconimg,.opntbtlmd').css({'filter':'invert(1)'});
   $('.dashiconex').css({'background-image':'linear-gradient(-150deg,#2b2b2bee,#ffffffee)'});
   document.getElementById('aol').style.backgroundColor ="#282828";
   document.getElementById('aol').style.boxShadow ="0 0px 0px 0px #2a26f1";
