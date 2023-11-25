@@ -1748,15 +1748,15 @@ border-bottom-left-radius: 10px;
 }
 .dashiconex{
   width:100%;
+  max-width:560px;
   text-align: right;
-    background-image: linear-gradient(-150deg,#3333d9ee,#ffffffee);
+    background-image: linear-gradient(-150deg,#0808b9ef,#ffffffee);
     color:white;
     display:inline-block;
   margin-bottom:10px;
   font-size:20px;
   padding: 15px 10px;
   cursor: pointer;
-
 }
 
 .dashiconotsrv {
@@ -1774,14 +1774,10 @@ border-bottom-left-radius: 10px;
 }
 .dashiconex svg{
   float:left;
-  background-image: linear-gradient(-45deg,#0000ff9c,#9a9a9ab5,#0000ff86);
-padding:10px;
+  background:#0808b9ef ;
+  padding:10px;
 }
 
-.dashiconex:hover{
-  color: white;
-  text-decoration: none;
-}
 
 .tdur{
   max-width:60px;
