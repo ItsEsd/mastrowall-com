@@ -432,8 +432,8 @@ for(var d=0;d<a.length;d++){
       ["../images/gaming/gm5.png",
               "https://littlealchemy2.com/"],
 
-      ["../images/gaming/gm6.png",
-              "https://www.learninggamesforkids.com/"],
+      // ["../images/gaming/gm6.png",
+      //         "https://www.learninggamesforkids.com/"],
 
       ["../images/gaming/gm7.png",
               "https://kids.nationalgeographic.com/games/"],
@@ -441,8 +441,8 @@ for(var d=0;d<a.length;d++){
       ["../images/gaming/gm8.png",
               "https://www.roomrecess.com/"],
 
-      ["../images/gaming/gm9.png",
-              "https://www.starfall.com/"],
+      // ["../images/gaming/gm9.png",
+      //         "https://www.starfall.com/"],
 
       ["../images/gaming/gm10.png",
               "https://draw.tate.org.uk/"],
