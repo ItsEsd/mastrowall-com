@@ -267,6 +267,9 @@ function openNav() {
     $('#exportalpromo').show();
   });
 
+  $("#exmpsamptst").click(function() {
+    window.open("https://exam-portal.mastrowall.com?q=sampletest", "_blank");
+  });
   $("#exampconmasd").click(function() {
     $('#termuse').hide();
     $('#contactdesk').show('fast');
