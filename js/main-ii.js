@@ -470,9 +470,15 @@ for(var d=0;d<a.length;d++){
               
       ["../images/gaming/gm18.png",
               "https://mathworld.wolfram.com/"],
+      
+      ["../images/gaming/gm20.png",
+              "https://www.mathnook.com/math/boatcoordinates.html"],
+
+      ["../images/gaming/gm21.png",
+               "https://www.brainpop.com/games/"],
 
       ["../images/gaming/gm19.png",
-                      "https://www.thatquiz.org/"]
+              "https://www.thatquiz.org/"]
       
             ];
     $(document).ready(function(){
