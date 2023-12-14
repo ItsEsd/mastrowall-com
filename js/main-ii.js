@@ -432,17 +432,17 @@ for(var d=0;d<a.length;d++){
       ["../images/gaming/gm5.png",
               "https://littlealchemy2.com/"],
 
-      // ["../images/gaming/gm6.png",
-      //         "https://www.learninggamesforkids.com/"],
-
       ["../images/gaming/gm7.png",
               "https://kids.nationalgeographic.com/games/"],
+
+      ["../images/gaming/gm6.png",
+              "https://www.roythezebra.com/english-ks1"],
 
       ["../images/gaming/gm8.png",
               "https://www.roomrecess.com/"],
 
-      // ["../images/gaming/gm9.png",
-      //         "https://www.starfall.com/"],
+      ["../images/gaming/gm9.gif",
+              "https://toytheater.com/"],
 
       ["../images/gaming/gm10.png",
               "https://draw.tate.org.uk/"],
@@ -488,6 +488,14 @@ for(var d=0;d<a.length;d++){
           var posofimg = list.indexOf(label);
           document.getElementById("opgm").src=gmdsh[posofimg][1];
           $('#gmcnsl').slideDown();
+          if(gmdsh[posofimg][1] == "https://toytheater.com/"){
+            document.getElementById("opgm").style.backgroundColor = 'white';
+            document.getElementById("opgm").style.backgroundImage = 'none';
+          }
+          else{
+            document.getElementById("opgm").style.backgroundColor = '#161616be';
+            document.getElementById("opgm").style.backgroundImage = '/images/loading-gif.gif';
+          }
         }         
   
       $('#getgames').click(function(){
