@@ -489,6 +489,7 @@ for(var d=0;d<a.length;d++){
         });
 
         function goplgm(label){
+          document.getElementById("opgm").style.backgroundImage = 'url(/images/loading-gif.gif)';
           var list=document.getElementsByClassName("gtgmic");
           list = [].slice.call(list); 
           var posofimg = list.indexOf(label);
@@ -500,7 +501,6 @@ for(var d=0;d<a.length;d++){
           }
           else{
             document.getElementById("opgm").style.backgroundColor = '#161616be';
-            document.getElementById("opgm").style.backgroundImage = '/images/loading-gif.gif';
           }
         }         
   
