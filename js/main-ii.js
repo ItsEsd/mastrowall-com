@@ -481,7 +481,9 @@ for(var d=0;d<a.length;d++){
                "https://www.brainpop.com/games/"],
 
       ["../images/gaming/gm19.png",
-              "https://www.thatquiz.org/"]
+              "https://www.thatquiz.org/"],
+      ["../images/gaming/stellarium.org.png",
+              "https://stellarium-web.org/"],        
       
             ];
     $(document).ready(function(){
