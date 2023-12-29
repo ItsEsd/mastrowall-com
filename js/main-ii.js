@@ -482,6 +482,7 @@ for(var d=0;d<a.length;d++){
 
       ["../images/gaming/gm19.png",
               "https://www.thatquiz.org/"],
+              
       ["../images/gaming/stellarium.org.png",
               "https://stellarium-web.org/"],        
       
