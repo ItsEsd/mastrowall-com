@@ -75,6 +75,10 @@ $('#crtod,#botcrtod').click(function(){
   }
   else{
     $('#todbox').slideDown('fast');
+    var refelm = document.getElementById('srchengcon');
+    if(refelm.style.display =="block"){
+      fstelm.style.height ="83vh";
+    }
 
   }
     // let stateObj = { id: "0" };
@@ -521,7 +525,15 @@ for(var d=0;d<a.length;d++){
 
    $('#srchengn').click(function(){
     $('#srchengcon,#clssrceng').slideDown();
+    var refelm = document.getElementById('todbox');
+    if(refelm.style.display=='block'){
+      refelm.style.height="83vh";
+    }
    });
    $('#clssrceng').click(function(){
     $('#srchengcon,#clssrceng').slideUp();
+    var refelm = document.getElementById('todbox');
+    if(refelm.style.display=='block'){
+      refelm.style.height="95vh";
+    }
    })
