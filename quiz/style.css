@@ -1,0 +1,107 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+form {
+  max-width: 600px;
+  margin: auto;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+.mnfuncbtn {
+  background-color: #5d5d5d;
+}
+.question-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f1f1f1;
+}
+.question-container button {
+  float: right;
+  margin-bottom: 10px;
+}
+textarea {
+  width: 99%;
+  height: 150px;
+  resize: none;
+  resize: vertical;
+  overflow-y: auto;
+}
+label {
+  margin-top: 5px;
+}
+#ntitnt {
+  font-size: 14px;
+  float: right;
+  color: red;
+  display: none;
+}
+.rmvqsbtn {
+  background: #ff4646;
+}
+input :disabled {
+  background-color: #ccc;
+}
+#loader {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #ffffffdc;
+  color: grey;
+  padding-top: 20%;
+}
+.restctbtn {
+  width: 49.35%;
+  font-size: 12px;
+  border-radius: 2px;
+  border: 1px solid grey;
+}
+.restctbtn:active,
+.restctbtn:focus {
+  background: #c2c2c2;
+}
+
+#quizLink {
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  background-color: #e2e2e2;
+  text-align: center;
+}
+
+#quizLink span {
+  color: #4e4e4e;
+}
+
+#quizLink button {
+  bottom: 35px;
+  right: 10px;
+  position: fixed;
+  background-color: #4e4e4e;
+}
+#quizForm {
+  margin-bottom: 60px;
+}
