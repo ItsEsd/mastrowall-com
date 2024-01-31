@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Editor - MASTROWALL</title>
+    <link
+      rel="icon"
+      href="https://mastrowall.com/images/logoRecBWsvg.svg"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="quizForm" autocomplete="off">
+      <label for="quizTitle">Quiz Title:</label>
+      <input
+        type="text"
+        id="quizTitle"
+        name="quizTitle"
+        placeholder="Name your quiz"
+        required
+      />
+      <span id="ntitnt">Please add a quiz title (at least 10 characters)</span>
+
+      <label for="creationDate">Date of Creation:</label>
+      <input type="text" id="creationDate" name="creationDate" disabled />
+
+      <label for="quizId">Quiz ID:</label>
+      <input type="text" id="quizId" name="quizId" disabled />
+
+      <input
+        type="password"
+        id="quizPass"
+        name="quizPass"
+        placeholder="Pass"
+        required
+      />
+
+      <center>
+        <input
+          class="restctbtn"
+          type="button"
+          value="Public"
+          onclick="toggleAccessType('Public')"
+        />
+        <input
+          class="restctbtn"
+          type="button"
+          value="Private"
+          onclick="toggleAccessType('Private')"
+        />
+        <p
+          style="
+            font-size: 12px;
+            text-align: left;
+            padding: 0px;
+            margin: 0px;
+            color: grey;
+          "
+        >
+          <b>Public:</b> Quiz will be featured on quiz.mastrowall.com (default)
+          | <b>Private:</b> Quiz can only be fetched by [link] / Pass
+        </p>
+      </center>
+
+      <hr />
+      <div id="questionsContainer"></div>
+
+      <button type="button" onclick="addQuestion()">Add Question</button>
+      <button
+        type="button"
+        class="mnfuncbtn"
+        onclick="createJsonAndMakeAjaxRequest()"
+      >
+        Submit / Get Quiz link <span style="font-size: 10px">&#128279;</span>
+      </button>
+      <span style="float: right; font-size: 12px; margin-top: 10px">
+        &copy;
+        <a
+          href="https://mastrowall.com"
+          style="text-decoration: none; color: grey"
+          target="_blank"
+          >M A S T R O W A L L</a
+        ></span
+      >
+    </form>
+    <form
+      name="submit-to-google-sheet"
+      id="gfrmsbmt"
+      style="display: none"
+      onsubmit="return false"
+    >
+      <input name="QZdata" id="QZdata" />
+      <input name="QSdata" id="QSdata" />
+      <input name="QId" id="QId" />
+      <input name="QPass" id="QPass" />
+      <input name="QState" id="QSt" />
+    </form>
+    <center><div id="loader" style="display: none">Submitting...</div></center>
+    <center><div id="quizLink" style="display: none"></div></center>
+
+    <script>
+      let accessType = "Public";
+      document.getElementById("QSt").value = accessType;
+      function toggleAccessType(type) {
+        accessType = type;
+        document.getElementById("QSt").value = type;
+        updateButtons();
+      }
+
+      function updateButtons() {
+        const publicButton = document.querySelector(
+          '.restctbtn[value="Public"]'
+        );
+        const privateButton = document.querySelector(
+          '.restctbtn[value="Private"]'
+        );
+
+        if (accessType === "Public") {
+          publicButton.style.background = "#fdc75a";
+          privateButton.style.background = "#c2c2c2";
+        } else {
+          publicButton.style.background = "#c2c2c2";
+          privateButton.style.background = "#fdc75a";
+        }
+      }
+      document.getElementById("creationDate").value =
+        new Date().toLocaleDateString();
+      document.getElementById("quizId").value = "QUIZ/" + generateRandomId();
+
+      function generateRandomId() {
+        var characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var randomId = "";
+        for (var i = 0; i < 6; i++) {
+          randomId += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+          );
+        }
+        return randomId;
+      }
+
+      function addQuestion() {
+        var quizTitle = document.getElementById("quizTitle").value;
+        var quizPs = document.getElementById("quizPass").value;
+        if (quizTitle.trim() === "" || quizTitle.length < 10) {
+          document.getElementById("ntitnt").style.display = "block";
+          return false;
+        } else {
+          document.getElementById("ntitnt").style.display = "none";
+          document.getElementById("quizTitle").disabled = true;
+        }
+
+        if (quizPs.trim() === "") {
+          document.getElementById("quizPass").style.border = "2px solid red";
+          return false;
+        } else {
+          document.getElementById("quizPass").style.border = "1px solid #ccc";
+          document.getElementById("quizPass").disabled = true;
+        }
+        var questionId = "Q/" + generateRandomId();
+
+        var questionContainer = document.createElement("div");
+        questionContainer.classList.add("question-container");
+
+        questionContainer.innerHTML = `
+               <button type="button" class='rmvqsbtn' onclick="removeQuestion(this)">Remove</button>
+
+                <label for="questionId" style='font-size:14px;color:grey;'>Question ID: <b>${questionId}</b></label>
+                <input type="text" name="questionId" style='display:none;' value="${questionId}" readonly />
+                <div class='qzstinpt'><label for="questionStatement">Question Statement:</label>
+                <div contenteditable="true" name="questionStatement" class="conqsdiv"></div>
+                <button type="button" onclick="removeFormatting(this.previousElementSibling)" class='rmvfrmt'>Remove Formatting</button>
+                <div class='optnst'><label for="options">Options:</label>
+                <input type="text" name="option1" placeholder="Option 1" required />
+                <input type="text" name="option2" placeholder="Option 2" required />
+                <input type="text" name="option3" placeholder="Option 3" required />
+                <input type="text" name="option4" placeholder="Option 4" required /></div>
+
+                <label for="answer">Correct Answer:</label>
+                <select name="answer" required>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            `;
+
+        document
+          .getElementById("questionsContainer")
+          .appendChild(questionContainer);
+
+        questionContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
+      }
+
+      function removeQuestion(button) {
+        var questionContainer = button.parentNode;
+        document
+          .getElementById("questionsContainer")
+          .removeChild(questionContainer);
+      }
+
+      function createJsonAndMakeAjaxRequest() {
+        var quizTitle = document.getElementById("quizTitle").value;
+        var creationDate = document.getElementById("creationDate").value;
+        var quizId = document.getElementById("quizId").value;
+        var quizPass = document.getElementById("quizPass").value;
+        var questionsData = [];
+        var questionContainers = document.querySelectorAll(
+          ".question-container"
+        );
+        questionContainers.forEach(function (questionContainer, index) {
+          var questionIdElement = questionContainer.querySelector(
+            '[name="questionId"]'
+          );
+          var questionStatementElement = questionContainer.querySelector(
+            '[name="questionStatement"]'
+          );
+          var option1Element =
+            questionContainer.querySelector('[name="option1"]');
+          var option2Element =
+            questionContainer.querySelector('[name="option2"]');
+          var option3Element =
+            questionContainer.querySelector('[name="option3"]');
+          var option4Element =
+            questionContainer.querySelector('[name="option4"]');
+          var answerElement =
+            questionContainer.querySelector('[name="answer"]');
+
+          if (
+            !questionIdElement.value ||
+            !questionStatementElement.innerHTML ||
+            !option1Element.value ||
+            !option2Element.value ||
+            !option3Element.value ||
+            !option4Element.value ||
+            !answerElement.value
+          ) {
+            alert("Please fill in all fields for question " + (index + 1));
+            return false;
+          }
+
+          var questionId = questionIdElement.value;
+          var questionStatement = questionStatementElement.innerHTML;
+          var options = {
+            option1: option1Element.value,
+            option2: option2Element.value,
+            option3: option3Element.value,
+            option4: option4Element.value,
+          };
+          var answer = answerElement.value;
+
+          var questionData = {
+            questionNumber: index + 1,
+            questionId: questionId,
+            questionStatement: questionStatement,
+            options: options,
+            answer: answer,
+          };
+
+          questionsData.push(questionData);
+        });
+
+        if (questionsData.length === 0) {
+          alert("Please add at least one question");
+          return false;
+        }
+
+        var quizData = {
+          quizTitle: quizTitle,
+          creationDate: creationDate,
+          quizId: quizId,
+        };
+
+        var jsonDataQuiz = JSON.stringify(quizData);
+        var jsonDataQuestions = JSON.stringify(questionsData);
+
+        document.getElementById("QZdata").value = btoa(jsonDataQuiz);
+        document.getElementById("QSdata").value = btoa(jsonDataQuestions);
+        document.getElementById("QId").value = btoa(quizId);
+        document.getElementById("QPass").value = btoa(quizPass);
+        const qzcrlg =
+          "https://script.google.com/macros/s/AKfycbxBXu5MinbleR1PGr0Dqx2Oauj7bWYnBWeA6iOUuoy6OnxNectFK4Acn4UQz9Vpv3N6/exec";
+
+        const form = document.forms["submit-to-google-sheet"];
+        const loader = document.getElementById("loader");
+        loader.style.display = "block";
+        document.getElementById("quizForm").style.pointerEvents = "none";
+        fetch(qzcrlg, {
+          method: "POST",
+          body: new FormData(form),
+        })
+          .then(() => {
+            alert("Form submitted successfully!");
+
+            const quizLink = `https://quiz.mastrowall.com/?qid=${btoa(
+              quizId
+            )}&v=${btoa(quizPass)}`;
+
+            const quizLinkContainer = document.getElementById("quizLink");
+            quizLinkContainer.innerHTML = `
+              <span>Quiz Title: <b>${quizTitle}</b></span> | 
+              <a id="quizLinkAnchor" href="${quizLink}" target="_blank">Open</a>
+              <button onclick="copyToClipboard(document.getElementById('quizLinkAnchor').href)">Copy Link 🔗</button>
+            `;
+            quizLinkContainer.style.display = "block";
+            document.getElementById("quizForm").reset();
+            document.getElementById("creationDate").value =
+              new Date().toLocaleDateString();
+            document.getElementById("quizId").value =
+              "QUIZ/" + generateRandomId();
+            document.getElementById("quizTitle").disabled = false;
+            document.getElementById("quizPass").disabled = false;
+            var questionContainers =
+              document.getElementsByClassName("question-container");
+            for (var i = questionContainers.length - 1; i >= 0; i--) {
+              var questionContainer = questionContainers[i];
+              questionContainer.parentNode.removeChild(questionContainer);
+            }
+          })
+          .catch((error) => {
+            alert("Error submitting form:", error);
+          })
+          .finally(() => {
+            loader.style.display = "none";
+            document.getElementById("quizForm").style.pointerEvents = "auto";
+          });
+        return false;
+      }
+      function copyToClipboard(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert("Quiz link copied to clipboard!");
+      }
+      function removeFormatting(editable) {
+        document.execCommand("removeFormat");
+      }
+      if (window.location !== window.parent.location) {
+        document.body.style.display = "block";
+      } else {
+        document.body.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>
