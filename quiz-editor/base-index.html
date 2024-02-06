@@ -281,10 +281,11 @@
         var jsonDataQuiz = JSON.stringify(quizData);
         var jsonDataQuestions = JSON.stringify(questionsData);
 
-        document.getElementById("QZdata").value = btoa(jsonDataQuiz);
-        document.getElementById("QSdata").value = btoa(jsonDataQuestions);
-        document.getElementById("QId").value = btoa(quizId);
-        document.getElementById("QPass").value = btoa(quizPass);
+        document.getElementById("QZdata").value = encodeToBase64(jsonDataQuiz);
+        document.getElementById("QSdata").value =
+          encodeToBase64(jsonDataQuestions);
+        document.getElementById("QId").value = encodeToBase64(quizId);
+        document.getElementById("QPass").value = encodeToBase64(quizPass);
         const qzcrlg =
           "https://script.google.com/macros/s/AKfycbxBXu5MinbleR1PGr0Dqx2Oauj7bWYnBWeA6iOUuoy6OnxNectFK4Acn4UQz9Vpv3N6/exec";
 
@@ -299,9 +300,9 @@
           .then(() => {
             alert("Form submitted successfully!");
 
-            const quizLink = `https://quiz.mastrowall.com/?qid=${btoa(
+            const quizLink = `https://quiz.mastrowall.com/?qid=${encodeToBase64(
               quizId
-            )}&v=${btoa(quizPass)}`;
+            )}&v=${encodeToBase64(quizPass)}`;
 
             const quizLinkContainer = document.getElementById("quizLink");
             quizLinkContainer.innerHTML = `
@@ -333,6 +334,11 @@
           });
         return false;
       }
+      function encodeToBase64(string) {
+        let buffer = new TextEncoder().encode(string);
+        return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+      }
+
       function copyToClipboard(text) {
         const textarea = document.createElement("textarea");
         textarea.value = text;
