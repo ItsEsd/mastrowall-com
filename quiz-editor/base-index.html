@@ -197,8 +197,20 @@
           block: "end",
           inline: "nearest",
         });
-      }
 
+        var inputElements = questionContainer.querySelectorAll(
+          "input[name], select[name], div[name]"
+        );
+        inputElements.forEach(function (element) {
+          element.addEventListener("input", handleInput);
+        });
+      }
+      document
+        .getElementById("quizTitle")
+        .addEventListener("input", handleInput);
+      document
+        .getElementById("quizPass")
+        .addEventListener("input", handleInput);
       function removeQuestion(button) {
         var questionContainer = button.parentNode;
         document
@@ -337,6 +349,12 @@
       function encodeToBase64(string) {
         let buffer = new TextEncoder().encode(string);
         return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+      }
+
+      function handleInput(event) {
+        let element = event.target;
+        let value = element.value;
+        element.value = atob(encodeToBase64(value));
       }
 
       function copyToClipboard(text) {
