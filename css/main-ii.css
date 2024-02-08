@@ -346,6 +346,8 @@
   padding: 4px;
   background-color: black;
   color: white;
+  border-radius: 2px;
+  margin-left: 5px;
 }
 #cntashr {
   float: left;
