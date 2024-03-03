@@ -697,6 +697,7 @@ body {
 
 #framenews iframe {
   padding-bottom: 0px;
+  background-color: white;
 }
 .jdframe {
   background-color: white;
