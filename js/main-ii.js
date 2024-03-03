@@ -255,12 +255,13 @@ $("#bigth").click(function () {
   document.getElementById("hrefframenews").href = "https://bigthink.com/";
 });
 
-$("#genennws").click(function () {
+$("#rssamrit").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.genengnews.com";
-  document.getElementById("hrefframenews").href = "https://www.genengnews.com";
+  document.getElementById("frame").src = "https://rss-feed.amrit-corp.com";
+  document.getElementById("hrefframenews").href =
+    "https://rss-feed.amrit-corp.com";
 });
 
 $("#masthome").click(function () {
@@ -583,17 +584,20 @@ function goplgm(label) {
 $("#getgames").click(function () {
   $("#gmdiv,#gmdash").slideDown();
 });
+
 $("#gobcm").click(function () {
-  $("#gmdiv,#gmdash").slideUp();
-  $("#gmcnsl").hide();
+  $("#gmcnsl,#gmdiv,#gmdash").hide();
   document.getElementById("opgm").src = "";
 });
 
 $("#srchengn").click(function () {
   $("#srchengcon,#clssrceng").slideDown();
   var refelm = document.getElementById("todbox");
-  if (refelm.style.display == "block") {
+  var refsrch = document.getElementById("srchengcon");
+  if (refsrch.style.display == "block") {
     refelm.style.height = "83vh";
+  } else if (refelm.style.display == "none") {
+    refelm.style.height = "95vh";
   }
 });
 $("#clssrceng").click(function () {

@@ -587,7 +587,7 @@ body {
 }
 
 #framenews iframe {
-  height: 39vw;
+  height: 82vh;
   background-image: transparent;
 }
 #framenw-back {
@@ -607,7 +607,7 @@ body {
   padding-top: 0px;
   height: 100%;
   width: 100%;
-  max-height: 59em;
+  max-height: 70vh;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   background-color: white;
