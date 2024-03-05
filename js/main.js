@@ -511,9 +511,9 @@ function scrollFunction() {
       document.body.scrollTop > 100 ||
       document.documentElement.scrollTop > 100
     ) {
-      $("#footerholder").slideDown("slow");
+      $("#footerholder,#aol").slideDown("slow");
     } else {
-      $("#footerholder").slideUp("slow");
+      $("#footerholder,#aol").slideUp("slow");
     }
   }
 }

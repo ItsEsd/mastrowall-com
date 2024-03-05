@@ -1891,21 +1891,20 @@ body {
   max-width: 500px;
   cursor: pointer;
   font-size: 16px;
-  color: #df0a0a;
+  color: #ffffff;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
   padding: 4px 10px;
-  background-color: #ffffffd5;
+  background-color: #7b7b7bef;
+  border-radius: 5px;
+  display: inline-block;
+  margin: auto;
 }
 #mwquiz {
-  margin-left: 6px;
+  margin-right: 6px;
 }
-#examside:hover,
-#checkres:hover,
-#mwquiz :hover {
-  color: #081266;
-}
+
 #examsideq iframe {
   background-image: url("/images/frameloader.gif");
   background-size: 100% 100%;

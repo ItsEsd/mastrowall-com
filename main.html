@@ -259,10 +259,11 @@ gtag('config', 'G-N25E2CWHPC');
             <path d="M1.713 11.865v-.474H2c.217 0 .363-.137.363-.317 0-.185-.158-.31-.361-.31-.223 0-.367.152-.373.31h-.59c.016-.467.373-.787.986-.787.588-.002.954.291.957.703a.595.595 0 0 1-.492.594v.033a.615.615 0 0 1 .569.631c.003.533-.502.8-1.051.8-.656 0-1-.37-1.008-.794h.582c.008.178.186.306.422.309.254 0 .424-.145.422-.35-.002-.195-.155-.348-.414-.348h-.3zm-.004-4.699h-.604v-.035c0-.408.295-.844.958-.844.583 0 .96.326.96.756 0 .389-.257.617-.476.848l-.537.572v.03h1.054V9H1.143v-.395l.957-.99c.138-.142.293-.304.293-.508 0-.18-.147-.32-.342-.32a.33.33 0 0 0-.342.338v.041zM2.564 5h-.635V2.924h-.031l-.598.42v-.567l.629-.443h.635V5z"/>
           </svg>
         </a><a id="getgames">e-Games</a>
-        <a id="signinuser">
-          <i class="fa fa-user" id="signinuserbtn"></i> Sign In / Register
-        </a>
+       
       </div>
+      <a id="signinuser">
+        <i class="fa fa-user" id="signinuserbtn"></i> Sign In / Register
+      </a>
     </div>
    
       <div id="gmdiv">
@@ -273,7 +274,11 @@ gtag('config', 'G-N25E2CWHPC');
 
     <div id="headsrcdiv">
       <form id="topicsearchmw" onsubmit="event.preventDefault();"><input placeholder="Topic Search"  class="form-control" id="srctopichead" type="search" autocomplete="off" required/><input id="topicsrcbtn" type="submit" value="Go"/>
-      </form></div>
+      </form>
+      <p id="signmbl">
+        <i class="fa fa-user"></i> Sign In / Register
+      </p>
+    </div>
       <div align="center" id="mwallresult" class="pgdown">
         <button id="clstpseach" class="btn btn-danger">&times;</button>
         <div id="re" style="display:none; padding-top:10px;">
@@ -386,17 +391,20 @@ gtag('config', 'G-N25E2CWHPC');
             </div>
           </section>
     <section>
-      <div align="center" id="chresexam"><div><p>
+      <div align="center" id="chresexam"><p>
         <span id="checkres"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
           <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
           <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-        </svg> Check Result</span>
+        </svg> Check Test Result</span>
+        <span id="mwquiz"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+          <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+          <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+        </svg>Quiz</span>
         <span id="examside"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
         <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
         <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
       </svg> ExamSIDE Questions</span>
-      <span id="mwquiz"> Quiz</span>
-    </p></div>
+    </p>
       </div>     
     </section>
 <section>

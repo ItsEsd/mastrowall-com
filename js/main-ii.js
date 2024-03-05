@@ -29,7 +29,7 @@ $("#goinmastro").click(function () {
   );
 });
 
-$("#signinuser").click(function () {
+$("#signinuser,#signmbl").click(function () {
   document.getElementById("continueas").style.width = "100%";
   document.getElementById("myNav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
