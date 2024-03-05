@@ -392,11 +392,15 @@ header > div h3 {
   z-index: 0;
 }
 #promodiv {
-  top: 80%;
+  top: 45vh;
   left: 0px;
   position: fixed;
   width: 100%;
   z-index: 0;
+}
+#titltesrcpromo {
+  width: 200px;
+  opacity: 0.1;
 }
 #titltesrcpromo {
   color: #ffffff70;
