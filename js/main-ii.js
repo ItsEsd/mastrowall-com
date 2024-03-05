@@ -596,14 +596,17 @@ $("#srchengn").click(function () {
   var refsrch = document.getElementById("srchengcon");
   if (refsrch.style.display == "block") {
     refelm.style.height = "83vh";
-  } else if (refelm.style.display == "none") {
+  } else if (refsrch.style.display == "none") {
     refelm.style.height = "95vh";
   }
 });
 $("#clssrceng").click(function () {
-  $("#srchengcon,#clssrceng").slideUp();
+  $("#srchengcon, #clssrceng").slideUp();
   var refelm = document.getElementById("todbox");
-  if (refelm.style.display == "block") {
-    refelm.style.height = "95vh";
+  var screenWidth = window.innerWidth;
+  if (screenWidth <= 600) {
+    refelm.style.height = "100vh";
+  } else {
+    refelm.style.height = "95vh"; // Adjust as needed
   }
 });
