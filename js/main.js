@@ -431,6 +431,10 @@ function golight() {
     "linear-gradient(-45deg, #0c09c9,white,white)";
   document.getElementById("dots").style.backgroundColor = "#000000de";
   document.getElementById("signinuser").style.color = "#0b07df";
+  document.getElementById("signmbl").style.color = "#161616";
+  document.getElementById("sdnvtpdv").style.backgroundImage =
+    "linear-gradient(45deg, #0c29cd, white)";
+  document.getElementById("srctopichead").style.backgroundColor = "#ffffff00";
 }
 function godark() {
   $(".dashiconimg,.opntbtlmd").css({ filter: "invert(1)" });
@@ -438,7 +442,11 @@ function godark() {
   document.getElementById("aol").style.backgroundColor = "#282828";
   document.getElementById("aol").style.boxShadow = "0 0px 0px 0px #2a26f1";
   document.getElementById("oknav").style.color = "#6a67fa";
+  document.getElementById("signmbl").style.color = "#d2d2d2";
+  document.getElementById("srctopichead").style.backgroundColor = "#f0f0f0ce";
   document.getElementById("mwallImg").style.filter = "invert(1)";
+  document.getElementById("sdnvtpdv").style.backgroundImage =
+    "linear-gradient(45deg, #3d3e42, white)";
   document.body.style.backgroundColor = "#181818";
   document.body.style.backgroundImage =
     "url('images/hexback-blue-1200x900.gif')";

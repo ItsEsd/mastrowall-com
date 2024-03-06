@@ -414,6 +414,7 @@
   text-align: right;
   cursor: pointer;
   display: none;
+  color: #161616;
 }
 
 #srctopichead {
@@ -543,10 +544,10 @@
   #headsrcdiv {
     top: 40px;
     display: block;
-    left: 6vw;
+    left: 8vw;
     position: absolute;
     z-index: 1;
-    width: 80%;
+    width: 78%;
   }
 
   #signmbl {
@@ -563,7 +564,7 @@
   }
 
   #srctopichead {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: #ffffff00;
     width: 85.8%;
     border: none;
   }
