@@ -157,10 +157,11 @@ a:hover {
   padding: 10px;
   height: 100%;
   background-color: #e6e4e4;
-  max-height: 400px;
+  max-height: 450px;
   overflow-y: auto;
   max-width: 800px;
   display: none;
+  z-index: 10 !important;
 }
 
 #divsearch_note {
@@ -389,14 +390,18 @@ header > div h3 {
 }
 .pgdown {
   margin-top: 140px;
-  z-index: 0;
+  z-index: 10 !important;
 }
 #promodiv {
   top: 45vh;
-  left: 0px;
+  left: 42vw;
   position: fixed;
   width: 100%;
-  z-index: 0;
+  z-index: 1 !important;
+  height: 200px;
+  width: 200px;
+  opacity: 0.1;
+  background-image: url("/images/favicon-logos/logoRecBWsvg.svg");
 }
 #titltesrcpromo {
   width: 200px;
