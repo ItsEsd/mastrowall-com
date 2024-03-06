@@ -610,3 +610,12 @@ $("#clssrceng").click(function () {
     refelm.style.height = "95vh"; // Adjust as needed
   }
 });
+
+function downloadFileapk() {
+  var fileUrl = "https://mastrowall.com/app/apk-release/beta-0.1.apk";
+  var link = document.createElement("a");
+  link.href = fileUrl;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
