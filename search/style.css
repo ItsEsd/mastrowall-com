@@ -393,8 +393,8 @@ header > div h3 {
   z-index: 10 !important;
 }
 #promodiv {
-  top: 45vh;
-  left: 42vw;
+  top: 50vh;
+  left: 42%;
   position: fixed;
   width: 100%;
   z-index: 1 !important;
