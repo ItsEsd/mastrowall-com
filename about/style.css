@@ -17,23 +17,33 @@ body {
   z-index: 100;
   border-bottom: 1px solid white;
 }
+#title-head p {
+  padding: 0px;
+  margin: 0px;
+  line-height: normal;
+}
+.mnttl {
+  margin-left: 5px;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
 #title-head a {
   text-decoration: none;
   color: white;
-  line-height: normal;
   margin-left: 5px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
+  height: 28px;
+  line-height: 1.2;
 }
 #title-head img {
+  width: 28px;
   float: left;
-  width: 35px;
-  padding: 5px;
 }
 .entitle {
   float: right;
   font-size: 18px;
-  margin-top: 14px;
+  padding-top: 5px;
   margin-right: 5px;
   font-weight: 400;
 }
@@ -232,7 +242,7 @@ ul.icons li {
 }
 @media screen and (max-width: 768px) {
   #title-head img {
-    width: 30px;
+    width: 25px;
   }
 
   #title-head a {
@@ -240,7 +250,7 @@ ul.icons li {
   }
   .entitle {
     font-size: 14px;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: 400;
   }
 }
