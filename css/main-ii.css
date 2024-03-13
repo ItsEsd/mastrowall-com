@@ -1348,3 +1348,36 @@ input:disabled {
 #apkdwnld:hover {
   opacity: 0.8;
 }
+
+@media screen and (min-width: 600px) and (max-width: 1066px) {
+  #headsrcdiv {
+    top: 40px;
+    display: block;
+    left: 8vw;
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+  }
+  #headsrcdiv #srctopichead {
+    box-shadow: 0px 2px 15px 0px grey;
+    width: 87.8%;
+  }
+  #topicsrcbtn {
+    width: 12%;
+  }
+  #signmbl {
+    display: block;
+    float: right;
+  }
+  #aol {
+    display: none;
+  }
+  .bodyconv2 {
+    margin-top: 140px;
+  }
+}
+@media screen and (min-width: 1066px) {
+  #aol {
+    display: block;
+  }
+}
