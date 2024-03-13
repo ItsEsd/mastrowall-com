@@ -76,6 +76,7 @@
   width: 100%;
   border-radius: 50%;
   max-width: 180px;
+  max-height: 180x;
   padding: 4px;
   background-color: #ffffff;
 }
