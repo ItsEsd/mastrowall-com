@@ -1064,6 +1064,9 @@ input:disabled {
   .empnamtitle {
     font-size: 20px;
   }
+  .bodyconv2 {
+    margin-top: 120px;
+  }
 }
 
 #notifyoffln {
@@ -1374,7 +1377,7 @@ input:disabled {
     display: none;
   }
   .bodyconv2 {
-    margin-top: 140px;
+    margin-top: 120px;
   }
 }
 @media screen and (min-width: 1066px) {
