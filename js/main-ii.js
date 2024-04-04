@@ -25,7 +25,7 @@ $("#goinmastro").click(function () {
   window.open(
     "https://mastrowall.in",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
@@ -115,7 +115,7 @@ $("#prosign,#exammwall").click(function () {
   window.open(
     "https://exam-portal.mastrowall.com/",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
@@ -127,7 +127,7 @@ $("#oplibrary").click(function () {
   window.open(
     "https://library.mastrowall.in",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
@@ -135,7 +135,7 @@ $("#opblog").click(function () {
   window.open(
     "https://blog.mastrowall.in",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
@@ -268,14 +268,14 @@ $("#masthome").click(function () {
   window.open(
     "https://home.mastrowall.in",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 $("#astroforum").click(function () {
   window.open(
     "https://www.astro.mastrowall.in/forum",
     "_blank",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 $("#opabout").click(function () {
@@ -316,7 +316,7 @@ $("#expgtotst").click(function () {
   window.open(
     "online-test/",
     "_self",
-    "location=center,height=570,width=1200,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
