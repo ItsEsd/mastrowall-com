@@ -32,9 +32,9 @@ $(document).ready(function () {
     document.getElementById("frame").src = "https://www.medicalnewstoday.com";
   });
 
-  $("#twscience").click(function () {
+  $("#scrpwiki").click(function () {
     openframenews();
-    document.getElementById("frame").src = "https://science.thewire.in";
+    document.getElementById("frame").src = "http://scrapia.amrit-corp.com/";
   });
 
   $("#scialrt").click(function () {

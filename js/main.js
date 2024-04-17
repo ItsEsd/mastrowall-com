@@ -4,15 +4,10 @@ $(document).ready(function () {
     $("#framenw-back").hide();
   });
 });
-/*
-$(".botInline2").click(function(){
-  $('header').hide();
-}); */
 
 function openframenews() {
   $("#framenews").slideDown("slow");
   $("#framenw-back").show();
-  //document.getElementById('framenews').style.display="block";
 }
 
 if (navigator.onLine) {
@@ -57,19 +52,6 @@ window.addEventListener("offline", function () {
 function HBack() {
   window.history.back();
 }
-
-/*
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-   document.getElementById('aol').style.boxShadow = "0 2px 10px 0px #1d41d1";
-  } 
-  else {
-    document.getElementById('aol').style.boxShadow = "0 2px 10px 0px #1d41d1";
-  }
-}
-*/
 
 $(document).ready(function () {
   $(".frameback").on("click", function () {

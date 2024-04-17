@@ -195,12 +195,13 @@ $("#mntday").click(function () {
     "https://www.medicalnewstoday.com";
 });
 
-$("#twscience").click(function () {
+$("#scrpwiki").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://science.thewire.in";
-  document.getElementById("hrefframenews").href = "https://science.thewire.in";
+  document.getElementById("frame").src = "http://scrapia.amrit-corp.com/";
+  document.getElementById("hrefframenews").href =
+    "http://scrapia.amrit-corp.com/";
 });
 
 $("#scialrt").click(function () {
