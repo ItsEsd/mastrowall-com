@@ -34,7 +34,7 @@ $(document).ready(function () {
 
   $("#scrpwiki").click(function () {
     openframenews();
-    document.getElementById("frame").src = "http://scrapia.amrit-corp.com/";
+    document.getElementById("frame").src = "https://scrapia.amrit-corp.com/";
   });
 
   $("#scialrt").click(function () {

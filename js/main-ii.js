@@ -199,9 +199,9 @@ $("#scrpwiki").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "http://scrapia.amrit-corp.com/";
+  document.getElementById("frame").src = "https://scrapia.amrit-corp.com/";
   document.getElementById("hrefframenews").href =
-    "http://scrapia.amrit-corp.com/";
+    "https://scrapia.amrit-corp.com/";
 });
 
 $("#scialrt").click(function () {
