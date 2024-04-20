@@ -142,6 +142,35 @@ $(document).ready(function () {
   function openframenews() {
     $("#framenews,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
+    var overlayDiv = document.createElement("div");
+    overlayDiv.id = "ovrlyfrmld";
+    overlayDiv.style.position = "fixed";
+    overlayDiv.style.top = "0";
+    overlayDiv.style.left = "0";
+    overlayDiv.style.width = "100%";
+    overlayDiv.style.height = "100%";
+    overlayDiv.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    var loadingMessage = document.createElement("div");
+    loadingMessage.innerHTML =
+      '<div id="loadfrmdv"><span class="spinloadfrm"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16"> <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/> <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/> </svg></span>Loading... </div>';
+    loadingMessage.style.position = "absolute";
+    loadingMessage.style.top = "50%";
+    loadingMessage.style.left = "50%";
+    loadingMessage.style.transform = "translate(-50%, -50%)";
+    loadingMessage.style.color = "white";
+    overlayDiv.appendChild(loadingMessage);
+    document.getElementById("framenews").appendChild(overlayDiv);
+    var iframe = document.getElementById("frame");
+    iframe.onload = function () {
+      document.getElementById("framenews").removeChild(overlayDiv);
+    };
+
+    var ovrlyfrmldElement = document.getElementById("ovrlyfrmld");
+    if (ovrlyfrmldElement) {
+      ovrlyfrmldElement.addEventListener("click", function () {
+        ovrlyfrmldElement.parentNode.removeChild(ovrlyfrmldElement);
+      });
+    }
   }
 
   $("<link>", {
