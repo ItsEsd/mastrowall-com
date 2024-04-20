@@ -231,7 +231,23 @@
   padding: 0px 10px;
   cursor: pointer;
 }
-
+#loadfrmdv {
+  color: #e1e1e1d4;
+}
+.spinloadfrm svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .mwallbrndicon {
   width: 28px;
   padding: 2px;
