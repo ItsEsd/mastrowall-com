@@ -216,11 +216,22 @@ function getId(url) {
   }
 }
 
-$("#clstpseach").click(function () {
-  $("#mwallresult").hide("fast");
-  $("#search_results").empty();
-  $("#search_results_vid").empty();
-});
+document.body.addEventListener("click", closetopicsrcwall);
+
+function closetopicsrcwall(event) {
+  var searchResultsDiv = document.querySelector("#search_results");
+  var searchResultsDivVD = document.querySelector("#search_results_vid");
+  var searchResultsDivNT = document.querySelector("#search_results_not");
+  var isClickedOutside = !searchResultsDiv.contains(event.target);
+  var isClickedOutsideVD = !searchResultsDivVD.contains(event.target);
+  var isClickedOutsideNT = !searchResultsDivNT.contains(event.target);
+
+  if (isClickedOutside || isClickedOutsideVD || isClickedOutsideNT) {
+    $("#mwallresult").hide("fast");
+    $("#search_results").empty();
+    $("#search_results_vid").empty();
+  }
+}
 
 function showpoasnote(label) {
   document.getElementById("empnamblk").style.display = "block";
