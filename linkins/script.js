@@ -409,6 +409,10 @@ function show_wall() {
         ListIndex++;
         var i = currentIndex + 1;
         currentIndex = ListIndex * resultperList;
+
+        var lastIteam = $(".iteam").last().position().top;
+        $(document).scrollTop(lastIteam);
+
         for (i; i <= currentIndex; i++) {
           $("#showhtml").append(
             '<div class="iteam"><div class="card " align="center"> <div class="card-title "id="cardheader"><a target="_blank" href="' +
@@ -699,6 +703,8 @@ function show_wall_lec() {
         ListIndex++;
         var i = currentIndex + 1;
         currentIndex = ListIndex * resultperList;
+        var lastIteam = $(".iteamvid").last().position().top;
+        $(document).scrollTop(lastIteam);
         for (i; i <= currentIndex; i++) {
           var link = json.records[i].LecLink;
           var title = json.records[i].LecTitle;
