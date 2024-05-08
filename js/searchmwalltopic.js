@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
         var inpelem = document.createElement("input");
         inpelem.id = "rrdata";
-        inpelem.style.display = "block";
+        inpelem.style.display = "none";
         inpelem.value = JSON.stringify(alldatavid.concat(alldatant));
 
         document.body.appendChild(inpelem);
