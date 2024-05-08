@@ -1,10 +1,11 @@
 $(document).ready(function () {
-  var script_url_lec =
-    "https://script.google.com/macros/s/AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
-  var script_url =
-    "https://script.google.com/macros/s/AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
-  var url = script_url + "?action=read";
-  var url2 = script_url_lec + "?action=readLec";
+  var furl = "https://script.google.com/macros/s/";
+  var aplec =
+    "AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
+  var apnote =
+    "AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
+  var url = furl + apnote + "?action=read";
+  var url2 = furl + aplec + "?action=readLec";
   document
     .getElementById("searchmwall")
     .setAttribute("placeholder", "Loading topics ..");
