@@ -74,8 +74,6 @@ window.addEventListener("offline", function () {
   this.setTimeout(function () {
     $(elem).slideUp("slow");
   }, 5000);
-  // document.getElementById("framecontainer").innerHTML =
-  //   "<div align='center'><div style='max-width:400px;margin-top:180px;border:none;box-shadow:0 2px 6px 0 grey;padding:40px;'><p style='font-size:60px'>&#9785;</p><h2 style='padding:10px;'>No Internet</h2></div></div>";
 });
 
 function HBack() {
