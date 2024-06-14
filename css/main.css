@@ -884,23 +884,6 @@ body {
   cursor: context-menu;
 }
 
-#gdrivebox {
-  bottom: 0px;
-  position: fixed;
-  padding: 0px;
-  width: 100%;
-  height: 100%;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  background-color: white;
-  background-image: url("https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  display: none;
-  box-shadow: 0 1px 6px 1px #2202af;
-  z-index: 10;
-}
-
 #todbox {
   top: 0px;
   position: fixed;

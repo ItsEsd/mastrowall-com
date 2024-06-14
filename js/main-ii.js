@@ -74,12 +74,7 @@ $("#stopvc1,#signregpre").click(function () {
 
 $("#td").click(function () {
   $("#todbox").slideDown("fast");
-  $("#gdrivebox").hide();
   closeNav();
-  // let stateObj = { id: "0" };
-  // 		window.history.replaceState(stateObj,
-  // 					"", "/e/create-TOD/#");
-  //           document.title = "Create TOD | MASTROWALL";
 });
 
 $("#crtod,#botcrtod").click(function () {

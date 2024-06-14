@@ -262,13 +262,9 @@ $(document).ready(function () {
   });
 
   $("#gd").click(function () {
-    $("#gdrivebox").slideDown("fast");
     $("#todbox").hide();
   });
 
-  $(".closedrivebox").click(function () {
-    $("#gdrivebox").hide();
-  });
   $("#exmprtl").click(function () {
     $(".otservice").show();
     $("#falsesecback").show();
@@ -293,7 +289,6 @@ $(document).ready(function () {
   $("#pt").click(function () {
     $("#privacybox").toggle();
     $("#todbox").hide();
-    $("#gdrivebox").hide();
   });
 
   $(".closeprivacybox").click(function () {

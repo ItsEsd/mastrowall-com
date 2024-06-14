@@ -229,13 +229,6 @@ gtag('config', 'G-N25E2CWHPC');
       <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
       <path d="M3 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1z"/>
     </svg> Create TOD</a>
-    <hr/>
-    <a  id="mf"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
-      <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
-      <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
-    </svg> Manage Files</a>
-    <div id="mfiles"><a  id="gd">Google Drive</a>
-      <a id="signtomdrive">Microsoft OneDrive</a></div>
     <hr/><a target="_blank" href="//quiz.mastrowall.com" style="font-size:16px;">Quiz</a><hr/>
     <p style="width:100%; text-align:right;margin:0px;padding:0px;"><a style="font-size:14px;" target="_blank" href="pricing/">- Pricing</a></p>
     <p style="width:100%; text-align:right;margin:0px;padding:0px;"><a style="font-size:14px;"target="_blank" href="https://pdf.mastrowall.com/?f=%22https%3A%2F%2Fmastrowall.com%2Ffiles%2Fquick-manual%2FUSER%20MANUAL.pdf%22&m=USER%20MANUAL&r=true"> [ USER MANUAL ]</a></p>
@@ -845,15 +838,6 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
 
     </div>
   </section>
-
-  <section>
-    <div id="gdrivebox">
-      <span class="closedrivebox" title="Close"><b>&times;</b></span>
-      <span id="mtitlemg" style="font-size: 16px;display:block;padding-top:2px;" >|| Manage Files</span>
-      <iframe src="gdrive/index.html" frameborder=0 width="100%" height="100%" style="padding-bottom:10px;"></iframe>
-    </div>
-  </section>
-
   <section>
     <div id="todbox">
       <span class="closetodbox" title="Close"><b>&times;</b></span>
@@ -925,179 +909,6 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
     <div id="chbcgrtop"><p>Choose Background<span id="clschbc">&times;</span></p></div>
     <div id="choosebcgr"></div></div></div>
 </section>
-<script>
-var baseUrl = getQueryVariable("baseUrl")
-msGraphApiRoot = (baseUrl) ? baseUrl : "https://graph.microsoft.com/v1.0/me";
-
-var data = loadFromCookie();
-if (data) {
-if (!baseUrl)
-msGraphApiRoot = data.apiRoot;
-showCustomLoginButton(!data.signedin)
-}
-
-var loadedForHash = "";
-$(window).bind('hashchange', function() {
-if (window.location.hash != loadedForHash) {
-loadedForHash = window.location.hash;
-odauth();
-}
-
-return false;
-});
-
-$(document).on({
-ajaxStart: function() {
-$('body').addClass('loading');
-},
-ajaxStop: function() {
-$('body').removeClass('loading');
-}
-});
-
-function syntaxHighlight(obj) {
-var json = JSON.stringify(obj, undefined, 2)
-json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-function(match) {
-var cls = 'number';
-if (/^"/.test(match)) {
-if (/:$/.test(match)) {
-cls = 'key';
-} else {
-cls = 'string';
-}
-} else if (/true|false/.test(match)) {
-cls = 'boolean';
-} else if (/null/.test(match)) {
-cls = 'null';
-}
-return '<span class="' + cls + '">' + match + '</span>';
-});
-}
-function updateBreadcrumb(decodedPath) {
-var path = decodedPath || '';
-$('#od-breadcrumb').empty();
-var runningPath = '';
-var segments = path.split('/');
-for (var i = 0; i < segments.length; i++) {
-if (i > 0) {
-$('<span>').text(' > ').appendTo("#od-breadcrumb");
-}
-
-var segment = segments[i];
-if (segment) {
-runningPath = runningPath + '/' + encodeURIComponent(segment);
-} else {
-segment = 'Files';
-}
-
-$('<a>').
-attr("href", "#" + runningPath).
-click(function() {
-loadedForHash = $(this).attr('href');
-window.location = loadedForHash;
-odauth(true);
-}).
-text(segment).
-appendTo("#od-breadcrumb");
-}
-}
-function onAuthenticated(token, authWindow) {
-if (token) {
-if (authWindow) {
-removeLoginButton();
-authWindow.close();
-}
-
-(function($) {
-var path = "";
-var beforePath = "";
-var afterPath = "";
-if (window.location.hash.length > 1) {
-path = window.location.hash.substr(1);
-beforePath = ":";
-afterPath = ":";
-}
-
-var odurl = msGraphApiRoot + "/drive/root" + beforePath + path + afterPath;
-var thumbnailSize = "large"
-var odquery = "?expand=thumbnails,children(expand=thumbnails(select=" + thumbnailSize + "))";
-
-$.ajax({
-url: odurl + odquery,
-dataType: 'json',
-headers: {
-"Authorization": "Bearer " + token
-},
-accept: "application/json;odata.metadata=none",
-success: function(data) {
-if (data) {
-$('#od-items').empty();
-$('#od-json').empty();
-$("<pre>").html(syntaxHighlight(data)).appendTo("#od-json");
-var decodedPath = decodeURIComponent(path);
-document.title = "OneDrive Explorer" + ((decodedPath.length > 0) ? " - " + decodedPath : "");
-updateBreadcrumb(decodedPath);
-var children = data.children || data.value;
-if (children && children.length > 0) {
-$.each(children, function(i, item) {
-var tile = $("<div>").
-attr("href", "#" + path + "/" + encodeURIComponent(item.name)).
-addClass("item").
-click(function() {
-
-loadedForHash = $(this).attr('href');
-window.location = loadedForHash;
-odauth(true);
-}).
-appendTo("#od-items");
-if (item.folder) {
-tile.addClass("folder");
-}
-if (item.file) {
-tile.addClass("file");
-}
-
-if (item.thumbnails && item.thumbnails.length > 0) {
-var container = $("<div>").attr("class", "img-container").appendTo(tile)
-$("<img>").
-attr("src", item.thumbnails[0][thumbnailSize].url).
-appendTo(container);
-}
-
-$("<div>").
-addClass("nameplate").
-text(item.name).
-appendTo(tile);
-});
-} else if (data.file) {
-var tile = $("<div>").
-addClass("item").
-addClass("oneup").
-appendTo("#od-items");
-
-var downloadUrl = data['@microsoft.graph.downloadUrl'];
-if (downloadUrl) {
-tile.click(function() {
-window.open(downloadUrl, "Download");
-});
-}
-
-if (data.folder) {
-tile.addClass("folder");
-}
-
-if (data.thumbnails && data.thumbnails.length > 0) {
-$("<img>").
-attr("src", data.thumbnails[0].large.url).
-appendTo(tile);}} else {$('<p>No items in this folder.</p>').appendTo('#od-items');
-}} else {$('#od-items').empty();
-$('<p>error.</p>').appendTo('#od-items');
-$('#od-json').empty();}}});})(jQuery);} else {alert("Error signing in");}}
-odauth();
-
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
 window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
@@ -1123,7 +934,6 @@ elem.style.width = width + "%";}}}}
 <script src="js/main-ii.js"></script>
 <script src="js/ttest.js"></script>
 <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<script id="odauth" src="msonedrive/odauth.js"></script>
 <!-- <script src="js/cognitive-bias.js"></script> -->
 <script>
   if('serviceWorker' in navigator){
