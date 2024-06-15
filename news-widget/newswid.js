@@ -56,7 +56,6 @@ userFeedURLs.forEach((userUrl) => {
       // console.log(data);
       data.items.forEach((item) => {
         var content = document.getElementById("content");
-        content.innerHTML = "";
         var newItem = "";
         newItem +=
           '<div  id="rfitem"><a target="_blank" href="' +
