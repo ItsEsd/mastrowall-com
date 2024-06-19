@@ -481,6 +481,11 @@ $(document).ready(function () {
       chsbc[fin] +
       "' onclick='chngbackground(this)'>";
   }
+
+  var viewportWidth = window.innerWidth;
+  if (viewportWidth > 768) {
+    document.body.style.backgroundImage = 'url("' + chsbc[a[1]] + '")';
+  }
 });
 function chngbackground(label) {
   var list = document.getElementsByClassName("chsbcg");
