@@ -144,12 +144,9 @@ $(document).ready(function () {
     $(".falseback-nav").show();
     $(".mynvflback").slideDown("slow");
     document.getElementById("main").style.marginLeft = "0px";
-
     $("#dots").hide("fast");
     $("#togTest").show();
     $("#togTest2").hide();
-    //  document.body.scrollTop = 0;
-    // document.documentElement.scrollTop = 0;
   });
 
   $(".botInline1,.botInline2,.botInline3,.botInline4").click(function () {
@@ -165,12 +162,13 @@ $(document).ready(function () {
     $(".mynvflback").hide();
   });
 
-  $(".falseback-nav").on("click", function () {
-    document.getElementById("myNav").style.width = "0";
-    document.getElementById("falseback-conas").style.display = "none";
-    $(".falseback-nav").hide();
-    $(".mynvflback").hide();
-  });
+  // $(".falseback-nav").on("click", function () {
+  //   document.getElementById("myNav").style.width = "0";
+  //   document.getElementById("falseback-conas").style.display = "none";
+  //   $(".falseback-nav").hide();
+  //   $(".mynvflback").hide();
+  // });
+
   $("#bodyconv2").on("mouseover", function () {
     document.getElementById("myNav").style.width = "0";
     document.getElementById("continueas").style.width = "0";
