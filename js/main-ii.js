@@ -481,7 +481,7 @@ $(document).ready(function () {
   }
 
   var viewportWidth = window.innerWidth;
-  if (viewportWidth > 768) {
+  if (viewportWidth > 1024) {
     document.body.style.backgroundImage = 'url("' + chsbc[a[1]] + '")';
   }
 });
@@ -491,7 +491,7 @@ function chngbackground(label) {
   var posofimg = list.indexOf(label);
   var srcimg = document.getElementsByClassName("chsbcg")[posofimg].src;
   document.body.style.backgroundImage = 'url("' + srcimg + '")';
-  document.body.style.backgroundRepeat = "repeat";
+  document.body.style.backgroundRepeat = "no-repeat";
   document.body.style.backgroundSize = "100% 100%";
   $("#chbcground").hide("fast");
 }
