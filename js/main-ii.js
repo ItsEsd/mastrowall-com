@@ -481,8 +481,10 @@ $(document).ready(function () {
   }
 
   var viewportWidth = window.innerWidth;
-  if (viewportWidth > 1024) {
+  if (viewportWidth > 720) {
     document.body.style.backgroundImage = 'url("' + chsbc[a[1]] + '")';
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "100% 100%";
   }
 });
 function chngbackground(label) {
