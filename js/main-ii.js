@@ -197,13 +197,12 @@ $("#scrpwiki").click(function () {
     "https://scrapia.amrit-corp.com/";
 });
 
-$("#scialrt").click(function () {
+$("#iasstils").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.sciencealert.com";
-  document.getElementById("hrefframenews").href =
-    "https://www.sciencealert.com";
+  document.getElementById("frame").src = "https://ilias.mastrowall.in";
+  document.getElementById("hrefframenews").href = "https://ilias.mastrowall.in";
 });
 //////////////
 
