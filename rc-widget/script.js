@@ -38,8 +38,7 @@ $(document).ready(function () {
   });
 
   $("#iasstils").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://ilias.mastrowall.in";
+    window.open("https://ilias.mastrowall.in", "_blank");
   });
 
   $("#popscie").click(function () {
