@@ -133,13 +133,11 @@ $("#opblog").click(function () {
 });
 
 function openNav() {
-  // document.getElementById('aol').style.boxShadow = "0px 1px 4px 1px #8f8f8f";
   document.getElementById("myNav").style.width = "350px";
   document.getElementById("main").style.marginLeft = "0px";
 }
 
 function closeNav() {
-  // document.getElementById('aol').style.boxShadow = "none";
   document.getElementById("myNav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
   $(".falseback-nav").hide();
@@ -199,12 +197,9 @@ $("#scrpwiki").click(function () {
 
 $("#iasstils").click(function () {
   move();
-  openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://ilias.mastrowall.in";
-  document.getElementById("hrefframenews").href = "https://ilias.mastrowall.in";
+  window.open("https://ilias.mastrowall.in", "_blank");
 });
-//////////////
 
 $("#popscie").click(function () {
   move();
