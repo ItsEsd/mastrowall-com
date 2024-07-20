@@ -37,9 +37,9 @@ $(document).ready(function () {
     document.getElementById("frame").src = "https://scrapia.amrit-corp.com/";
   });
 
-  $("#scialrt").click(function () {
+  $("#iasstils").click(function () {
     openframenews();
-    document.getElementById("frame").src = "https://www.sciencealert.com";
+    document.getElementById("frame").src = "https://ilias.mastrowall.in";
   });
 
   $("#popscie").click(function () {
