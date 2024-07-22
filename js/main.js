@@ -30,7 +30,6 @@ function openframenews() {
   iframe.onload = function () {
     document.getElementById("framenews").removeChild(overlayDiv);
   };
-  iframe.src = "";
   var ovrlyfrmldElement = document.getElementById("ovrlyfrmld");
   if (ovrlyfrmldElement) {
     ovrlyfrmldElement.addEventListener("click", function () {
