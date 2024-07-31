@@ -320,8 +320,9 @@ $(document).ready(function () {
     $("#togTest").show();
     $("#togTest2").hide();
     document.getElementById("btitlejd").innerHTML = "|| Wikipedia";
-    document.getElementById("jdframe").src = "https://www.wikipedia.org";
-    document.getElementById("hrefframejd").href = "https://www.wikipedia.org";
+    document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
+    document.getElementById("hrefframejd").href =
+      "https://g2faq.amrit-corp.com";
   });
   $("#dictnr").click(function () {
     $("#jdbox").slideDown("slow");
