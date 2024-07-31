@@ -89,10 +89,10 @@ $(document).ready(function () {
       "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
   });
 
-  $("#wikip").click(function () {
+  $("#g2faq").click(function () {
     opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Wikipedia";
-    document.getElementById("jdframe").src = "https://www.wikipedia.org";
+    document.getElementById("btitlejd").innerHTML = "|| 🤖 G2 FAQ - AMRIT";
+    document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
   });
 
   $("#dictnr").click(function () {

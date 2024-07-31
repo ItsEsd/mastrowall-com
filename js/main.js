@@ -314,12 +314,12 @@ $(document).ready(function () {
     document.getElementById("hrefframejd").href =
       "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
   });
-  $("#wikip").click(function () {
+  $("#g2faq").click(function () {
     $("#jdbox").slideDown("slow");
     $("#dots").hide("fast");
     $("#togTest").show();
     $("#togTest2").hide();
-    document.getElementById("btitlejd").innerHTML = "|| Wikipedia";
+    document.getElementById("btitlejd").innerHTML = "|| 🤖 G2 FAQ - AMRIT";
     document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
     document.getElementById("hrefframejd").href =
       "https://g2faq.amrit-corp.com";
