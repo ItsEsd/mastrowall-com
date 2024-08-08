@@ -513,6 +513,7 @@ html {
   width: 138px;
   text-align: left;
   height: 35px;
+  font-weight: 600;
 }
 #upndd {
   bottom: 0px;
@@ -544,10 +545,15 @@ html {
     width: 100%;
   }
   #viewqset {
+    padding-left: 0px;
+    padding-right: 0px;
     width: 100%;
+    max-width: 100%;
+    text-align: left;
   }
+
   #timeleft {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #testtimer {
