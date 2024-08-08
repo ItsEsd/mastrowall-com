@@ -635,3 +635,26 @@ $("#sgconwexid").click(function () {
 $("#responqsindx,#upndd").click(function () {
   $("#quesindex,#uparw,#updwn").toggle();
 });
+
+let lastScrollTop = 0;
+let width = window.innerWidth;
+if (width <= 768) {
+  window.addEventListener("scroll", function () {
+    let currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down
+      document.getElementById("calculatorbtn").style.display = "none";
+      document.getElementById("boxexp-two").style.display = "none";
+    } else {
+      // Scrolling up
+      document.getElementById("calculatorbtn").style.display = "block";
+      document.getElementById("boxexp-two").style.display = "block";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+} else {
+  document.getElementById("calculatorbtn").style.display = "block";
+  document.getElementById("boxexp-two").style.display = "block";
+}
