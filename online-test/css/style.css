@@ -85,9 +85,10 @@ html {
   padding-left: 20px;
   padding-right: 20px;
   width: 98%;
-  max-width: 900px;
+  max-width: 1000px;
   min-width: 350px;
   text-align: left;
+  word-wrap: break-word;
 }
 
 #qsetanst {
@@ -542,7 +543,9 @@ html {
   #viewqset img {
     width: 100%;
   }
-
+  #viewqset {
+    width: 100%;
+  }
   #timeleft {
     font-size: 20px;
   }
