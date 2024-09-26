@@ -125,7 +125,7 @@ function result_vids() {
   document.getElementById("loader").style.display = "none";
   $("#re").show();
   $("#mwallresult").show();
-  $("#search_results_vid").empty();
+  $("#search_results_vid,#search_results_not").empty();
   var search = $("#searchmwall").val();
   if (search != 0) {
     document.getElementById("loader").style.display = "block";
@@ -156,17 +156,13 @@ function result_vids() {
           '<input class="empid_v" value="' +
           rawdata[v].EmpId +
           '" style="display:none;"></div></div>';
-        document.getElementById("mwallresult").style.backgroundImage =
-          "url('//img.youtube.com/vi/" + vidid + "/0.jpg')";
-        document.bgetElementById("mwallresult").style.backgroundSize =
-          "100% 100%";
-        document.getElementById("mwallresult").style.backgroundRepeat =
-          "no-repeat";
+        document.getElementsByClassName("background-blur")[0].src =
+          "//img.youtube.com/vi/" + vidid + "/0.jpg";
         document.getElementById("loader").style.visibility = "hidden";
         document.getElementById("loader").style.display = "none";
+        document.getElementById("search_results_not").style.display = "none";
         break;
       } else {
-        //  document.getElementById('search_results_vid').innerHTML = "<div class='nocontentmwall'>No content found!</div>";
         document.getElementById("loader").style.visibility = "hidden";
         document.getElementById("loader").style.display = "none";
       }
@@ -221,13 +217,21 @@ function result_notes() {
           '<input class="empid_n" value="' +
           rawdata[n].EmpId +
           '" style="display:none;"></div></div><br><br>';
+        document.getElementsByClassName("background-blur")[0].src =
+          rawdata[n].NotesPic;
         document.getElementById("loader").style.visibility = "hidden";
         document.getElementById("search_results_not").style.display = "none";
         document.getElementById("loader").style.display = "none";
-        document.getElementById("mwallresult").style.backgroundImage = "none";
         break;
       } else {
-        //   document.getElementById('search_results').innerHTML = "<div class='nocontentmwall'>No content found!</div>";
+        if (document.getElementById("search_results_vid").innerHTML !== "") {
+          document.getElementById("search_results_not").style.display = "none";
+        } else {
+          document.getElementById("search_results_not").style.display = "block";
+          document.getElementById("search_results_not").innerHTML =
+            "<div class='nocontentmwall'>No content found!</div>";
+        }
+
         document.getElementById("loader").style.visibility = "hidden";
         document.getElementById("loader").style.display = "none";
       }

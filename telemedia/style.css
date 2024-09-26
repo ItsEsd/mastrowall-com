@@ -2,7 +2,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #eeeeee;
-  background-image: -moz-linear-gradient(
+  /* background-image: -moz-linear-gradient(
     0deg,
     #00000033 25%,
     transparent 25%,
@@ -23,9 +23,10 @@ body {
     transparent
   );
   -moz-background-size: 4px 4px;
-  background-size: 6px 6px;
+  background-size: 6px 6px; */
   width: 100%;
   height: 100%;
+  background-image: linear-gradient(-90deg, #39a480d2, #e69292);
 }
 .telemhead {
   height: 60px;
@@ -322,7 +323,7 @@ img {
 }
 
 .animback {
-  background-image: linear-gradient(45deg, #000, #000, #000);
+  background-image: linear-gradient(-180deg, #000000, #a7a7a721);
   background-size: 1400% 1400%;
   background-repeat: no-repeat;
   animation: gradient 5s ease infinite;
@@ -350,7 +351,13 @@ img {
   clear: both;
   border-spacing: 14px;
 }
-
+.condivdta {
+  /* background-color: #d4d4d433; */
+  color: black;
+  width: 96%;
+  max-width: 1100px;
+  padding: 20px;
+}
 .iteam {
   background-image: linear-gradient(
     45deg,
