@@ -480,10 +480,10 @@ header > div h3 {
   height: 60px;
 }
 #mwallresult {
-  margin-top: 16.5vh;
+  margin-top: 15vh;
   top: 0px;
   width: 100%;
-  height: 83.5vh;
+  height: 85vh;
   position: absolute;
   background-color: #181717ee;
   display: none;
