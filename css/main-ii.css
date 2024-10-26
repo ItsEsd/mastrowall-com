@@ -436,7 +436,24 @@
 #srctopichead:focus {
   background-color: #ffffff;
 }
-
+@media screen and (max-width: 800px) {
+  #blbdiy {
+    display: block;
+  }
+  #exportalpromo {
+    height: 0vh;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+  .otservprp {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 993px) {
   .dashheading {
     font-size: 20px;
