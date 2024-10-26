@@ -316,6 +316,34 @@ $("#exmpcreatid").click(function () {
   $("#exportalpromo").show();
 });
 
+$(window).on("resize", function () {
+  adjustHeights();
+});
+
+function adjustHeights() {
+  var viewportWidth = $(window).width();
+  if (viewportWidth > 850) {
+    $("#blbdiy").css("display", "none");
+    $("#exportalpromo").css("height", "100vh");
+  } else {
+    $("#blbdiy").css("display", "block");
+    $("#exportalpromo").css("height", "50vh");
+  }
+}
+
+$(document).ready(function () {
+  adjustHeights();
+});
+
+$("#blbdiy").click(function () {
+  var blbdiyHeight = $("#exportalpromo").height();
+  if (blbdiyHeight > $(window).height() * 0.4) {
+    $("#exportalpromo").css("height", "0vh");
+  } else {
+    $("#exportalpromo").css("height", "50vh");
+  }
+});
+
 $("#exmpprereq").click(function () {
   $("#termuse").hide();
   $("#contactdesk").hide();
