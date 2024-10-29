@@ -277,3 +277,14 @@
     background-position: 200% 200%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #srchengcon {
+    font-size: 12px;
+    height: 25vh;
+  }
+
+  .nbtbfrmwtsrc {
+    height: 70vh;
+  }
+}
