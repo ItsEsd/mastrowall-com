@@ -84,10 +84,9 @@ body {
   width: 100%;
   text-align: center;
   display: none;
-  /* max-width: 400px; */
-  max-height: 400px;
+  height: 70vh;
   overflow-y: auto;
-  background-color: #b9b9b9a6;
+  background-color: #edededd4;
   padding-bottom: 20px;
 }
 
@@ -96,43 +95,60 @@ body {
   max-width: 280px;
   margin: 10px;
   margin-top: 20px;
-  padding: 10px;
   background: #ffffffe1;
-  box-shadow: 0px 2px 6px 0px grey;
+  box-shadow: 0px 2px 10px 0px #80808050;
   display: inline-flex;
   flex-wrap: wrap;
   vertical-align: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 }
 
 .cogbelem h4 {
   width: 100%;
   border-bottom: 1px solid #616161c2;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #222222;
   font-weight: 600;
-  background-color: #9e9ef1;
+  background-color: #d0d0fa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .cogbelem h5 {
   width: 100%;
   border-bottom: 1px solid #616161c2;
-  font-size: 16px;
+  font-size: 14px;
   padding: 15px;
+  padding-bottom: 25px;
   color: #222222;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: 0.1em;
+  hyphens: auto;
+  margin-bottom: 0px;
 }
 .cogbelem h6 {
   width: 100%;
   font-size: 12px;
   font-style: italic;
-  padding: 6px;
+  padding: 10px;
   color: #222222;
-  border-radius: 5px;
-  background-color: #fdb8b8;
+  background-color: #f9dcdc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
+  word-spacing: 0.1em;
+  hyphens: auto;
 }
 
 #cogelemhead {
@@ -141,18 +157,18 @@ body {
   font-size: 20px;
   font-weight: 600;
   padding: 10px;
-  background: #e27979;
+  background: #1a1a1a;
   width: 100%;
-  color: black;
+  color: #c5c5c5;
   cursor: pointer;
 }
 
 #cogelemhead:hover {
-  background: #eeb1b1;
+  opacity: 0.8;
 }
 
 #cogelemhead span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 }
 
