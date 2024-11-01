@@ -1,6 +1,5 @@
-$(document).ready(function(){
-
-    var cogbiaselem =`[
+$(document).ready(function () {
+  var cogbiaselem = `[
         {
             "Title":"Fundamental Attribution Error",
             "Def":"We judge others on their personality of fundamental character, but we judge ourselves on the situation.",
@@ -360,19 +359,33 @@ $(document).ready(function(){
             }
         
         ]`;
-     
-var obj = JSON.parse(cogbiaselem);
-var cogelemlen = obj.length;
-for(var i=0; i<=cogelemlen;i++){
 
-    document.getElementById('cogbias').innerHTML += "<div class='cogbelem'><h4>"+obj[i].Title +"</h4><h5>"+obj[i].Def+"</h5><h6>Eg: "+obj[i].Eg+"</h6></div>";
-    
-}
-
-
+  var obj = JSON.parse(cogbiaselem);
+  var cogelemlen = obj.length;
+  for (var i = 0; i <= cogelemlen; i++) {
+    document.getElementById("cogbias").innerHTML +=
+      "<div class='cogbelem'><h4>" +
+      obj[i].Title +
+      "</h4><h5>" +
+      obj[i].Def +
+      "</h5><h6>Eg: " +
+      obj[i].Eg +
+      "</h6></div>";
+  }
 });
 
-$('#cogelemhead').click(function(){
-    $('#cogbias').toggle();
+$("#cogelemhead").click(function () {
+  $("#cogbias").toggle();
+  if ($("#cogbias").is(":visible")) {
+    document.getElementById("cogbias").scrollIntoView({ behavior: "smooth" });
+  }
+});
+const elements = document.querySelectorAll(".cogbelem h5");
+elements.forEach((element) => {
+  let text = element.textContent
+    .toLowerCase()
+    .replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) {
+      return c.toUpperCase();
     });
-    
+  element.textContent = text;
+});
