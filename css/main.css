@@ -866,6 +866,9 @@ body {
   margin-left: 10px;
   display: none;
 }
+#golive svg {
+  margin-left: 5px;
+}
 #mfiles a {
   color: #d80757;
   font-size: 14px;
