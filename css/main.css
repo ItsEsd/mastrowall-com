@@ -1664,7 +1664,7 @@ body {
 }
 
 #formcontainer::-webkit-scrollbar {
-  width: 10px;
+  width: 8px !important;
 }
 
 #previewquestion {
@@ -1674,26 +1674,27 @@ body {
   width: 100%;
   max-width: 40%;
   overflow-y: auto;
+  background-color: #fff;
 }
 
 #previewr {
-  height: 300px;
+  height: 45vh;
   overflow-y: auto;
   border-bottom: 1px solid #555;
   /*resize: vertical;*/
 }
 
 #previews {
-  height: 325px;
+  height: 50vh;
   overflow-y: auto;
   /*resize: vertical;*/
 }
 
 #previewr::-webkit-scrollbar {
-  width: 10px;
+  width: 8px !important;
 }
 #previews::-webkit-scrollbar {
-  width: 10px;
+  width: 8px !important;
 }
 
 #preqsetbtn,
@@ -1701,16 +1702,14 @@ body {
   font-size: 14px;
   border-radius: 0px;
   width: 160px;
-  height: 30px;
 }
 
 .closeqform {
-  height: 30px;
   border-radius: 0px;
   padding: 4px 16px;
   color: white;
   background-color: #e02121;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
 }
 .closeqform:hover {
@@ -2033,7 +2032,6 @@ body {
   font-size: 14px;
   padding: 4px 10px;
   display: inline-block;
-  height: 30px;
 }
 #clrqsetnotify {
   top: 160px;
@@ -2130,12 +2128,12 @@ body {
 }
 .eduinfoex {
   margin: 10px;
-  min-width: 350px;
-  max-width: 380px;
+  width: 100%;
   display: inline-block;
   padding: 10px;
-  border: 1px solid #c2c2c2;
-  background-color: #e1e1e2;
+  border: 1px solid #d5d5d5;
+  background-color: #ededed;
+  border-radius: 10px;
 }
 
 .delqsetex {

@@ -711,7 +711,7 @@ function previewqset() {
                   "<div style='font-size:16px;padding-top:20px;padding:10px;'>" +
                   "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No." +
                   i1 +
-                  "</p><p>" +
+                  "<span class='delquesone'>Delete</span></p><p>" +
                   qs +
                   "</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' " +
                   "src='" +
@@ -740,7 +740,7 @@ function previewqset() {
                   "<div style='font-size:16px;padding-top:20px;padding:10px;'>" +
                   "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No." +
                   i1 +
-                  "</p><p>" +
+                  "<span class='delquesone'>Delete</span></p><p>" +
                   qs +
                   "</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' " +
                   "src='" +
@@ -763,7 +763,7 @@ function previewqset() {
                   "<div style='font-size:16px;padding-top:20px;padding:10px;'>" +
                   "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No." +
                   iq +
-                  "</p><p>" +
+                  "<span class='delquesone'>Delete</span></p><p>" +
                   qs +
                   "</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' " +
                   "src='" +
@@ -792,7 +792,7 @@ function previewqset() {
                   "<div style='font-size:16px;padding-top:20px;padding:10px;'>" +
                   "<p style='font-size:14px;font-weight:bold;padding-bottom:20px;'>Question No." +
                   iq +
-                  "</p><p>" +
+                  "<span class='delquesone'>Delete</span></p><p>" +
                   qs +
                   "</p><div id='showqstimg' align='center'><img style='pointer-events:none;padding-bottom:10px;' " +
                   "src='" +
@@ -1351,7 +1351,7 @@ function downloadqset() {
   oPrntWin.document.write(
     "<!doctype html><html><head><title>" +
       title +
-      ' - MASTROWALL - Service Portal</title><link rel="stylesheet" href="online-test/css/vendor/bootstrap.min.css"><link rel="stylesheet" href="online-test/css/dqset.css"></head><body onload="print();" style="margin:20px;"><center><div class=\'row\' style=\'background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;\'><div class=\'col-md-6\'><div style="text-align:left;font-size:18px;font-weight:400;">' +
+      ' - MASTROWALL - Service Portal</title><link rel="stylesheet" href="online-test/css/vendor/bootstrap.min.css"><link rel="stylesheet" href="online-test/css/dqset.css"><style>.delquesone {display: none !important;}</style></head><body onload="print();" style="margin:20px;"><center><div class=\'row\' style=\'background-color:#d6d6d6;padding:10px;width:100%;max-width:1000px;\'><div class=\'col-md-6\'><div style="text-align:left;font-size:18px;font-weight:400;">' +
       elem2.innerHTML +
       '</div></div><div class=\'col-md-6\'><a target=\'_blank\' href="https://mastrowall.com" style=\'cursor:pointer;\'><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style=\'width:80px;float:right;display:block;\' oncontextmenu="return false;"></a></div></div><hr style="max-width:1000px;"><div align="center" style="max-width:1000px;"><div>' +
       elem1.innerHTML +
@@ -1976,3 +1976,17 @@ if (rtv == "true") {
     document.getElementById("expass").disabled = true;
   }, 2000);
 }
+
+const tgglprvw = document.querySelector(".tgglqsetvw");
+const tgglelm = document.getElementById("previewquestion");
+tgglprvw.addEventListener("click", () => {
+  if (tgglelm.style.display == "none" || tgglelm.style.display == "") {
+    tgglelm.style.display = "block";
+  } else {
+    tgglelm.style.display = "none";
+  }
+});
+
+$(window).on("resize", function () {
+  tgglelm.style.display = "block";
+});

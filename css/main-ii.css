@@ -1372,6 +1372,67 @@ input:disabled {
 #loadfrmdv {
   color: #e1e1e1d4;
 }
+.delquesone {
+  float: right;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #eaeaea;
+  padding: 2px 10px;
+  margin: 5px;
+  display: none;
+}
+.delquesone:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.edtrfunc {
+  width: 100%;
+  max-width: 40%;
+  margin: 0px;
+  height: 35px;
+}
+.tgglqsetvw {
+  top: 5px;
+  right: 5px;
+  position: fixed;
+  z-index: 1000;
+  height: 30px;
+  width: 40px;
+  display: none;
+}
+.tgglqsetvw svg {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  color: white;
+  background-color: #2b2b2b;
+  border-radius: 5px;
+}
+.tgglqsetvw:hover {
+  cursor: pointer;
+  filter: grayscale(0.5);
+}
+@media screen and (max-width: 1090px) {
+  #previewquestion {
+    display: none;
+    width: 100%;
+    max-width: 100%;
+  }
+  .tgglqsetvw {
+    display: block;
+  }
+  #formcontainer {
+    width: 100%;
+    max-width: 100% !important;
+    padding-bottom: 40px;
+  }
+
+  .edtrfunc {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .spinloadfrm svg {
   width: 16px;
   height: 16px;
