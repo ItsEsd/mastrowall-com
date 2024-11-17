@@ -1394,8 +1394,8 @@ function downloadqset() {
       .set({
         margin: 0.5,
         filename: `${title} - MASTROWALL.pdf`,
-        html2canvas: { scale: 3 },
-        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
       })
       .save()
       .then(() => {
