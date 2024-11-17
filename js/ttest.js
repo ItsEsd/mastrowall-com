@@ -1361,7 +1361,7 @@ function downloadqset() {
           </div>
           <div class='col-md-6'>
             <a target='_blank' href="https://mastrowall.com" style='cursor:pointer;'>
-              <img src="https://mastrowall.com/images/logoRecBWsvg.svg" style='width:80px;float:right;display:block;' oncontextmenu="return false;">
+              <img src="https://mastrowall.com/images/thumbnail.png" style='width:80px;float:right;display:block;' oncontextmenu="return false;">
             </a>
           </div>
         </div>
