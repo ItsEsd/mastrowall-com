@@ -1342,8 +1342,6 @@ function downloadqset() {
   var pdnme = document.getElementById("eduextitle").innerText;
   var pdby = document.getElementById("eduexname").innerText;
   var title = pdnme + " by " + pdby;
-
-  // Dynamically create the HTML content
   var printContent = `
   <!doctype html>
   <html>
@@ -1382,12 +1380,10 @@ function downloadqset() {
     </body>
   </html>
 `;
-
   var pdfrndrd = document.createElement("div");
   pdfrndrd.style.display = "block";
   pdfrndrd.innerHTML = printContent;
   document.body.appendChild(pdfrndrd);
-
   setTimeout(() => {
     html2pdf()
       .from(pdfrndrd)
