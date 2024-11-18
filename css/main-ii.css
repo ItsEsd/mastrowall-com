@@ -1413,7 +1413,15 @@ input:disabled {
   cursor: pointer;
   filter: grayscale(0.5);
 }
+
 @media screen and (max-width: 1090px) {
+  #admntl,
+  #openDialog {
+    display: inline-block !important;
+    float: none;
+    margin-left: 0px;
+    margin-right: 4px;
+  }
   #previewquestion {
     display: none;
     width: 100%;
