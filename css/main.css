@@ -1685,7 +1685,7 @@ body {
 }
 
 #previews {
-  height: 50vh;
+  height: 51vh;
   overflow-y: auto;
   /*resize: vertical;*/
 }
