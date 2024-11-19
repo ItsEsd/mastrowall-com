@@ -402,6 +402,9 @@ a:hover {
   float: left;
 }
 @media screen and (max-width: 550px) {
+  .modal-dialog {
+    margin-top: 0px;
+  }
   .signinop h4 {
     font-size: 18px;
   }
