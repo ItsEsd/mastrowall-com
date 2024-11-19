@@ -441,7 +441,7 @@
     display: block;
   }
   #exportalpromo {
-    height: 0vh;
+    height: 0vh !important;
     top: 0px;
     left: 0px;
     align-items: center;
@@ -449,6 +449,7 @@
     width: 100%;
     max-width: 100%;
     display: block;
+    z-index: 2000;
   }
   .otservprp {
     width: 100%;
