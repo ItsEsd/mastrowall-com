@@ -981,27 +981,19 @@
         if (!validateMode()) {
           return;
         }
-
         var oPrntWin = window.open(
           "",
           "_blank",
           "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
         );
-
         oPrntWin.document.open();
         oPrntWin.document.write(
-          '<!doctype html><html><head><title>M A S T R O W A L L<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="window.print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;" id="printContent"></div></div><script src="dist/mathlive.min.js"><\/script><\/body><\/html>'
+          '<!doctype html><html><head><title>M A S T R O W A L L<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
+            oDoc.innerHTML +
+            '<\/div><\/div><script src="dist/mathlive.min.js"><\/script><\/body><\/html>'
         );
         oPrntWin.document.close();
-
-        // Wait for the document to load, then append the content dynamically
-        oPrntWin.onload = function () {
-          var printContent = oPrntWin.document.getElementById("printContent");
-          printContent.innerHTML = oDoc.innerHTML; // Assuming oDoc is already defined
-          oPrntWin.print();
-        };
       }
-
       document.getElementById("crImage").addEventListener("input", selectImg);
       document.getElementById("rd1").addEventListener("click", selectImg);
       document.getElementById("rd2").addEventListener("click", selectImg);
