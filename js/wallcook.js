@@ -15,17 +15,19 @@ function actionforuser() {
 }
 
 function rmvrestrictfn() {
-  // $('#chexid,#chkey,#conexedited').removeAttr('disabled');
-  // $('#eduname,#extitle,#exdescp,#timedurhr,#timedurmin,#edueid,#crtidone').removeAttr('disabled');
+  $("#chexid,#chkey,#conexedited").removeAttr("disabled");
+  $(
+    "#eduname,#extitle,#exdescp,#timedurhr,#timedurmin,#edueid,#crtidone"
+  ).removeAttr("disabled");
 }
 
-// var url_string = window.location.href;
-// var url = new URL(url_string);
-// var q = url.searchParams.get("onlineTest");
-// if (q == "true") {
-//   $(".otservice").show();
-//   $("#falsesecback").show();
-// }
+var url_string = window.location.href;
+var url = new URL(url_string);
+var q = url.searchParams.get("onlineTest");
+if (q == "true") {
+  $(".otservice").show();
+  $("#falsesecback").show();
+}
 
 var decodedCookie = decodeURIComponent(document.cookie);
 var ca = decodedCookie.split(";");
