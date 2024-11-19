@@ -181,10 +181,11 @@ input.error {
   width: 100%;
   max-width: 500px;
   height: 76vh;
-  border: 2px solid white;
+  border: 4px solid #ffffff1e;
   overflow-y: auto;
   overflow: hidden;
   position: fixed;
+  border-radius: 15px;
 }
 
 .modal-dialog {
