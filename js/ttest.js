@@ -1101,7 +1101,7 @@ conexeducator.addEventListener("submit", (event) => {
           json.records[i].ExamID +
           '</span></b></span><span class="exdcrtedt">Exam Pass: <b><span class="exeduinfoid">' +
           JSON.parse(json.records[i].ExamPass) +
-          '</span></b></span></p></div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;float:right;display:block;"></div></div><hr>';
+          '</span></b></span></p></div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;top:0px;right:15px;position:absolute;"></div></div><hr>';
         document.getElementById("exmdscrpprfn").innerHTML = exmhd;
         var restren = JSON.parse(
           JSON.stringify(json.records[i].EnrolledStuFinal)
