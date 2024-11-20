@@ -667,3 +667,7 @@ function sendconfirmem(mailat, nam, sgn) {
     },
   });
 }
+if (window.top === window.self) {
+  document.body.innerHTML = "";
+  window.location.href = "about:blank";
+}
