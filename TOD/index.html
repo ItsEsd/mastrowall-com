@@ -1513,6 +1513,12 @@
       }
     </script>
     <script>
+      if (window.top === window.self) {
+        document.body.innerHTML = "";
+        window.location.href = "about:blank";
+      }
+    </script>
+    <script>
       function pasteFun() {
         document
           .querySelector("[contenteditable]")
