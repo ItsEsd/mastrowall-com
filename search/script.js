@@ -487,3 +487,8 @@ function linkpostasco(e) {
 $("#empnamblk").click(function () {
   $("#empnamblk").hide();
 });
+
+if (window.top === window.self) {
+  document.body.innerHTML = "";
+  window.location.href = "about:blank";
+}
