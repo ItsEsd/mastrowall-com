@@ -986,8 +986,11 @@
           "_blank",
           "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
         );
+        var timestp = new Date().toLocaleString();
         var toprint =
-          '<!doctype html><html><head><title>M A S T R O W A L L<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
+          "<!doctype html><html><head><title>TOD - MASTROWALL /_" +
+          timestp +
+          '<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
           oDoc.innerHTML +
           '<\/div><\/div><script src="dist/mathlive.min.js"><\/script><\/body><\/html>';
         oPrntWin.document.open();
