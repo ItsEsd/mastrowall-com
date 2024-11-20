@@ -981,21 +981,35 @@
         if (!validateMode()) {
           return;
         }
-        var oPrntWin = window.open(
-          "",
-          "_blank",
-          "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
-        );
+
         var timestp = new Date().toLocaleString();
         var toprint =
-          "<!doctype html><html><head><title>TOD - MASTROWALL /_" +
+          "<!doctype html><html><head><title>TOD - MASTROWALL_/_" +
           timestp +
-          '<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
+          '<\/title><link rel="stylesheet" href="https://mastrowall.com/css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="https://mastrowall.com/TOD/style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
           oDoc.innerHTML +
-          '<\/div><\/div><script src="dist/mathlive.min.js"><\/script><\/body><\/html>';
-        oPrntWin.document.open();
-        oPrntWin.document.write(toprint);
-        oPrntWin.document.close();
+          '<\/div><\/div><script src="https://mastrowall.com/TOD/dist/mathlive.min.js"><\/script><\/body><\/html>';
+
+        // Create iframe for printing
+        var iframe = document.createElement("iframe");
+        iframe.style.position = "absolute";
+        iframe.style.top = "-10000px";
+        iframe.style.left = "-10000px";
+        document.body.appendChild(iframe);
+
+        var doc = iframe.contentWindow.document;
+        doc.open();
+        doc.write(toprint);
+        doc.close();
+
+        // Ensure styles and scripts are fully loaded before printing
+        iframe.onload = function () {
+          setTimeout(() => {
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+            document.body.removeChild(iframe); // Clean up iframe
+          }, 0); // Delay for style loading
+        };
       }
       document.getElementById("crImage").addEventListener("input", selectImg);
       document.getElementById("rd1").addEventListener("click", selectImg);
