@@ -137,7 +137,7 @@ $(document).ready(function () {
     $("#jdbox,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#framenews").hide("fast");
     document.getElementById("jdframe").style.backgroundImage =
-      'url("/images/loading-gif.gif")';
+      'url("https://mastrowall.com/images/loading-gif.gif")';
     document.getElementById("jdframe").onload = function () {
       document.getElementById("jdframe").style.backgroundImage = "none";
     };
@@ -165,7 +165,8 @@ $(document).ready(function () {
     overlayDiv.appendChild(loadingMessage);
     document.getElementById("framenews").appendChild(overlayDiv);
     var iframe = document.getElementById("frame");
-    iframe.style.backgroundImage = "url('/images/loading-gif.gif')";
+    iframe.style.backgroundImage =
+      "url('https://mastrowall.com/images/loading-gif.gif')";
     iframe.onload = function () {
       document.getElementById("framenews").removeChild(overlayDiv);
       iframe.style.backgroundImage = "none";
