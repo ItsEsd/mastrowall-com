@@ -241,7 +241,7 @@
   animation: spin 2s linear infinite;
 }
 #jdframe {
-  background-image: url("/images/loading-gif.gif");
+  background-image: url("https://mastrowall.com/images/loading-gif.gif");
   background-size: 100px 40px;
   background-position-x: center;
   background-position-y: center;
