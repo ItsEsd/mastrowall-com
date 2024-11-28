@@ -47,112 +47,8 @@ gtag('config', 'G-N25E2CWHPC');
 <link rel="manifest" href="/manifest.json">  
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script>
-  function signInToOneDrive() {
-    var appInfo = {
-      "clientId": "be35119f-1a96-438d-b863-ad6a3a14837a",
-      "redirectUri": "https://onedrive.live.com/",
-      "scopes": "user.read files.read files.read.all sites.read.all",
-      "authServiceUri": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize"
-    };
-    provideAppInfo(appInfo);
-
-    var baseUrl = getQueryVariable("baseUrl")
-    msGraphApiRoot = (baseUrl) ? baseUrl : "https://graph.microsoft.com/v1.0/me";
-
-    challengeForAuth();
-
-    saveToCookie({
-      "apiRoot": msGraphApiRoot,
-      "signedin": true
-    });
-    return false;
-  }
-
-  function showCustomLoginButton(show) {
-    var loginButton = document.getElementById("od-login");
-    loginButton.style.display = show ? "block" : "none";
-
-    var logoutButton = document.getElementById("od-logoff");
-    logoutButton.style.display = show ? "none" : "block";
-  }
-
-  function getUrlParts(url) {
-    var a = document.createElement("a");
-    a.href = url;
-
-    return {
-      "hostname": a.hostname,
-      "path": a.pathname
-    }
-  }
-
-  function setOneDriveTitle(title) {
-    var element = document.getElementById("od-site");
-    element.innerText = title;
-  }
-
-
-  function saveToCookie(obj) {
-    var expiration = new Date();
-    expiration.setTime(expiration.getTime() + 3600 * 1000);
-    var data = JSON.stringify(obj);
-    var cookie = "odexplorer=" + data + "; path=/; expires=" + expiration.toUTCString();
-
-    if (document.location.protocol.toLowerCase() == "https") {
-      cookie = cookie + ";secure";
-    }
-    document.cookie = cookie;
-  }
-
-  function loadFromCookie() {
-    var cookies = document.cookie;
-    var name = "odexplorer=";
-    var start = cookies.indexOf(name);
-    if (start >= 0) {
-      start += name.length;
-      var end = cookies.indexOf(';', start);
-      if (end < 0) {
-        end = cookies.length;
-      } else {
-        postCookie = cookies.substring(end);
-      }
-
-      var value = cookies.substring(start, end);
-      return JSON.parse(value);
-    }
-
-    return "";
-  }
-
-  function signOut() {
-    logoutOfAuth();
-    saveToCookie({
-      "apiRoot": msGraphApiRoot,
-      "signedin": false
-    });
-    $('#od-breadcrumb').empty();
-    $('#od-items').empty();
-    $('#od-json').empty();
-    location.reload();
-  }
-
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-      var pair = vars[i].split("=");
-      if (pair[0] == variable) {
-        return pair[1];
-      }
-    }
-    return (false);
-  }
-
-</script>
 <base target="_self" />
 </head>
-
 <body ng-app=""> 
 <div id="intro">
   <div align="center"> 
@@ -859,29 +755,6 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
 <div id="falsesecback"></div>
 </section>
   <section>
-    <div>
-      <div id="od-site">
-        <div id="od-commands">
-          <div id="od-login" style="display: hidden">
-            <a href="#" onclick="signInToOneDrive()"></a>&nbsp;&nbsp;
-          </div>
-          <div id="od-logoff" style="display: hidden">
-            <a href="#" onclick="signOut()"></a>
-          </div>
-        </div>
-        <div id="od-title"></div>
-      </div>
-
-      <div id="od-loading"></div>
-      <div id="od-breadcrumb"></div>
-      <div id="od-content">
-        <div id="od-items" class="od-pagecol"></div>
-        <div id="od-json" class="od-pagecol"></div>
-      </div>
-
-    </div>
-  </section>
-  <section>
     <div id="todbox">
       <span class="closetodbox" title="Close"><b>&times;</b></span>
       <span id="fullheighttod" style="display:none;" title="Full Height"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
@@ -903,7 +776,6 @@ text-align:center;"  placeholder="Enter Enrollment ID" required/><br>
       <span class="newtab" title="Open in new tab"><a target="_blank" href="#" id="hrefframejd" style="color:white;"><b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
       </svg></b></a></span> <span id="mtitlejd" style="font-size: 16px;display:none;padding-top:2px;" >|| M A S T R O W A L L</span> <span id="btitlejd" style="font-size: 16px;display:block;padding-top:2px;" >|| Journals</span>
-
       <iframe id="jdframe" src="" frameborder=0 width="100%" height="100%"  ></iframe>
     </div>
   </section>

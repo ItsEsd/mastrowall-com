@@ -240,6 +240,19 @@
   margin-right: 6px;
   animation: spin 2s linear infinite;
 }
+#jdframe {
+  background-image: url("/images/loading-gif.gif");
+  background-size: 100px 40px;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+#framenews iframe {
+  background-size: 100px 20px;
+  background-position-x: center;
+  background-position-y: 95%;
+  background-repeat: no-repeat;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

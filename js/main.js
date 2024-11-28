@@ -27,8 +27,10 @@ function openframenews() {
   overlayDiv.appendChild(loadingMessage);
   document.getElementById("framenews").appendChild(overlayDiv);
   var iframe = document.getElementById("frame");
+  iframe.style.backgroundImage = "url('/images/loading-gif.gif')";
   iframe.onload = function () {
     document.getElementById("framenews").removeChild(overlayDiv);
+    iframe.style.backgroundImage = "none";
   };
   var ovrlyfrmldElement = document.getElementById("ovrlyfrmld");
   if (ovrlyfrmldElement) {
@@ -293,21 +295,18 @@ $(document).ready(function () {
   });
 
   $("#esq").click(function () {
-    $("#jdbox").slideDown("slow");
-    $("#dots").hide("fast");
-    $("#togTest").show();
-    $("#togTest2").hide();
+    opnjdfrm();
     document.getElementById("btitlejd").innerHTML = "|| Journals";
     document.getElementById("jdframe").src =
       "https://www.openaccessjournals.com/";
     document.getElementById("hrefframejd").href =
       "https://www.openaccessjournals.com/";
+    document.getElementById("jdframe").onload = function () {
+      document.getElementById("jdframe").style.backgroundImage = "none";
+    };
   });
   $("#scd").click(function () {
-    $("#jdbox").slideDown("slow");
-    $("#dots").hide("fast");
-    $("#togTest").show();
-    $("#togTest2").hide();
+    opnjdfrm();
     document.getElementById("btitlejd").innerHTML = "|| Journals";
     document.getElementById("jdframe").src =
       "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
@@ -315,24 +314,30 @@ $(document).ready(function () {
       "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
   });
   $("#g2faq").click(function () {
-    $("#jdbox").slideDown("slow");
-    $("#dots").hide("fast");
-    $("#togTest").show();
-    $("#togTest2").hide();
+    opnjdfrm();
     document.getElementById("btitlejd").innerHTML = "|| 🤖 G2 FAQ - AMRIT";
     document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
     document.getElementById("hrefframejd").href =
       "https://g2faq.amrit-corp.com";
   });
   $("#dictnr").click(function () {
-    $("#jdbox").slideDown("slow");
-    $("#dots").hide("fast");
-    $("#togTest").show();
-    $("#togTest2").hide();
+    opnjdfrm();
     document.getElementById("btitlejd").innerHTML = "|| Dictionary";
     document.getElementById("jdframe").src = "https://www.dictionary.com/";
     document.getElementById("hrefframejd").href = "https://www.dictionary.com/";
   });
+
+  function opnjdfrm() {
+    $("#jdbox").slideDown("slow");
+    $("#dots").hide("fast");
+    $("#togTest").show();
+    $("#togTest2").hide();
+    document.getElementById("jdframe").style.backgroundImage =
+      'url("/images/loading-gif.gif")';
+    document.getElementById("jdframe").onload = function () {
+      document.getElementById("jdframe").style.backgroundImage = "none";
+    };
+  }
 
   $(".closejdbox").click(function () {
     $("#jdbox").slideUp("slow");

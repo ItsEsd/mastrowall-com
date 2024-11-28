@@ -136,6 +136,11 @@ $(document).ready(function () {
   function opjdbox() {
     $("#jdbox,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#framenews").hide("fast");
+    document.getElementById("jdframe").style.backgroundImage =
+      'url("/images/loading-gif.gif")';
+    document.getElementById("jdframe").onload = function () {
+      document.getElementById("jdframe").style.backgroundImage = "none";
+    };
   }
 
   function openframenews() {
@@ -160,8 +165,10 @@ $(document).ready(function () {
     overlayDiv.appendChild(loadingMessage);
     document.getElementById("framenews").appendChild(overlayDiv);
     var iframe = document.getElementById("frame");
+    iframe.style.backgroundImage = "url('/images/loading-gif.gif')";
     iframe.onload = function () {
       document.getElementById("framenews").removeChild(overlayDiv);
+      iframe.style.backgroundImage = "none";
     };
 
     var ovrlyfrmldElement = document.getElementById("ovrlyfrmld");
