@@ -166,15 +166,18 @@
   font-size: 25px;
   cursor: pointer;
   float: right;
-  padding: 0px 15px;
+  padding: 2px 15px;
   font-weight: 100;
-  margin-top: -5px;
   border-top-right-radius: 0px;
   background-color: #db0b49;
   color: #ffffff;
-  /* display:none; */
+  justify-content: center;
+  align-items: center;
+  margin-top: -5px !important;
 }
-
+.closeotbx b {
+  margin-top: -5px !important;
+}
 .closeotbx:hover {
   background-color: #fa1818;
   color: white;
