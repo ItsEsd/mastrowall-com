@@ -175,9 +175,7 @@
   align-items: center;
   margin-top: -5px !important;
 }
-.closeotbx b {
-  margin-top: -5px !important;
-}
+
 .closeotbx:hover {
   background-color: #fa1818;
   color: white;
