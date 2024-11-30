@@ -286,6 +286,10 @@ $(document).ready(function () {
   // });
 
   $("#pt").click(function () {
+    var elm = document.getElementById("pvrcfrm");
+    if (elm.src == "") {
+      elm.src = "/privacy-policy.html";
+    }
     $("#privacybox").toggle();
     $("#todbox").hide();
   });

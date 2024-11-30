@@ -224,6 +224,7 @@
 
 #chresexam {
   padding-top: 20px;
+  margin-bottom: 0px;
   padding-bottom: 0px;
 }
 
@@ -233,6 +234,8 @@
 
 #chresexam p {
   max-width: 70%;
+  padding: 0px;
+  margin: 0px;
 }
 #chresexam span {
   margin-bottom: 10px;
