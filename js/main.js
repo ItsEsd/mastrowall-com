@@ -277,14 +277,6 @@ $(document).ready(function () {
     //       document.title = "Art of Learning | MASTROWALL";
   });
 
-  // $("#todbox").click(function() {
-  //   $("#todbox").css('z-index','10');
-  //   // let stateObj = { id: "0" };
-  //   // window.history.replaceState(stateObj,
-  //   //       "", "/");
-  //   //       document.title = "Art of Learning | MASTROWALL";
-  // });
-
   $("#pt").click(function () {
     var elm = document.getElementById("pvrcfrm");
     if (elm.src == "") {
@@ -384,20 +376,27 @@ $(document).ready(function () {
   }
 });
 
-$(document).ready(function () {
-  $("#togTest").click(function () {
-    $("#dots").show("fast");
-    $("#togTest").hide();
-    $("#closecasinfo").hide();
-    document.getElementById("continueas").style.width = "0";
-    document.getElementById("togTest2").style.display = "block";
-    document.getElementById("myNav").style.width = "0";
-    document.getElementById("falseback-conas").style.display = "none";
-    $(".falseback-nav").hide();
-    $(".mynvflback").hide();
-    document.getElementById("dots").style.zIndex = "100";
-  });
+// $(document).ready(function () {
+$("#togTest").click(function () {
+  $("#dots").show("fast");
+  $("#togTest").hide();
+  $("#closecasinfo").hide();
+  document.getElementById("continueas").style.width = "0";
+  document.getElementById("togTest2").style.display = "block";
+  document.getElementById("myNav").style.width = "0";
+  document.getElementById("falseback-conas").style.display = "none";
+  $(".falseback-nav").hide();
+  $(".mynvflback").hide();
+  document.getElementById("dots").style.zIndex = "100";
 });
+// });
+
+$("#togTest2").click(function () {
+  $("#dots").hide("fast");
+  $("#togTest").show();
+  $("#togTest2").hide();
+});
+
 $(document).ready(function () {
   window.addEventListener("mouseup", function (event) {
     var pol = document.getElementById("dots");
@@ -481,35 +480,34 @@ function godark() {
   document.getElementById("signinuser").style.color = "#4542f1";
 }
 
-$(document).ready(function () {
-  $("#acdash").click(function () {
-    document.getElementById("searchframe").style.boxShadow =
-      "0 1px 6px 1px #2202af";
-    document.getElementById("searchframe").style.width = "100%";
-    document.getElementById("main").style.marginLeft = "0";
-  });
-
-  $("#spdash").click(function () {
-    document.getElementById("linkins").style.boxShadow =
-      "0 1px 6px 1px #2202af";
-    document.getElementById("linkins").style.width = "100%";
-    document.getElementById("main").style.marginLeft = "0";
-  });
-
-  var clkelement = document.getElementById("tlmdnw");
-
-  $("#sgdash").click(function (event) {
-    if (event.target === clkelement) {
-      window.open("https://telemedia.mastrowall.com", "_blank");
-      return;
-    }
-
-    document.getElementById("telemedia").style.boxShadow =
-      "0 1px 6px 1px #2202af";
-    document.getElementById("telemedia").style.width = "100%";
-    document.getElementById("main").style.marginLeft = "0";
-  });
+// $(document).ready(function () {
+$("#acdash").click(function () {
+  document.getElementById("searchframe").style.boxShadow =
+    "0 1px 6px 1px #2202af";
+  document.getElementById("searchframe").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "0";
 });
+
+$("#spdash").click(function () {
+  document.getElementById("linkins").style.boxShadow = "0 1px 6px 1px #2202af";
+  document.getElementById("linkins").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "0";
+});
+
+var clkelement = document.getElementById("tlmdnw");
+
+$("#sgdash").click(function (event) {
+  if (event.target === clkelement) {
+    window.open("https://telemedia.mastrowall.com", "_blank");
+    return;
+  }
+
+  document.getElementById("telemedia").style.boxShadow =
+    "0 1px 6px 1px #2202af";
+  document.getElementById("telemedia").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "0";
+});
+// });
 
 $("#botlinkins").click(function () {
   document.getElementById("linkins").style.boxShadow = "0 1px 6px 1px #2202af";

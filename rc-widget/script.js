@@ -22,6 +22,12 @@ $(document).ready(function () {
     $("#togTest2").hide();
   });
 
+  $("#togTest2").click(function () {
+    $("#dots").hide("fast");
+    $("#togTest").show();
+    $("#togTest2").hide();
+  });
+
   $("#scinewsorg").click(function () {
     openframenews();
     document.getElementById("frame").src = "https://www.sciencenews.org";
