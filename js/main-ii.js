@@ -552,8 +552,6 @@ var gmdsh = [
     "https://www.spellingcity.com/spelling-games-vocabulary-games.html",
   ],
 
-  ["../images/gaming/gm13.png", "https://www.mathplayground.com/"],
-
   ["../images/gaming/gm14.png", "https://www.cellsalive.com/"],
 
   ["../images/gaming/gm15.png", "https://www.physicsgames.net/"],
@@ -571,8 +569,6 @@ var gmdsh = [
     "../images/gaming/gm20.png",
     "https://www.mathnook.com/math/boatcoordinates.html",
   ],
-
-  ["../images/gaming/gm21.png", "https://www.brainpop.com/games/"],
 
   ["../images/gaming/gm19.png", "https://www.thatquiz.org/"],
 
