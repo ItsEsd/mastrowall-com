@@ -32,7 +32,7 @@ formwall.addEventListener("submit", (event) => {
   var Board = $("#board_").val();
   var Subject = $("#subject_").val();
   var Resume = $("#resume").val();
-  var Storage = $("#storage").val();
+  var Storage = "NA";
   var TPic = $("#proPicT").val();
   if (
     email != 0 &&
@@ -254,7 +254,7 @@ formwallco.addEventListener("submit", (event) => {
   var Board = $("#boardco_").val();
   var Subject = $("#subjectco_").val();
   var Resume = $("#resumeco").val();
-  var Storage = $("#storageco").val();
+  var Storage = "NA";
   var TPic = $("#proPicT").val();
   if (
     email != 0 &&
