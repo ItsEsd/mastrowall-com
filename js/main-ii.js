@@ -532,6 +532,7 @@ var gmdsh = [
     "../images/gaming/chess.png",
     "/e-games/stockfish-chess-web-gui-master/index.html",
   ],
+  ["../images/gaming/sudoku-icon.png", "/e-games/web-sudoku-puzzle/index.html"],
 
   ["../images/gaming/gm5.png", "https://littlealchemy2.com/"],
 
