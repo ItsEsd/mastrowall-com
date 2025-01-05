@@ -90,9 +90,8 @@ $(document).ready(function () {
 
   $("#scd").click(function () {
     opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Journals";
-    document.getElementById("jdframe").src =
-      "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
+    document.getElementById("btitlejd").innerHTML = "|| Curiosity";
+    document.getElementById("jdframe").src = "https://www.howstuffworks.com/";
   });
 
   $("#g2faq").click(function () {

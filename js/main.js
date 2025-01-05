@@ -303,11 +303,10 @@ $(document).ready(function () {
   });
   $("#scd").click(function () {
     opnjdfrm();
-    document.getElementById("btitlejd").innerHTML = "|| Journals";
-    document.getElementById("jdframe").src =
-      "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
+    document.getElementById("btitlejd").innerHTML = "|| Curiosity";
+    document.getElementById("jdframe").src = "https://www.howstuffworks.com/";
     document.getElementById("hrefframejd").href =
-      "https://www.sciencedirect.com/browse/journals-and-books?accessType=openAccess";
+      "https://www.howstuffworks.com/";
   });
   $("#g2faq").click(function () {
     opnjdfrm();
