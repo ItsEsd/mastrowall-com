@@ -135,7 +135,7 @@ cridtwo.addEventListener("submit", (event) => {
     "Exam Pass For Students: " +
     "<span style='color:#0c29cd;line-height:160%;'>" +
     examp +
-    "</span></p><hr><hr></div><p style='width:100%;text-align: center;font-size:14px;'>©️ M A S T R O W A L L</p></div>";
+    "</span></p><hr><hr></div><p style='width:100%;text-align: center;font-size:14px;'>&copy; M A S T R O W A L L</p></div>";
   sendEdmail();
 });
 function infoexampdf() {
@@ -836,7 +836,7 @@ function ctrlq(e) {
       "<p style='font-size:16px;'>Registered Email ID: <em>" +
       eid +
       "</em></p><br><hr>" +
-      "<div><p style='font-size:14px;width:100%;line-height:160%;display:block;'><span style='float:left;line-height:160%;display:block;'>©️ M A S T R O W A L L</span><a style='font-size:16px;color:#0c29cd;text-decoration:none;float:right;line-height:160%;display:block;' target='_blank' href='https://mastrowall.com/online-test/'>Go to Test >></a></p></div><br></div></div>";
+      "<div><p style='font-size:14px;width:100%;line-height:160%;display:block;'><span style='float:left;line-height:160%;display:block;'>&copy; M A S T R O W A L L</span><a style='font-size:16px;color:#0c29cd;text-decoration:none;float:right;line-height:160%;display:block;' target='_blank' href='https://mastrowall.com/online-test/'>Go to Test >></a></p></div><br></div></div>";
     document.getElementById("actionbtnenroll").style.display = "block";
     sendStmail();
   } else {
