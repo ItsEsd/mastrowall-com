@@ -548,11 +548,6 @@ var gmdsh = [
 
   ["../images/gaming/gm11.png", "https://www.turtlediary.com/"],
 
-  [
-    "../images/gaming/gm12.png",
-    "https://www.spellingcity.com/spelling-games-vocabulary-games.html",
-  ],
-
   ["../images/gaming/gm14.png", "https://www.cellsalive.com/"],
 
   ["../images/gaming/gm15.png", "https://www.physicsgames.net/"],
