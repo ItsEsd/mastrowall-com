@@ -129,8 +129,10 @@
   border-color: #bbbbbb;
 }
 .titlewndw {
+  font-size: 16px;
   margin-left: 5px;
   float: left;
+  padding-top: 4px;
 }
 
 .nbtbfrm {
@@ -266,8 +268,8 @@
 }
 .mwallbrndicon {
   width: 28px;
-  padding: 2px;
-  margin: 4px;
+  padding: 1px;
+  margin-right: 0px;
   background-color: #120ef7;
   border-radius: 50%;
   background: linear-gradient(
@@ -302,5 +304,18 @@
 
   .nbtbfrmwtsrc {
     height: 70vh;
+  }
+  .closeotbx {
+    font-size: 18px;
+  }
+  .titlewndw {
+    font-size: 14px;
+    padding-top: 2px;
+  }
+  .mwallbrndicon {
+    width: 20px;
+  }
+  .nbtbfrm {
+    height: 96.5vh;
   }
 }
