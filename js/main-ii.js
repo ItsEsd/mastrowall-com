@@ -186,13 +186,13 @@ $("#mntday").click(function () {
     "https://www.medicalnewstoday.com";
 });
 
-$("#scrpwiki").click(function () {
+$("#esq").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://scrapia.amrit-corp.com/";
+  document.getElementById("frame").src = "https://www.openaccessjournals.com/";
   document.getElementById("hrefframenews").href =
-    "https://scrapia.amrit-corp.com/";
+    "https://www.openaccessjournals.com/";
 });
 
 $("#iasstils").click(function () {

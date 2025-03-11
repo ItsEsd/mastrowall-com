@@ -427,6 +427,7 @@ body {
   text-align: center;
   margin: 4px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .botInline1:hover {
   -webkit-transform: scale(1.06);
@@ -443,6 +444,7 @@ body {
   background-color: #ffffff;
   color: #0c09c9;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .botInline2:hover {

@@ -38,9 +38,10 @@ $(document).ready(function () {
     document.getElementById("frame").src = "https://www.medicalnewstoday.com";
   });
 
-  $("#scrpwiki").click(function () {
+  $("#esq").click(function () {
     openframenews();
-    document.getElementById("frame").src = "https://scrapia.amrit-corp.com/";
+    document.getElementById("frame").src =
+      "https://www.openaccessjournals.com/";
   });
 
   $("#iasstils").click(function () {
@@ -81,17 +82,14 @@ $(document).ready(function () {
     $(".dircttb").slideUp("slow");
   });
 
-  $("#esq").click(function () {
+  $("#quzz").click(function () {
     opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Journals";
-    document.getElementById("jdframe").src =
-      "https://www.openaccessjournals.com/";
+    document.getElementById("btitlejd").innerHTML = "|| Quizzes";
+    document.getElementById("jdframe").src = "https://quiz.mastrowall.com";
   });
 
-  $("#scd").click(function () {
-    opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Curiosity";
-    document.getElementById("jdframe").src = "https://www.howstuffworks.com/";
+  $("#mlibr").click(function () {
+    window.open("https://library.mastrowall.in/", "_blank");
   });
 
   $("#g2faq").click(function () {
@@ -100,10 +98,10 @@ $(document).ready(function () {
     document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
   });
 
-  $("#dictnr").click(function () {
+  $("#scrpwiki").click(function () {
     opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Dictionary";
-    document.getElementById("jdframe").src = "https://www.dictionary.com/";
+    document.getElementById("btitlejd").innerHTML = "|| Scrapia";
+    document.getElementById("jdframe").src = "https://scrapia.amrit-corp.com/";
   });
 
   $("#botcrtod").click(function () {

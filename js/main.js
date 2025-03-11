@@ -290,23 +290,20 @@ $(document).ready(function () {
     $("#privacybox").hide();
   });
 
-  $("#esq").click(function () {
+  $("#quzz").click(function () {
     opnjdfrm();
-    document.getElementById("btitlejd").innerHTML = "|| Journals";
-    document.getElementById("jdframe").src =
-      "https://www.openaccessjournals.com/";
+    document.getElementById("btitlejd").innerHTML = "|| Quizzes";
+    document.getElementById("jdframe").src = "https://quiz.mastrowall.com/";
     document.getElementById("hrefframejd").href =
-      "https://www.openaccessjournals.com/";
+      "https://quiz.mastrowall.com/";
     document.getElementById("jdframe").onload = function () {
       document.getElementById("jdframe").style.backgroundImage = "none";
     };
   });
-  $("#scd").click(function () {
-    opnjdfrm();
-    document.getElementById("btitlejd").innerHTML = "|| Curiosity";
-    document.getElementById("jdframe").src = "https://www.howstuffworks.com/";
-    document.getElementById("hrefframejd").href =
-      "https://www.howstuffworks.com/";
+  $("#mlibr").click(function () {
+    move();
+    changezpostd();
+    window.open("https://library.mastrowall.in/", "_blank");
   });
   $("#g2faq").click(function () {
     opnjdfrm();
@@ -315,11 +312,12 @@ $(document).ready(function () {
     document.getElementById("hrefframejd").href =
       "https://g2faq.amrit-corp.com";
   });
-  $("#dictnr").click(function () {
+  $("#scrpwiki").click(function () {
     opnjdfrm();
-    document.getElementById("btitlejd").innerHTML = "|| Dictionary";
-    document.getElementById("jdframe").src = "https://www.dictionary.com/";
-    document.getElementById("hrefframejd").href = "https://www.dictionary.com/";
+    document.getElementById("btitlejd").innerHTML = "|| Scrapia";
+    document.getElementById("jdframe").src = "https://scrapia.amrit-corp.com/";
+    document.getElementById("hrefframejd").href =
+      "https://scrapia.amrit-corp.com/";
   });
 
   function opnjdfrm() {
