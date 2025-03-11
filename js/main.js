@@ -314,7 +314,7 @@ $(document).ready(function () {
   });
   $("#scrpwiki").click(function () {
     opnjdfrm();
-    document.getElementById("btitlejd").innerHTML = "|| Scrapia";
+    document.getElementById("btitlejd").innerHTML = "|| Wikipedia Search";
     document.getElementById("jdframe").src = "https://scrapia.amrit-corp.com/";
     document.getElementById("hrefframejd").href =
       "https://scrapia.amrit-corp.com/";
