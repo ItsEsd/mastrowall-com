@@ -100,7 +100,7 @@ $(document).ready(function () {
 
   $("#scrpwiki").click(function () {
     opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Scrapia";
+    document.getElementById("btitlejd").innerHTML = "|| Wikipedia Search";
     document.getElementById("jdframe").src = "https://scrapia.amrit-corp.com/";
   });
 
