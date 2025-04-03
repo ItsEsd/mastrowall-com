@@ -548,8 +548,6 @@ var gmdsh = [
 
   ["../images/gaming/gm11.png", "https://www.turtlediary.com/"],
 
-  ["../images/gaming/gm14.png", "https://www.cellsalive.com/"],
-
   ["../images/gaming/gm15.png", "https://www.physicsgames.net/"],
 
   ["../images/gaming/gm16.png", "https://kids.niehs.nih.gov/games/"],
