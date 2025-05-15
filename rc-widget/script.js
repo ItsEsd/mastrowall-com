@@ -45,7 +45,7 @@ $(document).ready(function () {
   });
 
   $("#iasstils").click(function () {
-    window.open("https://ilias.mastrowall.in", "_blank");
+    window.open("https://www.astro.mastrowall.in/groups", "_blank");
   });
 
   $("#popscie").click(function () {
