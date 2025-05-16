@@ -1,30 +1,49 @@
-body{
-    overflow-x:hidden;
-    overflow-y: scroll;
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-#newsfeed{
-padding:10px;
-padding-bottom:0px;
+#newsfeed {
+  padding: 10px;
+  padding-bottom: 0px;
 }
 
-hr{border-color: #1d0a72;}
+hr {
+  border-color: #1d0a72;
+}
 #rfitem {
-    border: none;
-    width:100%;
-    padding:10px;
-    display:inline-block;
-    margin-bottom: 5px;
-    background-color: #dddddd;
-    border-radius:10px;
-}  
-#rfitem p{color:#6a13db}
+  border: none;
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+#rfitem p {
+  color: #6a13db;
+}
 
-#rfitem .title{color: #a00a49;}
+#rfitem .title {
+  color: #a00a49;
+}
 
-#rfitem a{text-decoration: none;}
-#rfitem .title:hover{color:#a00a48ab}
+#rfitem a {
+  text-decoration: none;
+}
+#rfitem .title:hover {
+  color: #a00a48ab;
+}
 
-#rfitem .dtitle{font-size: 14px;color:#ff6868}
+#rfitem .dtitle {
+  font-size: 14px;
+  color: #ff6868;
+}
 
-#rfitem .descp {color:#06117a}
-#rfitem img{width:100%;height:100%;pointer-events: none;}
+#rfitem .descp {
+  color: #06117a;
+}
+#rfitem img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
