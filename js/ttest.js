@@ -385,10 +385,13 @@ quesfrm.addEventListener("submit", (event) => {
     $("#falsesecback-mq").fadeOut("slow");
   }, 4000);
   quesfrm.reset();
-  document.getElementById("conq").innerText = "";
+  document.getElementById(
+    "conq"
+  ).innerHTML = `<p onclick="$(this).remove();" style="width:100%;height:150px;color:#f75252;">**[ required ]**</p>`;
   previewqset();
 });
 function ctrlqs(e) {
+  $("#previewst, #previewop").remove();
   var re = e.result;
   if (re === "Value updated successfully!") {
     document.getElementById("qupdated").style.display = "block";
