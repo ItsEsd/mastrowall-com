@@ -362,6 +362,75 @@ function read_value() {
     for (var i = 0; i < json.records.length - 1; i++) {}
   });
 }
+function showNotification(message, duration = 1500) {
+  const box = document.getElementById("outgoing-warning");
+  box.innerHTML = message;
+  box.style.display = "block";
+  setTimeout(() => {
+    box.style.display = "none";
+  }, duration);
+}
+
+document.addEventListener("click", function (e) {
+  const anchor = e.target.closest("a");
+  if (!anchor || anchor.target !== "_blank" || !anchor.href) return;
+  e.preventDefault();
+  const href = anchor.href;
+  showNotification("Opening external link in <u>GistBox</u>");
+  setTimeout(() => {
+    showGistBox(href);
+  }, 1000);
+});
+
+function showGistBox(url) {
+  document.body.style.overflowY = "hidden";
+  let existinggist = document.getElementById("gistbox");
+  if (existinggist instanceof HTMLElement) {
+    existinggist.style.display =
+      existinggist.style.display === "none" || !existinggist.style.display
+        ? "block"
+        : "none";
+    updateFetchUrl(url);
+  } else {
+    const box = document.createElement("div");
+    box.id = "gistbox";
+    box.className = "gistbox";
+    box.style.display = "block";
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "gistbox-close";
+    closeBtn.textContent = "Close GistBox";
+    closeBtn.onclick = () => {
+      box.style.display = "none";
+      document.body.style.overflowY = "auto";
+    };
+
+    const iframe = document.createElement("iframe");
+    iframe.src =
+      "https://gistbox.mastrowall.com/?fetchurl=" + encodeURIComponent(url);
+    iframe.className = "gistbox-iframe";
+    iframe.id = "gistbox-iframe";
+    iframe.allowFullscreen = true;
+    box.appendChild(closeBtn);
+    box.appendChild(iframe);
+    document.body.appendChild(box);
+  }
+}
+
+function updateFetchUrl(newUrl) {
+  const iframegist = document.getElementById("gistbox-iframe");
+  if (iframegist && iframegist.contentWindow) {
+    iframegist.contentWindow.postMessage(
+      {
+        type: "navigatelinkins",
+        url: newUrl,
+        headtit: "Testing",
+      },
+      "https://gistbox.mastrowall.com/"
+    );
+  } else {
+    console.warn("iframe not ready or not found");
+  }
+}
 
 function show_wall() {
   $("#loadmore_note,#loadmore_lec").show();

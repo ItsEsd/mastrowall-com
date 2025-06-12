@@ -121,15 +121,15 @@ th {
 
 .iteam,
 .frame {
-  border-radius: 0px;
   display: inline-block;
   margin: 20px;
   padding: 0px;
-  border: 0px;
   background-color: #0c09c9;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 1px 4px 0px #0c09c9;
+  box-shadow: 0 2px 10px 0px #0c09c971;
+  border-radius: 10px;
+  border: none;
 }
 
 .iteam:hover,
@@ -141,7 +141,7 @@ th {
 }
 
 .iteamvid {
-  border-radius: 0px;
+  border-radius: 10px;
   display: inline-block;
   margin: 20px;
   padding: 0px;
@@ -389,9 +389,33 @@ input.error {
 }
 
 .card {
-  border-radius: 0px;
+  border-radius: 10px;
+  text-align: center;
 }
-
+.card a:hover {
+  text-decoration: underline;
+}
+.card-des {
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px;
+}
+.card-des h5 {
+  font-size: 1.15em;
+  line-height: 1.5;
+}
+.card img {
+  border-radius: 10px;
+}
+.card-footer p {
+  padding: 0px;
+  line-height: 20px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+.card-footer span {
+  font-size: 16px;
+}
 #loadmore_lec,
 #loadmore_note {
   background-color: #e41542;
@@ -399,7 +423,7 @@ input.error {
   border: 1px solid #c90909;
   width: 140px;
   margin-bottom: 20px;
-  box-shadow: 0 1px 10px 0 #0c09c9;
+  box-shadow: 0 1px 10px 0 #0c09c99f;
 }
 
 #loadmore_lec:hover,
@@ -590,6 +614,65 @@ input.error {
 }
 #info a:hover {
   text-decoration: underline;
+}
+
+#outgoing-warning {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.gistbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.gistbox-close {
+  align-self: flex-end;
+  margin: 0px;
+  padding: 2px 12px;
+  bottom: 0px;
+  right: 20px;
+  position: fixed;
+  font-size: 13px;
+  cursor: pointer;
+  /* background-image: linear-gradient(-135deg, #ff0000b2, #800080b8, #0000ff92); */
+  background-color: #c2c2c2;
+  border: none;
+  border-radius: 0px;
+  color: #22222298;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  outline: none !important;
+}
+.gistbox-close:hover {
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.gistbox-iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 @media screen and (max-width: 500px) {
