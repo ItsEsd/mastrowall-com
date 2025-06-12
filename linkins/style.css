@@ -392,8 +392,8 @@ input.error {
   border-radius: 10px;
   text-align: center;
 }
-.card a:hover {
-  text-decoration: underline;
+.card-des :hover {
+  text-decoration: underline !important;
 }
 .card-des {
   text-align: left;
