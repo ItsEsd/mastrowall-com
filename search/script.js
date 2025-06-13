@@ -552,8 +552,7 @@ function showGistBox(url) {
 
     const iframe = document.createElement("iframe");
     iframe.src =
-      "http://127.0.0.1:5500/public/index.html?fetchurl=" +
-      encodeURIComponent(url);
+      "https://gistbox.mastrowall.com/?fetchurl=" + encodeURIComponent(url);
     iframe.className = "gistbox-iframe";
     iframe.id = "gistbox-iframe";
     iframe.allowFullscreen = true;
@@ -572,7 +571,7 @@ function updateFetchUrl(newUrl) {
         url: newUrl,
         headtit: "Testing",
       },
-      "http://127.0.0.1:5500/public/index.html"
+      "https://gistbox.mastrowall.com/"
     );
   } else {
     console.warn("iframe not ready or not found");
