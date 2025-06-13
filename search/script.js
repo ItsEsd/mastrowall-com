@@ -272,7 +272,11 @@ $(document).ready(function () {
           pageElement.append(
             $("<h4>").append(
               $("<a>")
-                .attr("href", "http://en.wikipedia.org/wiki/" + page.title)
+                .attr(
+                  "href",
+                  "http://en.wikipedia.org/wiki/" +
+                    page.title.replace(/\s+/g, "_")
+                )
                 .text(page.title)
             )
           );
@@ -548,7 +552,8 @@ function showGistBox(url) {
 
     const iframe = document.createElement("iframe");
     iframe.src =
-      "https://gistbox.mastrowall.com/?fetchurl=" + encodeURIComponent(url);
+      "http://127.0.0.1:5500/public/index.html?fetchurl=" +
+      encodeURIComponent(url);
     iframe.className = "gistbox-iframe";
     iframe.id = "gistbox-iframe";
     iframe.allowFullscreen = true;
@@ -567,7 +572,7 @@ function updateFetchUrl(newUrl) {
         url: newUrl,
         headtit: "Testing",
       },
-      "https://gistbox.mastrowall.com/"
+      "http://127.0.0.1:5500/public/index.html"
     );
   } else {
     console.warn("iframe not ready or not found");
