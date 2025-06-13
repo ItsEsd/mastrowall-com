@@ -510,18 +510,37 @@ document.addEventListener("click", function (e) {
   const anchor = e.target.closest("a");
   if (!anchor || !anchor.href) return;
 
+  let href = anchor.href;
+
+  if (href.startsWith("https://www.google.com/url")) {
+    const urlParams = new URL(href).searchParams;
+    const realUrl = urlParams.get("q");
+    if (realUrl) href = realUrl;
+  }
+
   const isNewTab = anchor.target === "_blank" || getBaseTarget() === "_blank";
   if (!isNewTab) return;
 
   e.preventDefault();
-
-  const href = anchor.href;
+  console.log(href);
   showNotification("Opening external link in <u>GistBox</u>");
-
   setTimeout(() => {
     showGistBox(href);
   }, 1000);
 });
+
+window.open = function (url) {
+  const parsed = new URL(url);
+  const realUrl =
+    parsed.hostname === "www.google.com" && parsed.pathname === "/url"
+      ? parsed.searchParams.get("q") || url
+      : url;
+  console.log(realUrl);
+  showNotification("Opening external link in <u>GistBox</u>");
+  setTimeout(() => {
+    showGistBox(realUrl);
+  }, 0);
+};
 
 function getBaseTarget() {
   const base = document.querySelector("base");
@@ -564,10 +583,15 @@ function showGistBox(url) {
 
 function updateFetchUrl(newUrl) {
   const iframegist = document.getElementById("gistbox-iframe");
+
   if (iframegist && iframegist.contentWindow) {
+    const isYouTube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(
+      newUrl
+    );
+
     iframegist.contentWindow.postMessage(
       {
-        type: "navigatelinkins",
+        type: isYouTube ? "youtubevid" : "navigatelinkins",
         url: newUrl,
         headtit: "Testing",
       },
