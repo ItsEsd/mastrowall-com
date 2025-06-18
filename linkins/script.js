@@ -266,7 +266,7 @@ function ThumbFinal() {
 }
 
 var script_url =
-  "https://script.google.com/macros/s/AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
+  "https://script.google.com/macros/s/AKfycbwVY8W9kRA5EXGEoFJApnqurbiIfSjewQxEz0OPnStDgIi29QASCaX_SW7V4AWCKoC5BA/exec";
 document.getElementById("insertt").addEventListener("click", insert_value);
 
 function insert_value() {
@@ -300,7 +300,9 @@ function insert_value() {
       "&action=insert";
     var request = jQuery.ajax({
       crossDomain: true,
-      url: url,
+      url:
+        "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+        encodeURIComponent(url),
       method: "GET",
       dataType: "jsonp",
     });
@@ -342,7 +344,9 @@ function delete_value() {
     "&action=delete";
   var request = jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
     method: "GET",
     dataType: "jsonp",
   });
@@ -356,7 +360,9 @@ function ctrlq(e) {
 function read_value() {
   $("#re").css("visibility", "hidden");
   document.getElementById("loader").style.visibility = "visible";
-  var url = script_url + "?action=read";
+  var url =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(script_url + "?action=read");
   $.getJSON(url, function (json) {
     json.records.reverse();
     for (var i = 0; i < json.records.length - 1; i++) {}
@@ -436,7 +442,9 @@ function show_wall() {
   $("#loadmore_note,#loadmore_lec").show();
   $("#re_lec").css("visibility", "hidden");
   document.getElementById("loader").style.visibility = "visible";
-  var url = script_url + "?action=read";
+  var url =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(script_url + "?action=read");
   $.getJSON(url, function (json) {
     json.records.reverse();
     var maxresult = json.records.length;
@@ -614,7 +622,7 @@ function enableinput_lec(id) {
 }
 
 var script_url_lec =
-  "https://script.google.com/macros/s/AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
+  "https://script.google.com/macros/s/AKfycbxmsOyDjjcCXu0O1l3l2_FjoaTm8f650MGD7jX0wxzsWNchamdybBuPwqvg5JfAq7e9/exec";
 document
   .getElementById("insertt_lec")
   .addEventListener("click", insert_value_lec);
@@ -647,7 +655,9 @@ function insert_value_lec() {
       "&action=insertLec";
     var request = jQuery.ajax({
       crossDomain: true,
-      url: url,
+      url:
+        "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+        encodeURIComponent(url),
       method: "GET",
       dataType: "jsonp",
     });
@@ -690,7 +700,9 @@ function delete_value_lec() {
     "&action=deleteLec";
   var request = jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
     method: "GET",
     dataType: "jsonp",
   });
@@ -704,7 +716,9 @@ function ctrlq_lec(e) {
 function read_value_lec() {
   $("#re_lec").css("visibility", "hidden");
   document.getElementById("loader_lec").style.visibility = "visible";
-  var url = script_url_lec + "?action=readLec";
+  var url =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(script_url_lec + "?action=readLec");
   $.getJSON(url, function (json) {});
 }
 
@@ -723,7 +737,9 @@ function show_wall_lec() {
   $("#loadmore_note,#loadmore_lec").show();
   $("#re_lec").css("visibility", "hidden");
   document.getElementById("loader_lec").style.visibility = "visible";
-  var url = script_url_lec + "?action=readLec";
+  var url =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(script_url_lec + "?action=readLec");
   $.getJSON(url, function (json) {
     json.records.reverse();
     var maxresult = json.records.length;

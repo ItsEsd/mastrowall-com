@@ -1,11 +1,15 @@
 $(document).ready(function () {
   var furl = "https://script.google.com/macros/s/";
   var aplec =
-    "AKfycbzovARmAJqod9O8JKcWqFbIs0y3MvlCgdsPoW7r8p8nbdRneCahk9fcbmi0JOU38hMX/exec";
+    "AKfycbxmsOyDjjcCXu0O1l3l2_FjoaTm8f650MGD7jX0wxzsWNchamdybBuPwqvg5JfAq7e9/exec";
   var apnote =
-    "AKfycby7WMOvKX38co6FPL3RWMYq7YZvzlqA6zLAx6u3xFIJeSnP4W-HJZqOsF38GD1ztzlFUA/exec";
-  var url = furl + apnote + "?action=read";
-  var url2 = furl + aplec + "?action=readLec";
+    "AKfycbwVY8W9kRA5EXGEoFJApnqurbiIfSjewQxEz0OPnStDgIi29QASCaX_SW7V4AWCKoC5BA/exec";
+  var url =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(furl + apnote + "?action=read");
+  var url2 =
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+    encodeURIComponent(furl + aplec + "?action=readLec");
   document
     .getElementById("searchmwall")
     .setAttribute("placeholder", "Loading topics ..");
