@@ -627,7 +627,17 @@ $("#clssrceng").click(function () {
 });
 
 function downloadFileapk() {
-  var fileUrl = "https://mastrowall.com/app/apk-release/beta-0.99.apk";
+  var fileUrl =
+    "https://mastrowall.com/app/apk-release/MASTROWALL-apkversion_beta-0.99.apk";
+  var link = document.createElement("a");
+  link.href = fileUrl;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+function downloadFileapk_monolith() {
+  var fileUrl =
+    "https://mastrowall.com/app/apk-release/MASTROWALL-apkversion_monolith-1.0.apk";
   var link = document.createElement("a");
   link.href = fileUrl;
   document.body.appendChild(link);
