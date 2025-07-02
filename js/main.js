@@ -93,8 +93,8 @@ $(document).ready(function () {
   });
 
   $("#fullheightnews").on("click", function () {
-    document.getElementById("framenews").style.maxHeight = "95vh";
-    document.getElementById("frame").style.height = "100%";
+    document.getElementById("framenews").style.maxHeight = "100vh";
+    document.getElementById("frame").style.height = "calc(100vh - 30px)";
     document.getElementById("framecontainer").style.height = "100%";
     document.getElementById("framenews").style.zIndex = "8";
     document.getElementById("fullheightnews").style.display = "none";
