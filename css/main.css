@@ -917,7 +917,6 @@ body {
   z-index: 20;
 }
 #todbox iframe {
-  /* padding-bottom:30px; */
   height: 100%;
 }
 #privacybox,
@@ -926,13 +925,12 @@ body {
   top: 0;
   left: 0;
   position: fixed;
-  padding-bottom: 30px;
+  padding-bottom: 33px;
   width: 100%;
   height: 100%;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   background-color: white;
-  /* background-image: url("https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif");*/
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: none;
