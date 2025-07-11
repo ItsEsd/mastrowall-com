@@ -86,7 +86,7 @@ img.tb1:hover {
   padding: 5px;
   margin: auto;
   margin-left: -50px;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding-bottom: 100px;
 }
 #textBox {

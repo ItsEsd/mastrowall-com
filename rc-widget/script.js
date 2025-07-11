@@ -28,126 +28,62 @@ $(document).ready(function () {
     $("#togTest2").hide();
   });
 
-  $("#scinewsorg").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.sciencenews.org";
-  });
-
-  $("#mntday").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.medicalnewstoday.com";
-  });
-
-  $("#esq").click(function () {
-    openframenews();
-    document.getElementById("frame").src =
-      "https://www.openaccessjournals.com/";
-  });
-
   $("#iasstils").click(function () {
     window.open("https://www.astro.mastrowall.in/groups", "_blank");
   });
 
+  $("#scinewsorg").click(function () {
+    const frmurl = "https://www.sciencenews.org";
+    openframenews(frmurl, "scinewsorg");
+  });
+
+  $("#mntday").click(function () {
+    const frmurl = "https://www.medicalnewstoday.com";
+    openframenews(frmurl, "mntday");
+  });
+
+  $("#esq").click(function () {
+    const frmurl = "https://www.openaccessjournals.com/";
+    openframenews(frmurl, "esq");
+  });
   $("#popscie").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.popsci.com";
+    const frmurl = "https://www.popsci.com";
+    openframenews(frmurl, "popscie");
   });
 
   $("#wirdns").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.wired.com";
+    const frmurl = "https://www.wired.com";
+    openframenews(frmurl, "wirdns");
   });
 
   $("#scdaily").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.scitechdaily.com";
+    const frmurl = "https://www.scitechdaily.com";
+    openframenews(frmurl, "scdaily");
   });
 
   $("#anainsgt").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://www.ourworldindata.org/";
+    const frmurl = "https://www.ourworldindata.org/";
+    openframenews(frmurl, "anainsgt");
   });
 
   $("#bigth").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://bigthink.com/";
+    const frmurl = "https://bigthink.com/";
+    openframenews(frmurl, "bigth");
   });
 
   $("#rssamrit").click(function () {
-    openframenews();
-    document.getElementById("frame").src = "https://rss-feed.amrit-corp.com";
+    const frmurl = "https://rss-feed.amrit-corp.com";
+    openframenews(frmurl, "rssamrit");
   });
 
   $(".closeotbx").click(function () {
     $(".dircttb").slideUp("slow");
   });
-
-  $("#quzz").click(function () {
-    opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| Quizzes";
-    document.getElementById("jdframe").src = "https://quiz.mastrowall.com";
-  });
-
-  $("#mlibr").click(function () {
-    window.open("https://library.mastrowall.in/", "_blank");
-  });
-
-  $("#g2faq").click(function () {
-    opjdbox();
-    document.getElementById("btitlejd").innerHTML = "|| 🤖 G2 FAQ - AMRIT";
-    document.getElementById("jdframe").src = "https://g2faq.amrit-corp.com";
-  });
-
-  $("#scrpwiki").click(function () {
-    opjdbox();
-    document.getElementById("btitlejd").innerHTML =
-      "|| Scrapia Academic Search 🔍";
-    document.getElementById("jdframe").src = "https://scrapia.amrit-corp.com/";
-  });
-
-  $("#botcrtod").click(function () {
-    opnotbxctd();
-  });
-
-  $("#botlinkins").click(function () {
-    opnotbxlnk();
-  });
-
-  $("#masthome").click(function () {
-    window.open("https://mastrowall.com", "_blank");
-  });
-
-  $("#srchengn").click(function () {
-    $("#srchengcon,#clssrceng").slideDown();
-    $(".nbtbfrm").addClass("nbtbfrmwtsrc");
-  });
-
-  $("#clssrceng").click(function () {
-    $("#srchengcon,#clssrceng").slideUp();
-    $(".nbtbfrm").removeClass("nbtbfrmwtsrc");
-  });
-
-  function opnotbxctd() {
-    $("#ctdotbx,.nbtbfrm").slideDown("slow");
-    $("#dots,#jdbox,#lnkotbx").hide("fast");
-  }
-
-  function opnotbxlnk() {
-    $("#lnkotbx,.nbtbfrm").slideDown("slow");
-    $("#dots,#jdbox,#ctdotbx").hide("fast");
-  }
-
-  function opjdbox() {
-    $("#jdbox,.nbtbfrm").slideDown("slow");
-    $("#dots,#ctdotbx,#lnkotbx,#framenews").hide("fast");
-    document.getElementById("jdframe").style.backgroundImage =
-      'url("https://mastrowall.com/images/loading-gif.gif")';
-    document.getElementById("jdframe").onload = function () {
-      document.getElementById("jdframe").style.backgroundImage = "none";
-    };
-  }
-
-  function openframenews() {
+  function openframenews(url, triggerId) {
+    const frmanwsctive = document.querySelector(".frmnwsactive");
+    if (frmanwsctive) {
+      frmanwsctive.remove();
+    }
     $("#framenews,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
     var overlayDiv = document.createElement("div");
@@ -182,6 +118,119 @@ $(document).ready(function () {
         ovrlyfrmldElement.parentNode.removeChild(ovrlyfrmldElement);
       });
     }
+
+    if (new URL(iframe.src).href !== new URL(url, location.origin).href) {
+      iframe.src = url;
+    } else {
+      document.getElementById("framenews").removeChild(overlayDiv);
+      iframe.style.backgroundImage = "none";
+    }
+
+    if (triggerId) {
+      const triggerEl = document.getElementById(triggerId);
+      if (triggerEl) {
+        const dot = document.createElement("span");
+        dot.className = "frmnwsactive";
+        dot.innerHTML = "";
+        const label = triggerEl.querySelector("span");
+        if (label) {
+          triggerEl.insertBefore(dot, label);
+        } else {
+          triggerEl.appendChild(dot);
+        }
+      }
+    }
+  }
+
+  $("#mlibr").click(function () {
+    window.open("https://library.mastrowall.in/", "_blank");
+  });
+
+  $("#quzz").click(function () {
+    opjdbox();
+    const active = document.createElement("span");
+    active.innerHTML = "";
+    active.className = "frmactive";
+    document.getElementById("quzz").appendChild(active);
+    const frame = document.getElementById("jdframe");
+    const newSrc = "https://quiz.mastrowall.com";
+    document.getElementById("btitlejd").innerHTML = "|| Quizzes";
+    if (new URL(frame.src).href !== new URL(newSrc, location.origin).href)
+      frame.src = newSrc;
+  });
+
+  $("#g2faq").click(function () {
+    opjdbox();
+    const active = document.createElement("span");
+    active.innerHTML = "";
+    active.className = "frmactive";
+    document.getElementById("g2faq").appendChild(active);
+    const frame = document.getElementById("jdframe");
+    const newSrc = "https://g2faq.amrit-corp.com";
+    document.getElementById("btitlejd").innerHTML = "|| 🤖 G2 FAQ - AMRIT";
+    if (new URL(frame.src).href !== new URL(newSrc, location.origin).href)
+      frame.src = newSrc;
+  });
+
+  $("#scrpwiki").click(function () {
+    opjdbox();
+    const active = document.createElement("span");
+    active.innerHTML = "";
+    active.className = "frmactive";
+    document.getElementById("scrpwiki").appendChild(active);
+    const frame = document.getElementById("jdframe");
+    const newSrc = "https://scrapia.amrit-corp.com/";
+    document.getElementById("btitlejd").innerHTML =
+      "|| Scrapia Academic Search 🔍";
+    if (new URL(frame.src).href !== new URL(newSrc, location.origin).href)
+      frame.src = newSrc;
+  });
+
+  $("#botcrtod").click(function () {
+    opnotbxctd();
+  });
+
+  $("#botlinkins").click(function () {
+    opnotbxlnk();
+  });
+
+  $("#masthome").click(function () {
+    window.open("https://mastrowall.com", "_blank");
+  });
+  const responimps = document.querySelectorAll(".nbtbfrm");
+
+  $("#srchengn").click(function () {
+    $("#srchengcon,#clssrceng").slideDown();
+    responimps.forEach((el) => el.classList.add("nbtbfrmwtsrc"));
+  });
+
+  $("#clssrceng").click(function () {
+    $("#srchengcon,#clssrceng").slideUp();
+    responimps.forEach((el) => el.classList.remove("nbtbfrmwtsrc"));
+  });
+
+  function opnotbxctd() {
+    $("#ctdotbx,.nbtbfrm").slideDown("slow");
+    $("#dots,#jdbox,#lnkotbx").hide("fast");
+  }
+
+  function opnotbxlnk() {
+    $("#lnkotbx,.nbtbfrm").slideDown("slow");
+    $("#dots,#jdbox,#ctdotbx").hide("fast");
+  }
+
+  function opjdbox() {
+    const frmactive = document.querySelector(".frmactive");
+    if (frmactive) {
+      frmactive.remove();
+    }
+    $("#jdbox,.nbtbfrm").slideDown("slow");
+    $("#dots,#ctdotbx,#lnkotbx,#framenews").hide("fast");
+    document.getElementById("jdframe").style.backgroundImage =
+      'url("https://mastrowall.com/images/loading-gif.gif")';
+    document.getElementById("jdframe").onload = function () {
+      document.getElementById("jdframe").style.backgroundImage = "none";
+    };
   }
 
   $("<link>", {
