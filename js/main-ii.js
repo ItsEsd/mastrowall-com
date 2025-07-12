@@ -552,11 +552,6 @@ var gmdsh = [
 
   ["../images/gaming/gm16.png", "https://kids.niehs.nih.gov/games/"],
 
-  [
-    "../images/gaming/gm17.png",
-    "https://education.jlab.org/indexpages/elementgames.html",
-  ],
-
   ["../images/gaming/gm18.png", "https://mathworld.wolfram.com/"],
 
   [
