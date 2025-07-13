@@ -272,7 +272,7 @@ const gmdsh = [
     "Primary Games",
     "All game A - Z.",
   ],
-  ["../images/gaming/gm30.png", "pacman/", "PAC-MAN", "All game A - Z."],
+  ["../images/gaming/gm30.png", "pacman/", "PAC-MAN", "Play Pac-Man."],
   [
     "../images/gaming/gm19.png",
     "https://www.thatquiz.org/",
