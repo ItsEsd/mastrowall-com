@@ -314,12 +314,11 @@ $(document).ready(function () {
 });
 
 $("#showother").click(function () {
-  $("#searchother").toggle(function () {
-    var k = document.getElementById("searchother");
-    if (k.style.display == "block") {
-      document.getElementById("showother").innerHTML = "&#9660;";
+  $("#searchother").slideToggle(200, function () {
+    if ($(this).is(":visible")) {
+      $("#showother").html("&#9660;");
     } else {
-      document.getElementById("showother").innerHTML = "Other Search &#9650;";
+      $("#showother").html("Other Search &#9650;");
     }
   });
 });
