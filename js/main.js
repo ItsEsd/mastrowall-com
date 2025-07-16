@@ -421,8 +421,7 @@ function golight() {
   document.getElementById("oknav").style.color = "#1a2ca5";
   document.getElementById("mwallImg").style.filter = "invert(0)";
   document.body.style.backgroundColor = "#e6e6e6";
-  document.body.style.backgroundImage =
-    "url('images/hexback-white-1200x900.gif')";
+  document.body.style.backgroundImage = "url('images/hex-white.webp')";
   document.body.style.backgroundRepeat = "repeat";
   document.body.style.backgroundSize = "100%";
   $(".con-one").addClass("con-one-light").removeClass("con-one");
@@ -456,8 +455,7 @@ function godark() {
   document.getElementById("sdnvtpdv").style.backgroundImage =
     "linear-gradient(45deg, #3d3e42, white)";
   document.body.style.backgroundColor = "#181818";
-  document.body.style.backgroundImage =
-    "url('images/hexback-blue-1200x900.gif')";
+  document.body.style.backgroundImage = "url('images/hex-blue.webp')";
   document.body.style.backgroundRepeat = "repeat";
   document.body.style.backgroundSize = "100%";
   $(".con-one-light").addClass("con-one").removeClass("con-one-light");
