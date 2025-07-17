@@ -473,42 +473,72 @@ $(document).ready(function () {
     "../images/background/img-45.webp",
     "../images/background/img-46.webp",
     "../images/background/img-47.webp",
-    "../images/background/img-48.png",
+    "../images/background/img-48.webp",
     "../images/background/img-49.webp",
     "../images/background/img-50.webp",
   ];
+
   var exmplen = chsbc.length;
-  for (var a = [], i = 0; i < exmplen; ++i) a[i] = i;
+  var indices = [...Array(exmplen).keys()];
+
   function shuffle(array) {
-    var tmp,
-      current,
-      top = array.length;
-    if (top)
-      while (--top) {
-        current = Math.floor(Math.random() * (top + 1));
-        tmp = array[current];
-        array[current] = array[top];
-        array[top] = tmp;
-      }
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
     return array;
   }
-  a = shuffle(a);
-  var fin;
-  for (var d = 0; d < a.length; d++) {
-    fin = a[d];
-    document.getElementById("choosebcgr").innerHTML +=
-      "<img onerror='this.src= `../images/imgonerror.svg`' class='chsbcg' src='" +
-      chsbc[fin] +
-      "' onclick='chngbackground(this)'>";
+
+  indices = shuffle(indices);
+
+  for (let d = 0; d < indices.length; d++) {
+    const fin = indices[d];
+    const img = document.createElement("img");
+    img.setAttribute(
+      "src",
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+    );
+    img.setAttribute("data-src", chsbc[fin]);
+    img.setAttribute("onerror", "this.src='../images/imgonerror.svg'");
+    img.setAttribute("class", "chsbcg lazy");
+    img.setAttribute("onclick", "chngbackground(this)");
+    img.setAttribute("alt", "Background Image");
+    document.getElementById("choosebcgr").appendChild(img);
   }
 
-  var viewportWidth = window.innerWidth;
-  if (viewportWidth > 720) {
-    document.body.style.backgroundImage = 'url("' + chsbc[a[1]] + '")';
+  // Apply random background for wide screens
+  if (window.innerWidth > 720) {
+    document.body.style.backgroundImage = 'url("' + chsbc[indices[1]] + '")';
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "100% 100%";
   }
+
+  // Lazy load images using IntersectionObserver
+  if ("IntersectionObserver" in window) {
+    let lazyImages = document.querySelectorAll("img.lazy");
+    let observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          let img = entry.target;
+          img.src = img.dataset.src;
+          img.classList.remove("lazy");
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(function (img) {
+      observer.observe(img);
+    });
+  } else {
+    // Fallback: Load all images if IntersectionObserver is not supported
+    $("img.lazy").each(function () {
+      $(this).attr("src", $(this).data("src"));
+      $(this).removeClass("lazy");
+    });
+  }
 });
+
 function chngbackground(label) {
   var list = document.getElementsByClassName("chsbcg");
   list = [].slice.call(list);
