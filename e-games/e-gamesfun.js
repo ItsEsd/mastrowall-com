@@ -100,8 +100,8 @@ if (getCookie() === false) {
     }
     .close-btnnw {
       position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
+      top: 0.2rem;
+      right: 0.6rem;
       background: none;
       border: none;
       font-size: 1.5rem;
