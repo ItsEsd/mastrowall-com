@@ -164,7 +164,11 @@ html {
   }
 }
 #sdnvtpdv {
+  top: 0px;
+  left: 0px;
+  position: absolute;
   margin: 0px;
+  width: 100%;
   background-image: linear-gradient(45deg, #0c29cd, white);
   line-height: normal;
   height: 61px;
@@ -200,6 +204,7 @@ html {
 #myNav-two {
   max-height: 280px;
   padding: 0px;
+  padding-top: 72px;
   overflow-y: scroll;
 }
 

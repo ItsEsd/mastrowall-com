@@ -372,6 +372,20 @@ $(document).ready(function () {
       golight();
     }
   }
+
+  function resizetofull() {
+    $("#footerholder,#aol").slideDown("slow");
+  }
+
+  function checkWidthAndRun() {
+    if (window.innerWidth > 900) {
+      resizetofull();
+    }
+  }
+  if (window.innerWidth > 900) {
+    resizetofull();
+  }
+  window.addEventListener("resize", checkWidthAndRun);
 });
 
 // $(document).ready(function () {
