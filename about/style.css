@@ -250,6 +250,9 @@ ul.icons {
   width: 30px;
   height: 30px;
 }
+.container li {
+  padding-left: 20px;
+}
 
 ul.icons li {
   display: inline-block;
