@@ -185,30 +185,30 @@ body {
 }
 .content {
   width: 100%;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   max-width: 1000px;
   text-align: left;
   background-color: white;
   padding-bottom: 20px;
 }
-
+.content img {
+  width: 100%;
+}
 #info,
 #info a {
-  color: #b6b6b6cc;
+  color: #4a4a4a;
   font-size: 12px;
 }
 .con-one-img {
   width: 100%;
-  max-width: 600px;
-  height: 300px;
-  float: left;
   padding: 20px;
   object-fit: cover;
   border-radius: 10px;
 }
 
 #bodyConOne {
-  /* display:none; */
   margin-top: 48px;
   padding-bottom: 20px;
   left: 0px;
@@ -245,13 +245,12 @@ ul.icons {
   padding: 10px;
   text-align: center;
 }
-
+.container ul {
+  padding-left: 40px;
+}
 .icons svg {
   width: 30px;
   height: 30px;
-}
-.container li {
-  padding-left: 20px;
 }
 
 ul.icons li {
