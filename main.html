@@ -855,6 +855,7 @@ elem.style.width = width + "%";}}}}
     $('#loadtd').load("/TOD/");
     }) 
 </script>
+<script src="TOD/dist/mathlive.min.js"></script>
 <script>
       var mf = document.getElementById('formula');
       mf.addEventListener('input',(ev) => {
@@ -888,7 +889,6 @@ elem.style.width = width + "%";}}}}
     () => MathLive.renderMathInDocument()
   );
   </script>
-<script src="TOD/dist/mathlive.min.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', 
     () => MathLive.renderMathInDocument()
