@@ -521,11 +521,7 @@ math-field:active {
   border: 0px;
   outline: none;
 }
-@media not (pointer: coarse) {
-  math-field::part(virtual-keyboard-toggle) {
-    display: block;
-  }
-}
+
 #creqn math-field {
   padding: 10px;
   width: 100%;
@@ -542,9 +538,19 @@ math-field:active {
   pointer-events: none;
   cursor: not-allowed;
 }
-
+#formula {
+  height: auto;
+  overflow-y: auto;
+  min-height: 20vh;
+}
+#formula .tooltip {
+  display: none;
+}
 @media not (pointer: coarse) {
   .mftd::part(virtual-keyboard-toggle) {
+    display: none;
+  }
+  .mftd::part(menu-toggle) {
     display: none;
   }
 }

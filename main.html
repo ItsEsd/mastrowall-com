@@ -855,7 +855,7 @@ elem.style.width = width + "%";}}}}
     $('#loadtd').load("/TOD/");
     }) 
 </script>
-<script src="TOD/dist/mathlive.min.js"></script>
+
 <script>
       var mf = document.getElementById('formula');
       mf.addEventListener('input',(ev) => {
@@ -884,15 +884,13 @@ elem.style.width = width + "%";}}}}
       };
       });
       </script>
+      <script defer src="TOD/dist/mathlive.min.js"></script>
+      <!-- <script defer src="//unpkg.com/mathlive"></script> -->
 <script>
   window.addEventListener('DOMContentLoaded', 
     () => MathLive.renderMathInDocument()
   );
-  </script>
-<script>
-  window.addEventListener('DOMContentLoaded', 
-    () => MathLive.renderMathInDocument()
-  );
+
 mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
 document.body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
   </script>
