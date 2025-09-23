@@ -543,9 +543,7 @@ math-field:active {
   overflow-y: auto;
   min-height: 20vh;
 }
-#formula .tooltip {
-  display: none;
-}
+
 @media not (pointer: coarse) {
   .mftd::part(virtual-keyboard-toggle) {
     display: none;
