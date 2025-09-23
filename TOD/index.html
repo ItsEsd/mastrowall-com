@@ -1677,18 +1677,7 @@
       window.addEventListener("DOMContentLoaded", () =>
         MathLive.renderMathInDocument()
       );
-      const MLvirtualKeyboardBtn = document.querySelector(
-        ".ML__virtual-keyboard-toggle"
-      );
-
-      MLvirtualKeyboardBtn.addEventListener("click", () => {
-        if (mathVirtualKeyboard.visible) {
-          mathVirtualKeyboard.hide();
-        } else {
-          mathVirtualKeyboard.show();
-        }
-      });
-
+      mf.addEventListener("focus", () => mathVirtualKeyboard.show());
       document.body.addEventListener("click", () => mathVirtualKeyboard.hide());
     </script>
 
