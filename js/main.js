@@ -59,9 +59,6 @@ window.addEventListener("online", function () {
   this.setTimeout(function () {
     $(elem).slideUp("slow");
   }, 5000);
-  document.getElementById("framenews").style.display = "none";
-  document.getElementById("framecontainer").innerHTML =
-    '<iframe id="frame" src="" width="100%" frameborder=0></iframe>';
 });
 
 window.addEventListener("offline", function () {
