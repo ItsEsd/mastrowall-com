@@ -1673,12 +1673,22 @@
           ev.preventDefault();
         }
       });
-    </script>
-    <script>
+
       window.addEventListener("DOMContentLoaded", () =>
         MathLive.renderMathInDocument()
       );
-      mf.addEventListener("focus", () => mathVirtualKeyboard.show());
+      const MLvirtualKeyboardBtn = document.querySelector(
+        ".ML__virtual-keyboard-toggle"
+      );
+
+      MLvirtualKeyboardBtn.addEventListener("click", () => {
+        if (mathVirtualKeyboard.visible) {
+          mathVirtualKeyboard.hide();
+        } else {
+          mathVirtualKeyboard.show();
+        }
+      });
+
       document.body.addEventListener("click", () => mathVirtualKeyboard.hide());
     </script>
     <script type="module">

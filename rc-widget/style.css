@@ -307,7 +307,17 @@
   background-size: 1600% 1600%;
   animation: rainbowBackground 10s linear infinite;
 }
-
+@media not (pointer: coarse) {
+  .mftd::part(virtual-keyboard-toggle) {
+    display: none;
+  }
+  .mftd::part(menu-toggle) {
+    display: none;
+  }
+}
+.virtual-keyboard-toggle {
+  display: none;
+}
 @keyframes rainbowBackground {
   0% {
     background-position: 0% 0%;
