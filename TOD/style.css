@@ -552,9 +552,7 @@ math-field:active {
     display: none;
   }
 }
-.ML__virtual-keyboard-toggle {
-  display: none;
-}
+
 #sketchpdcon {
   top: 0px;
   left: 0px;
