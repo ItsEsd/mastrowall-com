@@ -159,7 +159,7 @@ function result_tp() {
           document.getElementById("search_results_vid").innerHTML =
             '<div class="iteamvid "> <div class="card " align="center"> <div class="card-title holds-iframe"><iframe src="//www.youtube.com/embed/' +
             vidid +
-            '" frameborder="0" allowfullscreen ></iframe></div> <div class="card-des"> <h5 style="color: #0c09c9;">' +
+            '" frameborder="0" allowfullscreen ></iframe></div> <div class="card-des"> <h5 style="color: #0c09c9; padding-bottom:10px;">' +
             title +
             '</h5> </div> <div class="card-footer"> <p style="color:#44cc00;"><span>&#9673; </span><span>' +
             sub +
