@@ -190,6 +190,7 @@
 .closeotbx {
   font-size: 25px;
   cursor: pointer;
+  display: flex;
   float: right;
   padding: 2px 15px;
   font-weight: 100;
@@ -198,7 +199,6 @@
   color: #ffffff;
   justify-content: center;
   align-items: center;
-  margin-top: -5px !important;
 }
 
 .closeotbx:hover {
