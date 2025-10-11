@@ -434,14 +434,15 @@ gtag('config', 'G-N25E2CWHPC');
 </div>
 <button type="button" class="tbtn" id="expstucon">Student</button>
 <div id="gtside">
+
+<button class="ttsidebtn" id="chperfexpst"> Check Performance</button>  
 <button class="gtsidebtn" id="assgntst"> Assign for a Test</button>
-<button class="gtsidebtn" id="expgtotst"target="_blank"> Go to Test</button>
 </div>
 <hr style="border-width:2px;">
 <div align="center" id="ttestinfo">
 <span id="exmpcreatid">&#9745; Create Test ID</span>
 <span id="exmpprereq">&#9745; Prerequisite</span>
-<span id="exmpsamptst">&#9745; Sample Tests</span>
+<span id="exmpsamptst">&#9745; Sample Tests (E.P)</span>
 </div>
 </div>
 </center></div>
@@ -694,14 +695,14 @@ gtag('config', 'G-N25E2CWHPC');
 <div id="assignstuexform">
 <form id="stuassign" onsubmit="event.preventDefault();">
 <label>Name:</label>
-<input type="text" class="form-control" id="stuname" style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required/><br>
+<input type="text" class="form-control" id="stuname" disabled style="text-transform: capitalize;" placeholder="Enter your name" oninput="genenrollid();" required/><br>
 <label>Email Address:</label>
-<input type="email" class="form-control" id="stueid" placeholder="Enter Email Address" required/><br>
+<input type="email" class="form-control" id="stueid" disabled placeholder="Enter Email Address" required/><br>
 <label>Exam ID:</label>
-<input type="text" class="form-control" id="exid" placeholder="Enter Exam ID"required/><br>
+<input type="text" class="form-control" id="exid" disabled placeholder="Enter Exam ID"required/><br>
 <label>Exam Pass:</label>
-<input type="password" class="form-control" id="expass" placeholder="Enter Student Pass" required/><br>
-<input type="submit" class="exidbtn" value="Continue"><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#assignstuexam').hide();" value="Back">
+<input type="password" class="form-control" id="expass" disabled placeholder="Enter Student Pass" required/><br>
+<input type="submit" class="exidbtn" id="conexidbtn" value="Continue" disabled><input class="exidbtn" type="button" style="margin-left:6px;" onclick="$('.otservice').show();$('#assignstuexam').hide();" value="Back">
 <input id="enrollid" style="display:none;"/>
 </form>
 <div id="enrolledinfo"></div>

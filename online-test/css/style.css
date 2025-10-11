@@ -18,6 +18,7 @@ html {
   font-weight: 600;
   color: white;
   padding: 6px 10px;
+  cursor: pointer;
 }
 #flsback {
   height: 100%;
@@ -203,12 +204,15 @@ html {
   background-size: 6px 6px;
 }
 #checkresmain {
-  background-color: #e7e7e7;
+  background-color: #fff;
   color: #303030;
   margin: 0px;
   box-shadow: 0px 2px 4px 0px grey;
   padding: 40px;
   max-width: 600px;
+}
+#checkresmain h4 {
+  color: #1a2ca5;
 }
 #testscore {
   margin-top: 10px;

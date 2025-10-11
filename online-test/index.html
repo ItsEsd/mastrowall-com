@@ -59,44 +59,64 @@
             placeholder="*************"
             required
           /><br />
-          <label>Exam Pass:</label>
-          <input
-            class="form-control"
-            id="chpass"
-            placeholder="*************"
-            required
-          /><br />
-          <input
-            type="submit"
-            class="btn btn-warning"
-            value="Continue"
-            style="float: right"
-          />
+          <label
+            style="
+              margin-top: 10px;
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              align-items: center;
+              gap: 5px;
+            "
+          >
+            <input
+              class="form-control"
+              id="chpass"
+              placeholder="Enter Exam Pass"
+              required />
+            <input
+              type="submit"
+              class="btn btn-warning"
+              value="Continue ››"
+              id="tstgtone"
+              style="float: right"
+          /></label>
           <br />
-          <p>** Answers will be submitted automatically after allocated time</p>
+          <p style="text-align: center">
+            ** Answers will be submitted automatically after allocated time
+          </p>
         </form>
         <div id="enrollid" style="display: none">
           <div id="expdetails"></div>
           <form id="exptwo" target="ttstnfrm">
-            <label>Enrollment ID:</label>
-            <input
-              class="form-control"
-              id="chenid"
-              placeholder="*************"
-              required
-            /><br />
-            <input
-              type="submit"
-              class="btn btn-warning"
-              value="Go"
-              style="float: right"
-            />
+            <label
+              style="
+                margin-top: 10px;
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 5px;
+              "
+            >
+              <input
+                class="form-control"
+                id="chenid"
+                placeholder="Enter Enrollment ID"
+                required />
+              <input
+                type="submit"
+                class="btn btn-warning"
+                value="Go ››"
+                id="tstgttwo"
+                style="float: right"
+            /></label>
           </form>
         </div>
         <div
           id="loader-vq"
           class="spinner-border text-light"
-          style="display: none"
+          style="display: none; margin-top: 20px"
         ></div>
         <p id="troomlimit"></p>
       </div>
@@ -282,16 +302,24 @@
             <span class="closeotserv">&times;</span>
             <hr />
             <div align="left" id="ttestinfo">
-              <span id="exmpcreatid">&#9745; Create Exam ID</span>
-              <span id="exmpprereq">&#9745; Prerequisite</span>
-              <span id="exampconmasd">&#9745; MASTRO Desk</span>
+              <span id="exmpcreatid">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="30px"
+                  viewBox="0 -960 960 960"
+                  width="30px"
+                  fill="#e3e3e3"
+                >
+                  <path
+                    d="M120-160v-80h480v80H120Zm520-280q-83 0-141.5-58.5T440-640q0-83 58.5-141.5T640-840q83 0 141.5 58.5T840-640q0 83-58.5 141.5T640-440Zm-520-40v-80h252q7 22 16 42t22 38H120Zm0 160v-80h376q23 14 49 23.5t55 13.5v43H120Zm500-200h40v-160h-40v160Zm20-200q8 0 14-6t6-14q0-8-6-14t-14-6q-8 0-14 6t-6 14q0 8 6 14t14 6Z"
+                  />
+                </svg>
+                About Online Exam</span
+              >
             </div>
             <hr />
             <h4>Educator</h4>
             <div id="ttside" align="right">
-              <button class="btn btn-outline-warning" id="conwexid">
-                Continue With Exam ID
-              </button>
               <button class="btn btn-outline-warning" id="chperfexp">
                 Check Performance
               </button>
@@ -303,266 +331,14 @@
               <button class="btn btn-outline-warning" id="chresexam">
                 Check Result
               </button>
-              <button class="btn btn-warning" id="assgntst">
+              <button class="btn btn-outline-warning" id="assgntst">
                 Assign for a Test
               </button>
+              <button class="btn btn-warning" id="sgconwstid">Sign In</button>
             </div>
             <hr />
           </div>
         </center>
-      </div>
-    </section>
-    <section>
-      <div id="otserviceexamid">
-        <div id="formcontainer">
-          <form
-            onsubmit="event.preventDefault();"
-            id="quesfrm"
-            autocomplete="off"
-          >
-            <div id="stdiv">
-              <label>Question Statement:</label>
-              <textarea class="form-control" id="qst" required></textarea>
-              <div
-                contenteditable="true"
-                id="conq"
-                onclick="$(this).focus();"
-              ></div>
-              <p id="qtstfalse"></p>
-              <input
-                type="file"
-                accept="image/png, image/gif, image/jpeg"
-                id="stimg"
-              /><input
-                id="qstimg"
-                value="null"
-                style="display: none"
-              /><br /><br />
-            </div>
-            <hr />
-            <div id="opdiv">
-              <label>Options:</label>
-              <input
-                id="opa"
-                class="form-control optionss"
-                required
-                placeholder="Option A"
-              />
-              <input
-                id="opb"
-                class="form-control optionss"
-                required
-                placeholder="Option B"
-              />
-              <input
-                id="opc"
-                class="form-control optionss"
-                required
-                placeholder="Option C"
-              />
-              <input
-                id="opd"
-                class="form-control optionss"
-                required
-                placeholder="Option D"
-              />
-              <input
-                type="file"
-                accept="image/png, image/gif, image/jpeg"
-                id="opsimg"
-              /><input
-                id="opimg"
-                value="null"
-                style="display: none"
-              /><br /><br />
-            </div>
-            <hr />
-            <div id="ansdiv">
-              <label>Answer:</label>
-              <input
-                class="form-control"
-                required
-                placeholder="Option A/B/C/D"
-                id="anqs"
-                style="text-transform: uppercase"
-              />
-            </div>
-            <hr />
-            <div>
-              <div style="height: 55px">
-                <div>
-                  <input
-                    type="submit"
-                    class="btn btn-danger"
-                    value="Add Question"
-                    id="addQ"
-                  />
-                  <input
-                    type="button"
-                    class="btn btn-outline-primary"
-                    value="Test Room Size Health: GOOD!"
-                    id="crtnewexid"
-                    disabled
-                  />
-                </div>
-              </div>
-              <hr />
-              <div>
-                <div style="font-size: 14px; padding: 10px">
-                  <div class="eduinfoex" id="eduinfofordqset">
-                    <p>
-                      Educator Name:
-                      <span id="eduexname" class="exeduinfoid">......</span>
-                    </p>
-                    <p>
-                      Exam Title:
-                      <span id="eduextitle" class="exeduinfoid">......</span>
-                    </p>
-                    <p>
-                      Description:
-                      <span id="eduexdescp" class="exeduinfoid">......</span>
-                    </p>
-                    <p>
-                      Test Duration:
-                      <span id="eduextimedur" class="exeduinfoid">......</span>
-                    </p>
-                  </div>
-                  <div class="eduinfoex">
-                    <p style="color: #f75858">
-                      Question Set Storage Used:
-                      <span id="qststorage">....</span>
-                    </p>
-                    <p style="color: #58cc0a">
-                      Number of Enrolled Students:
-                      <span id="enrolledstuall">....</span>
-                    </p>
-                    <p style="color: #1612f0">
-                      Test Room Size Occupied: <span id="troomsize">....</span>
-                    </p>
-                    <button
-                      class="btn btn-dark"
-                      type="button"
-                      onclick="downloadqset();"
-                      style="padding: 6px 10px"
-                    >
-                      Download/ Print Question Set
-                    </button>
-                  </div>
-                  <div id="qsetanst"></div>
-                </div>
-              </div>
-            </div>
-            <div id="qupdated">Question added successfully</div>
-            <div align="center" id="clrqsetnotify">
-              <div id="clrqsetnotify-child">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
-                    fill="currentColor"
-                    class="bi bi-info-circle-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                    />
-                  </svg>
-                </div>
-                <br />
-                <p style="text-align: left; max-width: 400px">
-                  This action will clear all data and can not be undone.
-                </p>
-                <br />
-                <input
-                  type="button"
-                  onclick="clrqsetcomplete();"
-                  class="btn btn-danger clrnotibtn"
-                  value="Clear Question Set"
-                /><input
-                  type="button"
-                  class="btn btn-info clrnotibtn"
-                  onclick='$("#clrqsetnotify").hide();$("#falsesecback-two").hide();'
-                  value="Back"
-                />
-                <div
-                  id="loader-clrq"
-                  class="spinner-border text-primary"
-                  style="display: none; margin-top: 20px"
-                ></div>
-              </div>
-            </div>
-            <br />
-          </form>
-          <div id="falsesecback-two"></div>
-        </div>
-        <div id="previewquestion">
-          <div id="previewr">
-            <div id="displayqst">
-              <div align="center" style="color: #d9d8db; margin-top: 120px">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
-                  fill="currentColor"
-                  class="bi bi-info-circle-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div id="previews" align="center">
-            <div id="previewqset" style="text-align: left">
-              <div align="center" style="color: #d9d8db; margin-top: 120px">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="60"
-                  fill="currentColor"
-                  class="bi bi-info-circle-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div align="center" id="loaderCon">
-              <div id="loader-qst" class="spinner-border text-primary"></div>
-            </div>
-          </div>
-        </div>
-        <div style="bottom: 0px; right: 0px; position: fixed">
-          <button
-            class="btn btn-dark"
-            id="clrqset"
-            onclick='$("#clrqsetnotify").show();$("#falsesecback-two").show();'
-          >
-            Clear All
-          </button>
-          <button class="btn btn-primary" onclick="displayQST();" id="preqbtn">
-            Preview Question
-          </button>
-          <button
-            class="btn btn-warning"
-            onclick="previewqset();"
-            id="preqsetbtn"
-          >
-            Preview Question Set
-          </button>
-          <button
-            class="closeqform btn"
-            onclick="$('#otserviceexamid').slideUp('fast');$('#falsesecback').slideUp('fast');$('.otserviceinfo').slideUp('fast');"
-            title="Close"
-          >
-            X
-          </button>
-        </div>
       </div>
     </section>
     <section>
@@ -826,7 +602,5 @@
     <div ng-include="'divsec/create-examid.html'"></div>
     <script src="js/tt-one.js"></script>
     <script src="js/timer.js"></script>
-    <script src="js/crtest-one.js"></script>
-    <script src="js/test-edit.js"></script>
   </body>
 </html>

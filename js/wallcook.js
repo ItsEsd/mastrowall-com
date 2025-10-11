@@ -12,6 +12,8 @@ for (var i = 0; i < ca.length; i++) {
 }
 function actionforuser() {
   $("#intro").slideUp("slow");
+  $("#stuname,#stueid,#exid,#expass,#conexidbtn").removeAttr("disabled");
+  $("#expgtotst").show();
 }
 
 function rmvrestrictfn() {

@@ -3,6 +3,11 @@ $(".closeotserv").click(function () {
   $("#falsesecback").hide();
   $(".otserviceinfo").hide("fast");
 });
+// $("#titlehd").click(function () {
+//   $(".otservice").slideDown("fast");
+//   $("#falsesecback").show();
+//   // $(".otserviceinfo").show("fast");
+// });
 $("#exmpcreatid").click(function () {
   $("#contactdesk").hide();
   $("#exportalpromo").show();
@@ -310,10 +315,10 @@ function infoexampdf() {
   );
   oPrntWin.document.close();
 }
-mquearytest.addEventListener("submit", (event) => {
-  $("#qmsgsent").show();
-  $("#mquearytest").hide();
-});
+// mquearytest.addEventListener("submit", (event) => {
+//   $("#qmsgsent").show();
+//   $("#mquearytest").hide();
+// });
 jQuery("#confirmpasskey").on("keyup", function () {
   if (jQuery("#createpasskey").val() == jQuery("#confirmpasskey").val()) {
     jQuery("#matched").html("Matching").css("font-size", "12px");
@@ -327,3 +332,55 @@ jQuery("#confirmpasskey").on("keyup", function () {
     Math.random().toString(26).substring(2, 7);
   document.getElementById("examid").value = k;
 });
+
+// var url_stringn = window.location.href;
+// var urlex = new URL(url_stringn);
+// var dig = urlex.searchParams.get("e");
+// var key = urlex.searchParams.get("p");
+// var rtv = urlex.searchParams.get("valid");
+// if (rtv == "true") {
+//   setTimeout(function () {
+//     document.getElementById("assignstuexam").style.display = "block";
+//     $("#falsesecback").show();
+//     document.getElementById("exid").value = decodeURIComponent(dig);
+//     document.getElementById("exid").disabled = true;
+//     document.getElementById("expass").value = key;
+//     document.getElementById("expass").disabled = true;
+//   }, 2000);
+// }
+
+var url_stringn = window.location.href;
+var urlex = new URL(url_stringn);
+var eid = urlex.searchParams.get("id");
+var erid = urlex.searchParams.get("enroll");
+var eip = urlex.searchParams.get("pass");
+var mid = urlex.searchParams.get("mid");
+var rtv = urlex.searchParams.get("valid");
+
+if (rtv == "true") {
+  setTimeout(function () {
+    document.getElementById("chexid").value = atob(eid);
+    document.getElementById("chpass").value = atob(eip);
+    document.getElementById("chenid").value = atob(erid);
+    $("#tstgtone").click();
+    document.getElementById("tstgtone").disabled = true;
+  }, 1000);
+}
+
+function getCookie() {
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    const cookie = ca[i].trim();
+    if (
+      cookie.startsWith("mwallpswstud=") ||
+      cookie.startsWith("mwallpswedud=")
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+if (getCookie() === false) {
+  window.open("https://mastrowall.com/", "_self");
+}

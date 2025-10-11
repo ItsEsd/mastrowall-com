@@ -1,5 +1,6 @@
 expone.addEventListener("submit", (event) => {
   $("#troomlimit").empty();
+  document.getElementById("tstgtone").disabled = true;
   var exid = $("#chexid").val();
   var ekey = JSON.stringify($("#chpass").val());
   var url1 = "https://script.google.com/macros/s/";
@@ -417,6 +418,7 @@ $(function () {
 });
 
 exptwo.addEventListener("submit", (event) => {
+  document.getElementById("tstgttwo").disabled = true;
   var exid = $("#chexid").val();
   var enid = $("#chenid").val();
   var ekey = JSON.stringify($("#chpass").val());
@@ -458,7 +460,7 @@ exptwo.addEventListener("submit", (event) => {
                 "<p style='font-size:20px;'>Name: <span style='font-size:24px;font-style: italic;'>" +
                 JSON.parse(sstring[k - 2]) +
                 "</span></p>" +
-                "<p style='font-size:20px;'>Registered Email: <span style='font-size:24px;font-style: italic;'>" +
+                "<p style='font-size:20px;'>Registered Email: <span style='font-size:24px;font-style: italic;' id='tstursmid'>" +
                 JSON.parse(sstring[k - 1]) +
                 "</span></p></div>";
 
@@ -472,7 +474,7 @@ exptwo.addEventListener("submit", (event) => {
                 "</span>";
               document.getElementById("expdash").style.display = "none";
 
-              //setTimeout(function(){ alert("Hello"); }, timedurmili);
+              //setTimeout(function(){ alert("Hello"); }, timedurmili); tstursmid
             }
           }
         } else {
@@ -524,13 +526,14 @@ function showTimeleft() {
 }
 function submitans() {
   $("#qnstfrm").submit();
+  var mid = document.querySelector("#tstursmid").textContent;
   var exid = $("#chexid").val();
   var expass = JSON.stringify($("#chpass").val());
   var enid = JSON.stringify($("#chenid").val());
   var jsonans = $("#jsonqnst").val();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbwqrtcrD22pGEu-1Cr9Yts4DwQzTrnM52o_mvbYEQuMnsnhjQWqKxwmp_m8JB1kDTDJ";
+    "AKfycbx4JhbP9bReqtivWUtH06hAcjOXL8ebLfD3HeF1QAFsRHFvBplmAO0Gvb70-hZN1AE-";
   var url =
     url1 +
     url2 +
@@ -543,6 +546,8 @@ function submitans() {
     enid +
     "&jsonqnst=" +
     jsonans +
+    "&mid=" +
+    mid +
     "&action=initans";
 
   var request = jQuery.ajax({
@@ -645,6 +650,13 @@ $("#chresexam").click(function () {
 $("#sgconwexid").click(function () {
   window.open(
     "https://educator.mastrowall.com",
+    "_blank",
+    "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
+  );
+});
+$("#sgconwstid").click(function () {
+  window.open(
+    "https://student.mastrowall.com",
     "_blank",
     "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
   );

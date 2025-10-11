@@ -289,7 +289,10 @@ $("#chperfexp").click(function () {
   $("#continueeducator").show();
   $(".otservice").hide();
 });
-
+$("#chperfexpst").click(function () {
+  $("#continueeducator").show();
+  $(".otservice").hide();
+});
 $("#expstucon").click(function () {
   $("#gtside").toggle("fast");
   $("#ttside").hide();
