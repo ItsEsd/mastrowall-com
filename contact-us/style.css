@@ -85,7 +85,10 @@ body {
   overflow-x: hidden;
   border-radius: 10px;
 }
-
+.nbforpreq {
+  width: 100%;
+  text-align: center;
+}
 .conone {
   width: 100%;
   padding: 30px;
