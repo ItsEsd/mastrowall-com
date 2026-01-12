@@ -33,7 +33,7 @@ $(document).ready(function () {
   });
 
   $("#scinewsorg").click(function () {
-    const frmurl = "https://www.sciencenews.org";
+    const frmurl = "https://www.britannica.com/Science-Tech";
     openframenews(frmurl, "scinewsorg");
   });
 

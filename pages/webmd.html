@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebMD Sitemap – Flex Columns + Live Search</title>
+
+<style>
+/* --------------------------------------------------------------
+   BASIC PAGE SETUP
+   -------------------------------------------------------------- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:"Source Sans Pro",Arial,sans-serif;
+    background:#f8f8f8;
+    color:#1b1b1b;
+    padding:0 10px 0px 10px;
+}
+
+/* --------------------------------------------------------------
+   SEARCH BAR
+   -------------------------------------------------------------- */
+.search-bar{
+    max-width:1200px;
+    margin:2rem auto;
+    display:flex;
+    gap:.5rem;
+}
+.search-bar input{
+    flex:1;
+    padding:.6rem 1rem;
+    font-size:1rem;
+    border:1px solid #ccc;
+    border-radius:4px;
+    max-width:calc(100% - 150px);
+}
+.search-bar button{
+    padding:.6rem 1.2rem;
+    font-size:1rem;
+    background:#001574;               /* WebMD blue */
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+/* --------------------------------------------------------------
+   GRID THAT HOLDS ALL SECTIONS
+   -------------------------------------------------------------- */
+.sitemap-grid{
+    width:100%;
+     max-width:1200px;
+    margin:0 auto 2rem;
+    gap:2rem;
+}
+
+/* --------------------------------------------------------------
+   EACH BLOCK (Health Centers, Blogs, Vitamins, Drugs, Features)
+   -------------------------------------------------------------- */
+.block{
+    background:#fff;
+    border:1px solid #ccc;
+    border-left:4px solid #001574;
+    padding:1rem;
+    width:100% !important;
+}
+.block h2{
+    font-weight:700;
+    font-size:1.25rem;
+    color:#001574;
+    margin-bottom:.8rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    border-bottom:1px solid #ccc;
+    padding-bottom:.4rem;
+}
+
+/* --------------------------------------------------------------
+   FLEX‑COLUMN LISTS
+   -------------------------------------------------------------- */
+.block ul{
+    /* remove the default list bullets */
+    list-style:none;
+
+    /* 4 equal‑width columns that fill the entire .block */
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);   /* 4 columns, each 1fr */
+    gap:.4rem;                               /* space between items */
+
+    /* optional – make the columns behave nicely on very narrow screens */
+    /* (you can drop this if you always want 4 columns) */
+    @media (max-width: 800px){
+        grid-template-columns: repeat(2, 1fr);   /* 2 columns on small screens */
+    }
+    @media (max-width: 500px){
+        grid-template-columns: 1fr;              /* single column on extra‑small screens */
+    }
+}
+
+/* keep the link styling you already have (no changes needed) */
+.block a{
+    color:#1b1b1b;
+    text-decoration:none;
+    font-size:1rem;
+    text-transform:capitalize;
+}
+.block a:hover{
+    color:#001574;
+    text-decoration:underline;
+}
+
+/* --------------------------------------------------------------
+   HIDDEN STATE (used by the search script)
+   -------------------------------------------------------------- */
+.hide{
+    display:none !important;
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================  SEARCH BAR  ===================== -->
+<div class="search-bar">
+<div style="width:100%;max-width:150px;background:#001574;text-align:center;padding:10px;"><a href="https://www.webmd.com/" data-metrics-link="logo" target="_blank"><img src="https://img.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/oncology/1/images/webmd-logo-white.svg" alt="Logo for WebMD" title="WebMD: Better information. Better health." height="26" width="110" loading="lazy"></a></div>
+    <input type="search" id="siteSearch" placeholder="Search all entries…" aria-label="Site search">
+</div>
+
+<!-- =====================  GRID OF SECTIONS  ===================== -->
+<div class="sitemap-grid">
+
+    <!-- ---------- Health Centers ---------- -->
+    <section class="block" id="health-centers">
+        <h2>Health Centers</h2>
+        <ul>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/acne/default.htm"
+                   target="_blank" rel="noopener noreferrer">acne</a></li>
+            <li><a href="https://www.webmd.com/add-adhd/default.htm"
+                   target="_blank" rel="noopener noreferrer">add-adhd</a></li>
+            <li><a href="https://www.webmd.com/add-adhd/childhood-adhd/default.htm"
+                   target="_blank" rel="noopener noreferrer">adhd in children</a></li>
+            <li><a href="https://www.webmd.com/vaccines/default.htm"
+                   target="_blank" rel="noopener noreferrer">adult vaccines</a></li>
+            <li><a href="https://www.webmd.com/allergies/default.htm"
+                   target="_blank" rel="noopener noreferrer">allergies</a></li>
+            <li><a href="https://www.webmd.com/alzheimers/default.htm"
+                   target="_blank" rel="noopener noreferrer">alzheimers</a></li>
+            <li><a href="https://www.webmd.com/ankylosing-spondylitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">ankylosing spondylitis</a></li>
+            <li><a href="https://www.webmd.com/mental-health/eating-disorders/anorexia-nervosa/default.htm"
+                   target="_blank" rel="noopener noreferrer">anorexia nervosa</a></li>
+            <li><a href="https://www.webmd.com/anxiety-panic/default.htm"
+                   target="_blank" rel="noopener noreferrer">anxiety &amp; panic disorders</a></li>
+            <li><a href="https://www.webmd.com/arthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">arthritis</a></li>
+            <li><a href="https://www.webmd.com/asthma/default.htm"
+                   target="_blank" rel="noopener noreferrer">asthma</a></li>
+            <li><a href="https://www.webmd.com/heart-disease/atrial-fibrillation/default.htm"
+                   target="_blank" rel="noopener noreferrer">atrial fibrillation</a></li>
+            <li><a href="https://www.webmd.com/brain/autism/default.htm"
+                   target="_blank" rel="noopener noreferrer">autism</a></li>
+            <li><a href="https://www.webmd.com/parenting/baby/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; baby</a></li>
+            <li><a href="https://www.webmd.com/back-pain/default.htm"
+                   target="_blank" rel="noopener noreferrer">back pain</a></li>
+            <li><a href="https://www.webmd.com/mental-health/eating-disorders/binge-eating-disorder/default.htm"
+                   target="_blank" rel="noopener noreferrer">binge eating disorder</a></li>
+            <li><a href="https://www.webmd.com/bipolar-disorder/default.htm"
+                   target="_blank" rel="noopener noreferrer">bipolar disorder</a></li>
+            <li><a href="https://www.webmd.com/sex/birth-control/default.htm"
+                   target="_blank" rel="noopener noreferrer">birth control</a></li>
+            <li><a href="https://www.webmd.com/cancer/bladder-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">bladder cancer</a></li>
+            <li><a href="https://www.webmd.com/brain/default.htm"
+                   target="_blank" rel="noopener noreferrer">brain and nervous system</a></li>
+            <li><a href="https://www.webmd.com/cancer/brain-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">brain cancer</a></li>
+            <li><a href="https://www.webmd.com/breast-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">breast cancer</a></li>
+            <li><a href="https://www.webmd.com/mental-health/eating-disorders/bulimia-nervosa/default.htm"
+                   target="_blank" rel="noopener noreferrer">bulimia nervosa</a></li>
+            <li><a href="https://www.webmd.com/cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">cancer</a></li>
+            <li><a href="https://www.webmd.com/pain-management/carpal-tunnel/default.htm"
+                   target="_blank" rel="noopener noreferrer">carpal tunnel syndrome</a></li>
+            <li><a href="https://www.webmd.com/eye-health/cataracts/default.htm"
+                   target="_blank" rel="noopener noreferrer">cataracts</a></li>
+            <li><a href="https://www.webmd.com/pets/cats/default.htm"
+                   target="_blank" rel="noopener noreferrer">cats</a></li>
+            <li><a href="https://www.webmd.com/digestive-disorders/celiac-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">celiac disease</a></li>
+            <li><a href="https://www.webmd.com/cancer/cervical-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">cervical cancer</a></li>
+            <li><a href="https://www.webmd.com/children/default.htm"
+                   target="_blank" rel="noopener noreferrer">children's health</a></li>
+            <li><a href="https://www.webmd.com/cholesterol-management/default.htm"
+                   target="_blank" rel="noopener noreferrer">cholesterol management</a></li>
+            <li><a href="https://www.webmd.com/chronic-fatigue-syndrome/default.htm"
+                   target="_blank" rel="noopener noreferrer">chronic fatigue syndrome</a></li>
+            <li><a href="https://www.webmd.com/cold-and-flu/default.htm"
+                   target="_blank" rel="noopener noreferrer">cold and flu</a></li>
+            <li><a href="https://www.webmd.com/colorectal-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">colorectal cancer</a></li>
+            <li><a href="https://www.webmd.com/lung/copd/default.htm"
+                   target="_blank" rel="noopener noreferrer">copd</a></li>
+            <li><a href="https://www.webmd.com/covid/default.htm"
+                   target="_blank" rel="noopener noreferrer">coronavirus updates center</a></li>
+            <li><a href="https://www.webmd.com/vaccines/covid-19-vaccine/default.htm"
+                   target="_blank" rel="noopener noreferrer">covid-19 vaccine</a></li>
+            <li><a href="https://www.webmd.com/ibd-crohns-disease/crohns-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">crohn's disease</a></li>
+            <li><a href="https://www.webmd.com/depression/default.htm"
+                   target="_blank" rel="noopener noreferrer">depression</a></li>
+            <li><a href="https://www.webmd.com/diabetes/default.htm"
+                   target="_blank" rel="noopener noreferrer">diabetes</a></li>
+            <li><a href="https://www.webmd.com/digestive-disorders/default.htm"
+                   target="_blank" rel="noopener noreferrer">digestive disorders</a></li>
+            <li><a href="https://www.webmd.com/pets/dogs/default.htm"
+                   target="_blank" rel="noopener noreferrer">dogs</a></li>
+            <li><a href="https://www.webmd.com/drugs/default.htm"
+                   target="_blank" rel="noopener noreferrer">drugs and medications</a></li>
+            <li><a href="https://www.webmd.com/dvt/default.htm"
+                   target="_blank" rel="noopener noreferrer">dvt</a></li>
+            <li><a href="https://www.webmd.com/cold-and-flu/ear-infection/default.htm"
+                   target="_blank" rel="noopener noreferrer">ear infection</a></li>
+            <li><a href="https://www.webmd.com/mental-health/eating-disorders/default.htm"
+                   target="_blank" rel="noopener noreferrer">eating disorders</a></li>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/eczema/default.htm"
+                   target="_blank" rel="noopener noreferrer">eczema</a></li>
+            <li><a href="https://www.webmd.com/women/endometriosis/default.htm"
+                   target="_blank" rel="noopener noreferrer">endometriosis</a></li>
+            <li><a href="https://www.webmd.com/epilepsy/default.htm"
+                   target="_blank" rel="noopener noreferrer">epilepsy</a></li>
+            <li><a href="https://www.webmd.com/erectile-dysfunction/default.htm"
+                   target="_blank" rel="noopener noreferrer">erectile dysfunction</a></li>
+            <li><a href="https://www.webmd.com/eye-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">eye health</a></li>
+            <li><a href="https://www.webmd.com/fatty-liver-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">fatty liver disease</a></li>
+            <li><a href="https://www.webmd.com/fibromyalgia/default.htm"
+                   target="_blank" rel="noopener noreferrer">fibromyalgia</a></li>
+            <li><a href="https://www.webmd.com/first-aid/default.htm"
+                   target="_blank" rel="noopener noreferrer">first aid</a></li>
+            <li><a href="https://www.webmd.com/food-recipes/food-poisoning/default.htm"
+                   target="_blank" rel="noopener noreferrer">food poisoning</a></li>
+            <li><a href="https://www.webmd.com/genital-herpes/default.htm"
+                   target="_blank" rel="noopener noreferrer">genital herpes</a></li>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/hair-loss/default.htm"
+                   target="_blank" rel="noopener noreferrer">hair loss</a></li>
+            <li><a href="https://www.webmd.com/baby/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; baby</a></li>
+            <li><a href="https://www.webmd.com/balance/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; balance</a></li>
+            <li><a href="https://www.webmd.com/food-recipes/default.htm"
+                   target="_blank" rel="noopener noreferrer">food &amp; recipes</a></li>
+            <li><a href="https://www.webmd.com/diet/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; diet</a></li>
+            <li><a href="https://www.webmd.com/fitness-exercise/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; fitness</a></li>
+            <li><a href="https://www.webmd.com/parenting/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; parenting</a></li>
+            <li><a href="https://www.webmd.com/sex-relationships/default.htm"
+                   target="_blank" rel="noopener noreferrer">health &amp; sex</a></li>
+            <li><a href="https://www.webmd.com/a-to-z-guides/default.htm"
+                   target="_blank" rel="noopener noreferrer">health a‑z</a></li>
+            <li><a href="https://www.webmd.com/health-insurance/default.htm"
+                   target="_blank" rel="noopener noreferrer">health insurance &amp; medicare</a></li>
+            <li><a href="https://www.webmd.com/beauty/default.htm"
+                   target="_blank" rel="noopener noreferrer">healthy beauty</a></li>
+            <li><a href="https://www.webmd.com/healthy-aging/default.htm"
+                   target="_blank" rel="noopener noreferrer">healthy aging</a></li>
+            <li><a href="https://www.webmd.com/heart-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">heart disease</a></li>
+            <li><a href="https://www.webmd.com/heart-disease/heart-failure/default.htm"
+                   target="_blank" rel="noopener noreferrer">heart failure</a></li>
+            <li><a href="https://www.webmd.com/heart/default.htm"
+                   target="_blank" rel="noopener noreferrer">heart health</a></li>
+            <li><a href="https://www.webmd.com/heartburn-gerd/default.htm"
+                   target="_blank" rel="noopener noreferrer">heartburn/gerd</a></li>
+            <li><a href="https://www.webmd.com/hepatitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">hepatitis</a></li>
+            <li><a href="https://www.webmd.com/hiv-aids/default.htm"
+                   target="_blank" rel="noopener noreferrer">hiv &amp; aids</a></li>
+            <li><a href="https://www.webmd.com/sexual-conditions/hpv-genital-warts/default.htm"
+                   target="_blank" rel="noopener noreferrer">hpv/genital warts</a></li>
+            <li><a href="https://www.webmd.com/hypertension-high-blood-pressure/default.htm"
+                   target="_blank" rel="noopener noreferrer">hypertension</a></li>
+            <li><a href="https://www.webmd.com/infertility-and-reproduction/default.htm"
+                   target="_blank" rel="noopener noreferrer">infertility and reproduction</a></li>
+            <li><a href="https://www.webmd.com/ibd-crohns-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">ibd</a></li>
+            <li><a href="https://www.webmd.com/ibs/default.htm"
+                   target="_blank" rel="noopener noreferrer">irritable bowel syndrome</a></li>
+            <li><a href="https://www.webmd.com/kidney-stones/default.htm"
+                   target="_blank" rel="noopener noreferrer">kidney stones</a></li>
+            <li><a href="https://www.webmd.com/pain-management/knee-pain/default.htm"
+                   target="_blank" rel="noopener noreferrer">knee pain</a></li>
+            <li><a href="https://www.webmd.com/lung/default.htm"
+                   target="_blank" rel="noopener noreferrer">lung disease &amp; respiratory health</a></li>
+            <li><a href="https://www.webmd.com/lung-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">lung cancer</a></li>
+            <li><a href="https://www.webmd.com/lupus/default.htm"
+                   target="_blank" rel="noopener noreferrer">lupus</a></li>
+            <li><a href="https://www.webmd.com/eye-health/macular-degeneration/default.htm"
+                   target="_blank" rel="noopener noreferrer">macular degeneration</a></li>
+            <li><a href="https://www.webmd.com/melanoma-skin-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">melanoma &amp; non‑melanoma skin cancer</a></li>
+            <li><a href="https://www.webmd.com/men/default.htm"
+                   target="_blank" rel="noopener noreferrer">men's health</a></li>
+            <li><a href="https://www.webmd.com/menopause/default.htm"
+                   target="_blank" rel="noopener noreferrer">menopause</a></li>
+            <li><a href="https://www.webmd.com/mental-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">mental health</a></li>
+            <li><a href="https://www.webmd.com/heart/metabolic-syndrome/default.htm"
+                   target="_blank" rel="noopener noreferrer">metabolic syndrome</a></li>
+            <li><a href="https://www.webmd.com/migraines-headaches/default.htm"
+                   target="_blank" rel="noopener noreferrer">migraine &amp; headaches</a></li>
+            <li><a href="https://www.webmd.com/cancer/multiple-myeloma/default.htm"
+                   target="_blank" rel="noopener noreferrer">multiple myeloma health center</a></li>
+            <li><a href="https://www.webmd.com/multiple-sclerosis/default.htm"
+                   target="_blank" rel="noopener noreferrer">multiple sclerosis</a></li>
+            <li><a href="https://www.webmd.com/cancer/lymphoma/default.htm"
+                   target="_blank" rel="noopener noreferrer">leukemia &amp; lymphoma</a></li>
+            <li><a href="https://www.webmd.com/oral-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">oral health</a></li>
+            <li><a href="https://www.webmd.com/osteoarthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">osteoarthritis</a></li>
+            <li><a href="https://www.webmd.com/osteoporosis/default.htm"
+                   target="_blank" rel="noopener noreferrer">osteoporosis</a></li>
+            <li><a href="https://www.webmd.com/ovarian-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">ovarian cancer</a></li>
+            <li><a href="https://www.webmd.com/pain-management/default.htm"
+                   target="_blank" rel="noopener noreferrer">pain management</a></li>
+            <li><a href="https://www.webmd.com/palliative-care/default.htm"
+                   target="_blank" rel="noopener noreferrer">palliative care</a></li>
+            <li><a href="https://www.webmd.com/cancer/pancreatic-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">pancreatic cancer</a></li>
+            <li><a href="https://www.webmd.com/parkinsons-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">parkinson's disease</a></li>
+            <li><a href="https://www.webmd.com/pets/default.htm"
+                   target="_blank" rel="noopener noreferrer">pets</a></li>
+            <li><a href="https://www.webmd.com/women/pms/default.htm"
+                   target="_blank" rel="noopener noreferrer">pms</a></li>
+            <li><a href="https://www.webmd.com/depression/postpartum-depression/default.htm"
+                   target="_blank" rel="noopener noreferrer">postpartum depression</a></li>
+            <li><a href="https://www.webmd.com/prostate-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">prostate cancer</a></li>
+            <li><a href="https://www.webmd.com/men/prostate-enlargement-bph/default.htm"
+                   target="_blank" rel="noopener noreferrer">prostate enlargement bph</a></li>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/psoriasis/default.htm"
+                   target="_blank" rel="noopener noreferrer">psoriasis</a></li>
+            <li><a href="https://www.webmd.com/arthritis/psoriatic-arthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">psoriatic arthritis</a></li>
+            <li><a href="https://www.webmd.com/brain/restless-legs-syndrome/default.htm"
+                   target="_blank" rel="noopener noreferrer">restless legs syndrome</a></li>
+            <li><a href="https://www.webmd.com/rheumatoid-arthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">rheumatoid arthritis</a></li>
+            <li><a href="https://www.webmd.com/schizophrenia/default.htm"
+                   target="_blank" rel="noopener noreferrer">schizophrenia</a></li>
+            <li><a href="https://www.webmd.com/sexual-conditions/default.htm"
+                   target="_blank" rel="noopener noreferrer">sexual conditions</a></li>
+            <li><a href="https://www.webmd.com/sex/default.htm"
+                   target="_blank" rel="noopener noreferrer">sexual health</a></li>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/shingles/default.htm"
+                   target="_blank" rel="noopener noreferrer">shingles</a></li>
+            <li><a href="https://www.webmd.com/skin-problems-and-treatments/default.htm"
+                   target="_blank" rel="noopener noreferrer">skin problems and treatments</a></li>
+            <li><a href="https://www.webmd.com/sleep-disorders/sleep-apnea/default.htm"
+                   target="_blank" rel="noopener noreferrer">sleep apnea</a></li>
+            <li><a href="https://www.webmd.com/sleep-disorders/default.htm"
+                   target="_blank" rel="noopener noreferrer">sleep disorders</a></li>
+            <li><a href="https://www.webmd.com/smoking-cessation/default.htm"
+                   target="_blank" rel="noopener noreferrer">smoking cessation</a></li>
+            <li><a href="https://www.webmd.com/balance/stress-management/default.htm"
+                   target="_blank" rel="noopener noreferrer">stress management</a></li>
+            <li><a href="https://www.webmd.com/stroke/default.htm"
+                   target="_blank" rel="noopener noreferrer">stroke</a></li>
+            <li><a href="https://www.webmd.com/mental-health/addiction/default.htm"
+                   target="_blank" rel="noopener noreferrer">substance abuse and addiction</a></li>
+            <li><a href="https://www.webmd.com/teens/default.htm"
+                   target="_blank" rel="noopener noreferrer">teen health</a></li>
+            <li><a href="https://www.webmd.com/ibd-crohns-disease/ulcerative-colitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">ulcerative colitis</a></li>
+            <li><a href="https://www.webmd.com/urinary-incontinence-oab/default.htm"
+                   target="_blank" rel="noopener noreferrer">incontinence &amp; overactive bladder</a></li>
+            <li><a href="https://www.webmd.com/uterine-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">uterine cancer (endometrial cancer)</a></li>
+            <li><a href="https://www.webmd.com/women/uterine-fibroids/default.htm"
+                   target="_blank" rel="noopener noreferrer">uterine fibroids</a></li>
+            <li><a href="https://www.webmd.com/children/vaccines/default.htm"
+                   target="_blank" rel="noopener noreferrer">children's vaccines</a></li>
+            <li><a href="https://www.webmd.com/obesity/default.htm"
+                   target="_blank" rel="noopener noreferrer">weight loss &amp; obesity</a></li>
+            <li><a href="https://www.webmd.com/women/default.htm"
+                   target="_blank" rel="noopener noreferrer">women's health</a></li>
+        </ul>
+    </section>
+
+    <!-- ---------- Blogs ---------- -->
+    <section class="block" id="blogs">
+        <h2>Blogs</h2>
+        <ul>
+            <li><a href="https://blogs.webmd.com/adhd/default.htm"
+                   target="_blank" rel="noopener noreferrer">adhd blog</a></li>
+            <li><a href="https://blogs.webmd.com/adhd-in-children/default.htm"
+                   target="_blank" rel="noopener noreferrer">adhd in children blog</a></li>
+            <li><a href="https://blogs.webmd.com/alzheimers/default.htm"
+                   target="_blank" rel="noopener noreferrer">alzheimer's blog</a></li>
+            <li><a href="https://blogs.webmd.com/ankylosing-spondylitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">ankylosing spondylitis blog</a></li>
+            <li><a href="https://blogs.webmd.com/asthma/default.htm"
+                   target="_blank" rel="noopener noreferrer">asthma blog</a></li>
+            <li><a href="https://blogs.webmd.com/atopic-dermatitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">atopic dermatitis blog</a></li>
+            <li><a href="https://blogs.webmd.com/atrial-fibrillation/default.htm"
+                   target="_blank" rel="noopener noreferrer">atrial fibrillation blog</a></li>
+            <li><a href="https://blogs.webmd.com/bipolar-disorder/default.htm"
+                   target="_blank" rel="noopener noreferrer">bipolar disorder blog</a></li>
+            <li><a href="https://blogs.webmd.com/breast-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">breast cancer blog</a></li>
+            <li><a href="https://blogs.webmd.com/childhood-adhd/default.htm"
+                   target="_blank" rel="noopener noreferrer">childhood adhd expert blog</a></li>
+            <li><a href="https://blogs.webmd.com/cholesterol-management/default.htm"
+                   target="_blank" rel="noopener noreferrer">cholesterol management blog</a></li>
+            <li><a href="https://blogs.webmd.com/copd/default.htm"
+                   target="_blank" rel="noopener noreferrer">copd blog</a></li>
+            <li><a href="https://blogs.webmd.com/crohns-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">crohn’s disease blog</a></li>
+            <li><a href="https://blogs.webmd.com/deep-vein-thrombosis/default.htm"
+                   target="_blank" rel="noopener noreferrer">deep vein thrombosis blog</a></li>
+            <li><a href="https://blogs.webmd.com/depression/default.htm"
+                   target="_blank" rel="noopener noreferrer">depression blog</a></li>
+            <li><a href="https://blogs.webmd.com/diet-nutrition/default.htm"
+                   target="_blank" rel="noopener noreferrer">diet and nutrition blog</a></li>
+            <li><a href="https://blogs.webmd.com/digestive-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">digestive health blog</a></li>
+            <li><a href="https://blogs.webmd.com/es/esclerosis-multiple/default.htm"
+                   target="_blank" rel="noopener noreferrer">blog de esclerosis múltiple</a></li>
+            <li><a href="https://blogs.webmd.com/eye-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">eye health blog</a></li>
+            <li><a href="https://blogs.webmd.com/fibromyalgia/default.htm"
+                   target="_blank" rel="noopener noreferrer">fibromyalgia blog</a></li>
+            <li><a href="https://blogs.webmd.com/food-allergies/default.htm"
+                   target="_blank" rel="noopener noreferrer">food allergies blog</a></li>
+            <li><a href="https://blogs.webmd.com/heart-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">webmd heart health blog</a></li>
+            <li><a href="https://blogs.webmd.com/hiv/default.htm"
+                   target="_blank" rel="noopener noreferrer">hiv blog</a></li>
+            <li><a href="https://blogs.webmd.com/lung-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">lung cancer blog</a></li>
+            <li><a href="https://blogs.webmd.com/lupus/default.htm"
+                   target="_blank" rel="noopener noreferrer">lupus blog</a></li>
+            <li><a href="https://blogs.webmd.com/mental-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">mental health blog</a></li>
+            <li><a href="https://blogs.webmd.com/migraine/default.htm"
+                   target="_blank" rel="noopener noreferrer">migraine blog</a></li>
+            <li><a href="https://blogs.webmd.com/multiple-myeloma/default.htm"
+                   target="_blank" rel="noopener noreferrer">multiple myeloma blog</a></li>
+            <li><a href="https://blogs.webmd.com/multiple-sclerosis/default.htm"
+                   target="_blank" rel="noopener noreferrer">multiple sclerosis blog</a></li>
+            <li><a href="https://blogs.webmd.com/myasthenia-gravis/default.htm"
+                   target="_blank" rel="noopener noreferrer">webmd myasthenia gravis blog</a></li>
+            <li><a href="https://blogs.webmd.com/ovarian-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">ovarian cancer blog</a></li>
+            <li><a href="https://blogs.webmd.com/pain-management/default.htm"
+                   target="_blank" rel="noopener noreferrer">webmd pain management blog</a></li>
+            <li><a href="https://blogs.webmd.com/pet-health/default.htm"
+                   target="_blank" rel="noopener noreferrer">webmd pet health blog</a></li>
+            <li><a href="https://blogs.webmd.com/prostate-cancer/default.htm"
+                   target="_blank" rel="noopener noreferrer">prostate cancer blog</a></li>
+            <li><a href="https://blogs.webmd.com/psoriasis/default.htm"
+                   target="_blank" rel="noopener noreferrer">psoriasis blog</a></li>
+            <li><a href="https://blogs.webmd.com/psoriatic-arthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">psoriatic arthritis blog</a></li>
+            <li><a href="https://blogs.webmd.com/rheumatoid-arthritis/default.htm"
+                   target="_blank" rel="noopener noreferrer">rheumatoid arthritis blog</a></li>
+            <li><a href="https://blogs.webmd.com/schizophrenia/default.htm"
+                   target="_blank" rel="noopener noreferrer">schizophrenia blog</a></li>
+            <li><a href="https://blogs.webmd.com/sickle-cell-disease/default.htm"
+                   target="_blank" rel="noopener noreferrer">webmd sickle cell disease blog</a></li>
+            <li><a href="https://blogs.webmd.com/skin-care/default.htm"
+                   target="_blank" rel="noopener noreferrer">skin care blog</a></li>
+            <li><a href="https://blogs.webmd.com/sleep-disorders/default.htm"
+                   target="_blank" rel="noopener noreferrer">sleep disorders blog</a></li>
+            <li><a href="https://blogs.webmd.com/substance-abuse/default.htm"
+                   target="_blank" rel="noopener noreferrer">substance abuse blog</a></li>
+            <li><a href="https://blogs.webmd.com/diabetes/default.htm"
+                   target="_blank" rel="noopener noreferrer">type 2 diabetes blog</a></li>
+            <li><a href="https://blogs.webmd.com/ulcerative-colitis/default.htm"
+                   target="_blank" rel="noopener noreferrer">ulcerative colitis blog</a></li>
+        </ul>
+    </section>
+
+    <!-- ---------- Top Vitamins ---------- -->
+    <section class="block" id="vitamins">
+        <h2>Top Vitamins</h2>
+        <ul>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-113/tea-tree-oil"
+                   target="_blank" rel="noopener noreferrer">tea tree oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-205/glucomannan"
+                   target="_blank" rel="noopener noreferrer">glucomannan</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-227/witch-hazel"
+                   target="_blank" rel="noopener noreferrer">witch hazel</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-269/activated-charcoal"
+                   target="_blank" rel="noopener noreferrer">activated charcoal</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-294/quercetin"
+                   target="_blank" rel="noopener noreferrer">quercetin</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-299/inositol"
+                   target="_blank" rel="noopener noreferrer">inositol</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-300/garlic"
+                   target="_blank" rel="noopener noreferrer">garlic</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-313/biotin"
+                   target="_blank" rel="noopener noreferrer">biotin</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-333/ginkgo"
+                   target="_blank" rel="noopener noreferrer">ginkgo</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-390/propolis"
+                   target="_blank" rel="noopener noreferrer">propolis</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-436/choline"
+                   target="_blank" rel="noopener noreferrer">choline</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-437/lemon-balm"
+                   target="_blank" rel="noopener noreferrer">lemon balm</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-464/gamma-aminobutyric-acid-gaba"
+                   target="_blank" rel="noopener noreferrer">gamma‑aminobutyric acid (gaba)</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-503/royal-jelly"
+                   target="_blank" rel="noopener noreferrer">royal jelly</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-555/maca"
+                   target="_blank" rel="noopener noreferrer">maca</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-602/cordyceps"
+                   target="_blank" rel="noopener noreferrer">cordyceps</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-653/phenylalanine"
+                   target="_blank" rel="noopener noreferrer">phenylalanine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-699/horny-goat-weed"
+                   target="_blank" rel="noopener noreferrer">horny goat weed</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-703/damiana"
+                   target="_blank" rel="noopener noreferrer">damiana</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-35/iodine"
+                   target="_blank" rel="noopener noreferrer">iodine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-39/tribulus"
+                   target="_blank" rel="noopener noreferrer">tribulus</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-895/bromelain"
+                   target="_blank" rel="noopener noreferrer">bromelain</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-907/chlorella"
+                   target="_blank" rel="noopener noreferrer">chlorella</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-912/iron"
+                   target="_blank" rel="noopener noreferrer">iron</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-932/chromium"
+                   target="_blank" rel="noopener noreferrer">chromium</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-940/melatonin"
+                   target="_blank" rel="noopener noreferrer">melatonin</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-953/ashwagandha"
+                   target="_blank" rel="noopener noreferrer">ashwagandha</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-954/vitamin-e"
+                   target="_blank" rel="noopener noreferrer">vitamin e</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-963/astragalus"
+                   target="_blank" rel="noopener noreferrer">astragalus</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-966/lecithin"
+                   target="_blank" rel="noopener noreferrer">lecithin</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-961/ginger"
+                   target="_blank" rel="noopener noreferrer">ginger</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-971/saw-palmetto"
+                   target="_blank" rel="noopener noreferrer">saw palmetto</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-978/slippery-elm"
+                   target="_blank" rel="noopener noreferrer">slippery elm</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-981/echinacea"
+                   target="_blank" rel="noopener noreferrer">echinacea</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-982/zinc"
+                   target="_blank" rel="noopener noreferrer">zinc</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-992/phosphatidylserine"
+                   target="_blank" rel="noopener noreferrer">phosphatidylserine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-993/fish-oil"
+                   target="_blank" rel="noopener noreferrer">fish oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-996/xylitol"
+                   target="_blank" rel="noopener noreferrer">xylitol</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-998/magnesium"
+                   target="_blank" rel="noopener noreferrer">magnesium</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1006/evening-primrose"
+                   target="_blank" rel="noopener noreferrer">evening primrose</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1017/folic-acid"
+                   target="_blank" rel="noopener noreferrer">folic acid</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1019/maritime-pine"
+                   target="_blank" rel="noopener noreferrer">maritime pine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1024/taurine"
+                   target="_blank" rel="noopener noreferrer">taurine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1026/l-carnitine"
+                   target="_blank" rel="noopener noreferrer">l‑carnitine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1040/cod-liver-oil"
+                   target="_blank" rel="noopener noreferrer">cod liver oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1063/astaxanthin"
+                   target="_blank" rel="noopener noreferrer">astaxanthin</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1062/hyaluronic-acid"
+                   target="_blank" rel="noopener noreferrer">hyaluronic acid</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1092/coconut-oil"
+                   target="_blank" rel="noopener noreferrer">coconut oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1099/oolong-tea"
+                   target="_blank" rel="noopener noreferrer">oolong tea</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1101/holy-basil"
+                   target="_blank" rel="noopener noreferrer">holy basil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1115/serrapeptase"
+                   target="_blank" rel="noopener noreferrer">serrapeptase</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1126/berberine"
+                   target="_blank" rel="noopener noreferrer">berberine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1169/pu-erh-tea"
+                   target="_blank" rel="noopener noreferrer">pu‑erh tea</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1172/krill-oil"
+                   target="_blank" rel="noopener noreferrer">krill oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1242/moringa"
+                   target="_blank" rel="noopener noreferrer">moringa</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-1262/raspberry-ketone"
+                   target="_blank" rel="noopener noreferrer">raspberry ketone</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-712/chlorophyll"
+                   target="_blank" rel="noopener noreferrer">chlorophyll</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-717/glutathione"
+                   target="_blank" rel="noopener noreferrer">glutathione</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-733/fenugreek"
+                   target="_blank" rel="noopener noreferrer">fenugreek</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-753/gotu-kola"
+                   target="_blank" rel="noopener noreferrer">gotu kola</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-754/lutein"
+                   target="_blank" rel="noopener noreferrer">lutein</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-759/yohimbe"
+                   target="_blank" rel="noopener noreferrer">yohimbe</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-760/progesterone"
+                   target="_blank" rel="noopener noreferrer">progesterone</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-779/colloidal-silver"
+                   target="_blank" rel="noopener noreferrer">colloidal silver</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-781/calcium"
+                   target="_blank" rel="noopener noreferrer">calcium</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-794/5-htp"
+                   target="_blank" rel="noopener noreferrer">5-htp</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-825/emu-oil"
+                   target="_blank" rel="noopener noreferrer">emu oil</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-826/conjugated-linoleic-acid-cla"
+                   target="_blank" rel="noopener noreferrer">conjugated linoleic acid (cla)</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-833/whey-protein"
+                   target="_blank" rel="noopener noreferrer">whey protein</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-851/potassium"
+                   target="_blank" rel="noopener noreferrer">potassium</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-870/valerian"
+                   target="_blank" rel="noopener noreferrer">valerian</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-873/creatine"
+                   target="_blank" rel="noopener noreferrer">creatine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-875/l-arginine"
+                   target="_blank" rel="noopener noreferrer">l‑arginine</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-881/licorice"
+                   target="_blank" rel="noopener noreferrer">licorice</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-883/rhodiola"
+                   target="_blank" rel="noopener noreferrer">rhodiola</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-929/vitamin-d"
+                   target="_blank" rel="noopener noreferrer">vitamin d</a></li>
+            <li><a href="https://www.webmd.com/vitamins/ai/ingredientmono-964/vitamin-a"
+                   target="_blank" rel="noopener noreferrer">vitamin a</a></li>
+        </ul>
+    </section>
+
+    <!-- ---------- Top Drugs ---------- -->
+    <section class="block" id="drugs">
+        <h2>Top Drugs</h2>
+        <ul>
+            <li><a href="https://www.webmd.com/drugs/2/drug-941/acyclovir-oral/details"
+                   target="_blank" rel="noopener noreferrer">acyclovir</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8610/allopurinol-oral/details"
+                   target="_blank" rel="noopener noreferrer">allopurinol</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-9824/xanax-oral/details"
+                   target="_blank" rel="noopener noreferrer">alprazolam</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8611/amitriptyline-oral/details"
+                   target="_blank" rel="noopener noreferrer">amitriptyline</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-1531-3295/amoxicillin-oral/amoxicillin-oral/details"
+                   target="_blank" rel="noopener noreferrer">amoxicillin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-64439/abilify-oral/details"
+                   target="_blank" rel="noopener noreferrer">aripiprazole</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-11035/atenolol-oral/details"
+                   target="_blank" rel="noopener noreferrer">atenolol</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-1527-2223/azithromycin-oral/azithromycin-600-mg-oral/details"
+                   target="_blank" rel="noopener noreferrer">azithromycin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8615/baclofen-oral/details"
+                   target="_blank" rel="noopener noreferrer">baclofen</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-14257/benzonatate-oral/details"
+                   target="_blank" rel="noopener noreferrer">benzonatate</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8876/buspirone-oral/details"
+                   target="_blank" rel="noopener noreferrer">buspirone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-16849/celebrex-oral/details"
+                   target="_blank" rel="noopener noreferrer">celecoxib</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-1701/citalopram-oral/details"
+                   target="_blank" rel="noopener noreferrer">citalopram</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-12235/clindamycin-hcl-oral/details"
+                   target="_blank" rel="noopener noreferrer">clindamycin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8888-8087/cyclobenzaprine-oral/cyclobenzaprine-oral/details"
+                   target="_blank" rel="noopener noreferrer">cyclobenzaprine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-154839-1122/pradaxa-oral/dabigatran-oral/details"
+                   target="_blank" rel="noopener noreferrer">dabigatran</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-11116/valium-oral/details"
+                   target="_blank" rel="noopener noreferrer">diazepam</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-5247/dicyclomine-oral/details"
+                   target="_blank" rel="noopener noreferrer">dicyclomine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-1788/depakote-oral/details"
+                   target="_blank" rel="noopener noreferrer">divalproex</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-91491/cymbalta-oral/details"
+                   target="_blank" rel="noopener noreferrer">duloxetine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-176179/emgality-pen-subcutaneous/details"
+                   target="_blank" rel="noopener noreferrer">emgality</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-63990/lexapro-oral/details"
+                   target="_blank" rel="noopener noreferrer">escitalopram</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6997/prozac-oral/details"
+                   target="_blank" rel="noopener noreferrer">fluoxetine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-14208-8217/gabapentin-oral/gabapentin-oral/details"
+                   target="_blank" rel="noopener noreferrer">gabapentin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-5310/hydrochlorothiazide-oral/details"
+                   target="_blank" rel="noopener noreferrer">hydrochlorothiazide</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-251/hydrocodone-acetaminophen-oral/details"
+                   target="_blank" rel="noopener noreferrer">hydrocodone/acetaminophen</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-9130/dilaudid-oral/details"
+                   target="_blank" rel="noopener noreferrer">hydromorphone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-7681/hydroxyzine-hcl-oral/details"
+                   target="_blank" rel="noopener noreferrer">hydroxyzine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-5166-9368/ibuprofen-oral/ibuprofen-oral/details"
+                   target="_blank" rel="noopener noreferrer">ibuprofen</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-18053/keppra-oral/details"
+                   target="_blank" rel="noopener noreferrer">levetiracetam</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-1433-2020/levothyroxine-oral/levothyroxine-solution-oral/details"
+                   target="_blank" rel="noopener noreferrer">levothyroxine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-148324/vyvanse-oral/details"
+                   target="_blank" rel="noopener noreferrer">lisdexamfetamine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6873-9371/lisinopril-oral/lisinopril-oral/details"
+                   target="_blank" rel="noopener noreferrer">lisinopril</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8895-5244/lorazepam-oral/lorazepam-oral/details"
+                   target="_blank" rel="noopener noreferrer">lorazepam</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6616/losartan-oral/details"
+                   target="_blank" rel="noopener noreferrer">losartan</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-911/meloxicam-oral/details"
+                   target="_blank" rel="noopener noreferrer">meloxicam</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-2671-1278/methadone-oral/methadone-concentrate-oral/details"
+                   target="_blank" rel="noopener noreferrer">methadone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8677/methocarbamol-oral/details"
+                   target="_blank" rel="noopener noreferrer">methocarbamol</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-19857/concerta-oral/details"
+                   target="_blank" rel="noopener noreferrer">methylphenidate</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6470/methylprednisolone-oral/details"
+                   target="_blank" rel="noopener noreferrer">methylprednisolone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6426/metronidazole-oral/details"
+                   target="_blank" rel="noopener noreferrer">metronidazole</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-152224/savella-oral/details"
+                   target="_blank" rel="noopener noreferrer">milnacipran</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-327-819/morphine-oral/morphine-oral/details"
+                   target="_blank" rel="noopener noreferrer">morphine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-10710/nortriptyline-oral/details"
+                   target="_blank" rel="noopener noreferrer">nortriptyline</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-30/zofran-oral/details"
+                   target="_blank" rel="noopener noreferrer">ondansetron</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-7277/percocet-oral/details"
+                   target="_blank" rel="noopener noreferrer">oxycodone/acetaminophen</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-17633/pantoprazole-oral/details"
+                   target="_blank" rel="noopener noreferrer">pantoprazole</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-4151/phentermine-oral/details"
+                   target="_blank" rel="noopener noreferrer">phentermine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6989/pravastatin-oral/details"
+                   target="_blank" rel="noopener noreferrer">pravastatin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6007-9383/prednisone-oral/prednisone-oral/details"
+                   target="_blank" rel="noopener noreferrer">prednisone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-93965/lyrica-oral/details"
+                   target="_blank" rel="noopener noreferrer">pregabalin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-8895/promethazine-oral/details"
+                   target="_blank" rel="noopener noreferrer">promethazine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-4718/seroquel-oral/details"
+                   target="_blank" rel="noopener noreferrer">quetiapine</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-6105/simvastatin-oral/details"
+                   target="_blank" rel="noopener noreferrer">simvastatin</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-5530/bactrim-ds-oral/details"
+                   target="_blank" rel="noopener noreferrer">sulfamethoxazole/trimethoprim</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-4398-5239/tramadol-oral/tramadol-oral/details"
+                   target="_blank" rel="noopener noreferrer">tramadol</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-11188/trazodone-oral/details"
+                   target="_blank" rel="noopener noreferrer">trazodone</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-167025/trulicity-subcutaneous/details"
+                   target="_blank" rel="noopener noreferrer">trulicity</a></li>
+            <li><a href="https://www.webmd.com/drugs/2/drug-9690/ambien-oral/details"
+                   target="_blank" rel="noopener noreferrer">zolpidem</a></li>
+        </ul>
+    </section>
+
+    <!-- ---------- WebMD Features ---------- -->
+    <section class="block" id="features">
+        <h2>WebMD Features</h2>
+        <ul>
+            <li><a href="https://symptoms.webmd.com/default.htm"
+                   target="_blank" rel="noopener noreferrer">symptom checker</a></li>
+            <li><a href="https://www.webmd.com/pill-identification/default.htm"
+                   target="_blank" rel="noopener noreferrer">pill identificator</a></li>
+            <li><a href="https://www.webmd.com/interaction-checker/default.htm"
+                   target="_blank" rel="noopener noreferrer">interaction checker</a></li>
+            <li><a href="https://www.webmd.com/baby/healthtool-ovulation-calculator"
+                   target="_blank" rel="noopener noreferrer">ovulation calculator</a></li>
+            <li><a href="https://www.webmd.com/baby/healthtool-due-date-calculator"
+                   target="_blank" rel="noopener noreferrer">due date calculator</a></li>
+            <li><a href="https://www.webmd.com/baby/healthtool-daily-pregnancy-calendar"
+                   target="_blank" rel="noopener noreferrer">pregnancy calculator</a></li>
+            <li><a href="https://www.webmd.com/parenting/kids-bmi-calculator"
+                   target="_blank" rel="noopener noreferrer">kid's bmi calculator</a></li>
+            <li><a href="https://www.webmd.com/children/healthtool-kids-height-predictor"
+                   target="_blank" rel="noopener noreferrer">kid's height predictor</a></li>
+            <li><a href="https://www.webmd.com/fitness-exercise/healthtool-exercise-calculator"
+                   target="_blank" rel="noopener noreferrer">fitness calorie counter</a></li>
+            <li><a href="https://www.webmd.com/diet/healthtool-food-calorie-counter"
+                   target="_blank" rel="noopener noreferrer">food calorie counter</a></li>
+            <li><a href="https://www.webmd.com/pets/dogs/healthy-dog-tool/default.htm"
+                   target="_blank" rel="noopener noreferrer">dog health</a></li>
+            <li><a href="https://www.webmd.com/pets/cats/healthy-cat-tool/default.htm"
+                   target="_blank" rel="noopener noreferrer">cat health</a></li>
+            <li><a href="https://www.webmd.com/webinar/default.htm"
+                   target="_blank" rel="noopener noreferrer">webinars</a></li>
+            <li><a href="https://www.webmd.com/podcasts/default.htm"
+                   target="_blank" rel="noopener noreferrer">podcasts</a></li>
+            <li><a href="https://www.webmd.com/pets/pet-meds"
+                   target="_blank" rel="noopener noreferrer">pet medications</a></li>
+        </ul>
+    </section>
+
+</div> <!-- /.sitemap-grid -->
+</div> <!-- /.wrapper -->
+
+<!-- --------------------------------------------------------------
+     SEARCH LOGIC (vanilla JS)
+     -------------------------------------------------------------- -->
+<script>
+/**
+ * Live filter – compares the user’s query against the text of every
+ * <li> in the page.  Matching items stay visible; non‑matching items
+ * get the ‘hide’ class (display:none).  The layout automatically
+ * re‑flows because each <ul> is a flex container.
+ */
+(function(){
+    const searchInput = document.getElementById('siteSearch');
+    const listItems   = document.querySelectorAll('.block ul li');
+
+    // Helper – returns true if the element’s text contains the query
+    function matches(item, query){
+        return item.textContent.toLowerCase().includes(query);
+    }
+
+    // Run on each keystroke (including paste)
+    searchInput.addEventListener('input', function(){
+        const q = this.value.trim().toLowerCase();
+
+        // If the box is empty, show everything
+        if (q === ''){
+            listItems.forEach(li => li.classList.remove('hide'));
+            return;
+        }
+
+        // Otherwise, hide non‑matches
+        listItems.forEach(li => {
+            if (matches(li, q)){
+                li.classList.remove('hide');
+            }else{
+                li.classList.add('hide');
+            }
+        });
+    });
+
+    
+})();
+</script>
+</body>
+</html>

@@ -173,8 +173,10 @@ $("#scinewsorg").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.sciencenews.org";
-  document.getElementById("hrefframenews").href = "https://www.sciencenews.org";
+  document.getElementById("frame").src =
+    "https://www.britannica.com/Science-Tech";
+  document.getElementById("hrefframenews").href =
+    "https://www.britannica.com/Science-Tech";
 });
 
 $("#mntday").click(function () {
