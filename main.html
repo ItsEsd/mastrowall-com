@@ -995,5 +995,13 @@ $("document").ready(function () {
   });
 });
 </script>
+<script>
+const loca = window.location.hostname;
+if (loca === "mastrowall.com") {
+document.body.style.display = "block";
+} else {
+document.body.innerHTML = "";
+}
+</script>
 </body>
 </html>
