@@ -169,32 +169,85 @@ $("#nrheightmtel").click(function () {
   document.getElementById("btitlemtel").style.display = "block";
 });
 
+function loadUrlInSrcdoc(outerIframeId, linkId, url, options = {}) {
+  const outer = document.getElementById(outerIframeId);
+  if (!outer) {
+    console.error(`[loadUrlInSrcdoc] No element with id="${outerIframeId}"`);
+    return;
+  }
+
+  const sandbox =
+    options.sandbox || "allow-scripts allow-same-origin allow-forms";
+
+  const innerHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedded – ${url}</title>
+  <style>
+    html,body{margin:0;padding:0;height:100%;overflow:hidden;}
+    iframe{border:none;width:100%;height:100%;display:block;}
+  </style>
+</head>
+<body>
+  <iframe src="${url}"
+          sandbox="${sandbox}"
+          loading="eager"
+          referrerpolicy="no-referrer"></iframe>
+</body>
+</html>`.trim();
+  outer.srcdoc = innerHTML;
+  outer.removeAttribute("src");
+  if (linkId) {
+    const link = document.getElementById(linkId);
+    if (link) {
+      link.href = url;
+      if (options.openInNewTab) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      } else {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      }
+    }
+  }
+}
+
 $("#scinewsorg").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src =
-    "https://www.britannica.com/Science-Tech";
-  document.getElementById("hrefframenews").href =
-    "https://www.britannica.com/Science-Tech";
+  loadUrlInSrcdoc(
+    "frame",
+    "hrefframenews",
+    "https://www.britannica.com/Science-Tech",
+    { openInNewTab: true }
+  );
 });
 
 $("#mntday").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.medicalnewstoday.com";
-  document.getElementById("hrefframenews").href =
-    "https://www.medicalnewstoday.com";
+  loadUrlInSrcdoc(
+    "frame",
+    "hrefframenews",
+    "https://www.medicalnewstoday.com",
+    { openInNewTab: true }
+  );
 });
 
 $("#esq").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.openaccessjournals.com/";
-  document.getElementById("hrefframenews").href =
-    "https://www.openaccessjournals.com/";
+  loadUrlInSrcdoc(
+    "frame",
+    "hrefframenews",
+    "https://www.openaccessjournals.com/",
+    { openInNewTab: true }
+  );
 });
 
 $("#iasstils").click(function () {
@@ -207,51 +260,54 @@ $("#popscie").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.popsci.com";
-  document.getElementById("hrefframenews").href = "https://www.popsci.com";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.popsci.com", {
+    openInNewTab: true,
+  });
 });
 
 $("#wirdns").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.wired.com";
-  document.getElementById("hrefframenews").href = "https://www.wired.com";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.wired.com", {
+    openInNewTab: true,
+  });
 });
 
 $("#scdaily").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.scitechdaily.com";
-  document.getElementById("hrefframenews").href =
-    "https://www.scitechdaily.com";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.scitechdaily.com", {
+    openInNewTab: true,
+  });
 });
 
 $("#anainsgt").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://www.ourworldindata.org/";
-  document.getElementById("hrefframenews").href =
-    "https://www.ourworldindata.org/";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.ourworldindata.org/", {
+    openInNewTab: true,
+  });
 });
 
 $("#bigth").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://bigthink.com/";
-  document.getElementById("hrefframenews").href = "https://bigthink.com/";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://bigthink.com/", {
+    openInNewTab: true,
+  });
 });
 
 $("#rssamrit").click(function () {
   move();
   openframenews();
   changezpostd();
-  document.getElementById("frame").src = "https://rss-feed.amrit-corp.com";
-  document.getElementById("hrefframenews").href =
-    "https://rss-feed.amrit-corp.com";
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://rss-feed.amrit-corp.com", {
+    openInNewTab: true,
+  });
 });
 
 $("#masthome").click(function () {
