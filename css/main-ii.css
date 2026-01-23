@@ -1498,7 +1498,7 @@ input:disabled {
     float: right;
   }
   #aol {
-    display: block;
+    display: none !important;
   }
   .bodyconv2 {
     margin-top: 120px;
@@ -1513,23 +1513,5 @@ input:disabled {
 @media screen and (max-height: 350px) {
   * {
     overflow-y: auto;
-  }
-}
-@media screen and (min-width: 955px) and (max-width: 1066px) {
-  #headsrcdiv {
-    top: 14px;
-    display: block;
-    left: 280px;
-    position: absolute;
-    z-index: 100;
-    width: 40%;
-  }
-  #headsrcdiv #srctopichead {
-    box-shadow: none;
-    width: 87.8%;
-    background-color: #ffffff !important;
-  }
-  #signmbl {
-    display: none;
   }
 }
