@@ -410,7 +410,7 @@
 }
 #signmbl {
   font-size: 14px;
-  padding-top: 10px;
+  margin-top: 10px;
   text-align: right;
   cursor: pointer;
   display: none;
@@ -427,7 +427,7 @@
   border-bottom-left-radius: 20px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  background-color: #e1e1e1;
+  background-color: #ffffff !important;
   border: 1px solid #4e6cf1;
   border-right: 0px;
   box-shadow: none;
@@ -480,7 +480,7 @@
   }
 }
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 1200px) {
   .dashheading {
     font-size: 20px;
   }
@@ -587,7 +587,7 @@
   }
 
   #srctopichead {
-    background-color: #ffffff00;
+    background-color: #ffffff !important;
     width: 85.8%;
     border: none;
   }
@@ -1486,8 +1486,9 @@ input:disabled {
     width: 80%;
   }
   #headsrcdiv #srctopichead {
-    box-shadow: 0px 2px 15px 0px grey;
+    box-shadow: 0px 2px 15px 0px #145ae7a0;
     width: 87.8%;
+    background-color: #ffffff !important;
   }
   #topicsrcbtn {
     width: 12%;
@@ -1497,7 +1498,7 @@ input:disabled {
     float: right;
   }
   #aol {
-    display: none;
+    display: block;
   }
   .bodyconv2 {
     margin-top: 120px;

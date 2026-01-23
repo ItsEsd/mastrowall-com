@@ -23,7 +23,7 @@ $("#goinmastro").click(function () {
   window.open(
     "https://mastrowall.in",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 
@@ -40,7 +40,7 @@ $("#conlivem").click(function () {
     {
       scrollTop: 150,
     },
-    500
+    500,
   );
 });
 
@@ -108,7 +108,7 @@ $("#prosign,#exammwall").click(function () {
   window.open(
     "https://exam-portal.mastrowall.com/",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 
@@ -120,7 +120,7 @@ $("#oplibrary").click(function () {
   window.open(
     "https://library.mastrowall.in",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 
@@ -128,7 +128,7 @@ $("#opblog").click(function () {
   window.open(
     "https://blog.mastrowall.in",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 
@@ -222,7 +222,7 @@ $("#scinewsorg").click(function () {
     "frame",
     "hrefframenews",
     "https://www.britannica.com/Science-Tech",
-    { openInNewTab: true }
+    { openInNewTab: true },
   );
 });
 
@@ -234,7 +234,7 @@ $("#mntday").click(function () {
     "frame",
     "hrefframenews",
     "https://www.medicalnewstoday.com",
-    { openInNewTab: true }
+    { openInNewTab: true },
   );
 });
 
@@ -246,7 +246,7 @@ $("#esq").click(function () {
     "frame",
     "hrefframenews",
     "https://www.openaccessjournals.com/",
-    { openInNewTab: true }
+    { openInNewTab: true },
   );
 });
 
@@ -314,14 +314,14 @@ $("#masthome").click(function () {
   window.open(
     "https://home.mastrowall.in",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 $("#astroforum").click(function () {
   window.open(
     "https://www.astro.mastrowall.in/forum",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 $("#opabout").click(function () {
@@ -365,7 +365,7 @@ $("#expgtotst").click(function () {
   window.open(
     "online-test/",
     "_self",
-    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes",
   );
 });
 
@@ -557,7 +557,7 @@ $(document).ready(function () {
     const img = document.createElement("img");
     img.setAttribute(
       "src",
-      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
     );
     img.setAttribute("data-src", chsbc[fin]);
     img.setAttribute("onerror", "this.src='../images/imgonerror.svg'");
@@ -568,8 +568,8 @@ $(document).ready(function () {
   }
 
   // Apply random background for wide screens
-  if (window.innerWidth > 720) {
-    document.body.style.backgroundImage = 'url("' + chsbc[indices[1]] + '")';
+  if (window.innerWidth > 1000) {
+    document.body.style.backgroundImage = 'url("' + chsbc[indices[0]] + '")';
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundSize = "100% 100%";
   }
