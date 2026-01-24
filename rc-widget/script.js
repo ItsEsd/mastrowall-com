@@ -135,27 +135,38 @@ $(document).ready(function () {
   }
 
   function openframenews(url, triggerId) {
-    const frmanwsctive = document.querySelector(".frmnwsactive");
-    if (frmanwsctive) frmanwsctive.remove();
+    const $iframe = $("#frame");
+    const currentUrl = $iframe.data("srcdoc-url");
+
+    const cachedFromTrigger = triggerId
+      ? $(`#${triggerId}`).data("srcdoc-url")
+      : null;
+
+    if (url === currentUrl || url === cachedFromTrigger) {
+      setActiveDot(triggerId);
+      return;
+    }
+
+    $(".frmnwsactive").remove();
 
     $("#framenews,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
 
-    const overlayDiv = document.createElement("div");
-    overlayDiv.id = "ovrlyfrmld";
-    Object.assign(overlayDiv.style, {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      backgroundColor: "rgba(0,0,0,0.5)",
-      zIndex: 9999,
-      cursor: "pointer",
+    const $overlayDiv = $("<div>", {
+      id: "ovrlyfrmld",
+      css: {
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0,0,0,0.5)",
+        zIndex: 9999,
+        cursor: "pointer",
+      },
     });
 
-    const loadingMessage = document.createElement("div");
-    loadingMessage.innerHTML = `
+    const $loadingMessage = $(`
     <div id="loadfrmdv" style="font-size:14px;">
       <span class="spinloadfrm">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -165,8 +176,8 @@ $(document).ready(function () {
                 d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
         </svg>
       </span> Loading...
-    </div>`;
-    Object.assign(loadingMessage.style, {
+    </div>
+  `).css({
       position: "absolute",
       top: "50%",
       left: "50%",
@@ -174,41 +185,49 @@ $(document).ready(function () {
       color: "white",
       textAlign: "center",
     });
-    overlayDiv.appendChild(loadingMessage);
-    document.getElementById("framenews").appendChild(overlayDiv);
 
-    overlayDiv.addEventListener("click", () => overlayDiv.remove());
+    $overlayDiv.append($loadingMessage);
+    $("#framenews").append($overlayDiv);
 
-    const iframe = document.getElementById("frame");
-    iframe.style.backgroundImage =
-      "url('https://mastrowall.com/images/loading-gif.gif')";
+    $overlayDiv.on("click", () => $overlayDiv.remove());
+
+    const $iframeEl = $("#frame");
+    $iframeEl.css(
+      "backgroundImage",
+      "url('https://mastrowall.com/images/loading-gif.gif')",
+    );
 
     loadIntoIframeSrcdoc("frame", url, {
       sandbox: "allow-scripts allow-same-origin allow-forms",
       openInNewTab: false,
     });
 
-    iframe.addEventListener(
-      "srcdoc-loaded",
-      () => {
-        const ov = document.getElementById("ovrlyfrmld");
-        if (ov) ov.remove();
+    $iframeEl.one("srcdoc-loaded", () => {
+      $("#ovrlyfrmld").remove();
+      $iframeEl.css("backgroundImage", "none");
+    });
 
-        iframe.style.backgroundImage = "none";
-      },
-      { once: true }
-    );
+    $iframeEl.data("srcdoc-url", url);
 
-    if (triggerId) {
-      const triggerEl = document.getElementById(triggerId);
-      if (triggerEl) {
-        const dot = document.createElement("span");
-        dot.className = "frmnwsactive";
-        const label = triggerEl.querySelector("span");
-        if (label) triggerEl.insertBefore(dot, label);
-        else triggerEl.appendChild(dot);
-      }
-    }
+    setActiveDot(triggerId);
+  }
+
+  function setActiveDot(triggerId) {
+    if (!triggerId) return;
+    const $trigger = $(`#${triggerId}`);
+
+    if (!$trigger.length) return;
+
+    const cachedUrl = $("#frame").data("srcdoc-url");
+    if (cachedUrl) $trigger.data("srcdoc-url", cachedUrl);
+
+    $trigger.find(".frmnwsactive").remove();
+
+    const $dot = $('<span class="frmnwsactive"></span>');
+    const $label = $trigger.find("span").first();
+
+    if ($label.length) $label.before($dot);
+    else $trigger.append($dot);
   }
 
   $("#mlibr").click(function () {
