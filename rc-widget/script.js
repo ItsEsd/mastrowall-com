@@ -143,6 +143,8 @@ $(document).ready(function () {
       : null;
 
     if (url === currentUrl || url === cachedFromTrigger) {
+      $("#framenews,.nbtbfrm").slideDown("slow");
+      $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
       setActiveDot(triggerId);
       return;
     }
