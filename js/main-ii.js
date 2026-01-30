@@ -178,7 +178,7 @@ function loadUrlInSrcdoc(outerIframeId, linkId, url, options = {}) {
 
   const sandbox =
     options.sandbox ||
-    "allow-scripts allow-same-origin allow-forms allow-popups";
+    "allow-scripts allow-same-origin allow-forms allow-popups allow‑top‑navigation allow‑top‑navigation‑by‑user‑activation";
 
   const innerHTML = `
 <!DOCTYPE html>
