@@ -42,7 +42,7 @@ function openframenews() {
 
 if (navigator.onLine) {
   document.getElementById("framecontainer").innerHTML =
-    '<iframe id="frame" src="" width="100%" frameborder=0></iframe>';
+    '<iframe id="frame" src="" sandbox="allow-same-origin allow-scripts allow-forms allow-top-navigation allow-popups allow-modals allow-top-navigation-by-user-activation" width="100%" frameborder=0></iframe>';
 } else {
   document.getElementById("framecontainer").innerHTML =
     "<div align='center'><div style='max-width:400px;margin-top:140px;border:none;box-shadow:0 2px 6px 0 grey;padding:40px;'><p style='font-size:60px'>&#9785;</p><h2 style='padding:10px;'>No Internet</h2></div></div>";
