@@ -199,6 +199,9 @@ $(document).ready(function () {
       "url('https://mastrowall.com/images/loading-gif.gif')",
     );
     if (triggerId === "rssamrit") {
+      $iframe.removeAttr("srcdoc");
+      $iframe[0].contentDocument?.open?.();
+      $iframe[0].contentDocument?.close?.();
       $iframe.attr({
         src: url,
         sandbox:
