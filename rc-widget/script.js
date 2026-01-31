@@ -80,69 +80,59 @@ $(document).ready(function () {
     $(".dircttb").slideUp("slow");
   });
 
-  function loadIntoIframeSrcdoc(outerId, url, options = {}) {
-    const outer = document.getElementById(outerId);
-    if (!outer) {
-      console.error("[loadIntoIframeSrcdoc] No iframe with id", outerId);
-      return;
-    }
+  function loadIntoIframeSrcdoc(iframeId, url, mode = "srcdoc", options = {}) {
+    const oldIframe = document.getElementById(iframeId);
+    if (!oldIframe) return Promise.resolve();
 
     const sandbox =
-      options.sandbox || "allow-scripts allow-same-origin allow-forms";
-    const innerHTML = `
+      options.sandbox ||
+      "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation";
+
+    return new Promise((resolve) => {
+      // 🔁 create fresh iframe (hard reset)
+      const iframe = document.createElement("iframe");
+      iframe.id = oldIframe.id;
+      iframe.className = oldIframe.className;
+      iframe.style.cssText = oldIframe.style.cssText;
+
+      iframe.onload = () => resolve();
+
+      if (mode === "src") {
+        iframe.setAttribute("sandbox", sandbox);
+        iframe.src = url;
+        iframe.dataset.loadedUrl = url;
+      } else {
+        const html = `
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
+<html>
+<head>
+<meta charset="UTF-8">
 <style>
-  html,body{margin:0;padding:0;height:100%;overflow:hidden;}
-  iframe{border:none;width:100%;height:100%;display:block;}
+html,body{margin:0;height:100%;overflow:hidden;}
+iframe{border:none;width:100%;height:100%;}
 </style>
 </head>
 <body>
-  <iframe src="${url}" sandbox="${sandbox}"
-          loading="eager" referrerpolicy="no-referrer"></iframe>
-</body></html>`.trim();
-    const onLoad = () => {
-      const ev = new Event("srcdoc-loaded");
-      outer.dispatchEvent(ev);
-    };
-    outer.addEventListener("load", onLoad, { once: true });
-
-    if ("srcdoc" in outer) {
-      outer.srcdoc = innerHTML;
-      outer.removeAttribute("src");
-    } else {
-      const blob = new Blob([innerHTML], { type: "text/html" });
-      const blobUrl = URL.createObjectURL(blob);
-      outer.src = blobUrl;
-      outer.addEventListener("load", () => URL.revokeObjectURL(blobUrl), {
-        once: true,
-      });
-    }
-
-    if (options.linkId) {
-      const link = document.getElementById(options.linkId);
-      if (link) {
-        link.href = url;
-        if (options.openInNewTab) {
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-        } else {
-          link.removeAttribute("target");
-          link.removeAttribute("rel");
-        }
+<iframe src="${url}" sandbox="${sandbox}" referrerpolicy="no-referrer"></iframe>
+</body>
+</html>`;
+        iframe.srcdoc = html;
+        iframe.dataset.srcdocUrl = url;
       }
-    }
+
+      // 🔥 replace old iframe completely
+      oldIframe.replaceWith(iframe);
+    });
   }
 
-  function openframenews(url, triggerId) {
+  async function openframenews(url, triggerId) {
     const $iframe = $("#frame");
-    const currentUrl = $iframe.data("srcdoc-url");
 
-    const cachedFromTrigger = triggerId
-      ? $(`#${triggerId}`).data("srcdoc-url")
-      : null;
+    const mode = triggerId === "rssamrit" ? "src" : "srcdoc";
+    const cachedUrl =
+      mode === "src" ? $iframe.data("loaded-url") : $iframe.data("srcdoc-url");
 
-    if (url === currentUrl || url === cachedFromTrigger) {
+    if (url === cachedUrl) {
       $("#framenews,.nbtbfrm").slideDown("slow");
       $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
       setActiveDot(triggerId);
@@ -150,94 +140,54 @@ $(document).ready(function () {
     }
 
     $(".frmnwsactive").remove();
+    $("#ovrlyfrmld").remove();
 
     $("#framenews,.nbtbfrm").slideDown("slow");
     $("#dots,#ctdotbx,#lnkotbx,#jdbox").hide("fast");
 
-    const $overlayDiv = $("<div>", {
-      id: "ovrlyfrmld",
-      css: {
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "rgba(0,0,0,0.5)",
-        zIndex: 9999,
-        cursor: "pointer",
-      },
+    /* ---------- overlay ---------- */
+    const $overlay = $('<div id="ovrlyfrmld">Loading…</div>').css({
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,0.5)",
+      color: "#fff",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 9999,
     });
 
-    const $loadingMessage = $(`
-    <div id="loadfrmdv" style="font-size:14px;">
-      <span class="spinloadfrm">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-             class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-          <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
-          <path fill-rule="evenodd"
-                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
-        </svg>
-      </span> Loading...
-    </div>
-  `).css({
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%,-50%)",
-      color: "white",
-      textAlign: "center",
-    });
+    $("#framenews").append($overlay);
 
-    $overlayDiv.append($loadingMessage);
-    $("#framenews").append($overlayDiv);
-
-    $overlayDiv.on("click", () => $overlayDiv.remove());
-
-    const $iframeEl = $("#frame");
-    $iframeEl.css(
+    $("#frame").css(
       "backgroundImage",
       "url('https://mastrowall.com/images/loading-gif.gif')",
     );
-    if (triggerId === "rssamrit") {
-      $iframe.removeAttr("srcdoc");
-      $iframe[0].contentDocument?.open?.();
-      $iframe[0].contentDocument?.close?.();
-      $iframe.attr({
-        src: url,
-        sandbox:
-          "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation",
-      });
 
-      $iframe.one("load", () => {
-        $("#ovrlyfrmld").remove();
-        $iframe.css("backgroundImage", "none");
-      });
+    // 🔁 unified loader (hard reset iframe)
+    await loadIntoIframeSrcdoc("frame", url, mode);
 
-      $iframe.data("srcdoc-url", url);
+    $("#ovrlyfrmld").remove();
+    $("#frame").css("backgroundImage", "none");
+
+    if (mode === "src") {
+      $("#frame").data("loaded-url", url);
     } else {
-      loadIntoIframeSrcdoc("frame", url, {
-        sandbox:
-          "allow-scripts allow-same-origin allow-forms allow-popups allow‑top‑navigation allow‑top‑navigation‑by‑user‑activation",
-        openInNewTab: true,
-      });
+      $("#frame").data("srcdoc-url", url);
     }
-    $iframeEl.one("srcdoc-loaded", () => {
-      $("#ovrlyfrmld").remove();
-      $iframeEl.css("backgroundImage", "none");
-    });
-
-    $iframeEl.data("srcdoc-url", url);
 
     setActiveDot(triggerId);
   }
 
   function setActiveDot(triggerId) {
     if (!triggerId) return;
-    const $trigger = $(`#${triggerId}`);
 
+    const $trigger = $(`#${triggerId}`);
     if (!$trigger.length) return;
 
-    const cachedUrl = $("#frame").data("srcdoc-url");
+    const cachedUrl =
+      $("#frame").data("srcdoc-url") || $("#frame").data("loaded-url");
+
     if (cachedUrl) $trigger.data("srcdoc-url", cachedUrl);
 
     $trigger.find(".frmnwsactive").remove();
