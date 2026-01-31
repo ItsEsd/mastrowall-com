@@ -752,7 +752,7 @@ function downloadFileapk() {
 }
 function downloadFileapk_monolith() {
   var fileUrl =
-    "https://mastrowall.com/app/apk-release/MASTROWALL-apkversion_monolith-1.0.apk";
+    "https://mastrowall.com/app/apk-release/MASTROWALL-apkversion_monolith-1.1.apk";
   var link = document.createElement("a");
   link.href = fileUrl;
   document.body.appendChild(link);
