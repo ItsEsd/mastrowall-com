@@ -176,6 +176,32 @@ function loadUrlInSrcdoc(outerIframeId, linkId, url, options = {}) {
     return;
   }
 
+  const isRssFeed = /rss[-_]feed/i.test(url);
+  if (isRssFeed) {
+    const sandbox =
+      options.sandbox ||
+      "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation";
+
+    outer.sandbox = sandbox;
+    outer.src = url;
+    outer.removeAttribute("srcdoc");
+
+    if (linkId) {
+      const link = document.getElementById(linkId);
+      if (link) {
+        link.href = url;
+        if (options.openInNewTab) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        } else {
+          link.removeAttribute("target");
+          link.removeAttribute("rel");
+        }
+      }
+    }
+    return;
+  }
+
   const sandbox =
     options.sandbox ||
     "allow-scripts allow-same-origin allow-forms allow-popups allow‑top‑navigation allow‑top‑navigation‑by‑user‑activation";
@@ -198,8 +224,10 @@ function loadUrlInSrcdoc(outerIframeId, linkId, url, options = {}) {
           referrerpolicy="no-referrer"></iframe>
 </body>
 </html>`.trim();
+
   outer.srcdoc = innerHTML;
   outer.removeAttribute("src");
+
   if (linkId) {
     const link = document.getElementById(linkId);
     if (link) {

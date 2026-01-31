@@ -198,13 +198,26 @@ $(document).ready(function () {
       "backgroundImage",
       "url('https://mastrowall.com/images/loading-gif.gif')",
     );
+    if (triggerId === "rssamrit") {
+      $iframe.attr({
+        src: url,
+        sandbox:
+          "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation",
+      });
 
-    loadIntoIframeSrcdoc("frame", url, {
-      sandbox:
-        "allow-scripts allow-same-origin allow-forms allow-popups allow‑top‑navigation allow‑top‑navigation‑by‑user‑activation",
-      openInNewTab: true,
-    });
+      $iframe.one("load", () => {
+        $("#ovrlyfrmld").remove();
+        $iframe.css("backgroundImage", "none");
+      });
 
+      $iframe.data("srcdoc-url", url);
+    } else {
+      loadIntoIframeSrcdoc("frame", url, {
+        sandbox:
+          "allow-scripts allow-same-origin allow-forms allow-popups allow‑top‑navigation allow‑top‑navigation‑by‑user‑activation",
+        openInNewTab: true,
+      });
+    }
     $iframeEl.one("srcdoc-loaded", () => {
       $("#ovrlyfrmld").remove();
       $iframeEl.css("backgroundImage", "none");
