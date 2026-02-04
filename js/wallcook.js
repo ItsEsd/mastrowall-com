@@ -122,7 +122,7 @@ function showGistBox(url) {
       box.style.display = "none";
       document.body.style.overflowY = "auto";
       if (history.state === "gistbox-open") {
-        history.back();
+        history.replaceState(null, "");
       }
     };
 
@@ -137,7 +137,7 @@ function showGistBox(url) {
     document.body.appendChild(box);
   }
   if (history.state !== "gistbox-open") {
-    history.pushState("gistbox-open", "", "#gistbox");
+    history.pushState({ page: "gistbox-open" }, "");
   }
 }
 
@@ -161,6 +161,5 @@ window.addEventListener("popstate", (ev) => {
   if (ev.state !== "gistbox-open") {
     document.getElementById("gistbox").style.display = "none";
     document.body.style.overflowY = "auto";
-    history.replaceState(null, "");
   }
 });
