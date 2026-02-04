@@ -84,7 +84,7 @@ $("#crtod,#botcrtod").click(function () {
     $("#todbox").slideDown("fast");
     var refelm = document.getElementById("srchengcon");
     if (refelm.style.display == "block") {
-      fstelm.style.height = "83vh";
+      fstelm.style.height = "calc(84vh - 30px)";
     }
   }
   // let stateObj = { id: "0" };
@@ -725,19 +725,19 @@ $("#srchengn").click(function () {
   var refelm = document.getElementById("todbox");
   var refsrch = document.getElementById("srchengcon");
   if (refsrch.style.display == "block") {
-    refelm.style.height = "83vh";
+    refelm.style.height = "calc(84vh - 30px)";
   } else if (refsrch.style.display == "none") {
-    refelm.style.height = "95vh";
+    refelm.style.height = "calc(100vh - 30px)";
   }
 });
 $("#clssrceng").click(function () {
   $("#srchengcon, #clssrceng").slideUp();
   var refelm = document.getElementById("todbox");
   var screenWidth = window.innerWidth;
-  if (screenWidth <= 600) {
-    refelm.style.height = "100vh";
+  if (screenWidth <= 20000) {
+    refelm.style.height = "calc(100vh - 30px)";
   } else {
-    refelm.style.height = "95vh"; // Adjust as needed
+    refelm.style.height = "calc(84vh - 30px)"; // Adjust as needed
   }
 });
 
