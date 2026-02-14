@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     const sandbox =
       options.sandbox ||
-      "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation";
+      "allow-scripts allow-same-origin allow-forms allow-popups";
 
     return new Promise((resolve) => {
       // 🔁 create fresh iframe (hard reset)

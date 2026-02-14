@@ -180,7 +180,7 @@ function loadUrlInSrcdoc(outerIframeId, linkId, url, options = {}) {
   if (isRssFeed) {
     const sandbox =
       options.sandbox ||
-      "allow-scripts allow-same-origin allow-forms allow-popups allow-top-navigation allow-top-navigation-by-user-activation";
+      "allow-scripts allow-same-origin allow-forms allow-popups";
 
     outer.sandbox = sandbox;
     outer.src = url;
