@@ -141,7 +141,7 @@
 }
 
 .nbtbfrm {
-  height: calc(100vh - 35px);
+  height: calc(100vh - 37px);
   background-color: white;
   overflow-x: hidden;
   display: none;
