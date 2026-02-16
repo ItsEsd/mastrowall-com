@@ -71,9 +71,9 @@ $(document).ready(function () {
     openframenews(frmurl, "bigth");
   });
 
-  $("#rssamrit").click(function () {
-    const frmurl = "https://rss-feed.amrit-corp.com";
-    openframenews(frmurl, "rssamrit");
+  $("#telemdmastro").click(function () {
+    const frmurl = "https://telemedia.mastrowall.com";
+    openframenews(frmurl, "telemdmastro");
   });
 
   $(".closeotbx").click(function () {
@@ -128,7 +128,7 @@ iframe{border:none;width:100%;height:100%;}
   async function openframenews(url, triggerId) {
     const $iframe = $("#frame");
 
-    const mode = triggerId === "rssamrit" ? "src" : "srcdoc";
+    const mode = triggerId === "telemdmastro" ? "src" : "srcdoc";
     const cachedUrl =
       mode === "src" ? $iframe.data("loaded-url") : $iframe.data("srcdoc-url");
 

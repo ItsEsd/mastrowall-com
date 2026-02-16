@@ -330,13 +330,18 @@ $("#bigth").click(function () {
   });
 });
 
-$("#rssamrit").click(function () {
+$("#telemdmastro").click(function () {
   move();
   openframenews();
   changezpostd();
-  loadUrlInSrcdoc("frame", "hrefframenews", "https://rss-feed.amrit-corp.com", {
-    openInNewTab: true,
-  });
+  loadUrlInSrcdoc(
+    "frame",
+    "hrefframenews",
+    "https://telemedia.mastrowall.com",
+    {
+      openInNewTab: true,
+    },
+  );
 });
 
 $("#masthome").click(function () {
