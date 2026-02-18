@@ -997,7 +997,9 @@ const loca = window.location.hostname;
 if (loca === "mastrowall.com") {
 document.body.style.display = "block";
 } else {
-document.body.innerHTML = "";
+document.body.innerHTML = window.atob(
+      "PGRpdiBzdHlsZT0nZm9udC1zaXplOjE1cHg7Y29sb3I6IzY2NjtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpjZW50ZXI7aGVpZ2h0OjEwMHZoO2JhY2tncm91bmQ6I2ZmZjtmbGV4LWRpcmVjdGlvbjpjb2x1bW47Jz48aW1nIHNyYz0naHR0cHM6Ly9hbXJpdC1jb3JwLmNvbS9jb3JwLWRyaXZlL2ltZ3NvdXJjZS9wYWdlLW5vdC1hdmFpbGFibGUuc3ZnJyBzdHlsZT0nd2lkdGg6OTAlO21heC13aWR0aDo0MDBweDsnPjxwcmUgc3R5bGU9ImNvbG9yOiM2NjY7Ij4mIzE2OTsgQU1SSVQtY29ycC5jb208L3ByZT48L2Rpdj4=",
+    );
 }
 </script>
 </body>
