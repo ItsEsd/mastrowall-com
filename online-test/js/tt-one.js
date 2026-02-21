@@ -58,14 +58,14 @@ expone.addEventListener("submit", (event) => {
           }
           var qstate = JSON.parse(JSON.stringify(json.records[i].QuesSTFinal));
           var qstateimg = JSON.parse(
-            JSON.stringify(json.records[i].QSTimgFinal)
+            JSON.stringify(json.records[i].QSTimgFinal),
           );
           var qstateops = JSON.parse(JSON.stringify(json.records[i].OPfinal));
           var qstateopimg = JSON.parse(
-            JSON.stringify(json.records[i].OPimgfinal)
+            JSON.stringify(json.records[i].OPimgfinal),
           );
           var qstateanst = JSON.parse(
-            JSON.stringify(json.records[i].AnsSTfinal)
+            JSON.stringify(json.records[i].AnsSTfinal),
           );
           var timedur = json.records[i].TDuration;
           var qstate2 = qstate.split('{qfin}"');
@@ -347,7 +347,7 @@ expone.addEventListener("submit", (event) => {
           document.getElementById("loader-vq").style.display = "none";
         }
       }
-    }
+    },
   );
 });
 
@@ -389,7 +389,7 @@ function showqsec(label) {
     {
       scrollTop: $scrollTo.offset().top - 60,
     },
-    0
+    0,
   );
 }
 
@@ -411,7 +411,7 @@ $.fn.serializeObject = function () {
 $(function () {
   $("form").submit(function () {
     document.getElementById("jsonqnst").value = JSON.stringify(
-      $("form").serializeObject()
+      $("form").serializeObject(),
     );
     return false;
   });
@@ -441,7 +441,7 @@ exptwo.addEventListener("submit", (event) => {
           // console.log(timedurmili);
           document.getElementById("tmili").value = timedurmili;
           var stustring = JSON.parse(
-            JSON.stringify(json.records[i].EnrolledStuFinal)
+            JSON.stringify(json.records[i].EnrolledStuFinal),
           );
           var sstring = stustring.split(",");
           var lenstr = sstring.length;
@@ -481,7 +481,7 @@ exptwo.addEventListener("submit", (event) => {
           document.getElementById("loader-vq").style.display = "none";
         }
       }
-    }
+    },
   );
 });
 
@@ -613,7 +613,7 @@ function checkresult() {
         }
       }
       document.getElementById("loader-res").style.display = "none";
-    }
+    },
   );
 }
 onselectstart = (e) => {
@@ -651,14 +651,14 @@ $("#sgconwexid").click(function () {
   window.open(
     "https://educator.mastrowall.com",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes",
   );
 });
 $("#sgconwstid").click(function () {
   window.open(
     "https://student.mastrowall.com",
     "_blank",
-    "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes",
   );
 });
 $("#responqsindx,#upndd").click(function () {

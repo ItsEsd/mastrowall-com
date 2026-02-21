@@ -605,7 +605,7 @@ $(document).ready(function () {
   if (window.innerWidth > 1000) {
     document.body.style.backgroundImage = 'url("' + chsbc[indices[0]] + '")';
     document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "100% 100%";
+    document.body.style.backgroundSize = "cover";
   }
 
   // Lazy load images using IntersectionObserver
@@ -641,7 +641,7 @@ function chngbackground(label) {
   var srcimg = document.getElementsByClassName("chsbcg")[posofimg].src;
   document.body.style.backgroundImage = 'url("' + srcimg + '")';
   document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundSize = "100% 100%";
+  document.body.style.backgroundSize = "cover";
   $("#chbcground").hide("fast");
 }
 

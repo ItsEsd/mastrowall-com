@@ -425,16 +425,19 @@ $(document).ready(function () {
 });
 
 function golight() {
+  document.querySelectorAll(".dashicon").forEach((el) => {
+    el.style.backgroundColor = "#d80757";
+  });
   $(".dashiconimg,.opntbtlmd").css({ filter: "invert(0)" });
   $(".dashiconex").css({ filter: "grayscale(0)" });
   document.getElementById("aol").style.backgroundColor = "white";
-  document.getElementById("aol").style.boxShadow = "0 2px 10px 0px #2a26f1";
+  document.getElementById("aol").style.boxShadow = "0 2px 10px 0px #2a26f166";
   document.getElementById("oknav").style.color = "#1a2ca5";
   document.getElementById("mwallImg").style.filter = "invert(0)";
   document.body.style.backgroundColor = "#e6e6e6";
   document.body.style.backgroundImage = "url('images/hex-white.webp')";
   document.body.style.backgroundRepeat = "repeat";
-  document.body.style.backgroundSize = "100%";
+  document.body.style.backgroundSize = "cover";
   $(".con-one").addClass("con-one-light").removeClass("con-one");
   $(".con-one-main").addClass("con-one-main-light").removeClass("con-one-main");
   $(".con-two").addClass("con-two-light").removeClass("con-two");
@@ -455,10 +458,13 @@ function golight() {
   document.getElementById("srctopichead").style.backgroundColor = "#ffffff00";
 }
 function godark() {
+  document.querySelectorAll(".dashicon").forEach((el) => {
+    el.style.backgroundColor = "#9f9f9f";
+  });
   $(".dashiconimg,.opntbtlmd").css({ filter: "invert(1)" });
   $(".dashiconex").css({ filter: "grayscale(1)" });
   document.getElementById("aol").style.backgroundColor = "#282828";
-  document.getElementById("aol").style.boxShadow = "0 0px 0px 0px #2a26f1";
+  document.getElementById("aol").style.boxShadow = "0 2px 10px 0px #07070766";
   document.getElementById("oknav").style.color = "#6a67fa";
   document.getElementById("signmbl").style.color = "#d2d2d2";
   document.getElementById("srctopichead").style.backgroundColor = "#f0f0f0ce";
@@ -466,9 +472,9 @@ function godark() {
   document.getElementById("sdnvtpdv").style.backgroundImage =
     "linear-gradient(45deg, #3d3e42, white)";
   document.body.style.backgroundColor = "#181818";
-  document.body.style.backgroundImage = "url('images/hex-blue.webp')";
+  document.body.style.backgroundImage = "url('images/hex-black.webp')";
   document.body.style.backgroundRepeat = "repeat";
-  document.body.style.backgroundSize = "100%";
+  document.body.style.backgroundSize = "cover";
   $(".con-one-light").addClass("con-one").removeClass("con-one-light");
   $(".con-one-main-light")
     .addClass("con-one-main")

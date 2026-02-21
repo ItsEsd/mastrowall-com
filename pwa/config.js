@@ -159,7 +159,7 @@ const PWA_CONFIG = {
       "/images/dashicon/dash-telem.gif",
       "/images/dashicon/dash-tt.gif",
       "/images/hex-white.webp",
-      "/images/hex-blue.webp",
+      "/images/hex-black.webp",
       "/js/assets/jQuery-1.11.1.min.js",
       "/images/e-Gaming.webp",
       "/js/vendor/angular.js",
