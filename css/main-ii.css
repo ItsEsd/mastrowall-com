@@ -567,7 +567,7 @@
   #headsrcdiv {
     top: 40px;
     display: block;
-    left: 8vw;
+    left: 10vw;
     position: absolute;
     z-index: 1;
     width: 78%;
@@ -1495,7 +1495,7 @@ input:disabled {
   #headsrcdiv {
     top: 40px;
     display: block;
-    left: 8vw;
+    left: 10vw;
     position: absolute;
     z-index: 1;
     width: 80%;
