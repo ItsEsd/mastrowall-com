@@ -78,9 +78,22 @@ $(document).ready(function () {
 
   $(".closeotbx").click(function () {
     $(".dircttb").slideUp("slow");
+    history.replaceState(null, "", location.pathname);
+  });
+
+  window.addEventListener("popstate", function () {
+    $(".dircttb").slideUp("slow");
+    if (history.state === "rcwidget-frmnws") {
+      history.back();
+    }
+    const overlay = document.getElementById("ovrlyfrmld");
+    if (overlay) overlay.remove();
   });
 
   function loadIntoIframeSrcdoc(iframeId, url, mode = "srcdoc", options = {}) {
+    if (history.state !== "rcwidget-frmnws") {
+      history.pushState("rcwidget-frmnws", "");
+    }
     const oldIframe = document.getElementById(iframeId);
     if (!oldIframe) return Promise.resolve();
 
@@ -158,7 +171,12 @@ iframe{border:none;width:100%;height:100%;}
     });
 
     $("#framenews").append($overlay);
-
+    var ovrlyfrmldElement = document.querySelector("#ovrlyfrmld");
+    if (ovrlyfrmldElement) {
+      ovrlyfrmldElement.addEventListener("click", function () {
+        ovrlyfrmldElement.parentNode.removeChild(ovrlyfrmldElement);
+      });
+    }
     $("#frame").css(
       "backgroundImage",
       "url('https://mastrowall.com/images/loading-gif.gif')",

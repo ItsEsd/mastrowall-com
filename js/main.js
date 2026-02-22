@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".closeFrame").click(function () {
-    $("#framenews").slideUp("slow");
-    $("#framenw-back").hide();
+    closeFrameNews();
+    history.back();
   });
 });
 
@@ -38,6 +38,24 @@ function openframenews() {
       ovrlyfrmldElement.parentNode.removeChild(ovrlyfrmldElement);
     });
   }
+  if (history.state !== "rcwidget-frmnws") {
+    history.pushState("rcwidget-frmnws", "");
+  }
+}
+
+window.addEventListener("popstate", function () {
+  closeFrameNews();
+  if (history.state === "rcwidget-frmnws") {
+    history.back();
+  }
+});
+
+function closeFrameNews() {
+  $("#framenews").slideUp("slow");
+  $("#framenw-back").hide();
+  const overlay = document.getElementById("ovrlyfrmld");
+  if (overlay) overlay.remove();
+  history.replaceState(null, "", location.pathname);
 }
 
 if (navigator.onLine) {
