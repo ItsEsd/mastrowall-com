@@ -279,17 +279,17 @@ $(document).ready(function () {
                 .attr(
                   "href",
                   "http://en.wikipedia.org/wiki/" +
-                    page.title.replace(/\s+/g, "_")
+                    page.title.replace(/\s+/g, "_"),
                 )
-                .text(page.title)
-            )
+                .text(page.title),
+            ),
           );
           if (page.thumbnail)
             pageElement.append(
-              $("<img>").attr("width", 150).attr("src", page.thumbnail.source)
+              $("<img>").attr("width", 150).attr("src", page.thumbnail.source),
             );
           pageElement.append(
-            $('<p style="display;inline-block">').text(page.extract)
+            $('<p style="display;inline-block">').text(page.extract),
           );
           pageElement.append($("<hr>"));
           articles.append(pageElement);
@@ -495,10 +495,10 @@ $("#empnamblk").click(function () {
   $("#empnamblk").hide();
 });
 
-// if (window.top === window.self) {
-//   document.body.innerHTML = "";
-//   window.location.href = "about:blank";
-// }
+if (window.top === window.self) {
+  document.body.innerHTML = "";
+  window.location.href = "about:blank";
+}
 
 function showNotification(message, duration = 1500) {
   const box = document.getElementById("outgoing-warning");
@@ -550,7 +550,18 @@ function getBaseTarget() {
   return base?.getAttribute("target")?.toLowerCase() || null;
 }
 
+window.addEventListener("popstate", function () {
+  document.getElementById("gistbox").style.display = "none";
+  document.body.style.overflowY = "auto";
+  if (history.state === "gistbox-srch") {
+    history.back();
+  }
+});
+
 function showGistBox(url) {
+  if (history.state !== "gistbox-srch") {
+    history.pushState("gistbox-srch", "");
+  }
   document.body.style.overflowY = "hidden";
   let existinggist = document.getElementById("gistbox");
   if (existinggist instanceof HTMLElement) {
@@ -589,7 +600,7 @@ function updateFetchUrl(newUrl) {
 
   if (iframegist && iframegist.contentWindow) {
     const isYouTube = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(
-      newUrl
+      newUrl,
     );
 
     iframegist.contentWindow.postMessage(
@@ -598,7 +609,7 @@ function updateFetchUrl(newUrl) {
         url: newUrl,
         headtit: "Testing",
       },
-      "https://gistbox.mastrowall.com/"
+      "https://gistbox.mastrowall.com/",
     );
   } else {
     console.warn("iframe not ready or not found");
