@@ -500,7 +500,17 @@ if (window.top === window.self) {
   window.location.href = "about:blank";
 }
 document.getElementById("gistbxopn").addEventListener("click", function () {
-  showGistBox();
+  let existinggist = document.getElementById("gistbox");
+  if (existinggist instanceof HTMLElement) {
+    existinggist.style.display =
+      existinggist.style.display === "none" || !existinggist.style.display
+        ? "block"
+        : "none";
+
+    if (history.state !== "gistbox-srch") {
+      history.pushState("gistbox-srch", "");
+    }
+  }
 });
 function showNotification(message, duration = 1500) {
   const box = document.getElementById("outgoing-warning");

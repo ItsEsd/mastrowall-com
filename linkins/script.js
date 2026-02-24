@@ -395,9 +395,16 @@ function attachStaticGistButtons() {
     btn[FLAG] = true;
 
     btn.addEventListener("click", () => {
-      const url = btn.dataset.gistUrl || undefined;
-      const title = btn.dataset.gistTitle || undefined;
-      showGistBox(url, title);
+      let existinggist = document.getElementById("gistbox");
+      if (existinggist instanceof HTMLElement) {
+        existinggist.style.display =
+          existinggist.style.display === "none" || !existinggist.style.display
+            ? "block"
+            : "none";
+        if (history.state !== "gistbox-lnkns") {
+          history.pushState("gistbox-lnkns", "");
+        }
+      }
     });
   });
 }
