@@ -495,10 +495,10 @@ $("#empnamblk").click(function () {
   $("#empnamblk").hide();
 });
 
-if (window.top === window.self) {
-  document.body.innerHTML = "";
-  window.location.href = "about:blank";
-}
+// if (window.top === window.self) {
+//   document.body.innerHTML = "";
+//   window.location.href = "about:blank";
+// }
 
 function showNotification(message, duration = 1500) {
   const box = document.getElementById("outgoing-warning");
@@ -520,7 +520,7 @@ document.addEventListener("click", function (e) {
     const realUrl = urlParams.get("q");
     if (realUrl) href = realUrl;
   }
-
+  if (href.startsWith("#")) return;
   const isNewTab = anchor.target === "_blank" || getBaseTarget() === "_blank";
   if (!isNewTab) return;
 
