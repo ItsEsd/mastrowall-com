@@ -458,6 +458,7 @@ input.error {
   scrollbar-color: #0c29cd #00000000;
   background: #ffffff63;
   border-radius: 10px;
+  padding-bottom: 10px;
 }
 .card-title {
   margin: 4px;
