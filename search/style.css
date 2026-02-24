@@ -142,12 +142,12 @@ a:hover {
   padding: 10px;
   height: 100%;
   background-color: #ffffff;
-  height: 72vh;
+  height: 71vh;
   overflow-y: auto;
   max-width: 1000px;
   display: none;
   z-index: 10 !important;
-  margin-top: calc(16vh - 30px);
+  margin-top: calc(17vh - 30px);
   scrollbar-width: thin;
   scrollbar-color: #b1b1b1 #00000000;
   border-radius: 10px;

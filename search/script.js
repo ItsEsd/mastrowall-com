@@ -515,17 +515,21 @@ document.addEventListener("click", function (e) {
 
   let href = anchor.href;
 
+  const parts = href.split("#");
+
+  if (parts.length == 2) {
+    e.preventDefault();
+    return;
+  }
   if (href.startsWith("https://www.google.com/url")) {
     const urlParams = new URL(href).searchParams;
     const realUrl = urlParams.get("q");
     if (realUrl) href = realUrl;
   }
-  if (href.startsWith("#")) return;
   const isNewTab = anchor.target === "_blank" || getBaseTarget() === "_blank";
   if (!isNewTab) return;
 
   e.preventDefault();
-  console.log(href);
   showNotification("Opening external link in <u>GistBox</u>");
   setTimeout(() => {
     showGistBox(href);
