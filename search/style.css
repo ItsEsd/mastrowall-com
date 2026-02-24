@@ -133,10 +133,14 @@ a:hover {
 
 .autocomplete {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
-
+#gistbxopn:hover {
+  transform: scale(1.08);
+}
 #rewiki {
   width: 98%;
   padding: 10px;

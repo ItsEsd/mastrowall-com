@@ -84,5 +84,5 @@ $.getJSON(
     var slicedItems = paginate(jsonData, currentPage, itemsPerPage);
     renderData(slicedItems);
     renderPaginationButtons(totalPages);
-  }
+  },
 );

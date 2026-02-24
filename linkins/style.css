@@ -429,8 +429,8 @@ input.error {
   color: #fdfdfd;
   border: 1px solid #c90909;
   width: 140px;
-  margin-bottom: 20px;
   box-shadow: 0 1px 10px 0 #0c09c99f;
+  height: 40px;
 }
 
 #loadmore_lec:hover,
@@ -467,19 +467,31 @@ input.error {
   margin: 6px;
 }
 
+.opngstbxbtn {
+  cursor: pointer;
+  border: 1px solid #464964c1;
+  box-shadow: 0px 2px 10px 0px rgba(11, 11, 11, 0.445);
+  border-radius: 3px;
+}
+.opngstbxbtn:hover {
+  transform: scale(1.08);
+}
+
 #loadmorelecdiv,
 #loadmorenotesdiv {
   display: none;
-  right: 20px;
+  right: 30px;
   bottom: 20px;
   position: fixed;
   z-index: 2;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
 }
 
 #tlinkincontain {
   margin-top: 40px;
   margin-bottom: 40px;
-  /* background-color: #dfdddd7c; */
   height: 100%;
 }
 

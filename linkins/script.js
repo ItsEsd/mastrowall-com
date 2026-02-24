@@ -387,8 +387,34 @@ document.addEventListener("click", function (e) {
     showGistBox(href);
   }, 1000);
 });
+function attachStaticGistButtons() {
+  const btns = document.querySelectorAll(".opngstbxbtn");
+  btns.forEach((btn) => {
+    const FLAG = Symbol.for("gistBtnBound");
+    if (btn[FLAG]) return;
+    btn[FLAG] = true;
 
+    btn.addEventListener("click", () => {
+      const url = btn.dataset.gistUrl || undefined;
+      const title = btn.dataset.gistTitle || undefined;
+      showGistBox(url, title);
+    });
+  });
+}
+
+attachStaticGistButtons();
+
+window.addEventListener("popstate", function () {
+  document.getElementById("gistbox").style.display = "none";
+  document.body.style.overflowY = "auto";
+  if (history.state === "gistbox-lnkns") {
+    history.back();
+  }
+});
 function showGistBox(url) {
+  if (history.state !== "gistbox-lnkns") {
+    history.pushState("gistbox-lnkns", "");
+  }
   document.body.style.overflowY = "hidden";
   let existinggist = document.getElementById("gistbox");
   if (existinggist instanceof HTMLElement) {
@@ -431,7 +457,7 @@ function updateFetchUrl(newUrl) {
         url: newUrl,
         headtit: "Testing",
       },
-      "https://gistbox.mastrowall.com/"
+      "https://gistbox.mastrowall.com/",
     );
   } else {
     console.warn("iframe not ready or not found");
@@ -478,7 +504,7 @@ function show_wall() {
         {
           scrollTop: $("#showhtml").offset().top,
         },
-        0
+        0,
       );
     }
     $(btn_notesmore).on("click", function (e) {
@@ -509,7 +535,7 @@ function show_wall() {
               " </span></div>" +
               '<input class="empid_n" value="' +
               json.records[i].EmpId +
-              '" style="display:none;"></div></div>'
+              '" style="display:none;"></div></div>',
           );
           if (ListIndex == numberofList) {
             $("#loadmorenotesdiv").hide();
@@ -524,7 +550,7 @@ function show_wall() {
     document.getElementById("showData").style.display = "none";
     document.getElementById("note_log").style.display = "none";
     document.getElementById("showhtml").style.display = "block";
-    document.getElementById("loadmorenotesdiv").style.display = "block";
+    document.getElementById("loadmorenotesdiv").style.display = "flex";
   });
 }
 
@@ -780,7 +806,7 @@ function show_wall_lec() {
         {
           scrollTop: $("#showhtml_lec").offset().top,
         },
-        0
+        0,
       );
     }
     $(btn_lecmore).on("click", function (e) {

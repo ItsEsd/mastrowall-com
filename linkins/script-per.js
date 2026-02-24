@@ -74,7 +74,7 @@ function getedlinkNT(edlnk) {
                   " </span></div>" +
                   '<input class="empid_n" value="' +
                   topic[r].EmpId +
-                  '" style="display:none;"></div></div>'
+                  '" style="display:none;"></div></div>',
               );
             } else if (
               topic[r].EmpId === edlnk &&
@@ -105,19 +105,19 @@ function getedlinkNT(edlnk) {
                   " </span></div>" +
                   '<input class="empid_v" value="' +
                   topic[r].EmpId +
-                  '" style="display:none;"></div></div>'
+                  '" style="display:none;"></div></div>',
               );
             }
             $("html,body").animate(
               {
                 scrollTop: $("#showhtml").offset().top,
               },
-              0
+              0,
             );
           }
           document.getElementById("loader").style.visibility = "hidden";
-        }
+        },
       );
-    }
+    },
   );
 }

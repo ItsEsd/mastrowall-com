@@ -499,7 +499,9 @@ if (window.top === window.self) {
   document.body.innerHTML = "";
   window.location.href = "about:blank";
 }
-
+document.getElementById("gistbxopn").addEventListener("click", function () {
+  showGistBox();
+});
 function showNotification(message, duration = 1500) {
   const box = document.getElementById("outgoing-warning");
   box.innerHTML = message;

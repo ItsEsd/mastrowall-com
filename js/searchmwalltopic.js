@@ -119,7 +119,7 @@ $(document).ready(function () {
         }
         var todtop = autocomplete(
           document.getElementById("srctopichead"),
-          topic
+          topic,
         );
         document
           .getElementById("srctopichead")
