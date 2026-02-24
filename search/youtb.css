@@ -1,66 +1,71 @@
 #bdy .form-group {
-    color: white;
-  
-  }
+  color: white;
+}
 
+#bdy {
+  max-width: 800px;
+  text-align: left;
+  margin-top: 160px;
+  background-color: #fdfdfd69;
+  padding: 20px;
+  border-radius: 10px;
+}
+#hideBtn {
+  border: none;
+  margin-top: 45px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: white;
+  color: red;
+}
 
-  #hideBtn {
-    border: none;
-    margin-top: 45px;
-    border-radius: 4px;
-    padding: 5px 10px;
-    background-color: white;
-    color: red;
-  }
-
-  .yrbrslt{
-    background-color: #161616;
-    padding:2px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-  }
-  .yrbrslt iframe{
-    border-radius: 10px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-  }
-  #results{
-    z-index:20000;
-  }
-  #results p{
-    padding:5px;
-    background-color: #1e1e1e;
-    color:#e8e8e8;
-    font-size:18px;
-    font-weight:600;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    z-index:20000;
-  }
-  a,
-  a:active,
-  a:hover {
-    color: #9c9c9c;
-  }
+.yrbrslt {
+  background-color: #161616;
+  padding: 2px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.yrbrslt iframe {
+  border-radius: 10px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+#results {
+  z-index: 20000;
+}
+#results p {
+  padding: 5px;
+  background-color: #1e1e1e;
+  color: #e8e8e8;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  z-index: 20000;
+}
+a,
+a:active,
+a:hover {
+  color: #9c9c9c;
+}
 
 #bdy .form-control:focus,
-  .btn:focus {
-    box-shadow: none;
-  }
+.btn:focus {
+  box-shadow: none;
+}
 
-  #bdy .form-control{
-    border:1px solid #1a2ca5;
+#bdy .form-control {
+  border: 1px solid #1a2ca5;
+}
+.qb a {
+  margin-right: 10px;
+  float: right;
+  color: white;
+  margin-bottom: 2px;
+  text-decoration: none;
+}
 
-  }
-  .qb a {
-    margin-right: 10px;
-    float: right;
-    color: white;
-    margin-bottom: 2px;
-    text-decoration: none;
-  }
-
-  .qb a:hover {
-    margin-right: 18px;
-    transition: 0.3s;
-  }
+.qb a:hover {
+  margin-right: 18px;
+  transition: 0.3s;
+}

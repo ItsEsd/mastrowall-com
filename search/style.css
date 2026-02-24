@@ -1,9 +1,9 @@
 /* M A S T R O W A L L */
 body {
-  background-color: rgb(199, 196, 196);
-  background-image: linear-gradient(-180deg, #000000e2, rgba(2, 2, 176, 0.568));
+  background-color: #0202b0;
+  background-image: url("search-back.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-attachment: fixed;
 }
 #loader {
