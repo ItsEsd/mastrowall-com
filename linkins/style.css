@@ -3,6 +3,8 @@ body {
   overflow-x: hidden;
   background-color: rgb(199, 196, 196);
   background-image: linear-gradient(-180deg, #eaadad, #1f257d89, #a6aff7);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .overlay {
@@ -467,7 +469,7 @@ input.error {
 #tlinkincontain {
   margin-top: 40px;
   margin-bottom: 40px;
-  background-color: #dfdddd7c;
+  /* background-color: #dfdddd7c; */
   height: 100%;
 }
 
@@ -605,17 +607,17 @@ input.error {
 }
 
 #info {
-  font-size: 12px;
-  float: left;
-  text-align: left;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
   padding-left: 10px;
-  color: #464646;
+  color: #0101018d;
 }
 #youvidfrid {
-  background-color: rgba(226, 221, 221, 0.171);
+  background-color: #e2dddd2c;
 }
 #info a {
-  color: #464646;
+  color: #0101018d;
 }
 #info a:hover {
   text-decoration: underline;
