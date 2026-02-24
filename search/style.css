@@ -14,7 +14,10 @@ body {
   visibility: hidden;
   display: block;
 }
-
+body,
+html {
+  overscroll-behavior: none;
+}
 #loader2 {
   display: inline-block;
   width: 30px;
@@ -126,7 +129,6 @@ a:hover {
 
 * {
   box-sizing: border-box;
-  overscroll-behavior: none;
 }
 
 .autocomplete {
