@@ -495,10 +495,10 @@ $("#empnamblk").click(function () {
   $("#empnamblk").hide();
 });
 
-// if (window.top === window.self) {
-//   document.body.innerHTML = "";
-//   window.location.href = "about:blank";
-// }
+if (window.top === window.self) {
+  document.body.innerHTML = "";
+  window.location.href = "about:blank";
+}
 
 function showNotification(message, duration = 1500) {
   const box = document.getElementById("outgoing-warning");
