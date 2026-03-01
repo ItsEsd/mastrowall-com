@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-IN">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,16 +31,21 @@
     <script src="/js/assets/html2pdf.js"></script>
     <base target="_blank" />
   </head>
-  <body onload="initDoc(); pasteFun();">
+  <body
+    onload="
+      initDoc();
+      pasteFun();
+    "
+  >
     <div id="dashboard" class="container">
       <div align="center" id="editorBoard" style="display: block">
         <form
           name="compForm"
           method="post"
-          onsubmit="event.preventDefault();"
+          onsubmit="event.preventDefault()"
           id="texteditform"
         >
-          <input type="hidden" name="myDoc" />
+          <input type="hidden" />
           <div id="toolBar2">
             <img
               class="tb1"
@@ -48,7 +53,7 @@
               data-toggle="modal"
               data-target="#crimg"
               src="icons/picture.svg"
-              onclick="document.getElementById('btnOkImg').disabled='true';"
+              onclick="document.getElementById('btnOkImg').disabled = 'true'"
             />
             <img
               class="tb1"
@@ -71,77 +76,83 @@
             /><img
               class="tb1"
               title="Undo"
-              onclick="formatDoc('undo');"
+              onclick="formatDoc('undo')"
               src="icons/undo-alt-solid.svg"
             />
             <img
               class="tb1"
               title="Redo"
-              onclick="formatDoc('redo');"
+              onclick="formatDoc('redo')"
               src="icons/redo-alt-solid.svg"
             />
             <img
               class="intLink"
               title="Bold"
-              onclick="formatDoc('bold');"
+              onclick="formatDoc('bold')"
               src="icons/bold-button.svg"
             />
             <img
               class="intLink"
               title="Italic"
-              onclick="formatDoc('italic');"
+              onclick="formatDoc('italic')"
               src="icons/italic-button.svg"
             />
             <img
               class="intLink"
               title="Underline"
-              onclick="formatDoc('underline');"
+              onclick="formatDoc('underline')"
               src="icons/underline-text.svg"
             /><img
               class="intLink"
               title="Left align"
-              onclick="formatDoc('justifyleft');"
+              onclick="formatDoc('justifyleft')"
               src="icons/left-alignment.svg"
             />
             <img
               class="intLink"
               title="Center align"
-              onclick="formatDoc('justifycenter');"
+              onclick="formatDoc('justifycenter')"
               src="icons/center-alignment.svg"
             />
             <img
               class="intLink"
               title="Right align"
-              onclick="formatDoc('justifyright');"
+              onclick="formatDoc('justifyright')"
               src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMwMCAzMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwMCAzMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTUwLjAwNCwwQzY3LjE2NSwwLDAuMDAxLDY3LjE2MSwwLjAwMSwxNDkuOTk3UzY3LjE2NSwzMDAsMTUwLjAwNCwzMDBzMTQ5Ljk5NS02Ny4xNjMsMTQ5Ljk5NS0xNTAuMDAzDQoJCQlTMjMyLjg0MywwLDE1MC4wMDQsMHogTTYzLjkyOCwxNDEuODkyaDE3Mi4xNDR2MTUuNTYySDYzLjkyOFYxNDEuODkyeiBNMjM2LjA3MiwxMjEuNjM5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTIxLjYzOXoNCgkJCSBNMjM2LjA3MiwxOTMuMjY5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTkzLjI2OXogTTYzLjkyOCwyMjkuMDgxdi0xNS41NjJoMTcyLjE0NHYxNS41NjJINjMuOTI4eiBNNjMuOTI4LDg1LjgyN1Y3MC4yNjUNCgkJCWgxNzIuMTQ0djE1LjU2MmMwLDAsMC4wMDMsMCwwLjAwMywwSDYzLjkyOHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
             />
             <img
               class="intLink"
+              title="Justify Full"
+              onclick="formatDoc('justifyfull')"
+              src="icons/align-justify.svg"
+            />
+            <img
+              class="intLink"
               title="Numbered list"
-              onclick="formatDoc('insertorderedlist');"
+              onclick="formatDoc('insertorderedlist')"
               src="icons/text-number-list-ltr.svg"
             />
             <img
               class="intLink"
               title="Dotted list"
-              onclick="formatDoc('insertunorderedlist');"
+              onclick="formatDoc('insertunorderedlist')"
               src="icons/list-bullet.svg"
             />
             <img
               class="intLink"
               title="Add indentation"
-              onclick="formatDoc('indent');"
+              onclick="formatDoc('indent')"
               src="icons/left-indent-01.svg"
             /><img
               class="intLink"
               title="Delete indentation"
-              onclick="formatDoc('outdent');"
+              onclick="formatDoc('outdent')"
               src="icons/right-indent-01.svg"
             />
             <img
               class="intLink"
               title="Print/ Save as PDF"
-              onclick="printDoc();"
+              onclick="printDoc()"
               src="icons/print-button.svg"
             />
           </div>
@@ -220,15 +231,29 @@
                       id="radioS"
                       style="padding-top: 10px; display: block; color: white"
                     >
-                      <input id="rd1" name="size" type="radio" />
-                      <span onclick="$('#rd1').click();selectImg();"
+                      <input id="rd1" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd1').click();
+                          selectImg();
+                        "
                         >S - Left </span
-                      ><input id="rd2" name="size" type="radio" />
-                      <span onclick="$('#rd2').click();selectImg();">
+                      ><input id="rd2" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd2').click();
+                          selectImg();
+                        "
+                      >
                         M - Right</span
                       >
-                      <input id="rd3" name="size" type="radio" />
-                      <span onclick="$('#rd3').click();selectImg();">
+                      <input id="rd3" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd3').click();
+                          selectImg();
+                        "
+                      >
                         L - Center</span
                       >
                     </div>
@@ -241,7 +266,10 @@
                         background-color: #0c09c9;
                         color: white;
                       "
-                      onclick="document.getElementById('previewImg').style.display='none';"
+                      onclick="
+                        document.getElementById('previewImg').style.display =
+                          'none'
+                      "
                     />
                     <div
                       id="previewImg"
@@ -306,7 +334,7 @@
           >
             <div align="center">
               <h4
-                onclick="formatDoc('undo');"
+                onclick="formatDoc('undo')"
                 style="
                   cursor: pointer;
                   padding: 10px 6px;
@@ -326,7 +354,10 @@
           <div id="tbxcontn">
             <div id="textBox" contenteditable="true" align="left">
               <p
-                onclick="document.getElementById('textBox').innerHTML='';document.getElementById('topictod').style.display = 'none';"
+                onclick="
+                  document.getElementById('textBox').innerHTML = '';
+                  document.getElementById('topictod').style.display = 'none';
+                "
                 style="height: 500px; width: 100%"
               >
                 Start with a topic..
@@ -339,11 +370,14 @@
               class="intLink"
               title="Download Text"
               id="export"
-              onclick="saveasDoc();"
+              onclick="saveasDoc()"
               src="https://www.svgrepo.com/show/120995/download.svg"
             />
             <select
-              onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('fontname', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Font</option>
               <option>Arial</option>
@@ -354,7 +388,10 @@
               <option>Times New Roman</option>
             </select>
             <select
-              onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('formatblock', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option selected>Formatting</option>
               <option value="h1">Heading 1</option>
@@ -367,7 +404,10 @@
               <option value="pre">Preformatted</option>
             </select>
             <select
-              onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('forecolor', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Color</option>
               <option value="red">Red</option>
@@ -379,7 +419,10 @@
               <option value="white">White</option>
             </select>
             <select
-              onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('backcolor', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Background</option>
               <option value="red">Red</option>
@@ -404,14 +447,25 @@
               id="sktchpd"
               type="button"
               class="btn btn-dark"
-              onclick="window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+              onclick="
+                window.open(
+                  'https://sketch.mastrowall.com',
+                  '_blank',
+                  'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+                )
+              "
             >
               Sketch Pad
             </button>
             <button
               type="button"
               id="postTD"
-              onclick="document.getElementById('postT').style.display='block';document.getElementById('p1').style.display='block';document.getElementById('prepost').style.display='none'; dateUp();"
+              onclick="
+                document.getElementById('postT').style.display = 'block';
+                document.getElementById('p1').style.display = 'block';
+                document.getElementById('prepost').style.display = 'none';
+                dateUp();
+              "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +484,10 @@
             <button
               type="button"
               id="previewTD"
-              onclick="document.getElementById('p2').style.display='block';document.getElementById('prepost').style.display='none';"
+              onclick="
+                document.getElementById('p2').style.display = 'block';
+                document.getElementById('prepost').style.display = 'none';
+              "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -460,7 +517,7 @@
                 type="checkbox"
                 name="switchMode"
                 id="switchBox"
-                onchange="setDocMode(this.checked);"
+                onchange="setDocMode(this.checked)"
               />
               <label for="switchBox">Show HTML</label>
             </p>
@@ -487,79 +544,115 @@
             <div id="avatarBrd" style="display: none; margin-bottom: 20px">
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WAGVDvx.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/WAGVDvx.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/WAGVDvx.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/J91ETXd.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/J91ETXd.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/J91ETXd.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/GZwxDPC.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/GZwxDPC.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/GZwxDPC.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/VPgRpoP.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/VPgRpoP.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/VPgRpoP.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/zIM34RQ.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/zIM34RQ.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/zIM34RQ.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/vLQpCmM.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/vLQpCmM.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/vLQpCmM.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/rx94KbZ.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/rx94KbZ.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/rx94KbZ.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/iH6WgOT.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/iH6WgOT.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/iH6WgOT.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/kXTCvY5.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/kXTCvY5.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/kXTCvY5.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/Gm8hWSy.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/Gm8hWSy.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/Gm8hWSy.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/sxMCj4b.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/sxMCj4b.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/sxMCj4b.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WZsjtn3.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/WZsjtn3.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/WZsjtn3.png"
               /></a>
             </div>
 
-            <form id="postTODT" onsubmit="event.preventDefault();">
+            <form id="postTODT" onsubmit="event.preventDefault()">
               <div id="postT">
                 <input
                   type="text"
@@ -669,7 +762,12 @@
                 <button
                   type="button"
                   class="sub"
-                  onclick="document.getElementById('p1').style.display='none';document.getElementById('prepost').style.display='block'; document.getElementById('copied').innerHTML = 'Copy to Clipboard'"
+                  onclick="
+                    document.getElementById('p1').style.display = 'none';
+                    document.getElementById('prepost').style.display = 'block';
+                    document.getElementById('copied').innerHTML =
+                      'Copy to Clipboard';
+                  "
                 >
                   Close
                 </button>
@@ -705,7 +803,7 @@
           <div align="center" id="p2" style="display: none">
             <div>
               <br />
-              <form id="previewTODT" onsubmit="event.preventDefault();">
+              <form id="previewTODT" onsubmit="event.preventDefault()">
                 <div id="previewT">
                   <input
                     class="form-control"
@@ -732,7 +830,10 @@
                 ><button
                   type="button"
                   class="sub"
-                  onclick="document.getElementById('p2').style.display='none';document.getElementById('prepost').style.display='block';"
+                  onclick="
+                    document.getElementById('p2').style.display = 'none';
+                    document.getElementById('prepost').style.display = 'block';
+                  "
                 >
                   Close
                 </button>
@@ -807,17 +908,18 @@
     <div align="center" style="background: white; display: none" id="preview">
       <div style="background: white; display: block" id="preTD">
         <div id="info">
-          <h5 id="previewPostCreator" class="tx" style="margin-top: 7px"></h5>
+          <h5 id="previewPostCreator" class="tx"></h5>
           <span
             id="avthumb"
             title="Create TOD"
             style="float: right; cursor: pointer"
-            onclick="document.getElementById('preview').style.display='none';document.getElementById('dashboard').style.display='block';"
+            onclick="
+              document.getElementById('preview').style.display = 'none';
+              document.getElementById('dashboard').style.display = 'block';
+            "
           ></span>
         </div>
-        <br />
-        <br />
-        <h4 id="previewPostTitle" style="margin-top: 24px"></h4>
+        <h4 id="previewPostTitle"></h4>
         <hr />
         <div class="todBody">
           <div id="previewPost"></div>
@@ -843,7 +945,7 @@
           {
             scrollTop: $("#p1").offset().top + 400,
           },
-          1000
+          1000,
         );
       });
       $("#textBox").click(function () {
@@ -881,7 +983,7 @@
         var valHTM = document.getElementById("inHtml").value;
         if (valHTM != 0) {
           var postedTOD = JSON.stringify(
-            document.getElementById("inHtml").value
+            document.getElementById("inHtml").value,
           );
           var posts = JSON.parse(postedTOD);
           document.getElementById("genId").value =
@@ -892,7 +994,7 @@
             {
               scrollTop: $("#p1").offset().top + 400,
             },
-            1000
+            1000,
           );
         } else {
           document.getElementById("p1").style.display = "none";
@@ -1014,7 +1116,7 @@
           var oPrntWin = window.open(
             "",
             "_blank",
-            "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+            "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes",
           );
           oPrntWin.document.open();
           oPrntWin.document.write(toprint);
@@ -1037,14 +1139,14 @@
             document.getElementById("btnOkImg").disabled = false;
             formatDoc(
               "insertHTML",
-              '<img class="ForTypePs" src="' + imgS + '">'
+              '<img class="ForTypePs" src="' + imgS + '">',
             );
           }
           if (document.getElementById("rd2").checked) {
             document.getElementById("btnOkImg").disabled = false;
             formatDoc(
               "insertHTML",
-              '<img class="ForTypePm" src="' + imgS + '">'
+              '<img class="ForTypePm" src="' + imgS + '">',
             );
           }
           if (document.getElementById("rd3").checked) {
@@ -1053,7 +1155,7 @@
               "insertHTML",
               '<img class="limg" src="' +
                 imgS +
-                '" style="background:transparent;">'
+                '" style="background:transparent;">',
             );
           } else {
             return false;
@@ -1103,7 +1205,7 @@
             "insertHTML",
             '<br><div class="youvidF embed-responsive"><iframe src="' +
               myId +
-              '" frameborder="0" allowfullscreen="true"></iframe></div><br>'
+              '" frameborder="0" allowfullscreen="true"></iframe></div><br>',
           );
         } else {
           return false;
@@ -1124,7 +1226,7 @@
               oDoc.innerHTML +
               "<\/div><\/div><\/body><\/html>",
           ],
-          { type: "text/html" }
+          { type: "text/html" },
         );
         url = URL.createObjectURL(blob);
         link = document.createElement("A");
@@ -1208,7 +1310,7 @@
       $(function () {
         $("#confirmK").on("input", function () {
           document.getElementById("toddoc").value = JSON.stringify(
-            $("form").serializeObject()
+            $("form").serializeObject(),
           );
           return false;
         });
@@ -1348,10 +1450,10 @@
             document.getElementById("loader-potd").style.display = "none";
             document.getElementById("genstrngary").value = "";
             var title = encodeURIComponent(
-              JSON.stringify($("#todTitle").val())
+              JSON.stringify($("#todTitle").val()),
             );
             var creator = encodeURIComponent(
-              JSON.stringify($("#creatorN").val())
+              JSON.stringify($("#creatorN").val()),
             );
             var food = encodeURIComponent(JSON.stringify($("#genK").val()));
             var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
@@ -1363,10 +1465,10 @@
             var itemn = $("#genId").val();
             var reci = $("#toddoc").val();
             document.getElementById("preId").value = JSON.parse(
-              decodeURIComponent(itemno)
+              decodeURIComponent(itemno),
             );
             document.getElementById("preK").value = JSON.parse(
-              decodeURIComponent(food)
+              decodeURIComponent(food),
             );
             document.getElementById("topictod").style.display = "block";
             document.getElementById("AppShare").style.display = "block";
@@ -1473,18 +1575,18 @@
           document.getElementById("notfound").style.display = "none";
           var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
           var inHTML = atob(prepostpre.TODContent);
-          document.getElementById("previewPost").innerHTML = decodeURIComponent(
-            unescape(inHTML)
+          document.getElementById("previewPost").innerHTML = unescape(
+            decodeURIComponent(inHTML),
           );
           document.getElementById("previewPostTime").innerHTML =
             reslt[0].TimeStamp;
           document.getElementById("previewPostId").innerHTML =
             "ID: " + JSON.parse(reslt[0].TODidd);
           document.getElementById("previewPostCreator").innerHTML = JSON.parse(
-            reslt[0].TODAddmin
+            reslt[0].TODAddmin,
           );
           document.getElementById("avthumb").innerHTML =
-            '<img width="60px" src="' +
+            '<img width="50px" src="' +
             prepostpre.AVPic +
             '" style="padding:4px;">';
           document.getElementById("previewPostTitle").innerHTML =
@@ -1521,7 +1623,7 @@
           document.getElementById("profilePic").innerHTML =
             '<img width="140px" src="' + z + '">';
           document.getElementById("toddoc").value = JSON.stringify(
-            $("form").serializeObject()
+            $("form").serializeObject(),
           );
         });
       });
@@ -1551,7 +1653,7 @@
             document.execCommand(
               "inserttext",
               false,
-              event.clipboardData.getData("text/plain")
+              event.clipboardData.getData("text/plain"),
             );
           });
       }
@@ -1560,11 +1662,11 @@
       $("#genK").keyup(function (e) {
         var strongRegex = new RegExp(
           "^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
-          "g"
+          "g",
         );
         var mediumRegex = new RegExp(
           "^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$",
-          "g"
+          "g",
         );
         var enoughRegex = new RegExp("(?=.{4,}).*", "g");
         if (false == enoughRegex.test($(this).val())) {
@@ -1661,10 +1763,10 @@
         var eqnv = $("#eqntst").val();
         formatDoc(
           "insertHTML",
-          `<math-field class="mftd">` + eqnv + `</math-field><br>`
+          `<math-field class="mftd">` + eqnv + `</math-field><br>`,
         );
         window.addEventListener("DOMContentLoaded", () =>
-          MathLive.renderMathInDocument()
+          MathLive.renderMathInDocument(),
         );
       }
       mf.addEventListener("beforeinput", (ev) => {
@@ -1675,7 +1777,7 @@
       });
 
       window.addEventListener("DOMContentLoaded", () =>
-        MathLive.renderMathInDocument()
+        MathLive.renderMathInDocument(),
       );
       mf.addEventListener("focus", () => mathVirtualKeyboard.show());
       document.body.addEventListener("click", () => mathVirtualKeyboard.hide());
