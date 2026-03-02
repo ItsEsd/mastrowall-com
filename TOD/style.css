@@ -573,7 +573,12 @@ math-field:active {
     display: none !important;
   }
 }
-
+.todBody .mftd {
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
 #sketchpdcon {
   top: 0px;
   left: 0px;
