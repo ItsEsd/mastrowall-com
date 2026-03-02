@@ -574,10 +574,6 @@ math-field:active {
   }
 }
 
-#preTD .ML__virtual-keyboard-toggle {
-  display: none !important;
-}
-
 #sketchpdcon {
   top: 0px;
   left: 0px;
