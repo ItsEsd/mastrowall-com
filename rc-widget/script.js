@@ -78,7 +78,6 @@ $(document).ready(function () {
 
   $(".closeotbx").click(function () {
     $(".dircttb").slideUp("slow");
-    history.replaceState(null, "", location.pathname);
   });
 
   window.addEventListener("popstate", function () {
