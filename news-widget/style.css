@@ -1,3 +1,6 @@
+* {
+  scrollbar-width: thin;
+}
 body {
   overflow-x: hidden;
   overflow-y: scroll;
