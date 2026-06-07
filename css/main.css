@@ -121,6 +121,7 @@ html {
   overflow-x: hidden;
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -149,12 +150,13 @@ html {
   width: 100%;
   max-width: 300px;
   border: none;
-  border: 2px solid #0000006d;
+  border: 3px solid #0a89126f;
   border-radius: 10px !important;
+  margin-right: 10px;
 }
 #goinmastro {
   border: none;
-  border: 2px solid #0000006d;
+  border: 3px solid #93939368;
   border-radius: 10px !important;
 }
 /* Mobile Styles (up to 767px) */
