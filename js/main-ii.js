@@ -271,12 +271,9 @@ $("#esq").click(function () {
   move();
   openframenews();
   changezpostd();
-  loadUrlInSrcdoc(
-    "frame",
-    "hrefframenews",
-    "https://www.openaccessjournals.com/",
-    { openInNewTab: true },
-  );
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.sciencedaily.com/", {
+    openInNewTab: true,
+  });
 });
 
 $("#iasstils").click(function () {

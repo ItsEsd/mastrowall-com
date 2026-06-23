@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -74,7 +74,7 @@
         indent,
         addComma,
         isArray,
-        isPropertyContent
+        isPropertyContent,
       ) {
         var html = "";
         var comma = addComma ? "<span class='Comma'>,</span> " : "";
@@ -85,7 +85,7 @@
             html += GetRow(
               indent,
               "<span class='ArrayBrace'>[ ]</span>" + comma,
-              isPropertyContent
+              isPropertyContent,
             );
           } else {
             clpsHtml = window.IsCollapsible
@@ -96,7 +96,7 @@
             html += GetRow(
               indent,
               "<span class='ArrayBrace'>[</span>" + clpsHtml,
-              isPropertyContent
+              isPropertyContent,
             );
             for (var i = 0; i < obj.length; i++) {
               html += ProcessObject(
@@ -104,13 +104,13 @@
                 indent + 1,
                 i < obj.length - 1,
                 true,
-                false
+                false,
               );
             }
             clpsHtml = window.IsCollapsible ? "</span>" : "";
             html += GetRow(
               indent,
-              clpsHtml + "<span class='ArrayBrace'>]</span>" + comma
+              clpsHtml + "<span class='ArrayBrace'>]</span>" + comma,
             );
           }
         } else if (type == "object") {
@@ -127,7 +127,7 @@
               comma,
               indent,
               isArray,
-              "Date"
+              "Date",
             );
           } else if (obj.constructor == window._regexpObj.constructor) {
             html += FormatLiteral(
@@ -136,7 +136,7 @@
               comma,
               indent,
               isArray,
-              "RegExp"
+              "RegExp",
             );
           } else {
             var numProps = 0;
@@ -145,7 +145,7 @@
               html += GetRow(
                 indent,
                 "<span class='ObjectBrace'>{ }</span>" + comma,
-                isPropertyContent
+                isPropertyContent,
               );
             } else {
               clpsHtml = window.IsCollapsible
@@ -156,7 +156,7 @@
               html += GetRow(
                 indent,
                 "<span class='ObjectBrace'>{</span>" + clpsHtml,
-                isPropertyContent
+                isPropertyContent,
               );
               var j = 0;
               for (var prop in obj) {
@@ -173,14 +173,14 @@
                       indent + 1,
                       ++j < numProps,
                       false,
-                      true
-                    )
+                      true,
+                    ),
                 );
               }
               clpsHtml = window.IsCollapsible ? "</span>" : "";
               html += GetRow(
                 indent,
-                clpsHtml + "<span class='ObjectBrace'>}</span>" + comma
+                clpsHtml + "<span class='ObjectBrace'>}</span>" + comma,
               );
             }
           }
@@ -196,7 +196,7 @@
               comma,
               indent,
               isArray,
-              "RegExp"
+              "RegExp",
             );
           } else {
             obj = FormatFunction(indent, obj);
@@ -209,7 +209,7 @@
             comma,
             indent,
             isArray,
-            "Null"
+            "Null",
           );
         } else {
           html += FormatLiteral(
@@ -218,7 +218,7 @@
             comma,
             indent,
             isArray,
-            "String"
+            "String",
           );
         }
         return html;
@@ -286,7 +286,7 @@
               MakeContentVisible(element, false);
             }
           },
-          0
+          0,
         );
       }
 
@@ -299,7 +299,7 @@
               MakeContentVisible(element, true);
             }
           },
-          0
+          0,
         );
       }
 
@@ -346,7 +346,7 @@
               }
             }
           },
-          0
+          0,
         );
       }
 
@@ -358,7 +358,7 @@
         var select = $id("TabSize");
         window.TAB = MultiplyString(
           parseInt(select.options[select.selectedIndex].value),
-          window.SINGLE_TAB
+          window.SINGLE_TAB,
         );
       }
 
@@ -397,14 +397,14 @@
       function LinkToJson() {
         var val = $id("RawJson").value;
         val = encodeURIComponent(
-          val.split("/n").join(" ").split("/r").join(" ")
+          val.split("/n").join(" ").split("/r").join(" "),
         );
         $id("InvisibleLinkUrl").value = val;
         $id("InvisibleLink").submit();
       }
     </script>
   </head>
-  <body onload="initDoc();" align="center">
+  <body onload="initDoc()" align="center">
     <div class="containercl">
       <br />
       <h3 style="text-align: right; color: #fffffff1">
@@ -435,12 +435,17 @@
             <div id="toolBar1">
               <select
                 style="
-                  font: 14px Arial, sans-serif;
+                  font:
+                    14px Arial,
+                    sans-serif;
                   border: none;
                   border-radius: 4px;
                   height: 20px;
                 "
-                onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;"
+                onchange="
+                  formatDoc('formatblock', this[this.selectedIndex].value);
+                  this.selectedIndex = 0;
+                "
               >
                 <option selected>- formatting -</option>
                 <option value="h1">Title 1 &lt;h1&gt;</option>
@@ -454,12 +459,17 @@
               </select>
               <select
                 style="
-                  font: 14px Arial, sans-serif;
+                  font:
+                    14px Arial,
+                    sans-serif;
                   border: none;
                   border-radius: 4px;
                   height: 20px;
                 "
-                onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;"
+                onchange="
+                  formatDoc('fontname', this[this.selectedIndex].value);
+                  this.selectedIndex = 0;
+                "
               >
                 <option class="heading" selected>- font -</option>
                 <option>Arial</option>
@@ -469,12 +479,17 @@
               </select>
               <select
                 style="
-                  font: 14px Arial, sans-serif;
+                  font:
+                    14px Arial,
+                    sans-serif;
                   border: none;
                   border-radius: 4px;
                   height: 20px;
                 "
-                onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;"
+                onchange="
+                  formatDoc('fontsize', this[this.selectedIndex].value);
+                  this.selectedIndex = 0;
+                "
               >
                 <option class="heading" selected>- size -</option>
                 <option value="1">Very small</option>
@@ -487,12 +502,17 @@
               </select>
               <select
                 style="
-                  font: 14px Arial, sans-serif;
+                  font:
+                    14px Arial,
+                    sans-serif;
                   border: none;
                   border-radius: 4px;
                   height: 20px;
                 "
-                onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+                onchange="
+                  formatDoc('forecolor', this[this.selectedIndex].value);
+                  this.selectedIndex = 0;
+                "
               >
                 <option class="heading" selected>- color -</option>
                 <option value="red">Red</option>
@@ -503,12 +523,17 @@
               </select>
               <select
                 style="
-                  font: 14px Arial, sans-serif;
+                  font:
+                    14px Arial,
+                    sans-serif;
                   border: none;
                   border-radius: 4px;
                   height: 20px;
                 "
-                onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+                onchange="
+                  formatDoc('backcolor', this[this.selectedIndex].value);
+                  this.selectedIndex = 0;
+                "
               >
                 <option class="heading" selected>- background -</option>
                 <option value="red">Red</option>
@@ -522,25 +547,29 @@
               <img
                 class="intLink"
                 title="Clean"
-                onclick="if(validateMode()){oDoc.innerHTML=sDefTxt};"
+                onclick="
+                  if (validateMode()) {
+                    oDoc.innerHTML = sDefTxt;
+                  }
+                "
                 src="data:image/gif;base64,R0lGODlhFgAWAIQbAD04KTRLYzFRjlldZl9vj1dusY14WYODhpWIbbSVFY6O7IOXw5qbms+wUbCztca0ccS4kdDQjdTLtMrL1O3YitHa7OPcsd/f4PfvrvDv8Pv5xv///////////////////yH5BAEKAB8ALAAAAAAWABYAAAV84CeOZGmeaKqubMteyzK547QoBcFWTm/jgsHq4rhMLoxFIehQQSAWR+Z4IAyaJ0kEgtFoLIzLwRE4oCQWrxoTOTAIhMCZ0tVgMBQKZHAYyFEWEV14eQ8IflhnEHmFDQkAiSkQCI2PDC4QBg+OAJc0ewadNCOgo6anqKkoIQA7"
               />
               <img
                 class="intLink"
                 title="Print"
-                onclick="printDoc();"
+                onclick="printDoc()"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oEBxcZFmGboiwAAAAIdEVYdENvbW1lbnQA9syWvwAAAuFJREFUOMvtlUtsjFEUx//n3nn0YdpBh1abRpt4LFqtqkc3jRKkNEIsiIRIBBEhJJpKlIVo4m1RRMKKjQiRMJRUqUdKPT71qpIpiRKPaqdF55tv5vvusZjQTjOlseUkd3Xu/3dPzusC/22wtu2wRn+jG5So/OCDh8ycMJDflehMlkJkVK7KUYN+ufzA/RttH76zaVocDptRxzQtNi3mRWuPc+6cKtlXZ/sddP2uu9uXlmYXZ6Qm8v4Tz8lhF1H+zDQXt7S8oLMXtbF4e8QaFHjj3kbP2MzkktHpiTjp9VH6iHiA+whtAsX5brpwueMGdONdf/2A4M7ukDs1JW662+XkqTkeUoqjKtOjm2h53YFL15pSJ04Zc94wdtibr26fXlC2mzRvBccEbz2kiRFD414tKMlEZbVGT33+qCoHgha81SWYsew0r1uzfNylmtpx80pngQQ91LwVk2JGvGnfvZG6YcYRAT16GFtW5kKKfo1EQLtfh5Q2etT0BIWF+aitq4fDbk+ImYo1OxvGF03waFJQvBCkvDffRyEtxQiFFYgAZTHS0zwAGD7fG5TNnYNTp8/FzvGwJOfmgG7GOx0SAKKgQgDMgKBI0NJGMEImpGDk5+WACEwEd0ywblhGUZ4Hw5OdUekRBLT7DTgdEgxACsIznx8zpmWh7k4rkpJcuHDxCul6MDsmmBXDlWCH2+XozSgBnzsNCEE4euYV4pwCpsWYPW0UHDYBKSWu1NYjENDReqtKjwn2+zvtTc1vMSTB/mvev/WEYSlASsLimcOhOBJxw+N3aP/SjefNL5GePZmpu4kG7OPr1+tOfPyUu3BecWYKcwQcDFmwFKAUo90fhKDInBCAmvqnyMgqUEagQwCoHBDc1rjv9pIlD8IbVkz6qYViIBQGTJPx4k0XpIgEZoRN1Da0cij4VfR0ta3WvBXH/rjdCufv6R2zPgPH/e4pxSBCpeatqPrjNiso203/5s/zA171Mv8+w1LOAAAAAElFTkSuQmCC"
               />
               <img
                 class="intLink"
                 title="Undo"
-                onclick="formatDoc('undo');"
+                onclick="formatDoc('undo')"
                 src="data:image/gif;base64,R0lGODlhFgAWAOMKADljwliE33mOrpGjuYKl8aezxqPD+7/I19DV3NHa7P///////////////////////yH5BAEKAA8ALAAAAAAWABYAAARR8MlJq7046807TkaYeJJBnES4EeUJvIGapWYAC0CsocQ7SDlWJkAkCA6ToMYWIARGQF3mRQVIEjkkSVLIbSfEwhdRIH4fh/DZMICe3/C4nBQBADs="
               />
               <img
                 class="intLink"
                 title="Redo"
-                onclick="formatDoc('redo');"
+                onclick="formatDoc('redo')"
                 src="data:image/gif;base64,R0lGODlhFgAWAMIHAB1ChDljwl9vj1iE34Kl8aPD+7/I1////yH5BAEKAAcALAAAAAAWABYAAANKeLrc/jDKSesyphi7SiEgsVXZEATDICqBVJjpqWZt9NaEDNbQK1wCQsxlYnxMAImhyDoFAElJasRRvAZVRqqQXUy7Cgx4TC6bswkAOw=="
               />
               <img
@@ -552,67 +581,67 @@
               <img
                 class="intLink"
                 title="Bold"
-                onclick="formatDoc('bold');"
+                onclick="formatDoc('bold')"
                 src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAInhI+pa+H9mJy0LhdgtrxzDG5WGFVk6aXqyk6Y9kXvKKNuLbb6zgMFADs="
               />
               <img
                 class="intLink"
                 title="Italic"
-                onclick="formatDoc('italic');"
+                onclick="formatDoc('italic')"
                 src="data:image/gif;base64,R0lGODlhFgAWAKEDAAAAAF9vj5WIbf///yH5BAEAAAMALAAAAAAWABYAAAIjnI+py+0Po5x0gXvruEKHrF2BB1YiCWgbMFIYpsbyTNd2UwAAOw=="
               />
               <img
                 class="intLink"
                 title="Underline"
-                onclick="formatDoc('underline');"
+                onclick="formatDoc('underline')"
                 src="data:image/gif;base64,R0lGODlhFgAWAKECAAAAAF9vj////////yH5BAEAAAIALAAAAAAWABYAAAIrlI+py+0Po5zUgAsEzvEeL4Ea15EiJJ5PSqJmuwKBEKgxVuXWtun+DwxCCgA7"
               />
               <img
                 class="intLink"
                 title="Left align"
-                onclick="formatDoc('justifyleft');"
+                onclick="formatDoc('justifyleft')"
                 src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JMGELkGYxo+qzl4nKyXAAAOw=="
               />
               <img
                 class="intLink"
                 title="Center align"
-                onclick="formatDoc('justifycenter');"
+                onclick="formatDoc('justifycenter')"
                 src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIfhI+py+0Po5y02ouz3jL4D4JOGI7kaZ5Bqn4sycVbAQA7"
               />
               <img
                 class="intLink"
                 title="Right align"
-                onclick="formatDoc('justifyright');"
+                onclick="formatDoc('justifyright')"
                 src="data:image/gif;base64,R0lGODlhFgAWAID/AMDAwAAAACH5BAEAAAAALAAAAAAWABYAQAIghI+py+0Po5y02ouz3jL4D4JQGDLkGYxouqzl43JyVgAAOw=="
               />
               <img
                 class="intLink"
                 title="Numbered list"
-                onclick="formatDoc('insertorderedlist');"
+                onclick="formatDoc('insertorderedlist')"
                 src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAADljwliE35GjuaezxtHa7P///////yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKSespwjoRFvggCBUBoTFBeq6QIAysQnRHaEOzyaZ07Lu9lUBnC0UGQU1K52s6n5oEADs="
               />
               <img
                 class="intLink"
                 title="Dotted list"
-                onclick="formatDoc('insertunorderedlist');"
+                onclick="formatDoc('insertunorderedlist')"
                 src="data:image/gif;base64,R0lGODlhFgAWAMIGAAAAAB1ChF9vj1iE33mOrqezxv///////yH5BAEAAAcALAAAAAAWABYAAAMyeLrc/jDKSesppNhGRlBAKIZRERBbqm6YtnbfMY7lud64UwiuKnigGQliQuWOyKQykgAAOw=="
               />
               <img
                 class="intLink"
                 title="Quote"
-                onclick="formatDoc('formatblock','blockquote');"
+                onclick="formatDoc('formatblock', 'blockquote')"
                 src="data:image/gif;base64,R0lGODlhFgAWAIQXAC1NqjFRjkBgmT9nqUJnsk9xrFJ7u2R9qmKBt1iGzHmOrm6Sz4OXw3Odz4Cl2ZSnw6KxyqO306K63bG70bTB0rDI3bvI4P///////////////////////////////////yH5BAEKAB8ALAAAAAAWABYAAAVP4CeOZGmeaKqubEs2CekkErvEI1zZuOgYFlakECEZFi0GgTGKEBATFmJAVXweVOoKEQgABB9IQDCmrLpjETrQQlhHjINrTq/b7/i8fp8PAQA7"
               />
               <img
                 class="intLink"
                 title="Delete indentation"
-                onclick="formatDoc('outdent');"
+                onclick="formatDoc('outdent')"
                 src="data:image/gif;base64,R0lGODlhFgAWAMIHAAAAADljwliE35GjuaezxtDV3NHa7P///yH5BAEAAAcALAAAAAAWABYAAAM2eLrc/jDKCQG9F2i7u8agQgyK1z2EIBil+TWqEMxhMczsYVJ3e4ahk+sFnAgtxSQDqWw6n5cEADs="
               />
               <img
                 class="intLink"
                 title="Add indentation"
-                onclick="formatDoc('indent');"
+                onclick="formatDoc('indent')"
                 src="data:image/gif;base64,R0lGODlhFgAWAOMIAAAAADljwl9vj1iE35GjuaezxtDV3NHa7P///////////////////////////////yH5BAEAAAgALAAAAAAWABYAAAQ7EMlJq704650B/x8gemMpgugwHJNZXodKsO5oqUOgo5KhBwWESyMQsCRDHu9VOyk5TM9zSpFSr9gsJwIAOw=="
               />
               <img
@@ -631,7 +660,7 @@
                 title="Add picture"
                 data-toggle="modal"
                 data-target="#crimg"
-                onclick="document.getElementById('btnOkImg').disabled='true';"
+                onclick="document.getElementById('btnOkImg').disabled = 'true'"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -798,7 +827,7 @@
                 type="checkbox"
                 name="switchMode"
                 id="switchBox"
-                onchange="setDocMode(this.checked);"
+                onchange="setDocMode(this.checked)"
               />
               <label for="switchBox" style="color: white">Show HTML</label>
             </p>
@@ -879,7 +908,7 @@
             >Contact:
             <a href="mailto:mail@mastrowall.com">mail@mastrowall.com</a> </span
           ><br /><span
-            >© 2024 by
+            >© 2024-26 by
             <a target="_blank" href="https://mastrowall.com/"
               >MASTROWALL</a
             ></span
@@ -946,13 +975,13 @@
         var oPrntWin = window.open(
           "",
           "_blank",
-          "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+          "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes",
         );
         oPrntWin.document.open();
         oPrntWin.document.write(
           '<!doctype html><html><head><title>M A S T R O W A L L<\/title><\/head><body onload="print();">' +
             oDoc.innerHTML +
-            "<\/body><\/html>"
+            "<\/body><\/html>",
         );
         oPrntWin.document.close();
       }
@@ -974,7 +1003,7 @@
               "insertHTML",
               '<img src="' +
                 imgS +
-                '" width="30%" style="float:left; padding:6px;margin:4px;">'
+                '" width="30%" style="float:left; padding:6px;margin:4px;">',
             );
           }
           if (document.getElementById("rd2").checked) {
@@ -983,7 +1012,7 @@
               "insertHTML",
               '<img src="' +
                 imgS +
-                '" width="50%" style="float:right;padding:6px;margin:4px;">'
+                '" width="50%" style="float:right;padding:6px;margin:4px;">',
             );
           }
           if (document.getElementById("rd3").checked) {
@@ -992,7 +1021,7 @@
               "insertHTML",
               '<img src="' +
                 imgS +
-                '" width="98%" style="float:center;padding:6px;margin:4px;">'
+                '" width="98%" style="float:center;padding:6px;margin:4px;">',
             );
           } else {
             return false;
@@ -1036,7 +1065,7 @@
             "insertHTML",
             '<div class="youvid" align="center"><div class="embed-responsive embed-responsive-16by9 " style="max-width:600px; padding-top:10px;"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/' +
               myId +
-              '" frameborder="0" allowfullscreen></iframe></div></div><br>'
+              '" frameborder="0" allowfullscreen></iframe></div></div><br>',
           );
         } else {
           return false;

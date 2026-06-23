@@ -43,7 +43,7 @@ $(document).ready(function () {
   });
 
   $("#esq").click(function () {
-    const frmurl = "https://www.openaccessjournals.com/";
+    const frmurl = "https://www.sciencedaily.com/";
     openframenews(frmurl, "esq");
   });
   $("#popscie").click(function () {

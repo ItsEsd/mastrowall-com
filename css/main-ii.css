@@ -8,7 +8,7 @@
   position: fixed;
   z-index: 100;
   background-color: #ffffffe2;
-  background-image: linear-gradient(180deg, #2a45f584, #ffffff32, #f9d1088f);
+  background-image: linear-gradient(180deg, #2a45f545, #ffffff32, #f9d10837);
   -moz-background-size: 2px 2px;
   background-size: 4px 4px;
   border: 5px solid #fdfdfddc;
@@ -29,7 +29,7 @@
   border-radius: 50%;
   min-height: 150px;
   max-width: 150px;
-  margin-top: 12vh;
+  margin-top: 10vh;
   padding: 4px;
   margin-bottom: 0px;
   pointer-events: none;
@@ -98,10 +98,7 @@
 }
 
 .privacysp {
-  bottom: 10px;
-  right: 10px;
-  position: fixed;
-  text-align: right;
+  margin-top: 10px;
   font-size: 14px;
 }
 .prvctrms {
@@ -912,24 +909,18 @@
 }
 
 /* Icon */
-ul.icons {
-  bottom: 0px;
-  left: 20px;
-  position: fixed;
+.icons {
+  margin-top: 20px;
   cursor: default;
   list-style: none;
-  padding-left: 0;
+
   max-width: 240px;
 }
 
-ul.icons li {
+.icons a {
   display: inline-block;
   padding: 0 1em 0 0;
   font-size: 18px;
-}
-
-ul.icons li:last-child {
-  padding-right: 0;
 }
 
 @media screen and (max-width: 736px) {

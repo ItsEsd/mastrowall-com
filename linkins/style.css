@@ -368,6 +368,7 @@ a:hover {
 #content_lecture:hover {
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
+  box-shadow: 0px 2px 15px 0px rgba(255, 255, 255, 0.45);
 }
 
 label.error {
