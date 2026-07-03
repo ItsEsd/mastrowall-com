@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -84,7 +84,7 @@
       name="submit-to-google-sheet"
       id="gfrmsbmt"
       style="display: none"
-      onsubmit="return false"
+      onsubmit="return false;"
     >
       <input name="QZdata" id="QZdata" /> <input name="QSdata" id="QSdata" />
       <input name="QId" id="QId" /> <input name="QPass" id="QPass" />
@@ -102,10 +102,10 @@
       }
       function updateButtons() {
         const publicButton = document.querySelector(
-          '.restctbtn[value="Public"]'
+          '.restctbtn[value="Public"]',
         );
         const privateButton = document.querySelector(
-          '.restctbtn[value="Private"]'
+          '.restctbtn[value="Private"]',
         );
         if (accessType === "Public") {
           publicButton.style.background = "#fdc75a";
@@ -124,7 +124,7 @@
         var randomId = "";
         for (var i = 0; i < 6; i++) {
           randomId += characters.charAt(
-            Math.floor(Math.random() * characters.length)
+            Math.floor(Math.random() * characters.length),
           );
         }
         return randomId;
@@ -159,7 +159,7 @@
           inline: "nearest",
         });
         var inputElements = questionContainer.querySelectorAll(
-          "input[name], select[name], div[name]"
+          "input[name], select[name], div[name]",
         );
         inputElements.forEach(function (element) {
           element.addEventListener("input", handleInput);
@@ -184,14 +184,14 @@
         var quizPass = document.getElementById("quizPass").value;
         var questionsData = [];
         var questionContainers = document.querySelectorAll(
-          ".question-container"
+          ".question-container",
         );
         questionContainers.forEach(function (questionContainer, index) {
           var questionIdElement = questionContainer.querySelector(
-            '[name="questionId"]'
+            '[name="questionId"]',
           );
           var questionStatementElement = questionContainer.querySelector(
-            '[name="questionStatement"]'
+            '[name="questionStatement"]',
           );
           var option1Element =
             questionContainer.querySelector('[name="option1"]');
@@ -257,9 +257,9 @@
         document.getElementById("quizForm").style.pointerEvents = "none";
         fetch(qzcrlg, { method: "POST", body: new FormData(form) })
           .then(() => {
-            alert("Form submitted successfully!");
+            alert("Quiz submitted successfully!");
             const quizLink = `https://quiz.mastrowall.com/?qid=${encodeToBase64(
-              quizId
+              quizId,
             )}&v=${encodeToBase64(quizPass)}`;
             const quizLinkContainer = document.getElementById("quizLink");
             quizLinkContainer.innerHTML = ` <span>Quiz Title: <b>${quizTitle}</b></span> | <a id="quizLinkAnchor" href="${quizLink}" target="_blank">Open</a> <button onclick="copyToClipboard(document.getElementById('quizLinkAnchor').href)">Copy Link 🔗</button> `;
