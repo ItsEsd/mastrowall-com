@@ -195,7 +195,7 @@ function sendEdmail() {
     error: function (error) {
       document.getElementById("mailsented").style.display = "none";
       alert(
-        "Error sending verification email! Please check Internet connection."
+        "Error sending verification email! Please check Internet connection.",
       );
     },
   });
@@ -305,13 +305,13 @@ function infoexampdf() {
   var oPrntWin = window.open(
     "",
     "_blank",
-    "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+    "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes",
   );
   oPrntWin.document.open();
   oPrntWin.document.write(
     '<!doctype html><html><head><title>M A S T R O W A L L - Exam Portal</title><link rel="stylesheet" href="css/vendor/bootstrap.min.css"><link rel="stylesheet" href="style.css"></head><body onload="print();">' +
       elem.innerHTML +
-      "</body></html>"
+      "</body></html>",
   );
   oPrntWin.document.close();
 }
