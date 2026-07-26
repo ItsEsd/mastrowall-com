@@ -526,11 +526,19 @@ $("#spdash").click(function () {
 });
 
 var clkelement = document.getElementById("tlmdnw");
+var iframeLoaded = false;
 
 $("#sgdash").click(function (event) {
+  const iframe = document.getElementById("tlfrmcm");
+
   if (event.target === clkelement) {
     window.open("https://telemedia.mastrowall.com", "_blank");
     return;
+  }
+
+  if (!iframeLoaded && iframe.tagName.toLowerCase() === "iframe") {
+    iframe.src = "https://telemedia.mastrowall.com";
+    iframeLoaded = true;
   }
 
   document.getElementById("telemedia").style.boxShadow =
@@ -538,6 +546,7 @@ $("#sgdash").click(function (event) {
   document.getElementById("telemedia").style.width = "100%";
   document.getElementById("main").style.marginLeft = "0";
 });
+
 // });
 
 $("#botlinkins").click(function () {

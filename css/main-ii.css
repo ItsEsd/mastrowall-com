@@ -1,4 +1,5 @@
 /* M A S T R O W A L L */
+
 #intro {
   display: block;
   bottom: 0px;
@@ -13,13 +14,13 @@
   background-size: 4px 4px;
   border: 5px solid #fdfdfddc;
   border-bottom: 4px solid #0c29c9b7;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   backdrop-filter: blur(6px);
+  overflow-y: auto;
 }
 
 #intro h2 {
-  padding-top: 20px;
-  font-size: 24px;
+  padding: 5px 0 5px 0;
   font-weight: 600;
   color: #757575;
 }
@@ -29,7 +30,7 @@
   border-radius: 50%;
   min-height: 150px;
   max-width: 150px;
-  margin-top: 10vh;
+  margin-top: 8vh;
   padding: 4px;
   margin-bottom: 0px;
   pointer-events: none;
@@ -86,6 +87,7 @@
   filter: grayscale(0) invert(1);
   box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.126);
   opacity: 0.9;
+  border: 2px solid #8e8e8e76;
 }
 #introptsign {
   width: 100%;
@@ -99,7 +101,7 @@
 
 .privacysp {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .prvctrms {
   width: 100%;
@@ -172,7 +174,7 @@
 }
 #getgames {
   top: 18px;
-  right: 260px;
+  right: 270px;
   position: absolute;
   color: #0b07df;
   cursor: pointer;
@@ -1384,6 +1386,7 @@ input:disabled {
   width: 20px;
   margin-left: 5px;
   margin-bottom: 5px;
+  filter: brightness(0.6);
 }
 .apkdwnld {
   font-size: 14px;
