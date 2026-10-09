@@ -52,7 +52,7 @@ $(document).ready(function () {
   });
 
   $("#wirdns").click(function () {
-    const frmurl = "https://www.wired.com";
+    const frmurl = "https://www.ionos.com/digitalguide/";
     openframenews(frmurl, "wirdns");
   });
 
