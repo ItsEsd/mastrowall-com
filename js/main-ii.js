@@ -295,7 +295,7 @@ $("#wirdns").click(function () {
   move();
   openframenews();
   changezpostd();
-  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.wired.com", {
+  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.ionos.com/digitalguide/", {
     openInNewTab: true,
   });
 });
