@@ -279,7 +279,7 @@ $("#esq").click(function () {
 $("#iasstils").click(function () {
   move();
   changezpostd();
-  window.open("https://www.astro.mastrowall.in/groups", "_blank");
+  window.open("https://www.nobelprize.org/", "_blank");
 });
 
 $("#popscie").click(function () {
