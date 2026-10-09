@@ -52,7 +52,7 @@ $(document).ready(function () {
   });
 
   $("#wirdns").click(function () {
-    const frmurl = "https://www.ionos.com/digitalguide/";
+    const frmurl = "https://www.nobelprize.org/";
     openframenews(frmurl, "wirdns");
   });
 
