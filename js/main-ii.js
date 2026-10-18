@@ -644,9 +644,6 @@ function chngbackground(label) {
 
 /// GetGames ///////////////
 var gmdsh = [
-  ["../images/gaming/gm1.png", "https://testtubegames.com/velocityraptor.html"],
-
-  ["../images/gaming/gm2.png", "https://testtubegames.com/shocktopus_web.html"],
 
   ["../images/gaming/gm3.png", "https://www.funbrain.com/games/"],
 
