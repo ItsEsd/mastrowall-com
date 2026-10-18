@@ -146,18 +146,6 @@ function closeSignInOverlay() {
 
 const gmdsh = [
   [
-    "../images/gaming/gm1.png",
-    "https://testtubegames.com/velocityraptor.html",
-    "Velocity Raptor",
-    "Physics platformer with relativity.",
-  ],
-  [
-    "../images/gaming/gm2.png",
-    "https://testtubegames.com/shocktopus_web.html",
-    "Electric Shocktopus",
-    "Learn magnetism in action.",
-  ],
-  [
     "../images/gaming/gm3.png",
     "https://www.funbrain.com/games/",
     "FunBrain",
