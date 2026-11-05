@@ -295,9 +295,14 @@ $("#wirdns").click(function () {
   move();
   openframenews();
   changezpostd();
-  loadUrlInSrcdoc("frame", "hrefframenews", "https://www.ionos.com/digitalguide/", {
-    openInNewTab: true,
-  });
+  loadUrlInSrcdoc(
+    "frame",
+    "hrefframenews",
+    "https://www.ionos.com/digitalguide/",
+    {
+      openInNewTab: true,
+    },
+  );
 });
 
 $("#scdaily").click(function () {
@@ -644,7 +649,6 @@ function chngbackground(label) {
 
 /// GetGames ///////////////
 var gmdsh = [
-
   ["../images/gaming/gm3.png", "https://www.funbrain.com/games/"],
 
   [
@@ -668,8 +672,6 @@ var gmdsh = [
   ["../images/gaming/gm11.png", "https://www.turtlediary.com/"],
 
   ["../images/gaming/gm15.png", "https://www.physicsgames.net/"],
-
-  ["../images/gaming/gm16.png", "https://kids.niehs.nih.gov/games/"],
 
   ["../images/gaming/gm18.png", "https://mathworld.wolfram.com/"],
 

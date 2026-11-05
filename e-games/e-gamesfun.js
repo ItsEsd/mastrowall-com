@@ -212,12 +212,6 @@ const gmdsh = [
     "Learn science through play.",
   ],
   [
-    "../images/gaming/gm16.png",
-    "https://kids.niehs.nih.gov/games/",
-    "NIH Kids",
-    "Health and science games.",
-  ],
-  [
     "../images/gaming/gm18.png",
     "https://mathworld.wolfram.com/",
     "MathWorld",
